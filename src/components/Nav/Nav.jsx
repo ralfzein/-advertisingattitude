@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import logo from "../../../public/Images/logo.svg"
 
 const Nav = ({ title, tracking }) => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -102,7 +101,7 @@ const Nav = ({ title, tracking }) => {
                   Beirut — Beirut Digital District BDD 1499
                 </motion.div>
 
-                <motion.img variants={itemVariants} src={logo} alt="Hero" className="w-[20%] h-auto object-contain" />
+                <motion.img variants={itemVariants} src={'/Images/logo.svg'} loading='lazy' alt="Hero" className="w-[20%] h-auto object-contain" />
               </div>
 
               {/* Social Links */}

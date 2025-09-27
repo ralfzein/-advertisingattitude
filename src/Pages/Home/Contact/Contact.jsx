@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import bg from "../../../../public/Images/bg.svg"
 import Nav from '../../../components/Nav/Nav'
+
 
 const Contact = () => {
   const [selected, setSelected] = useState(1)
@@ -32,7 +32,7 @@ const title=[{
 
       <div
         className="absolute inset-0 w-full h-full bg-center bg-cover"
-        style={{ backgroundImage: `url(${bg})` }}
+        style={{ backgroundImage: `url('/Images/bg.svg')` }}
       >
         <div className="absolute inset-0 bg-[#202A43] -z-[1]" />
       </div>

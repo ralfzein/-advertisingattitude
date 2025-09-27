@@ -1,6 +1,4 @@
 import React from 'react'
-import swirl from '../../../../public/Images/Swirl/swirl.webp'
-import logo from "../../../../public/Images/sLogo.svg"
 import Nav from '../../../components/Nav/Nav'
 import { motion } from "framer-motion"
 
@@ -28,15 +26,15 @@ const Swirl = () => {
     className='  h-screen  relative overflow-hidden'>
          <motion.div variants={childVariants}>
 
-              <Nav title={'THE SWIRLBOLD'} tracking={'tracking-[.7rem]'} />
+              <Nav title={'THE SWIRLBOLD'} tracking={'tracking-[.9rem]'} />
       </motion.div>
     <div className='  h-screen   relative flex items-center justify-center'>
 
-      <img src={swirl} alt="swirl background" className=' absolute w-full h-full object-cover'/>
+      <img src={'/Images/Swirl/swirl.webp'} loading='lazy' alt="swirl background" className=' absolute w-full h-full object-cover'/>
 
         <div className=' z-10 flex items-center justify-center gap-5 '>
             <lable className='text-[10rem] tracking-[.7rem] font-R_regular text-primary uppercase'>SWIRL</lable>
-                  <img src={logo} alt="logo" className=' w-50 ' />
+                  <img src={'/Images/sLogo.svg'} loading='lazy' alt="logo" className=' w-50 ' />
             <lable className='text-[10rem] tracking-[.7rem] font-R_regular text-primary uppercase'>Bold</lable>
           
 

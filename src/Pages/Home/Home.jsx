@@ -7,7 +7,6 @@ import Swirl from "./Components/Swirl";
 import TheAA from "./Components/TheAA";
 import RedSection2 from "./Components/RedSection2";
 import Footer from "../../components/Footer/Footer";
-import slogo from "../../../public/Images/sLogo.svg";
 
 function Home() {
   const [showLogo, setShowLogo] = useState(false);
@@ -35,8 +34,9 @@ if (window.scrollY > heroHeight) {
         {showLogo && (
           <motion.img
             key="slogo"
-            src={slogo}
+            src={'/Images/sLogo.svg'}
             alt="logo"
+            loading='lazy'
             className="fixed bottom-10 right-[4rem] w-32 z-40"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

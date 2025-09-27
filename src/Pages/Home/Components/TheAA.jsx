@@ -1,46 +1,40 @@
 import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import bg from "../../../../public/Images/bg.svg"
-import aa from "../../../../public/Images/TheAA/aa.webp"
-import ab from "../../../../public/Images/TheAA/ab.webp"
-import ac from "../../../../public/Images/TheAA/ac.webp"
-import ad from "../../../../public/Images/TheAA/ad.webp"
-import ae from "../../../../public/Images/TheAA/ae.webp"
 
 import Nav from "../../../components/Nav/Nav"
 
 const slides = [
   {
-    img: aa,
-    img2: ab,
+    img: '/Images/TheAA/aa.webp',
+    img2: '/Images/TheAA/ab.webp',
     title: "Stop Branding \n Blindly",
     subtitle:
       "Many brands don’t fail in marketing because  of weak visuals—they fail because they skip  strategy. But with AI, it’s no longer out of  reach—it’s a revolution. Will you harness it, or \n fall behind?",
   },
   {
-    img: ab,
-    img2: ac,
+    img: '/Images/TheAA/ab.webp',
+    img2: '/Images/TheAA/ac.webp',
     title: "The New  Marketing   Playbook",
     subtitle:
       "One marketer can’t do it all. An agency brings  the full arsenal—strategy, design, content, execution—all under one roof. Buy back your   time, cut the overhead, and focus on what  actually grows your business.",
   },
   {
-    img: ac,
-    img2: ad,
+    img: '/Images/TheAA/ac.webp',
+    img2: '/Images/TheAA/ad.webp',
     title: "The Burnout   Whisperer",
     subtitle:
       "You love the craft. The chase. The next big   idea. But when every brief whispers “do more, be more,  ” burnout starts to speak louder than   creativity. This one’s for the marketers,  designers, and dreamers who feel the pressure    but keep showing up.",
   },
   {
-    img: ad,
-    img2: ae,
+    img: '/Images/TheAA/ad.webp',
+    img2: '/Images/TheAA/ae.webp',
     title: "The SwirlBold  Mentality",
     subtitle:
       "Welcome to SwirlBold Thinking. Let’s stop   blending in. SwirlBold isn’t a style. It’s   a   mindset. It’s marketing that spins out of the   obvious and lands where impact lives. You   don’t think in straight lines. You think in   loops, angles, and questions others are too   scared to ask. Because bold ideas don’t follow   the rules. They bend them, break them, and   redraw the map.",
   },
   {
-    img: ae,
-    img2: aa,
+    img: '/Images/TheAA/ae.webp',
+    img2: '/Images/TheAA/aa.webp',
     title: "Every Agency   Is An Award   Winner",
     subtitle:
       "Some win for real. Some win for reach. Either   way—congrats, truly. As for us? We’re not in it    (yet). We’re just keeping our heads down,    building loud ideas quietly. Because the best   kind of recognition? Comes after the work is   done.",
@@ -100,7 +94,7 @@ function TheAA() {
 
       <div
         className="absolute inset-0 w-full h-full bg-center bg-cover "
-        style={{ backgroundImage: `url(${bg})` }}
+        style={{ backgroundImage: `url(${'/Images/bg.svg'})` }}
       >
         <div className="absolute inset-0 bg-[#202A43] -z-1" />
       </div>
@@ -143,12 +137,12 @@ function TheAA() {
             <div className="relative flex-1 w-full flex items-start justify-start h-full ml-10 ">
               <img
                 src={slides[current].img}
-                alt="work1"
+                alt="work1" loading='lazy'
                 className="z-10 h-[430px] pointer-events-none "
               />
               <img
                 src={slides[current].img2}
-                alt="work2"
+                alt="work2" loading='lazy'
                 className="absolute z-0 h-[300px] left-[33%] top-[20%] opacity-[25%] pointer-events-none"
               />
             </div>

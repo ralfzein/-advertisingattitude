@@ -1,48 +1,40 @@
 "use client"
-
 import { useState, useEffect } from "react"
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "../../../components/ui/carousel"
 import Nav from "../../../components/Nav/Nav"
 
-import adf from "../../../../public/Images/Campaign/adf.webp"
-import mdf from "../../../../public/Images/Campaign/mdf.webp"
-import bdf from "../../../../public/Images/Campaign/bdf.webp"
-import ka from "../../../../public/Images/Campaign/ka.webp"
-import aa from "../../../../public/Images/Campaign/aa.webp"
 
 const slides = [
   {
-    img: adf,
+    img: '/Images/Campaign/adf.webp',
     title: "ABU DHABI DUTY FREE",
     subtitle:
       "The Red Thread — vibrant, no-miss \n digital campaign to turn heads fast",
   },
   {
-    img: mdf,
+    img: '/Images/Campaign/mdf.webp',
     title: "MUSCAT DUTY FREE",
     subtitle:
       "Chocoflight Time — playful concept \n turning the chocolate section into the \n most irresistible stop",
   },
   {
-    img: bdf,
+    img: '/Images/Campaign/bdf.webp',
     title: "BEIRUT DUTY FREE",
     subtitle:
       "Click & Collect — a campaign built on \n consistency, clear and direct messaging",
   },
   {
-    img: ka,
+    img: '/Images/Campaign/ka.webp',
     title: "K&A MACHMOUCHI",
     subtitle:
       "The FastLane Screen — digital branding \n that turns screens into bold statement",
   },
   {
-    img: aa,
+    img: '/Images/Campaign/aa.webp',
     title: "ADVERTISING ATTITUDE",
     subtitle:
       "Ignore This Ad — positioning a bold \n agency in a world of noise",
@@ -105,11 +97,11 @@ export default function Cam() {
         </CarouselContent>
 
         {/* Dots */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-6 z-20">
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-6 z-20 ">
           {slides.map((_, i) => (
             <button
               key={i}
-              className={`w-4 h-4 rounded-full transition ${
+              className={`w-4 h-4 rounded-full transition cursor-pointer ${
                 i === current ? "bg-primary" : "bg-transparent border border-white"
               }`}
               onClick={() => api && api.scrollTo(i)}

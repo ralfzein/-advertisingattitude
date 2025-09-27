@@ -1,12 +1,10 @@
 import React from 'react'
-import logo2 from "../../../public/Images/logo2.svg"
-import bg from "../../../public/Images/bg.svg"
 
 
 const Footer = () => {
   return (
     <div className='flex flex-col h-auto  bg-background   'id="footer"
-       style={{ backgroundImage: `url(${bg})` }}>
+       style={{ backgroundImage: `url('/Images/bg.svg')` }}>
       <div className='flex flex-col px-[4rem] py-[2rem]'>
         <p className='
           font-M_bold  text-primary
@@ -20,7 +18,7 @@ const Footer = () => {
              </p>
 
         <div className='mt-20 mb-10 flex'>
-            <img src={logo2} alt="Hero" className="w-[72%] h-auto object-contain " />
+            <img src={'/Images/logo2.svg'} alt="Hero" loading='lazy' className="w-[72%] h-auto object-contain " />
         </div>
         <div className='flex justify-between mb-5 '>
             <div className='flex items-center gap-10  '>

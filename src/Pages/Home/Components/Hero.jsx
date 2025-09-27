@@ -1,6 +1,4 @@
 import { motion } from "framer-motion";
-import hero2    from "../../../../public/Images/herro.webp";
-import logo from "../../../../public/Images/logo.svg";
 import Nav from "../../../components/Nav/Nav";
 
 function Hero() {
@@ -32,8 +30,9 @@ function Hero() {
       {/* Hero Background */}
       <div className="absolute inset-0 ">
         <img
-          src={hero2}
+          src={'/Images/herro.webp'}
           alt="Hero"
+          loading='lazy'
           className="w-full h-full  object-cover"
         />
          {/* <img
@@ -59,8 +58,9 @@ function Hero() {
         <motion.div variants={childVariants} className=" flex flex-col gap-10 ">
         <img
           
-          src={logo}
+          src={'/Images/logo.svg'}
           alt="Hero"
+          loading='lazy'
           className="w-[50rem] max-w-full object-contain mt-25"
         />
 
