@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Hero from "./Components/Hero";
 import RedSection from "./Components/RedSection";
 import Campaign from "./Components/Campaign";
-import Swirl from "./Components/Swirl";
+import Swirl from "./Components/Swirffffl";
 import TheAA from "./Components/TheAA";
 import RedSection2 from "./Components/RedSection2";
 import Footer from "../../components/Footer/Footer";
