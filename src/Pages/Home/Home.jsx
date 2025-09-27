@@ -7,7 +7,7 @@ import Swirl from "./Components/Swirl";
 import TheAA from "./Components/TheAA";
 import RedSection2 from "./Components/RedSection2";
 import Footer from "../../components/Footer/Footer";
-import slogo from "../../assets/Images/sLogo.svg";
+import slogo from "../../../public/Images/sLogo.svg";
 
 function Home() {
   const [showLogo, setShowLogo] = useState(false);

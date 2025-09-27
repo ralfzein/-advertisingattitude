@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import logo from "../../assets/Images/logo.svg"
+import logo from "../../../public/Images/logo.svg"
 
 const Nav = ({ title, tracking }) => {
   const [menuOpen, setMenuOpen] = useState(false)

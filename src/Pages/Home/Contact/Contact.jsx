@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import bg from "../../../assets/Images/bg.svg"
+import bg from "../../../../public/Images/bg.svg"
 import Nav from '../../../components/Nav/Nav'
 
 const Contact = () => {

@@ -10,11 +10,11 @@ import {
 } from "../../../components/ui/carousel"
 import Nav from "../../../components/Nav/Nav"
 
-import adf from "../../../assets/Images/Campaign/adf.webp"
-import mdf from "../../../assets/Images/Campaign/mdf.webp"
-import bdf from "../../../assets/Images/Campaign/bdf.webp"
-import ka from "../../../assets/Images/Campaign/ka.webp"
-import aa from "../../../assets/Images/Campaign/aa.webp"
+import adf from "../../../../public/Images/Campaign/adf.webp"
+import mdf from "../../../../public/Images/Campaign/mdf.webp"
+import bdf from "../../../../public/Images/Campaign/bdf.webp"
+import ka from "../../../../public/Images/Campaign/ka.webp"
+import aa from "../../../../public/Images/Campaign/aa.webp"
 
 const slides = [
   {

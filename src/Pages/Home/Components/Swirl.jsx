@@ -1,6 +1,6 @@
 import React from 'react'
-import swirl from '../../../assets/Images/Swirl/swirl.webp'
-import logo from "../../../assets/Images/sLogo.svg"
+import swirl from '../../../../public/Images/Swirl/swirl.webp'
+import logo from "../../../../public/Images/sLogo.svg"
 import Nav from '../../../components/Nav/Nav'
 import { motion } from "framer-motion"
 

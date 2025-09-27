@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
-import hero2    from "../../../assets/Images/herro.webp";
-import logo from "../../../assets/Images/logo.svg";
-import opacity from "../../../assets/Images/opacity.png";
+import hero2    from "../../../../public/Images/herro.webp";
+import logo from "../../../../public/Images/logo.svg";
 import Nav from "../../../components/Nav/Nav";
 
 function Hero() {

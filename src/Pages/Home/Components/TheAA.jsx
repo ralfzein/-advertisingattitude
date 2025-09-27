@@ -1,11 +1,11 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import bg from "../../../assets/Images/bg.svg"
-import aa from "../../../assets/Images/TheAA/aa.webp"
-import ab from "../../../assets/Images/TheAA/ab.webp"
-import ac from "../../../assets/Images/TheAA/ac.webp"
-import ad from "../../../assets/Images/TheAA/ad.webp"
-import ae from "../../../assets/Images/TheAA/ae.webp"
+import bg from "../../../../public/Images/bg.svg"
+import aa from "../../../../public/Images/TheAA/aa.webp"
+import ab from "../../../../public/Images/TheAA/ab.webp"
+import ac from "../../../../public/Images/TheAA/ac.webp"
+import ad from "../../../../public/Images/TheAA/ad.webp"
+import ae from "../../../../public/Images/TheAA/ae.webp"
 
 import Nav from "../../../components/Nav/Nav"
 
@@ -49,6 +49,7 @@ const slides = [
 
 function TheAA() {
   const [current, setCurrent] = useState(0)
+ 
 
 
   const handleDragEnd = (event, info) => {
@@ -156,16 +157,16 @@ function TheAA() {
       </motion.div>
 
       {/* Dots */}
-   <div className="absolute  bottom-10 left-1/2 -translate-x-1/2 flex gap-5 z-20 cursor-pointer" >
+   <div className="absolute  bottom-10 left-1/2 -translate-x-1/2 flex gap-5 z-90   cursor-pointer" >
         {slides.map((_, i) => (
           <button
             key={i}
             onClick={() => {
-              setDirection(i > current ? 1 : -1)
+              setCurrent(i > current ? 1 : -1)
               setCurrent(i)
             }}
-            className={`w-5 h-5 rounded-full border transition ${
-              i === current ? "bg-primary  border-transparent " : "bg-transparent boder  border-white"
+            className={`w-5 h-5 rounded-full border transition cursor-pointer ${
+              i === current ? "bg-primary  border-transparent " : "bg-transparent boder  border-primary"
             }`}
           />
         ))}

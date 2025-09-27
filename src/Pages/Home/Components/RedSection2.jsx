@@ -1,5 +1,4 @@
 import React from 'react'
-import logo from "../../../assets/Images/sLogo.svg" 
 
 const RedSection2 = () => {
   return (
