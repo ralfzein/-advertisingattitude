@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+
+
+--text-header:5.5rem;
+--color-border:#30334808;
+--color-secondary:#E3584B;
+--color-primary:#F2EDD9;
+--color-third:#D9D9D9;
+--color-bur:#7C1235;
+--color-background:#202A43;
+
+
+
+--font-R_regular: "R_regular";
+--font-M_regular: "M_regular";
+--font-M_bold: "M_bold";
+--font-M_medium: "M_medium";
+
+}
+
+@font-face {
+  font-family: "R_regular";
+  src: url("./assets/fonts/Righteous-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "M_medium";
+  src: url("./assets/fonts/Montserrat-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "M_regular";
+  src: url("./assets/fonts/Montserrat-Regular.ttf") format("truetype");
+}
+
+
+@font-face {
+  font-family: "M_bold";
+  src: url("./assets/fonts/Montserrat-Bold.ttf") format("truetype");
+}
+body {
+  user-select: none;
+}
