@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import Nav from '../../../components/Nav/Nav'
+import Nav from '../../components/Nav/Nav'
 import { LoaderPinwheel, Shell } from 'lucide-react'
-import { Button } from '../../../components/ui/button'
-import Footer from '../../../components/Footer/Footer'
+import { Button } from '../../components/ui/button'
+import Footer from '../../components/Footer/Footer'
 import FirstTab from './Components/FirstTab'
 import SecondTab from './Components/SecondTab'
 import ThirdTab from './Components/ThirdTab'
+
 
 
 const Contact = () => {

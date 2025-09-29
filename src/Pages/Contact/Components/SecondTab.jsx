@@ -1,5 +1,5 @@
 import { Shell } from "lucide-react";
-import { Button } from "../../../../components/ui/button";
+import { Button } from "../../../components/ui/button";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 

@@ -98,7 +98,7 @@ export default function Cam() {
         </CarouselContent>
 
         {/* Dots */}
-        <div className="absolute  bottom-10 left-1/2 -translate-x-1/2 flex gap-5 z-40   cursor-pointer ">
+        <div className="absolute  bottom-10 left-1/2 -translate-x-1/2 flex gap-5 z-30   cursor-pointer ">
           {slides.map((_, i) => (
             <button
               key={i}

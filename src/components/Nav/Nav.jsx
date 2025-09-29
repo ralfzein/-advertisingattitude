@@ -1,9 +1,10 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import { useNavigate } from "react-router-dom"
 
 const Nav = ({ title, tracking }) => {
   const [menuOpen, setMenuOpen] = useState(false)
-
+   const navigate=useNavigate();
   // Variants for container (staggered children)
   const containerVariants = {
     open: {
@@ -22,6 +23,29 @@ const Nav = ({ title, tracking }) => {
     exit: { opacity: 0, y: 20, transition: { duration: 0.3, ease: "easeIn" } },
   }
 
+
+  const navigation=[
+    {
+      name:"work",
+      href:"/"
+    },
+    {
+      name:"swirlbold",
+      href:"/"
+    },
+    {
+      name:" The AA Perspective",
+      href:"/"
+    },
+    {
+      name:"About",
+      href:"/"
+    },
+    {
+      name:"Let’s Talk",
+      href:"/contact"
+    }
+  ]
   return (
     <>
       {/* Navbar */}
@@ -81,13 +105,14 @@ const Nav = ({ title, tracking }) => {
                            tracking-[0.05em] sm:tracking-[0.08em] md:tracking-[0.1em]"
                 variants={containerVariants}
               >
-                {["work", "swirlbold", "The AA Perspective", "About", "Let’s Talk"].map((item, i) => (
+                {navigation.map((item, i) => (
                   <motion.div
                     key={i}
                     variants={itemVariants}
                     className="cursor-pointer hover:text-secondary w-fit capitalize"
+                    onClick={() => navigate(item.href)}
                   >
-                    {item}
+                    {item.name}
                   </motion.div>
                 ))}
               </motion.div>
