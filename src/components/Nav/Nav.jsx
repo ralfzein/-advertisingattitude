@@ -25,8 +25,8 @@ const Nav = ({ title, tracking }) => {
   return (
     <>
       {/* Navbar */}
-      <nav className="absolute top-0 w-full flex items-center justify-between px-[4rem] mt-3 z-50">
-        <div className="flex items-center justify-between w-full border-b-[0.5rem] border-primary">
+      <nav className="absolute top-0 w-full flex items-center justify-between px-[4rem] mt-3 z-50 ">
+        <div className="flex items-center justify-between w-full border-b-[0.5rem] border-primary 0">
           {/* Title */}
           <h1
             className={`font-R_regular font-bold text-primary text-header leading-[1.1] ${tracking} 
@@ -63,6 +63,7 @@ const Nav = ({ title, tracking }) => {
               transition: { opacity: { duration: 0.6, ease: "easeInOut" }, y: { duration: 0.3, ease: "easeIn" } },
             }}
             className="absolute top-0 inset-0 flex flex-col bg-[#202A43] h-screen items-start justify-center text-white bg-cover bg-center z-40"
+               style={{ backgroundImage: `url(${'/Images/bg.svg'})` }}
           >
             {/* Animated content */}
             <motion.div
@@ -76,7 +77,7 @@ const Nav = ({ title, tracking }) => {
               <motion.div
                 className="mt-4 flex flex-col text-primary font-R_regular font-normal
                            text-[2rem] sm:text-[2.8rem] md:text-[3.5rem] lg:text-[4rem] xl:text-[4.8rem]
-                           leading-tight sm:leading-[3rem] md:leading-[3.5rem] lg:leading-[5rem]
+                           leading-tight sm:leading-[3rem] md:leading-[3.5rem] lg:leading-[5.5rem]
                            tracking-[0.05em] sm:tracking-[0.08em] md:tracking-[0.1em]"
                 variants={containerVariants}
               >

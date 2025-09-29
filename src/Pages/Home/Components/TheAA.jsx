@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
 import Nav from "../../../components/Nav/Nav"
+import { Button } from "../../../components/ui/button"
 
 const slides = [
   {
@@ -9,14 +10,14 @@ const slides = [
     img2: '/Images/TheAA/ab.webp',
     title: "Stop Branding \n Blindly",
     subtitle:
-      "Many brands don’t fail in marketing because  of weak visuals—they fail because they skip  strategy. But with AI, it’s no longer out of  reach—it’s a revolution. Will you harness it, or \n fall behind?",
+      "Many brands don’t fail in marketing because  of weak visuals — they fail because they skip  strategy. But with AI, it’s no longer out of  reach — it’s a revolution. Will you harness it, or \n fall behind?",
   },
   {
     img: '/Images/TheAA/ab.webp',
     img2: '/Images/TheAA/ac.webp',
-    title: "The New  Marketing   Playbook",
+    title: "The New Marketing   Playbook",
     subtitle:
-      "One marketer can’t do it all. An agency brings  the full arsenal—strategy, design, content, execution—all under one roof. Buy back your   time, cut the overhead, and focus on what  actually grows your business.",
+      "One marketer can’t do it all. An agency brings  the full arsenal — strategy, design, content, execution — all under one roof. Buy back your   time, cut the overhead, and focus on what  actually grows your business.",
   },
   {
     img: '/Images/TheAA/ac.webp',
@@ -37,7 +38,7 @@ const slides = [
     img2: '/Images/TheAA/aa.webp',
     title: "Every Agency   Is An Award   Winner",
     subtitle:
-      "Some win for real. Some win for reach. Either   way—congrats, truly. As for us? We’re not in it    (yet). We’re just keeping our heads down,    building loud ideas quietly. Because the best   kind of recognition? Comes after the work is   done.",
+      "Some win for real. Some win for reach. Either   way — congrats, truly. As for us? We’re not in it    (yet). We’re just keeping our heads down,    building loud ideas quietly. Because the best   kind of recognition? Comes after the work is   done.",
   },
 ]
 
@@ -82,12 +83,12 @@ function TheAA() {
         whileInView="show"
         viewport={{ once: true, amount: 0.3 }}
         className="relative h-screen w-full
-         overflow-hidden cursor-grab active:cursor-grabbing"
+         overflow-hidden cursor-grab active:cursor-grabbing snap-start"
          >
       {/* Background */}
       <motion.div variants={childVariants}>
 
-              <Nav title={'THE AA PERSPECTIVE'} tracking={'tracking-[.7rem]'} />
+              <Nav title={'THE AA PERSPECTIVE'} tracking={'tracking-[.8rem]'} />
         {/* <Nav title={"THINK BOLDLY"} tracking={"tracking-[1.9rem]"} /> */}
 
       </motion.div>
@@ -114,36 +115,39 @@ function TheAA() {
             animate={{ opacity: 1,y:0 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="flex w-full gap-20 items-center justify-center  h-[430px]   mt-30"
+            className="flex w-full gap-20 items-center justify-center  h-[30rem]   mt-20"
           >
             {/* Text content */}
             <div className="flex-1 flex flex-col items-start justify-between bg-  h-full ">
             <div className=" flex flex-col items-start gap-5 ">
               <h3 className="text-secondary font-R_regular text-[4.8rem] leading-[4.5rem] tracking-[0.1em] whitespace-pre-line">
                 {slides[current].title}
-              </h3>
+              </h3>s
               <p className="text-lg text-primary leading-[1.3rem] font-M_regular
                tracking-[0.1em] whitespace-pre-line">
                 {slides[current].subtitle}
               </p>
               </div>
-              <div className="font-R_regular mt-6 font-normal text-[1.5rem] tracking-[0.12em] leading-[4rem] flex items-center 
+              {/* <div className="font-R_regular mt-6 font-normal text-[1.5rem] tracking-[0.12em] leading-[4rem] flex items-center 
               justify-center w-[20rem] h-[5rem] rounded-full text-primary bg-secondary">
                 See the Take
-              </div>
+              </div> */}
+                  <Button className=" font-R_regular  text-[1.5rem] tracking-[0.12em] leading-[4rem] mt-0
+          flex items-center justify-center w-[20rem] h-[5rem] hover:bg-secondary hover:opacity-80 cursor-pointer
+           rounded-full   text-primary bg-secondary  " variant="default" size="default">SEE THE TAKE</Button>
             </div>
 
             {/* Images */}
-            <div className="relative flex-1 w-full flex items-start justify-start h-full ml-10 ">
+            <div className="relative flex-1 w-full flex items-start justify-center h-full">
               <img
                 src={slides[current].img}
                 alt="work1" loading='lazy'
-                className="z-10 h-[430px] pointer-events-none "
+                className="z-10 h-[30rem] pointer-events-none"
               />
               <img
                 src={slides[current].img2}
                 alt="work2" loading='lazy'
-                className="absolute z-0 h-[300px] left-[33%] top-[20%] opacity-[25%] pointer-events-none"
+                className="absolute z-0 h-[20rem] right-0 top-[20%] opacity-[25%] pointer-events-none"
               />
             </div>
           </motion.div>
@@ -151,7 +155,7 @@ function TheAA() {
       </motion.div>
 
       {/* Dots */}
-   <div className="absolute  bottom-10 left-1/2 -translate-x-1/2 flex gap-5 z-90   cursor-pointer" >
+   <div className="absolute  bottom-10 left-1/2 -translate-x-1/2 flex gap-5 z-40   cursor-pointer" >
         {slides.map((_, i) => (
           <button
             key={i}

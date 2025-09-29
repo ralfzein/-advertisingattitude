@@ -27,7 +27,7 @@ if (window.scrollY > heroHeight) {
   }, []);
 
   return (
-    <div>
+ <div class="h-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth">
       <Hero />
 
       <AnimatePresence>

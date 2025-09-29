@@ -6,6 +6,7 @@ import {
   CarouselItem,
 } from "../../../components/ui/carousel"
 import Nav from "../../../components/Nav/Nav"
+import { Button } from "../../../components/ui/button"
 
 
 const slides = [
@@ -59,7 +60,7 @@ export default function Cam() {
   }, [api])
 
   return (
-    <div className="relative h-screen w-full overflow-hidden">
+    <div className="relative h-screen w-full overflow-hidden snap-start">
       <Nav title="CAMPAIGN MADE BY AA" tracking="tracking-[.8rem]" />
 
       <Carousel opts={{ loop: true }} className="h-screen w-screen" setApi={setApi}>
@@ -67,7 +68,7 @@ export default function Cam() {
           {slides.map((slide, index) => (
             <CarouselItem
               key={index}
-              className="h-screen w-full relative flex items-center justify-center"
+              className="h-screen w-full relative flex items-center justify-center "
             >
               {/* Background */}
               <div
@@ -88,22 +89,22 @@ export default function Cam() {
               {slides[current].subtitle}
             </p>
           </div>
-          <div className=" font-R_regular  text-[1.5rem] tracking-[0.12em] leading-[4rem] mt-0
-          flex items-center justify-center w-[25rem] h-[4rem]
-           rounded-full   text-primary bg-secondary ">SEE THE CAMPAIGN</div>
+          <Button className=" font-R_regular  text-[1.5rem] tracking-[0.12em] leading-[4rem] mt-0
+          flex items-center justify-center w-[25rem] h-[5rem] hover:bg-secondary hover:opacity-80 cursor-pointer
+           rounded-full   text-primary bg-secondary  " variant="default" size="default">SEE THE CAMPAIGN</Button>
           </div>
             </CarouselItem>
           ))}
         </CarouselContent>
 
         {/* Dots */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-6 z-20 ">
+        <div className="absolute  bottom-10 left-1/2 -translate-x-1/2 flex gap-5 z-40   cursor-pointer ">
           {slides.map((_, i) => (
             <button
               key={i}
-              className={`w-4 h-4 rounded-full transition cursor-pointer ${
-                i === current ? "bg-primary" : "bg-transparent border border-white"
-              }`}
+               className={`w-5 h-5 rounded-full border transition cursor-pointer ${
+              i === current ? "bg-primary  border-transparent " : "bg-transparent boder  border-primary"
+            }`}
               onClick={() => api && api.scrollTo(i)}
             />
           ))}

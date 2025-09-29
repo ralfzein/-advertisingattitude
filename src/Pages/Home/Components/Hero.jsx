@@ -25,7 +25,7 @@ function Hero() {
       initial="hidden"
       id="hero-section"
       whileInView="show"
-      className="relative h-screen w-full"
+      className="relative h-screen w-full snap-start"
     >
       {/* Hero Background */}
       <div className="absolute inset-0 ">
@@ -33,7 +33,7 @@ function Hero() {
           src={'/Images/herro.webp'}
           alt="Hero"
           loading='lazy'
-          className="w-full h-full  object-cover"
+          className="w-full h-full  object-cover "
         />
          {/* <img
           src={opacity}
@@ -54,7 +54,7 @@ function Hero() {
       </motion.div>
 
       {/* Hero Content */}
-      <div className="flex flex-col items-center justify-center h-full relative z-10    px-4">
+      <div className="flex flex-col items-center justify-center h-full relative z-10   ">
         <motion.div variants={childVariants} className=" flex flex-col gap-10 ">
         <img
           
