@@ -9,7 +9,7 @@ const Footer = () => {
       <div className='flex flex-col px-[4rem] justify-between h-full mb-5 '>
         <p className=' mt-5
           font-M_bold  text-primary
-           text-lg  leading-[2rem] text-justify
+             leading-[1.3rem] text-justify
           '>Advertising Attitude is a leading creative agency built for brands that 
             refuse to blend in. We don’t just craft campaigns—we train ideas to fight harder,
              lastlonger, and leave echoes. Rooted in clarity, rebellion, and bold thinking, 
