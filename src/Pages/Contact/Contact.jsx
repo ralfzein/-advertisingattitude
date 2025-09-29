@@ -35,7 +35,7 @@ const title=[{
       <Nav title={"let's talk"} tracking={"tracking-[1.6rem]"} />
 
       <div
-        className="absolute inset-0 w-full h-full bg-center bg-cover"
+        className="absolute inset-0 w-full h-full bg-center bg-"
         style={{ backgroundImage: `url('/Images/bg.svg')` }}
       >
         <div className="absolute inset-0 bg-[#202A43] -z-[1]" />
