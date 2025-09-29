@@ -28,7 +28,7 @@ const SecondTab = () => {
     }
   };
   return (
-    <motion.div variants={containerVariants} initial="hidden" animate="visible">
+    <motion.div variants={containerVariants} initial="hidden" animate="visible" className="mt-15">
       <div className="font-R_regular text-primary text-[1.5rem] leading-[2rem] mt-8 tracking-[0.15rem] ">
       Think you’ve got SwirlBold in your blood? <br/> Prove it, and drop us your portfolio.
       </div>
@@ -98,18 +98,19 @@ const SecondTab = () => {
 Need more space? Include a link in your message or email us at business@advertisingattitude.com</span>
         </div>
  <div className='flex items-center justify-start w-full  gap-5  mt-10 '>
-                 <div
-      className={`font-M_medium text-[1.5rem] border w-14 h-14 flex items-center justify-center cursor-pointer z-90
-                  transition-colors duration-300 border-primary`}
-      onClick={() => setActive(!active)}
-    >
-      <Shell
-        className="w-full h-full transition-colors duration-300 scale-x-[-1] rotate-90  "
-        stroke={active ? '#e3584b' : '#f2edd9'}
-        // fill="#e3584b"
-          // color="#f2edd9"
-      />
-    </div>
+                      <div
+  className={`font-M_medium text-[1.5rem] border w-14 h-14 flex items-center justify-center cursor-pointer
+              transition-colors duration-300 border-primary relative`}
+  onClick={() => setActive(!active)}
+>
+  <img
+    src="/Images/swirl.svg"
+    alt="logo"
+    className={` transition-scale transition-rotate duration-600 absolute top-0 left-0 w-full h-full
+      ${active ? 'opacity-100 scale-90 rotate-0' : ' scale-0 opacity-0 rotate-120'}`}
+  />
+</div>
+
                 <span className='font-M_regular text-xs  text-primary  tracking-[.12em]'>
                  I agree to the use of my data as outlined in the Privacy Policy. <br/>
                   By submitting this form, you agree to be contacted by Advertising Attitude regarding your inquiry. <br/>
