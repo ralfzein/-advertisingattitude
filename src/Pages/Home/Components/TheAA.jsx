@@ -122,7 +122,7 @@ function TheAA() {
             <div className=" flex flex-col items-start gap-5 ">
               <h3 className="text-secondary font-R_regular text-[4.8rem] leading-[4.5rem] tracking-[0.1em] whitespace-pre-line">
                 {slides[current].title}
-              </h3>s
+              </h3>
               <p className="text-lg text-primary leading-[1.3rem] font-M_regular
                tracking-[0.1em] whitespace-pre-line">
                 {slides[current].subtitle}
