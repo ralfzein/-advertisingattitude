@@ -26,7 +26,7 @@ const Nav = ({ title, tracking }) => {
     <>
       {/* Navbar */}
       <nav className="absolute top-0 w-full flex items-center justify-between px-[4rem] mt-3 z-50 ">
-        <div className="flex items-center justify-between w-full border-b-[0.5rem] border-primary 0">
+        <div className="flex items-center justify-between w-full border-b-[0.5rem] border-primary 0 uppercase">
           {/* Title */}
           <h1
             className={`font-R_regular font-bold text-primary text-header leading-[1.1] ${tracking} 
