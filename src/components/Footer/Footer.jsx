@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div className='relative snap-start h-screen flex flex-col   bg-background   'id="footer"
        style={{ backgroundImage: `url('/Images/bg.svg')` }}>
-      <div className='flex flex-col px-[4rem] '>
+      <div className='flex flex-col px-[4rem] justify-between h-full mb-5 '>
         <p className=' mt-5
           font-M_bold  text-primary
            text-lg  leading-[2rem] text-justify
@@ -17,11 +17,12 @@ const Footer = () => {
              andpunch through the noise. With a SwirlBold™ mindset at our core, we fuse creative 
              chaos with strategic intent—making work that’s  unignorable, unforgettable,and unapologetically sharp.
              </p>
+ <div className="flex-1" />
 
-        <div className='mt-5 mb-10 flex'>
+        <div className='  flex'>
             <img src={'/Images/logo2.svg'} alt="Hero" loading='lazy' className="w-full h-auto object-cover " />
         </div>
-        <div className='flex justify-between mb-5 '>
+        <div className='flex justify-between mt-5 '>
             <div className='flex items-center gap-10  '>
                 {['LinkedIn', 'Instagram', 'Facebook', 'Newsletter', 'Careers' ].map((item, index) => (
                     
@@ -37,7 +38,7 @@ const Footer = () => {
             </div> 
         </div>
       </div>
-        <div className=' py-2 w-full bg-bur flex items-center absolute bottom-0  '>
+        <div className=' py-2 w-full bg-bur flex items-center  '>
             
 
               <div className='flex justify-between  items-center w-full  px-[4rem] '>
