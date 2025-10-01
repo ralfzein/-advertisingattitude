@@ -21,8 +21,8 @@ const Swirl = () => {
     hidden: { opacity: 1, fontSize: "10rem", lineHeight: "9rem", y: 0 },
     show: {
       opacity: 1,
-      fontSize: "9rem",
-      lineHeight: "9rem",
+      fontSize: "8rem",
+      lineHeight: "8rem",
       y: direction === "down" ? 40 : -40,
       transition: { duration: 0.8, ease: "easeInOut", delay: 1 },
     },
@@ -48,7 +48,7 @@ const Swirl = () => {
 const logoVariants = {
   hidden: { width: "15rem", opacity: 0 },
   show: {
-    width: "28rem",
+    width: "30rem",
     opacity: 1,
     transition: { duration: 0.8, ease: "easeInOut", delay: 1 }
   }
@@ -82,7 +82,7 @@ const betweenVariants = {
           muted
           loop
           playsInline
-          className="absolute   h-full w-full   object-cover "
+          className="absolute   h-full w-full left-0   object-cover "
         />
 {/* <img 
           src="/Images/Swirl/swirl.webp"
@@ -137,7 +137,7 @@ const betweenVariants = {
   src="/Images/contactLogo.png"
   loading="lazy"
   alt="logo"
-  className="absolute -translate-x-10"
+  className="absolute "
   variants={logoVariants}
   initial="hidden"
   whileInView="show"
@@ -147,7 +147,7 @@ const betweenVariants = {
 </motion.div>
 
           {/* Right column */}
-          <motion.div className="relative flex flex-col items-start">
+          <motion.div className="relative flex flex-col items-start translate-x-10">
             <motion.div
               variants={hiddenTextVariants2}
               className="absolute -bottom-3 font-R_regular text-[2.5rem] uppercase tracking-[.7rem] text-primary"
@@ -162,7 +162,7 @@ const betweenVariants = {
               <span className="flex items-start justify-start">
                 Bold
 
-               <sub className=" text-[2.5rem] font-R_regular text-primary  -translate-x-4   tracking-normal">tm</sub>
+               <sub className=" text-[2.5rem] font-R_regular text-primary  -translate-x-6   tracking-normal">tm</sub>
 
               </span>
             </motion.div>
