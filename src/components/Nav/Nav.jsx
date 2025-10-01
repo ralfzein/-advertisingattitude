@@ -1,29 +1,34 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { useNavigate } from "react-router-dom"
+import { useEffect } from "react"
 
 const Nav = ({ title, tracking }) => {
-  const [menuOpen, setMenuOpen] = useState(false)
-   const navigate=useNavigate();
-  // Variants for container (staggered children)
-  const containerVariants = {
-    open: {
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.3,
-      },
-    },
-    closed: {},
+   const [menuOpen, setMenuOpen] = useState(false)
+  const navigate = useNavigate()
+
+  // 👉 for title cycling
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const titles = Array.isArray(title) ? title : [title]
+
+  useEffect(() => {
+    if (titles.length > 1) {
+      const interval = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % titles.length)
+      }, 4000) // every 3s
+      return () => clearInterval(interval)
+    }
+  }, [titles])
+
+  // Animation variants for title
+  const titleVariants = {
+    hidden: { opacity: 0, y: -5 },
+    visible: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: 5 },
   }
 
-  // Variants for menu items
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-    exit: { opacity: 0, y: 20, transition: { duration: 0.3, ease: "easeIn" } },
-  }
-
-
+const containerVariants = { open: { transition: { staggerChildren: 0.15, delayChildren: 0.3, }, }, closed: {}, }
+const itemVariants = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }, exit: { opacity: 0, y: 20, transition: { duration: 0.3, ease: "easeIn" } }, }
   const navigation=[
     {
       name:"work",
@@ -52,12 +57,20 @@ const Nav = ({ title, tracking }) => {
       <nav className="absolute top-0 w-full flex items-center justify-between px-[4rem] mt-3 z-50 ">
         <div className="flex items-center justify-between w-full border-b-[0.5rem] border-primary 0 uppercase">
           {/* Title */}
-          <h1
+         <AnimatePresence mode="wait">
+              <motion.h1
+                key={titles[currentIndex]}
+                variants={titleVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                transition={{ duration: 0.6, ease: "easeInOut" }}
             className={`font-R_regular font-bold text-primary text-header leading-[1.1] ${tracking} 
                         lg:text-header`} 
           >
-            {title}
-          </h1>
+           {titles[currentIndex]}
+          </motion.h1>
+            </AnimatePresence>
 
           {/* Burger */}
           <button

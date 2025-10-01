@@ -1,16 +1,16 @@
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"; 
 import Nav from "../../../components/Nav/Nav";
 
 function Hero() {
   const containerVariants = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 1 },
     show: {
       opacity: 1,
       transition: { when: "beforeChildren", staggerChildren: 0.15 },
     },
   };
 
-  const childVariants = {
+  const childVariantsnav = {
     hidden: { opacity: 0 ,y:-20 },
     show: {
       opacity: 1,
@@ -18,12 +18,25 @@ function Hero() {
       transition: { type: "tween", duration: 0.5, ease: "easeOut" },
     },
   };
-
+const childVariants = {
+  hidden: { opacity: 0, scale: 0.2 },
+  show: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      type: "tween",
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
   return (
     <motion.section
       variants={containerVariants}
       initial="hidden"
       id="hero-section"
+  viewport={{ once: false, amount: 0.2 }} 
+
       whileInView="show"
       className="relative h-screen w-full snap-start"
     >
@@ -47,15 +60,15 @@ function Hero() {
 
       {/* Navigation */}
       <motion.div
-        variants={childVariants}
+        variants={childVariantsnav}
         className="relative z-50 w-full"
       >
-        <Nav title={"THINK BOLDLY"} tracking={"tracking-[1.6rem]"} />
+        <Nav title={["THINK BOLDLY", "BOLDLY THINK "]} tracking={"tracking-[1.6rem]"} />
       </motion.div>
 
       {/* Hero Content */}
-      <div className="flex flex-col items-center justify-center h-full relative z-10   ">
-        <motion.div variants={childVariants} className=" flex flex-col gap-10 ">
+      <div className="flex flex-col items-center justify-center h-full relative z-10">
+        <motion.div variants={childVariants} className=" flex flex-col gap-10">
         <img
           
           src={'/Images/logo.svg'}

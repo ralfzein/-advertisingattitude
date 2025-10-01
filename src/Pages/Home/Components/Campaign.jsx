@@ -7,6 +7,7 @@ import {
 } from "../../../components/ui/carousel"
 import Nav from "../../../components/Nav/Nav"
 import { Button } from "../../../components/ui/button"
+import { motion } from "framer-motion"; 
 
 
 const slides = [
@@ -41,16 +42,43 @@ const slides = [
       "Ignore This Ad — positioning a bold \n agency in a world of noise",
   },
 ]
+  const containerVariants = {
+    hidden: { opacity: 1 },
+    show: {
+      opacity: 1,
+      transition: { when: "beforeChildren", staggerChildren: 0.3 },
+    },
+  };
 
+  const childVariantsnav = {
+    hidden: { opacity: 0 ,y:-20 },
+    show: {
+      opacity: 1,
+      y :0,
+      transition: { type: "tween", duration: 0.5, ease: "easeOut" },
+    },
+  };
+const childVariants = {
+  hidden: { opacity: 0, scale: 0.2 },
+  show: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      type: "tween",
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
 export default function Cam() {
   const [current, setCurrent] = useState(0)
   const [api, setApi] = useState(null)
 
-  // ✅ listen to carousel events when api is available
+ 
   useEffect(() => {
     if (!api) return
 
-    setCurrent(api.selectedScrollSnap()) // set initial
+    setCurrent(api.selectedScrollSnap()) 
     const onSelect = () => setCurrent(api.selectedScrollSnap())
 
     api.on("select", onSelect)
@@ -59,11 +87,34 @@ export default function Cam() {
     }
   }, [api])
 
-  return (
-    <div className="relative h-screen w-full overflow-hidden snap-start">
-      <Nav title="CAMPAIGN MADE BY AA" tracking="tracking-[.8rem]" />
 
-      <Carousel opts={{ loop: true }} className="h-screen w-screen" setApi={setApi}>
+
+  useEffect(() => {
+  if (!api) return;
+
+  const interval = setInterval(() => {
+    const nextIndex = (api.selectedScrollSnap() + 1) % slides.length;
+    api.scrollTo(nextIndex);
+  }, 10000); 
+
+  return () => clearInterval(interval);
+}, [api]);
+
+  return (
+      <motion.section
+      variants={containerVariants}
+      initial="hidden"
+  viewport={{ once: false, amount: 0.2 }} 
+
+      whileInView="show" className="relative h-screen w-full overflow-hidden snap-start">
+
+           <motion.div
+        variants={childVariantsnav}
+        className="relative z-50 w-full"
+      >
+      <Nav title="CAMPAIGN MADE BY AA" tracking="tracking-[.8rem]" />
+</motion.div>
+      <Carousel  opts={{ loop: true }} className="h-screen w-screen" setApi={setApi}>
         <CarouselContent className="h-screen">
           {slides.map((slide, index) => (
             <CarouselItem
@@ -79,7 +130,7 @@ export default function Cam() {
               <div className="absolute inset-0 bg-[#202A43] opacity-80" />
 
               {/* Content */}
-           <div className="relative   z-10 flex flex-col items-center justify-center  h-full  text-center px-6">
+           <motion.div variants={childVariants} className="relative   z-10 flex flex-col items-center justify-center  h-full  text-center px-6">
           <div className="relative z-10 flex flex-col items-center justify-start  gap-0  text-center mt-30 min-h-[15.5rem]  ">
             <h1 className="font-R_regular tracking-[0.2rem]  text-[4.6rem] leading-[5.4rem]  text-primary ">
               {slides[current].title}
@@ -92,7 +143,7 @@ export default function Cam() {
           <Button className=" font-R_regular  text-[1.5rem] tracking-[0.12em] leading-[4rem] mt-0
           flex items-center justify-center w-[25rem] h-[5rem] hover:bg-secondary hover:opacity-80 cursor-pointer
            rounded-full   text-primary bg-secondary  " variant="default" size="default">SEE THE CAMPAIGN</Button>
-          </div>
+          </motion.div>
             </CarouselItem>
           ))}
         </CarouselContent>
@@ -111,6 +162,6 @@ export default function Cam() {
         </div>
 
       </Carousel>
-    </div>
+    </motion.section>
   )
 }

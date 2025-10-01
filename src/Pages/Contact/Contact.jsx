@@ -42,13 +42,13 @@ const title=[{
       </div> 
       <div className='relative px-[4rem] pt-[10rem]  mb-20 '>
          
-      <div className='grid grid-cols-3 gap-25   '>
+      <div className='grid grid-cols-3 gap-18   '>
         {title.map((item, index) => (
           <div
             key={index}
             onClick={() => setSelected(item.value)}
-            className={`py-3 px-4 border-[3px] font-M_extrabold text-center text-[1.5rem]  bg
-              border-secondary text-primary rounded-full cursor-pointer
+            className={` h-[5rem] flex items-center justify-center px-4 border-[3px] font-M_extrabold text-center text-[1.5rem]  bg
+              border-secondary text-primary rounded-full cursor-pointer tracking-[.15rem]
               ${selected === item.value ? 'bg-secondary text-white' : ' '}`}
           >
             {item.label}

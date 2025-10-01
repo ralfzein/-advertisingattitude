@@ -27,7 +27,8 @@ if (window.scrollY > heroHeight) {
   }, []);
 
   return (
- <div class="h-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth">
+ <div className="h-screen s">
+  {/* <div class="h-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth">  */}
       <Hero />
 
       <AnimatePresence>
@@ -37,7 +38,7 @@ if (window.scrollY > heroHeight) {
             src={'/Images/sLogo.svg'}
             alt="logo"
             loading='lazy'
-            className="fixed bottom-10 right-[4rem] w-32 z-40"
+            className="fixed bottom-10 right-[4rem] w-32 z-90"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
@@ -50,6 +51,7 @@ if (window.scrollY > heroHeight) {
       <Campaign />
       <Swirl />
       <TheAA />
+
       <RedSection2 />
       <Footer  />
     </div>

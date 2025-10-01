@@ -49,3 +49,26 @@
 body {
   /* user-select: none; */
 }
+
+
+/* Chrome, Edge, Safari */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px; /* width of scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #202A43; /* track color */
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #f87171; /* thumb color */
+  border-radius: 4px;
+  border: 2px solid #202A43; /* optional padding */
+}
+
+/* Firefox */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #f87171 #202A43; /* thumb track */
+}
