@@ -104,7 +104,7 @@ export default function Cam() {
       <motion.section
       variants={containerVariants}
       initial="hidden"
-  viewport={{ once: false, amount: 0.2 }} 
+  viewport={{ once: false, amount: 0.5 }} 
 
       whileInView="show" className="relative h-screen w-full overflow-hidden snap-start">
 
