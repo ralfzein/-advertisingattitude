@@ -38,7 +38,7 @@ if (window.scrollY > heroHeight) {
             src={'/Images/sLogo.svg'}
             alt="logo"
             loading='lazy'
-            className="fixed bottom-10 right-[4rem] w-32 z-90"
+            className="fixed bottom-10 right-[4rem] w-32 z-40"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
