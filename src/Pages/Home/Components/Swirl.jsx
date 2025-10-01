@@ -50,7 +50,7 @@ const logoVariants = {
   show: {
     width: "30rem",
     opacity: 1,
-    transition: { duration: 0.8, ease: "easeInOut", delay: 1 }
+    transition: { duration: 0.8, ease: "easeInOut", delay: 0.8 }
   }
 };
 

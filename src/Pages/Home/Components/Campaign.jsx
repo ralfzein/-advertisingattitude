@@ -46,7 +46,7 @@ const slides = [
     hidden: { opacity: 1 },
     show: {
       opacity: 1,
-      transition: { when: "beforeChildren", staggerChildren: 0.3 },
+      transition: { when: "beforeChildren", staggerChildren: 0.15 },
     },
   };
 

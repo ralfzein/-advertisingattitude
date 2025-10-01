@@ -29,7 +29,7 @@ const RedSection2 = () => {
     <motion.div  variants={containerVariants}
   initial="hidden"
   whileInView="show"
-  viewport={{ once: false, amount: 0.2 }}  className='relative snap-start bg-bur py-[3.5rem] w-full flex flex-col justify-center items-center  bg-cover bg-center  '
+  viewport={{ once: false, amount: 0.5 }}  className='relative snap-start bg-bur py-[3.5rem] w-full flex flex-col justify-center items-center  bg-cover bg-center  '
               //  style={{ backgroundImage: `url(${'/Images/bg.svg'})` }}
      >
       <motion.h1     variants={childVariants} className= 'text-primary   font-R_regular text-[4rem] leading-[4.5rem] tracking-[.4rem]    font-normal text-center     '>
