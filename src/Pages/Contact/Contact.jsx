@@ -1,78 +1,79 @@
-import React, { useEffect, useState } from 'react'
-import Nav from '../../components/Nav/Nav'
-import { LoaderPinwheel, Shell } from 'lucide-react'
-import { Button } from '../../components/ui/button'
-import Footer from '../../components/Footer/Footer'
-import FirstTab from './Components/FirstTab'
-import SecondTab from './Components/SecondTab'
-import ThirdTab from './Components/ThirdTab'
-
-
+import { useEffect, useState, useRef } from "react";
+import Lenis from "@studio-freight/lenis";
+import Nav from "../../components/Nav/Nav";
+import Footer from "../../components/Footer/Footer";
+import FirstTab from "./Components/FirstTab";
+import SecondTab from "./Components/SecondTab";
+import ThirdTab from "./Components/ThirdTab";
 
 const Contact = () => {
-  const [selected, setSelected] = useState(1)
+  const [selected, setSelected] = useState(1);
+  const lenisRef = useRef(null);
 
-const title=[{
-  label:"I am a Brand",
-  value:1
-},
-{
-  label:"I am a Creator",
-  value:2
-},
-{
-  label:"I am a PR",
-  value:3
-}
+  const title = [
+    { label: "I am a Brand", value: 1 },
+    { label: "I am a Creator", value: 2 },
+    { label: "I am a PR", value: 3 },
+  ];
 
+  useEffect(() => {
+    const lenis = new Lenis({ smooth: true });
+    lenisRef.current = lenis;
 
-]
- 
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
 
+    const element = document.getElementById("contact-section");
+    if (element) {
+      lenis.scrollTo(element.offsetTop, { duration: 1, easing: (t) => t });
+    }
+
+    return () => lenis.destroy();
+  }, []);
 
   return (
-    <div className='relative'>
-      <Nav title={"let's talk"} tracking={"tracking-[1.6rem]"} />
+    <>
+      <section id="contact-section" className="relative">
+        <Nav title={"let's talk"} tracking={"tracking-[1.6rem]"} />
 
-      <div
-        className="absolute inset-0 w-full h-full bg-center bg-"
-        style={{ backgroundImage: `url('/Images/bg.svg')` }}
-      >
-        <div className="absolute inset-0 bg-[#202A43] -z-[1]" />
-      </div> 
-      <div className='relative px-[4rem] pt-[10rem]  mb-20 '>
-         
-      <div className='grid grid-cols-3 gap-18   '>
-        {title.map((item, index) => (
-          <div
-            key={index}
-            onClick={() => setSelected(item.value)}
-            className={` h-[5rem] flex items-center justify-center px-4 border-[3px] font-M_extrabold text-center text-[1.5rem]  bg
-              border-secondary text-primary rounded-full cursor-pointer tracking-[.15rem]
-              ${selected === item.value ? 'bg-secondary text-white' : ' '}`}
-          >
-            {item.label}
+        <div
+          className="absolute inset-0 w-full h-full bg-center"
+          style={{ backgroundImage: `url('/Images/bg.svg')` }}
+        >
+          <div className="absolute inset-0 bg-[#202A43] -z-[1]" />
+        </div>
+
+        <div className="relative px-[4rem] pt-[10rem] pb-20">
+          <div className="grid grid-cols-3 gap-18 pb-20">
+            {title.map((item) => (
+              <div
+                key={item.value}
+                onClick={() => setSelected(item.value)}
+                className={`h-[5rem] flex items-center justify-center px-4 border-[3px] font-M_extrabold text-center text-[1.5rem]
+                border-secondary text-primary rounded-full cursor-pointer tracking-[.15rem]
+                ${selected === item.value ? "bg-secondary text-white" : ""}`}
+              >
+                {item.label}
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-       
-     
-        {selected === 1 ?
-         <FirstTab /> :
-        selected === 2 ? <SecondTab />:
-       <ThirdTab />}
 
+          {selected === 1 ? (
+            <FirstTab />
+          ) : selected === 2 ? (
+            <SecondTab />
+          ) : (
+            <ThirdTab />
+          )}
+        </div>
+      </section>
 
+      <Footer />
+    </>
+  );
+};
 
-
-
-
-
-
-      </div>
-      <Footer/>
-    </div>
-  )
-}
-
-export default Contact
+export default Contact;

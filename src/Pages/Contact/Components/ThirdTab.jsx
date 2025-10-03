@@ -82,7 +82,7 @@ const handleSend = (e) => {
           {/* Textarea */}
           <div className="h-auto flex items-start justify-start w-full gap-5 mt-3">
             <div className="font-M_medium text-[1.5rem] text-primary  whitespace-nowrap  -mt-2 flex items-center justify-center gap-3 ">
-            Quick Note <span className="text-xs font-M_regular text-primary ">((e.g. Tell us how you bring clients))</span>
+            Quick Note <span className="text-xs font-M_regular text-primary ">(e.g. Tell us how you bring clients)</span>
              
             </div>
             <div className="w-full relative bg">

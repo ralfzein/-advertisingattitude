@@ -72,3 +72,18 @@ body {
   scrollbar-width: thin;
   scrollbar-color: #f87171 #202A43; /* thumb track */
 }
+
+
+
+
+
+
+
+
+
+
+
+.scroll-container {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}

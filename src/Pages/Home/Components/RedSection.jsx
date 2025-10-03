@@ -22,8 +22,8 @@ const RedSection = () => {
   },
 };
   return (
-   <motion.div
-  className="bg-bur bg-cover bg-center snap-start"
+   <motion.section
+  className="bg-bur bg-cover bg-center snap-start w-full"
   variants={containerVariants}
   initial="hidden"
   whileInView="show"
@@ -31,14 +31,18 @@ const RedSection = () => {
   style={{ backgroundImage: `url('/Images/bg.svg')` }}
 >
 
-    <div className='relative  py-[3.5rem] w-full  px-[4rem] '>
-      <motion.h1     variants={childVariants} className= 'text-primary inline-block  tracking-[.4rem] font-R_regular text-[5rem] leading-[6.5rem]  -ml-[5px] pl-0  font-normal     uppercase'
+    <div className='relative  py-[3.5rem] w-full  px-4 md:px-[4rem] '>
+      <motion.h1     variants={childVariants} className= 'text-primary inline-block tracking-[.2rem]  md:tracking-[.4rem] font-R_regular text-[2rem] md:text-[5rem] leading-[2.2rem] md:leading-[6.5rem]  -ml-[5px] pl-0  font-normal     uppercase'
       >we don't just build brands. <br/> 
-      we train them to fight, <br/>
-      evolve, and lead.
+      </motion.h1>
+      <motion.h1     variants={childVariants} className= ' text-primary inline-block tracking-[.2rem]  md:tracking-[.4rem] font-R_regular text-[2rem] md:text-[5rem] leading-[2.2rem] md:leading-[6.5rem]  -ml-[5px] pl-0  font-normal     uppercase'
+     > we train them to fight, </motion.h1>
+
+      <motion.h1     variants={childVariants} className= ' text-primary inline-block tracking-[.2rem]  md:tracking-[.4rem] font-R_regular text-[2rem] md:text-[5rem] leading-[2.2rem] md:leading-[6.5rem]  -ml-[5px] pl-0  font-normal     uppercase'
+     > evolve, and lead.
         </motion.h1>
     </div>
-    </motion.div>
+    </motion.section>
   )
 }   
 

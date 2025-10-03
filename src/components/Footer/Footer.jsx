@@ -9,42 +9,31 @@ const Footer = () => {
     hidden: { opacity: 1 },
     show: {
       opacity: 1,
-      transition: { when: "beforeChildren", staggerChildren: 0.15 },
+      transition: { when: "beforeChildren", staggerChildren: 0.2 },
     },
   };
 
 
-  const childVariantsScale = {
-    hidden: { opacity: 0, scale: 0.8 },
-  show: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      type: "tween",
-      duration: 0.8,
-      ease: "easeOut",
-    },
-  },
-  };
+
  const childVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0 , y:50 },
   show: {
     opacity: 1,
-    y: 0,
+  y:0,
     transition: {
       type: "tween",
-      duration: 0.8,
+      duration: 1,
       ease: "easeOut",
     },
   },
   };
   return (
-    <motion.div
+    <motion.section
       variants={containerVariants}
       initial="hidden"
-      viewport={{ once: false, amount: 0.2 }}
+
       whileInView="show"
-       className='relative snap-start h-screen flex flex-col   bg-background   'id="footer"
+       className='relative  h-screen flex flex-col   bg-background   'id="footer"
        style={{ backgroundImage: `url('/Images/bg.svg')` }}>
       <div className='flex flex-col px-[4rem] justify-around ween h-full mb-5 '>
         <motion.p  variants={childVariants} className=' mt-5
@@ -59,8 +48,8 @@ const Footer = () => {
              </motion.p>
                <div className="" />
 
-        <motion.div  variants={childVariantsScale}  className='  flex'>
-            <img src={'/Images/logo2.svg'} alt="Hero" loading='lazy' className="w-full h-auto object-cover " />
+        <motion.div  variants={childVariants}  className='  flex'>
+            <img src={'/Images/logo2.svg'} alt="Hero" loading='lazy'  decoding="sync" className="w-full h-auto object-cover " />
         </motion.div>
         <div className='flex justify-between mt-5 '>
             <div className='flex items-center gap-10  '>
@@ -94,7 +83,7 @@ const Footer = () => {
             </div> 
         </div>
         </motion.div>
-    </motion.div>
+    </motion.section>
   )
 }
 

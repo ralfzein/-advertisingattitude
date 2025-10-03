@@ -66,7 +66,8 @@ const betweenVariants = {
       variants={containerVariants}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: false, amount: 0.2 }}
+           viewport={{ once: true,amount:0.4}}
+
       className="relative  h-screen w-full overflow-hidden snap-start"
     >
       {/* Navbar */}
@@ -120,7 +121,7 @@ const betweenVariants = {
   className="relative flex h-[25rem] items-center justify-center"
   initial={{ width: "12rem" }}
   whileInView={{ width: "28rem" }}
-  viewport={{ once: false, amount: 0.2 }}
+  viewport={{ once: true, amount: 0.2 }}
   transition={{ duration: 0.8, ease: "easeInOut", delay: 1 }}
 >
   <motion.img
@@ -130,7 +131,7 @@ const betweenVariants = {
     className="absolute"
     initial={{ width: "12rem", opacity: 1 }}
     whileInView={{ width: "15rem", opacity: 1 }}
-    viewport={{ once: false, amount: 0.8 }}
+    viewport={{ once: true, amount: 0.8 }}
     transition={{ duration: 0.8, ease: "easeInOut", delay: 1 }}
   />
 <motion.img
@@ -141,7 +142,7 @@ const betweenVariants = {
   variants={logoVariants}
   initial="hidden"
   whileInView="show"
-  viewport={{ once: false, amount: 0.8 }}
+  viewport={{ once: true, amount: 0.8 }}
 />
 
 </motion.div>

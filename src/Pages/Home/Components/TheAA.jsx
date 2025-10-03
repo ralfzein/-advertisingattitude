@@ -126,10 +126,10 @@ function TheAA() {
   };
 
   return (
-    <motion.div
+    <motion.section
       variants={containerVariants}
       initial="hidden"
-      viewport={{ once: false, amount: 0.3}}
+      viewport={{ once: true, amount: 0.4}}
       whileInView="show"
       className="relative h-screen w-full overflow-hidden snap-start"
     >
@@ -149,14 +149,14 @@ function TheAA() {
    >
       <div className="flex w-full gap-20 items-center justify-between  h-[30rem]   mt-40 px-[4rem] ">
         {/* Text content */}
-        <motion.div
+        <div
+          className="flex-1 flex flex-col items-start justify-between bg-  h-full "
+        >
+          <motion.div
           key={index} // force remount when index changes
           variants={childVariants}
           initial="hidden"
-          animate="show"
-          className="flex-1 flex flex-col items-start justify-between bg-  h-full "
-        >
-          <div className=" flex flex-col items-start gap-5 ">
+          animate="show" className=" flex flex-col items-start gap-5 ">
             <h3 className="text-secondary font-R_regular text-[4.8rem] leading-[4.5rem] tracking-[0.1em] whitespace-pre-line">
               {slides[index].title}
             </h3>
@@ -166,18 +166,18 @@ function TheAA() {
             >
               {slides[index].subtitle}
             </p>
-          </div>
+          </motion.div>
 
           <Button
             className=" font-R_regular  text-[1.5rem] tracking-[0.12em] leading-[4rem] mt-0
           flex items-center justify-center w-[20rem] h-[5rem] hover:bg-secondary hover:opacity-80 cursor-pointer
-           rounded-full   text-primary bg-secondary  "
+           rounded-full   text-primary bg-secondary"
             variant="default"
             size="default"
           >
             SEE THE TAKE
           </Button>
-        </motion.div>
+        </div>
 
         <div className="relative flex-1 w-full flex items-center justify-center h-[30rem]">
           <div className="absolute right-12">
@@ -205,12 +205,12 @@ function TheAA() {
         {/* <div className="relative flex-1 w-full flex items-start justify-center h-full">
               <img
                 src={slides[current].img}
-                alt="work1" loading='lazy'
+                alt="work1" loading='lazy'  decoding="sync"
                 className="z-10 h-[30rem] pointer-events-none"
               />
               <img
                 src={slides[current].img2}
-                alt="work2" loading='lazy'
+                alt="work2" loading='lazy'  decoding="sync"
                 className="absolute z-0 h-[20rem] right-0 top-[20%] opacity-[25%] pointer-events-none"
               />
             </div> */}
@@ -235,7 +235,7 @@ function TheAA() {
           />
         ))}
       </div>
-    </motion.div>
+    </motion.section>
   );
 }
 

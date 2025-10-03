@@ -2,6 +2,7 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { useNavigate } from "react-router-dom"
 import { useEffect } from "react"
+import CustomCursor from "./CustomCursor"
 
 const Nav = ({ title, tracking }) => {
    const [menuOpen, setMenuOpen] = useState(false)
@@ -51,6 +52,21 @@ const itemVariants = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 
       href:"/contact"
     }
   ]
+const [isHovered, setIsHovered] = useState(false);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMove = (e) => {
+      setMousePos({ x: e.clientX, y: e.clientY });
+    };
+    if (isHovered) {
+      window.addEventListener("mousemove", handleMove);
+    } else {
+      window.removeEventListener("mousemove", handleMove);
+    }
+    return () => window.removeEventListener("mousemove", handleMove);
+  }, [isHovered]);
+
   return (
     <>
       {/* Navbar */}
@@ -65,7 +81,7 @@ const itemVariants = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 
                 animate="visible"
                 exit="exit"
                 transition={{ duration: 0.6, ease: "easeInOut" }}
-            className={`font-R_regular font-bold text-primary text-header leading-[1.1] ${tracking} 
+            className={`font-R_regular font-bold text-primary uppercase text-header leading-[1.1] ${tracking} 
                         lg:text-header`} 
           >
            {titles[currentIndex]}
@@ -73,14 +89,42 @@ const itemVariants = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 
             </AnimatePresence>
 
           {/* Burger */}
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="text-white flex flex-col gap-[0.5rem] -translate-y-2 mt-7 cursor-pointer"
-          >
-            <div className="w-24 h-[0.5rem] bg-primary"></div>
-            <div className="w-24 h-[0.5rem] bg-primary"></div>
-            <div className="w-24 h-[0.5rem] bg-primary"></div>
-          </button>
+     <div className="relative">
+      {/* The button */}
+      <button
+  onClick={() => setMenuOpen(!menuOpen)}
+
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        className="text-white flex flex-col gap-[0.5rem] -translate-y-2 mt-7 cursor-none"
+      >
+        <div className="w-24 h-[0.5rem] bg-primary"></div>
+        <div className="w-24 h-[0.5rem] bg-primary"></div>
+        <div className="w-24 h-[0.5rem] bg-primary"></div>
+      </button>
+
+      {/* Fake cursor icon */}
+   
+<AnimatePresence>
+  {isHovered && (
+    <motion.img
+      key="cursor"
+      src="/Images/swirl.svg"
+      alt="cursor icon"
+      className="fixed w-12 h-12 pointer-events-none"
+      style={{
+        left: mousePos.x - 24 + "px",
+        top: mousePos.y - 24 + "px",
+      }}
+      initial={{ scale: 0, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      exit={{ scale: 0, opacity: 0 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
+    />
+  )}
+</AnimatePresence>
+    </div>
+
         </div>
       </nav>
 
@@ -140,7 +184,7 @@ const itemVariants = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 
                   Beirut — Beirut Digital District BDD 1499
                 </motion.div>
 
-                <motion.img variants={itemVariants} src={'/Images/logo.svg'} loading='lazy' alt="Hero" className="w-[20%] h-auto object-contain" />
+                <motion.img variants={itemVariants} src={'/Images/logo.svg'} loading='lazy'  decoding="sync" alt="Hero" className="w-[20%] h-auto object-contain" />
               </div>
 
               {/* Social Links */}
