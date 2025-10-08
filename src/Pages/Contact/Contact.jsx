@@ -1,5 +1,4 @@
-import { useEffect, useState, useRef } from "react";
-import Lenis from "@studio-freight/lenis";
+import { useEffect, useState } from "react";
 import Nav from "../../components/Nav/Nav";
 import Footer from "../../components/Footer/Footer";
 import FirstTab from "./Components/FirstTab";
@@ -8,7 +7,6 @@ import ThirdTab from "./Components/ThirdTab";
 
 const Contact = () => {
   const [selected, setSelected] = useState(1);
-  const lenisRef = useRef(null);
 
   const title = [
     { label: "I am a Brand", value: 1 },
@@ -17,21 +15,11 @@ const Contact = () => {
   ];
 
   useEffect(() => {
-    const lenis = new Lenis({ smooth: true });
-    lenisRef.current = lenis;
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
+    // Smooth scroll removed
     const element = document.getElementById("contact-section");
     if (element) {
-      lenis.scrollTo(element.offsetTop, { duration: 1, easing: (t) => t });
+      window.scrollTo({ top: element.offsetTop, behavior: "smooth" });
     }
-
-    return () => lenis.destroy();
   }, []);
 
   return (
