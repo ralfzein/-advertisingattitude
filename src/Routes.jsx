@@ -2,6 +2,9 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./Pages/Home/Home";
 import Contact from "./Pages/Contact/Contact";
 import { useEffect } from "react";
+import Campaigns from "./Pages/Campaigns/Campaigns";
+import Footer from "./components/Footer/Footer";
+import CaseStudy from "./Pages/CaseStudy/CaseStudy";
 
 
 function AppRoutes() {
@@ -13,11 +16,17 @@ useEffect(() => {
 
 
   return (
+    <>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/home" element={<Home />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/work" element={<Campaigns />} />
+      <Route path="/work" element={<Campaigns />} />
+      <Route path="/case-study/:id" element={<CaseStudy />} />
     </Routes>
+{/* <Footer/> */}
+    </>
   );
 }
 

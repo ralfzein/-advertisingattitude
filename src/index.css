@@ -16,6 +16,7 @@
 --font-R_regular: "R_regular";
 --font-M_regular: "M_regular";
 --font-M_bold: "M_bold";
+--font-M_semibold: "M_semibold";
 --font-M_medium: "M_medium";
 --font-M_extrabold: "M_extrabold";
 
@@ -42,6 +43,10 @@
   src: url("./assets/fonts/Montserrat-Bold.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "M_semibold";
+  src: url("./assets/fonts/Montserrat-SemiBold.ttf") format("truetype");
+}
 @font-face {
   font-family: "M_extrabold";
   src: url("./assets/fonts/Montserrat-ExtraBold.ttf") format("truetype");

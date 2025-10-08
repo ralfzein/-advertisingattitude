@@ -55,7 +55,7 @@ const Footer = () => {
             <div className='flex items-center gap-10  '>
                 {['LinkedIn', 'Instagram', 'Facebook', 'Newsletter', 'Careers' ].map((item, index) => (
                     
-                <span className='text-sm font-M_bold text-primary tracking-[.1em] cursor-pointer hover:text-bur'>{item}</span>
+                <span key={index} className='text-sm font-M_bold text-primary tracking-[.1em] cursor-pointer hover:text-bur'>{item}</span>
                 ))}
                 
             </div>
