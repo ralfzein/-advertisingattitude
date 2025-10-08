@@ -17,7 +17,7 @@ const navigate =useNavigate();
   src={data?.img}
   alt="img"
   onLoad={() => setIsLoaded(true)}
-  className={`w-full transform transition duration-700 ease-in-out ${style}  hover:scale-105 cursor-pointer  ${
+  className={`w-full transform transition duration-700 min-h-[30rem]  ease-in-out ${style}  hover:scale-105 cursor-pointer  ${
     isLoaded ? 'opacity-100' : 'opacity-0'
   }`}
 />
