@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Cards = ({ data, style, center }) => {
   const [isLoaded, setIsLoaded] = useState(false);
-const navigate =useNavigate();
+const navigate =useNavigate();  
   return (
     <div className={`flex flex-col gap-[10px] col-span-1 ${center ? 'px-[5rem]' : ''}`} 
     onClick={() => navigate(`/case-study/${data.id}`)}

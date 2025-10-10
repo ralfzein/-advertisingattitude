@@ -4,7 +4,7 @@ const CampaignsData = [
     title: "Abu Dhabi Duty Free",
     subTitle:
       "Valentine’s came alive with offers, storytelling, and immersive airport activations that turned travel into celebration.",
-    img: "/Images/Work/first.svg",
+    img: "/Images/Work/first.webp",
     tags: [
       "Airport",
       "Campaigns",
@@ -13,19 +13,21 @@ const CampaignsData = [
     ],
     cTitle:"Valentine’s All Over the Emirates",
     client:"Abu Dhabi Duty Free",
-    Sector:"Airport",
-    Services:["Campaigns", "Retail Marketing", "Brand Activation"," Concept Creation", "Creative Direction", "Experiential Marketing" ],
+    Sector:"Airport / Travel Retail",
+    Disciplines:["Campaigns", "Retail Marketing", "Brand Activation"," Concept Creation", "Creative Direction", "Experiential Marketing" ],
     date:"2025",
     section1:["/Images/Cases/Case1/section1.svg"],
     description:  ` <h1 class="mt-8 font-M_bold text-[2.4rem] leading-[2.8rem] text-background tracking-[.12rem] ">Valentine’s is emotional. Airports are not.
      Abu Dhabi Duty Free asked us to bridge that gap, to
       transform a transit space built for speed into a 
-      destination for love, gifting, and sales.</h1>
+      destination for love, gifting, and sales.
+
+     <div class=" font-M_semibold text-[1.3rem] leading-[1.6rem] tracking-normal text-background"> 
       
-      <p class="mt-8 font-M_semibold text-[1.3rem] leading-[1.6rem] text-background ">
-      Travel retail has scale, but rarely feeling. Most promotions blur into background noise. Valentine’s needed to stand out in a cluttered environment and become something passengers couldn’t ignore. Not just discounts on shelves, but a campaign that made travelers pause, engage, and buy.
-<br/>
-<br/>
+<br/> Travel retail has scale, but rarely feeling. Most promotions blur into background noise. Valentine’s needed to stand out in a cluttered environment and become something passengers couldn’t ignore. Not just discounts on shelves, but a campaign that made travelers pause, engage, and buy.
+</div> </h1>
+      <p class=" font-M_semibold text-[1.3rem] leading-[1.6rem] text-background ">
+  
 The ambition was to move Valentine’s beyond a transactional offer and into an experience. Our insight: airports are full of emotion, reunions, goodbyes, surprises. Valentine’s was the perfect moment to amplify that truth and connect it with Abu Dhabi Duty Free’s retail power. Instead of running a quiet promotion, we built a campaign designed to shout love, across corridors, activations, and prime storefronts.
 <br/>
 <br/>
@@ -42,7 +44,11 @@ Passengers stopped to look. They smiled. And they shopped. Valentine’s became 
 <br/>
 <br/>
 
-            This project reflects how Advertising Attitude operates. We’re not a content studio or a digital shop, we’re a strategic marketing agency. Every project starts inside-out: clarity-first strategy, story, creative system, execution. Our SwirlBold™ mentality shaped every move: disruptive creativity on the surface, disciplined focus beneath. The result wasn’t just seasonal engagement, but a campaign that moved passengers, activated retail, and proved what emotional branding can do in airports.</p>`
+This project reflects how Advertising Attitude operates. We’re not a content studio or a signage vendor — we’re a strategic marketing agency. We build clarity-first systems that scale across bold creativity, emotional depth, and strategic clarity.
+<br/>
+<br/>
+Guided by our SwirlBold™ mentality, we pair disruptive creativity with disciplined execution. The result? Not just seasonal engagement, but a campaign that moved passengers, activated retail, and proved what emotional branding can do in airports.
+            </p>`
 ,
       section2:["/Images/Cases/Case1/section2a.svg","/Images/Cases/Case1/Photo 3.png","/Images/Cases/Case1/Photo 4.svg"],
       section3:["/Images/Cases/Case1/section3a.svg","/Images/Cases/Case1/section3b.svg","/Images/Cases/Case1/section3c.svg"],
@@ -64,18 +70,24 @@ Passengers stopped to look. They smiled. And they shopped. Valentine’s became 
     title: "Beirut Duty Free",
     subTitle:
       "200+ promotions amplified into passenger conversations with bold visibility, smart placement, and measurable impact.",
-    img: "/Images/Work/second.svg",
-    tags: ["Airport", "Campaigns", "Retail Marketing", "Outreach Strategyn"],
+    img: "/Images/Work/second.webp",
+    tags: ["Airport", "Campaigns", "Retail Marketing", "Brand Activation"],
         cTitle:"The Power of Outreach",
     client:"Beirut Duty Free",
     Sector:"Airport / Travel Retail",
-    Services:["Campaigns", "Retail Marketing", "Brand Activation"," Outreach Strategy", "Content & Digital Activation", "Concept & Creative Direction" ],
+    Disciplines:["Campaigns", "Retail Marketing", "Brand Activation"," Outreach Strategy", "Content & Digital Activation", "Concept & Creative Direction" ],
     date:"2025",
     section1:["/Images/Cases/Case2/1.mp4"],
-    description:` <h1 class="mt-8 font-M_bold text-[2.4rem] leading-[2.8rem] text-background tracking-[.12rem] ">Deals don’t sell themselves, visibility does. Beirut Duty Free challenged us with one of their most complex tasks: amplify more than 200 exclusive promotions in a way that passengers couldn’t miss.</h1>
+    description:` <h1 class="mt-8 font-M_bold text-[2.4rem] leading-[2.8rem] text-background tracking-[.12rem] ">Deals don’t sell themselves, visibility does. Beirut Duty Free challenged us with one of their most complex tasks: amplify more than 200 exclusive promotions in a way that passengers couldn’t miss.
+    
+     <div class=" font-M_semibold text-[1.3rem] leading-[1.6rem] tracking-normal text-background"> 
+<br/>
+     In travel retail, discounts are everywhere. Shoppers are bombarded with signs, shelf-talkers, and competing offers. The risk? Promotions fade into background noise, with passengers rushing past without engaging. Beirut Duty Free needed more than banners; they needed an outreach system, a way to turn discounts into conversations, and conversations into purchases. 
+     </div>
+</h1>
       
       <p class="mt-8 font-M_semibold text-[1.3rem] leading-[1.6rem] text-background ">
-     In travel retail, discounts are everywhere. Shoppers are bombarded with signs, shelf-talkers, and competing offers. The risk? Promotions fade into background noise, with passengers rushing past without engaging. Beirut Duty Free needed more than banners; they needed an outreach system, a way to turn discounts into conversations, and conversations into purchases. <br/><br/>
+
 Our insight was simple: passengers don’t buy what they don’t know exists. With over 200 offers, the challenge wasn’t price, it was visibility and clarity. Every promotion had to be seen, understood, and activated in the split seconds travelers spend moving through duty free. That meant rethinking outreach as not just signage, but as a strategic marketing engine.<br/><br/>
 We designed a cohesive system that blended digital storytelling, quantified messaging, and retail placement strategy. Instead of static signs, we built bold, high-contrast visuals that reframed offers into headlines passengers could digest instantly: “Save $30 vs Singles,” “Twinpacks Promo Bar,” “Exclusive $20 Off.” The creative direction leaned on sharp typographic cues, vibrant gradients, and repetition across zones to reinforce recall.<br/><br/>
 Placement was as critical as design. We transformed key high-traffic touchpoints into campaign hotspots: cash desks, liquor aisles, twinpack gondolas, and digital walls. Each acted as an outreach hub, carrying promotions where passengers naturally stopped, queued, or made choices. Messaging consistency across these hotspots created the sense of one unified campaign, not scattered offers.<br/><br/>
@@ -100,27 +112,27 @@ testimonial2:["This was outreach with purpose. Customers stopped, asked, acted. 
     title: "D-VIA by K&A",
     subTitle:
       "A bold agency-led model to lease premium offices in a brutalist tower — fusing concept design, performance marketing, and omnichannel activation to break away from conventional real estate approaches.",
-    img: "/Images/Work/third.svg",
+    img: "/Images/Work/third.webp",
     tags: [
       "Real Estate",
       "Campaigns",
-      " Content Strategy",
-      "Performance Marketing",
-      "Photography",
+      "Strategic Branding", "Concept & Creative Direction", "Performance Marketing"
     ],
        cTitle:"D-VIA by K&A — Your Route to Dbayeh",
     client:"D-VIA by K&A",
      Sector:"Real Estate",
-    Services:["Campaigns", "Retail Marketing", "Strategic Branding"," Concept & Creative Direction", "Content & Digital Activation", "Performance Marketing"],
+    Disciplines:["Campaigns", "Retail Marketing", "Strategic Branding"," Concept & Creative Direction", "Content & Digital Activation", "Performance Marketing"],
     date:"2025",
     section1:["/Images/Cases/Case3/1.webp"],
     description:` <h1 class="mt-8 font-M_bold text-[2.4rem] leading-[2.8rem] text-background tracking-[.12rem] ">
         Real estate marketing is usually passive: list specs, show floor plans, wait for calls. D-VIA by K&A demanded more. A brutalist tower on the Dbayeh highway, with seven premium office floors above a flagship pharmacy, needed to be more than a property listing. It needed to feel like a brand with edge, and sell out fast.
-
+  <div class=" font-M_semibold text-[1.3rem] leading-[1.6rem] tracking-normal text-background"> 
+<br/>
+Our ambition: position D-VIA as a micro-community for growth-driven companies, then lease all seven floors and the rooftop. To get there, we rejected conventional real estate playbooks and built a led agency marketing model that fused concept design, performance marketing, and physical activation.
+     </div>
     </h1>
       
       <p class="mt-8 font-M_semibold text-[1.3rem] leading-[1.6rem] text-background">
-Our ambition: position D-VIA as a micro-community for growth-driven companies, then lease all seven floors and the rooftop. To get there, we rejected conventional real estate playbooks and built a led agency marketing model that fused concept design, performance marketing, and physical activation.<br/><br/>
 The identity started with a name, D-VIA — blending “Dbayeh” with “via” (route, way). This turned a location into momentum. We designed a bold, brutalist-inspired system of typography, visuals, and copy that spoke in the language of business: scale, presence, visibility, edge.<br/><br/>
 Activation was omnichannel by design.<br/><br/>
 <span class="font-M_bold">Performance marketing </span> — Google Ads, retargeting funnels, affiliate PR features, and outbound email/WhatsApp pipelines to drive leads. <br/>
@@ -155,12 +167,15 @@ Guided by our SwirlBold™ mentality, we pair disruptive creativity with discipl
  cTitle:"Creating Moments People Remember",
     client:"TSS – Part of ARI Group – Abu Dhabi Duty Free’s Operator",
     Sector:"Airport / Travel Retail",
-    Services:["Campaigns"," Brand Activation", "Visual Identity", "Content & Digital Activation", "Brand Communication"],
+    Disciplines:["Campaigns"," Brand Activation", "Visual Identity", "Content & Digital Activation", "Brand Communication"],
     date:"2025",
     description:  ` <h1 class="mt-8 font-M_bold text-[2.4rem] leading-[2.8rem] text-background tracking-[.12rem] ">
     This project started as a simple seasonal brief — to design a Ramadan and Eid greeting for TRSS, part of ARI Group.
      But we saw an opportunity to go beyond a card and create a cohesive internal and external communication system that
-      carried both brand identity and cultural empathy.</h1>
+      carried both brand identity and cultural empathy.
+      
+       
+     </h1>
       
       <p class="mt-8 font-M_semibold text-[1.3rem] leading-[1.6rem] text-background ">
 We designed two complete visual directions for the holy season:<br/><br/>
@@ -192,19 +207,22 @@ Guided by our SwirlBold™ mentality, we pair disruptive creativity with discipl
     title: "Muscat Duty Free",
     subTitle:
       "A playful retail activation turned the chocolate section into a mascot-driven stop — mixing design, storytelling, and impulse offers.",
-    img: "/Images/Work/5.svg",
-    tags: ["Airport", "Campaigns", "Visual Identity", "Brand Activation"],
+    img: "/Images/Work/5.webp",
+    tags: ["Airport", "Campaigns", "Retail Marketing", "Brand Activation"],
      cTitle:"Chocolate Has Boarded",
     client:"Muscat Duty Free",
     Sector:"Airport / Travel Retail",
-    Services:["Campaigns", "Brand Activation", "Retail Marketing", "Concept & Creative Direction", "Strategic Communication", "Content & Digital Activation"],
+    Disciplines:["Campaigns", "Brand Activation", "Retail Marketing", "Concept & Creative Direction", "Strategic Communication", "Content & Digital Activation"],
     date:"2025",
     description:  ` <h1 class="mt-8 font-M_bold text-[2.4rem] leading-[2.8rem] text-background tracking-[.12rem] ">
     This project began with a simple truth: kids don’t skip the chocolate aisle. They’re the real decision-makers in travel retail — tugging sleeves, pointing fingers, and turning “just browsing” into a sale.
-   </h1>
+     <div class=" font-M_semibold text-[1.3rem] leading-[1.6rem] tracking-normal text-background"> 
+<br/>
+      Muscat Duty Free’s Chocoflight Time campaign was born from that insight. We wanted to transform the chocolate section into a destination — playful, colorful, and irresistibly alive. The goal wasn’t to decorate shelves, but to create an experience built around behavior. 
+     </div>
+    </h1>
       
       <p class="mt-8 font-M_semibold text-[1.3rem] leading-[1.6rem] text-background ">
-      Muscat Duty Free’s Chocoflight Time campaign was born from that insight. We wanted to transform the chocolate section into a destination — playful, colorful, and irresistibly alive. The goal wasn’t to decorate shelves, but to create an experience built around behavior. <br/><br/>
 The concept introduced four mascot characters — Creamy, Caramel, Nutty, and Candy — each representing a chocolate type and personality. This segmentation gave structure to chaos, making the space easy to navigate and emotionally engaging — and intellectually delightful — for both kids and adults.<br/><br/>
 The design drew from toy and logo design logic — playful illustrations, simple storytelling, and a rhythm of color that made the section feel like its own world within the store. Visually, it was designed to scale: mascots that could walk the store floor, trail floor stickers, danglers, value and hero offer cases that could extend to promotions, and wobbler signage that could grow into full retail experiences. All built under one unified Muscat Duty Free brand world.<br/><br/>
 Commercially, the concept was designed to drive subconscious purchase behavior — boosting section sales while optimizing long-term brand positioning. The goal was clear: make the chocolate zone and offerings a must-visit destination, and make its products a must-buy for self, family, or gifting every time passengers travel.<br/><br/>
@@ -233,21 +251,24 @@ Guided by our SwirlBold™ mentality, we pair disruptive creativity with discipl
     title: "Abu Dhabi Duty Free",
     subTitle:
       "A high-speed digital takeover: bold visuals, minimalist messaging, and 8K impact to turn airport attention into sales.",
-    img: "/Images/Work/6.svg",
+    img: "/Images/Work/6.webp",
     tags: ["Airport", "Campaigns", "Visual Identity", "Digital Activation"],
     cTitle:"The Red Thread",
     client:"Abu Dhabi Duty Free",
     Sector:"Airport / Travel Retail",
-    Services:["Campaigns", "Retail Marketing", "Brand Activation"," Concept & Creative Direction", "Content & Digital Activation"],
+    Disciplines:["Campaigns", "Retail Marketing", "Brand Activation"," Concept & Creative Direction", "Content & Digital Activation"],
     date:"2025",
     description:  ` <h1 class="mt-8 font-M_bold text-[2.4rem] leading-[2.8rem] text-background tracking-[.12rem] ">
-   </h1>
+    In an airport, attention is currency. Seconds decide whether passengers notice an offer or rush past it. Abu Dhabi Duty Free gave us one of the highest-stakes briefs in travel retail: dominate prime digital real estate with a 40% fragrance promotion and make it impossible to ignore.
+     <div class=" font-M_semibold text-[1.3rem] leading-[1.6rem] tracking-normal text-background"> 
+<br/>
+The challenge wasn’t the deal — it was visibility. Travel retail is saturated with promotions. Passengers are bombarded by banners, shelf-talkers, and digital signs across every category. The risk was simple: the 40% offer would fade into the noise. We needed to build a campaign that cut through instantly, stuck in memory, and traveled with passengers across the terminal.
+     </div>
+    </h1>
       
-      <p class="mt-8 font-M_semibold text-[1.3rem] leading-[1.6rem] text-background ">
-      In an airport, attention is currency. Seconds decide whether passengers notice an offer or rush past it. Abu Dhabi Duty Free gave us one of the highest-stakes briefs in travel retail: dominate prime digital real estate with a 40% fragrance promotion and make it impossible to ignore.</br/><br/>
-The challenge wasn’t the deal — it was visibility. Travel retail is saturated with promotions. Passengers are bombarded by banners, shelf-talkers, and digital signs across every category. The risk was simple: the 40% offer would fade into the noise. We needed to build a campaign that cut through instantly, stuck in memory, and traveled with passengers across the terminal.</br/><br/>
+   <p class="mt-8 font-M_semibold text-[1.3rem] leading-[1.6rem] text-background ">
 Our strategy was radical minimalism with maximum impact. Instead of cluttered visuals, we built the campaign around one unmistakable device: red. A color that signals urgency, commands attention, and pulls focus even in motion-heavy spaces. Red wasn’t an aesthetic choice — it was the strategy.</br/><br/>
-We translated this into<span class="font-M_bold"> The Red Thread </span>, a digital takeover system designed to follow passengers on their journey. Escalators, corridors, and gates became synchronized canvases. Ultra-high contrast visuals paired with ultra-minimal copy — “Save Up to 40%” — repeated across placements until it became impossible not to register. Custom 8K animations ensured sharpness across the airport’s massive screens, reinforcing the offer in every glance.</br/><br/>
+We translated this intoThe Red Thread, a digital takeover system designed to follow passengers on their journey. Escalators, corridors, and gates became synchronized canvases. Ultra-high contrast visuals paired with ultra-minimal copy — “Save Up to 40%” — repeated across placements until it became impossible not to register. Custom 8K animations ensured sharpness across the airport’s massive screens, reinforcing the offer in every glance.</br/><br/>
 The execution leaned on discipline. Four design rules drove every asset:</br/><br/>
 <span class="font-M_bold">High-contrast red </span> – an arresting backdrop in a sea of muted visuals .<br/> 
 <span class="font-M_bold">Minimalist messaging </span>– reduced to the absolute essentials, no more, no less.<br/> 
@@ -278,11 +299,8 @@ Guided by our SwirlBold™ mentality, we pair disruptive creativity with discipl
       "Our own OOH campaign in Dubai — bold, witty, and unapologetic. Turning the street into a live brand strategy that proves disruption isn’t theory but practice.",
     img: "/Images/Work/7.webp",
     tags: [
-      "Marketing & Advertising",
-      "Campaigns",
-      " OOH",
-      "Brand Strategy",
-      "Visual Identity",
+         "Marketing & Advertising", "Campaigns, Strategic Branding", "Visual Identity", "Out-of-Home Advertising"
+
     ],
   },
   {
@@ -298,7 +316,7 @@ Guided by our SwirlBold™ mentality, we pair disruptive creativity with discipl
     title: "K&A Machmouchi Pharmacy",
     subTitle:
       "Highway screens transformed into fast, clear pharmacy branding — digital activations built for visibility, speed, and instant recognition.",
-    img: "/Images/Work/9.svg",
+    img: "/Images/Work/9.webp",
     tags: [
       "Pharma & Healthcare",
       "Campaigns",
@@ -311,7 +329,7 @@ Guided by our SwirlBold™ mentality, we pair disruptive creativity with discipl
     title: "Advertising Attitude",
     subTitle:
       "A social media AA activation — AI-powered visuals and cultural foresight messaging to provoke, disrupt, and spark dialogue on legacy, family, and the future.",
-    img: "/Images/Work/10.svg",
+    img: "/Images/Work/10.webp",
     tags: [
       "Marketing & Advertising",
       " Digital Activation",
@@ -329,7 +347,6 @@ Guided by our SwirlBold™ mentality, we pair disruptive creativity with discipl
       "Airport",
       "Campaigns",
       "Retail Marketing",
-      "Gigital Activation",
       "Content & Digital Activation",
       "eCommerce"
     ],

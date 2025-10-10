@@ -49,18 +49,18 @@ const Grids = ({ data }) => {
 
           {/* Second Grid - reversed */}
           {(group[3] || group[4]) && (
-            <div className="flex w-full gap-25">
+             <div className="flex w-full gap-5">
               {group[3] && (
-                <div className="w-full flex-[1.3]">
+                <div className="w-full flex-[1.3] ">
                   <Cards
                     data={group[3]}
-                    style={" h-[33rem] "}
-                  />
+                    style={"  object-cover"}
+                    />
                 </div>
               )}
               {group[4] && (
-                <div className="w-full flex-[0.8]   pl-[2rem]">
-                  <Cards data={group[4]} style={" mt-[3rem]  object-cover"} />
+                <div className="w-full !flex-[0.8]  mt-[3rem]  pl-[6rem]">
+                  <Cards data={group[4]} style={" h-[35rem]   object-cover"} />
                 </div>
               )}
             </div>
