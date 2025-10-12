@@ -4,6 +4,7 @@ import "./carousel.css";
 
 import Nav from "../../../components/Nav/Nav";
 import { Button } from "../../../components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const slides = [
   {
@@ -124,6 +125,7 @@ function TheAA() {
     if (relativeIndex === 1) return "slide front-right";
     return "slide back";
   };
+const navigate =useNavigate();
 
   return (
     <motion.section
@@ -174,6 +176,7 @@ function TheAA() {
            rounded-full   text-primary bg-secondary"
             variant="default"
             size="default"
+
           >
             SEE THE TAKE
           </Button>

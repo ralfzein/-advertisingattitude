@@ -8,6 +8,7 @@ const Footer = () => {
     const containerVariants = {
     hidden: { opacity: 1 },
     show: {
+      
       opacity: 1,
       transition: { when: "beforeChildren", staggerChildren: 0.2 },
     },
@@ -37,7 +38,7 @@ const Footer = () => {
        style={{ backgroundImage: `url('/Images/bg.svg')` }}>
       <div className='flex flex-col px-[4rem] justify-around ween h-full mb-5 '>
         <motion.p  variants={childVariants} className=' mt-5
-          font-M_bold  text-primary
+          font-M_bold  text-primary tracking-[.1em] 
              leading-[1.3rem] text-justify
           '>Advertising Attitude is a leading creative agency built for brands that 
             refuse to blend in. We don’t just craft campaigns—we train ideas to fight harder,
@@ -53,17 +54,22 @@ const Footer = () => {
         </motion.div>
         <div className='flex justify-between mt-5 '>
             <div className='flex items-center gap-10  '>
-                {['LinkedIn', 'Instagram', 'Facebook', 'Newsletter', 'Careers' ].map((item, index) => (
+                {[{label:'LinkedIn',link:"https://www.linkedin.com/company/advertisingattitude"},
+                {label: 'Instagram',link:"https://www.instagram.com/advertisingattitude"},
+                {label: 'Facebook',link:"https://www.facebook.com/advertisingattitude"},
+                 {label:'Newsletter',link:""}, {label:'Careers',link:""} ].map((item, index) => (
                     
-                <span key={index} className='text-sm font-M_bold text-primary tracking-[.1em] cursor-pointer hover:text-bur'>{item}</span>
+                <span key={index} className='text-sm font-M_bold text-primary tracking-[.1em] cursor-pointer hover:text-secondary'
+                onClick={() => window.open(`${item.link}`, '_blank')}>{item.label}</span>
                 ))}
                 
             </div>
 
 
-            <div className='flex items-center gap-10  '>
-                <span className='text-sm font-M_bold text-primary tracking-[.1em]'>Privacy policy</span>
-                <span className='text-sm font-M_bold text-primary tracking-[.1em]'>@2025 Advertising Attitude</span>
+            <div className='flex items-center gap-10  '> 
+                <span className='text-sm font-M_bold text-primary tracking-[.1em] cursor-pointer hover:text-secondary'
+                   onClick={() => window.open(``, '_blank')}>Privacy policy</span>
+                <span className='text-sm font-M_bold text-primary tracking-[.1em] cursor-pointer hover:text-secondary'>@2025 Advertising Attitude</span>
             </div> 
         </div>
         </div>

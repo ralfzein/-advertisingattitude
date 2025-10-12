@@ -12,18 +12,21 @@ const CaseStudy = () => {
  const [nextCampaigns, setNextCampaigns] = useState([]);
 const navigate =useNavigate();
 
-  useEffect(() => {
-    // find the selected campaign
-    const current = CampaignsData.find(item => String(item.id) === String(id));
-    setCaseS(current);
+useEffect(() => {
+  const current = CampaignsData.find(item => String(item.id) === String(id));
+  setCaseS(current);
 
-    // get the index of the current one
-    const currentIndex = CampaignsData.findIndex(item => String(item.id) === String(id));
+  const currentIndex = CampaignsData.findIndex(item => String(item.id) === String(id));
 
-    // get the next 3 campaigns after it
-    const nextThree = CampaignsData.slice(currentIndex + 1, currentIndex + 4);
-    setNextCampaigns(nextThree);
-  }, [id]);
+  if (currentIndex === -1) return;
+
+  const doubledData = [...CampaignsData, ...CampaignsData];
+
+  const nextThree = doubledData.slice(currentIndex + 1, currentIndex + 4);
+
+  setNextCampaigns(nextThree);
+}, [id]);
+
 
   return (
     <div className='relative w-full snap-start bg-[#F2EDD9] pb-[10rem]
@@ -70,10 +73,23 @@ const navigate =useNavigate();
             <span className="font-M_semibold text-background text-[1.5rem] leading-[1rem] tracking-[0.1rem]">{' '}{caseS?.date}</span>
           </div>
         </div>
+            {caseS?.id == 9 ?(
+         <div className="flex items-center justify-center gap-5 px-[5rem] ">
+          <div>
+          <RenderMedia src={caseS?.section1?.[0]} className="!w-[28rem]  !object-cover " />
+          </div>
+          <div>
 
+          <RenderMedia src={caseS?.section1?.[1]} className="!w-[28rem] !object-cover" />
+        </div>
+        </div>
+
+            ):(
         <div>
           <RenderMedia src={caseS?.section1?.[0]} className="min-h-[30rem]" />
         </div>
+
+            )}
 
       
         <ExpandableText html={caseS?.description} />
@@ -94,6 +110,8 @@ const navigate =useNavigate();
         </div>
 
         {/* Section 2 */}
+          {caseS?.section2.length > 0 &&
+        (
         <div className="w-full">
           <div className="w-full grid grid-cols-4 gap-5">
             {caseS?.section2?.map((src, index) => (
@@ -111,6 +129,9 @@ const navigate =useNavigate();
             ))}
           </div>
         </div>
+        )}
+          {caseS?.testimonial2?.[0] &&(
+
      <div className="my-20">
           <h3 className="font-R_regular text-[3.6rem] leading-[4.2rem] text-secondary tracking-[0.1rem]">
             “{caseS?.testimonial2?.[0]}”
@@ -124,6 +145,8 @@ const navigate =useNavigate();
             </div>
           </div>
         </div>
+        )}
+
         {/* Section 3 */}
         {caseS?.id==4 ? 
         <div className="w-full">

@@ -8,33 +8,39 @@ import {
 import Nav from "../../../components/Nav/Nav";
 import { Button } from "../../../components/ui/button";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const slides = [
   {
+    id:6,
     img: "/Images/Campaign/adf.webp",
     title: "ABU DHABI DUTY FREE",
     subtitle:
       "The Red Thread — vibrant, no-miss \n digital campaign to turn heads fast",
   },
   {
+    id:5,
     img: "/Images/Campaign/mdf.webp",
     title: "MUSCAT DUTY FREE",
     subtitle:
       "Chocoflight Time — playful concept \n turning the chocolate section into the \n most irresistible stop",
   },
   {
+    id:2,
     img: "/Images/Campaign/bdf.webp",
     title: "BEIRUT DUTY FREE",
     subtitle:
       "Click & Collect — a campaign built on \n consistency, clear and direct messaging",
   },
   {
+    id:9,
     img: "/Images/Campaign/ka.webp",
     title: "K&A MACHMOUCHI",
     subtitle:
       "The FastLane Screen — digital branding \n that turns screens into bold statement",
   },
   {
+    id:7,
     img: "/Images/Campaign/aa.webp",
     title: "ADVERTISING ATTITUDE",
     subtitle:
@@ -95,6 +101,7 @@ export default function Cam() {
 
     return () => clearInterval(interval);
   }, [api]);
+const navigate =useNavigate();
 
   return (
     <motion.section
@@ -155,6 +162,8 @@ export default function Cam() {
            rounded-full   text-primary bg-secondary  "
                   variant="default"
                   size="default"
+    onClick={() => navigate(`/case-study/${slides[current].id}`)}
+
                 >
                   SEE THE CAMPAIGN
                 </Button>

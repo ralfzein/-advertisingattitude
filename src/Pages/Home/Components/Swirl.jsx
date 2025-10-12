@@ -50,7 +50,7 @@ const logoVariants = {
   show: {
     width: "30rem",
     opacity: 1,
-    transition: { duration: 0.8, ease: "easeInOut", delay: 0.8 }
+    transition: { duration: 0.8, ease: "easeInOut", delay: 2 }
   }
 };
 
@@ -72,7 +72,7 @@ const betweenVariants = {
     >
       {/* Navbar */}
       <motion.div className="relative z-50 w-full" variants={navVariants}>
-        <Nav title="DISRUPTIVE CREATIVITY" tracking="tracking-[.7rem]" />
+        <Nav title={["DISRUPTIVE CREATIVITY","DISCIPLINED EXECUTION"]} tracking="tracking-[.7rem]" />
       </motion.div>
 
       <div className="relative flex h-screen flex-col items-center justify-center">
@@ -143,6 +143,7 @@ const betweenVariants = {
   initial="hidden"
   whileInView="show"
   viewport={{ once: true, amount: 0.8 }}
+
 />
 
 </motion.div>
