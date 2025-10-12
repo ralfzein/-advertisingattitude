@@ -29,8 +29,7 @@ const slides = [
     id:2,
     img: "/Images/Campaign/bdf.webp",
     title: "BEIRUT DUTY FREE",
-    subtitle:
-      "Click & Collect — a campaign built on \n consistency, clear and direct messaging",
+    subtitle: "Click & Collect — a campaign built on \n consistency, clear and direct messaging",
   },
   {
     id:9,

@@ -17,7 +17,7 @@ function Home() {
   useEffect(() => {
     // Initialize Lenis
     const lenis = new Lenis({
-      duration: 0.8,
+      duration: 0.2,
       easing: (t) => t, // linear easing
       smooth: true,
       direction: "vertical",
@@ -86,7 +86,7 @@ function Home() {
             loading="lazy"
             decoding="sync"
             onClick={() => lenisRef.current?.scrollTo(0)} // scroll to top
-            className="fixed bottom-10 right-[4rem] w-32 z-40 cursor-pointer"
+            className="fixed bottom-10 right-4 md:right-[4rem] w-18 md:w-32 z-40 cursor-pointer"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}

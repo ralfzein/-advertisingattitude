@@ -70,8 +70,8 @@ const [isHovered, setIsHovered] = useState(false);
   return (
     <>
       {/* Navbar */}
-      <nav className="absolute top-0 w-full flex items-center justify-between px-[4rem] mt-3 z-50 ">
-        <div className={`flex items-center justify-between w-full border-b-[0.5rem]  0 uppercase ${color ? (menuOpen ? 'border-primary' : "border-background") : "border-primary"}`}>
+      <nav className="absolute top-0 w-full flex items-center justify-between px-4 md:px-[4rem] mt-3 z-50 ">
+        <div className={`flex items-center justify-between w-full border-b-[2px] md:border-b-[0.5rem]  0 uppercase ${color ? (menuOpen ? 'border-primary' : "border-background") : "border-primary"}`}>
           {/* Title */}
          <AnimatePresence mode="wait">
               <motion.h1
@@ -81,7 +81,8 @@ const [isHovered, setIsHovered] = useState(false);
                 animate="visible"
                 exit="exit"
                 transition={{ duration: 0.6, ease: "easeInOut" }}
-            className={`font-R_regular font-bold ${color ? (menuOpen ? 'text-[#f2edd9]' : "text-background") : "text-primary"}  uppercase text-header leading-[1.1] ${tracking} 
+            className={`font-R_regular font-bold ${color ? (menuOpen ? 'text-[#f2edd9]' : "text-background") : "text-primary"}
+                uppercase text-xl md:text-header md:leading-[1.1] tracking-[0.2rem] ${tracking} 
                         lg:text-header`} 
           >
            {titles[currentIndex]}
@@ -96,11 +97,11 @@ const [isHovered, setIsHovered] = useState(false);
 
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className="text-white flex flex-col gap-[0.5rem] -translate-y-2 mt-7 cursor-none"
+        className="text-white flex flex-col gap-[2.5px] md:gap-[0.5rem] -translate-y-3 md:-translate-y-2 mt-7 cursor-none"
       >
-        <div className={`w-24 h-[0.5rem]  ${color ? (menuOpen ? 'bg-primary' : "bg-background") : "bg-primary"}`}></div>
-        <div className={`w-24 h-[0.5rem]  ${color ? (menuOpen ? 'bg-primary' : "bg-background") : "bg-primary"}`}></div>
-        <div className={`w-24 h-[0.5rem]  ${color ? (menuOpen ? 'bg-primary' : "bg-background") : "bg-primary"}`}></div>
+        <div className={` w-6 md:w-24 h-[2px] md:h-[0.5rem]  ${color ? (menuOpen ? 'bg-primary' : "bg-background") : "bg-primary"}`}></div>
+        <div className={` !w-6 md:w-24 !h-[2px] md:h-[0.5rem]  ${color ? (menuOpen ? 'bg-primary' : "bg-background") : "bg-primary"}`}></div>
+        <div className={` w-6 md:w-24 h-[2px] md:h-[0.5rem]  ${color ? (menuOpen ? 'bg-primary' : "bg-background") : "bg-primary"}`}></div>
       </button>
 
       {/* Fake cursor icon */}

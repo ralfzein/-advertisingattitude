@@ -63,7 +63,7 @@ const childVariants = {
         variants={childVariantsnav}
         className="relative z-50 w-full"
       >
-        <Nav title={["think boldly", "feel deeply", "act smartly"]} tracking={"tracking-[1.6rem]"} />
+        <Nav title={["think boldly", "feel deeply", "act smartly"]} tracking={"md:tracking-[1.6rem]"} />
       </motion.div>
 
       {/* Hero Content */}
