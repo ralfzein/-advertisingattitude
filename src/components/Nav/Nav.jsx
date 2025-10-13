@@ -94,13 +94,12 @@ const [isHovered, setIsHovered] = useState(false);
       {/* The button */}
       <button
   onClick={() => setMenuOpen(!menuOpen)}
-
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         className="text-white flex flex-col gap-[2.5px] md:gap-[0.5rem] -translate-y-3 md:-translate-y-2 mt-7 cursor-none"
       >
         <div className={` w-6 md:w-24 h-[2px] md:h-[0.5rem]  ${color ? (menuOpen ? 'bg-primary' : "bg-background") : "bg-primary"}`}></div>
-        <div className={` !w-6 md:w-24 h-[2px] md:h-[0.5rem]  ${color ? (menuOpen ? 'bg-primary' : "bg-background") : "bg-primary"}`}></div>
+        <div className={` w-6 md:w-24 h-[2px] md:h-[0.5rem]  ${color ? (menuOpen ? 'bg-primary' : "bg-background") : "bg-primary"}`}></div>
         <div className={` w-6 md:w-24 h-[2px] md:h-[0.5rem]  ${color ? (menuOpen ? 'bg-primary' : "bg-background") : "bg-primary"}`}></div>
       </button>
 
