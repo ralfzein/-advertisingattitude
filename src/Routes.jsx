@@ -5,18 +5,21 @@ import { useEffect } from "react";
 import Campaigns from "./Pages/Campaigns/Campaigns";
 import Footer from "./components/Footer/Footer";
 import CaseStudy from "./Pages/CaseStudy/CaseStudy";
+import ScrollToTop from "./Pages/ScrollToTop";
 
 
 function AppRoutes() {
     const { pathname } = useLocation();
 
 useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: "0", behavior: "smooth" });
+
 }, [pathname]);
 
 
   return (
     <>
+      <ScrollToTop />
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/home" element={<Home />} />

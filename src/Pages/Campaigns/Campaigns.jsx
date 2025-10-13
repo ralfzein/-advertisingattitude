@@ -22,6 +22,7 @@ const Campaigns = () => {
       transition: { type: "tween", duration: 0.5, ease: "easeOut" },
     },
   };
+  
 
   const [data, setData] = useState(CampaignsData);
   const [showLogo, setShowLogo] = useState(false);

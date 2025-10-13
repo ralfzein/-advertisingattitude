@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import RenderMedia from "./MediaItem";
 import ExpandableText from "./ExpandText";
+import Footer from "../../components/Footer/Footer";
 
 const CaseStudy = () => {
   const { id } = useParams();         
@@ -29,7 +30,7 @@ useEffect(() => {
 
 
   return (
-    <div className='relative w-full snap-start bg-[#F2EDD9] pb-[10rem]
+    <div className='relative w-full snap-start bg-[#F2EDD9] 
     bg-contain'
         style={{ backgroundImage: `url('/Images/Work/workBg.svg')` }}
       >
@@ -39,23 +40,23 @@ useEffect(() => {
         <Nav title={["CAMPAIGN MADE BY AA"]} tracking={"tracking-[0.6rem]"} color="text-black" />
       </motion.div>
 
-      <div className="z-50 pt-40 px-[4rem]">
+      <div className="z-50 pt-40 px-[4rem] pb-30">
         <h2 className="font-R_regular text-[5rem] leading-[5.4rem] tracking-[0.1rem] text-secondary uppercase">{caseS?.cTitle}</h2>
 
         <div className="my-10">
           <div className="flex items-center  gap-2">
-            <span className="font-M_extrabold text-secondary text-[1.8rem] tracking-[0.1rem]">Client : </span>
+            <span className="font-M_extrabold text-secondary text-[1.8rem] tracking-[0.1rem]">Client: </span>
             <span className="font-M_semibold text-background text-[1.5rem] leading-[1rem] tracking-[0.1rem] mt-1 ">{' '}{caseS?.client}</span>
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="font-M_extrabold text-secondary text-[1.8rem] tracking-[0.1rem]">Sector : </span>
+            <span className="font-M_extrabold text-secondary text-[1.8rem] tracking-[0.1rem]">Sector: </span>
             <span className="font-M_semibold text-background text-[1.5rem] leading-[1rem] tracking-[0.1rem] mt-1">{' '}{caseS?.Sector}</span>
           </div>
 
           <div className="flex flex-wrap gap-0 ">
             <span className="font-M_extrabold text-secondary text-[1.8rem] tracking-[0.1rem] leading-[2rem] whitespace-nowrap mr-2">
-              Disciplines :
+              Disciplines:
             </span>
             {caseS?.Disciplines?.map((item, index) => (
               <span
@@ -69,7 +70,7 @@ useEffect(() => {
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="font-M_extrabold text-secondary text-[1.8rem] tracking-[0.1rem]">Year : </span>
+            <span className="font-M_extrabold text-secondary text-[1.8rem] tracking-[0.1rem]">Year: </span>
             <span className="font-M_semibold text-background text-[1.5rem] leading-[1rem] tracking-[0.1rem]">{' '}{caseS?.date}</span>
           </div>
         </div>
@@ -231,6 +232,8 @@ useEffect(() => {
       </div>
     </div>
       </div>
+      <Footer />
+
     </div>
   );
 };
