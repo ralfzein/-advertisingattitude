@@ -113,7 +113,7 @@ const betweenVariants = {
               Swirl
             </motion.div>
           </motion.div>
-            <div className="   flex w-full  items-center justify-center h-[40vh] bg-amber-400">
+            <div className="   flex w-full  items-center justify-center h-[40vh] ">
                <div
   className="relative flex w-full  items-center justify-center ">
   <motion.img
