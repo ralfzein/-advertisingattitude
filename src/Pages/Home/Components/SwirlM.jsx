@@ -96,7 +96,7 @@ const betweenVariants = {
             <div className="flex flex-col items-center justify-center w-full   pt-[5rem]  ">
         <motion.div
 
-          className="relative z-10 flex flex-col w-full items-center justify-between h-screen    px-4  "
+          className="relative z-10 flex flex-col w-full items-center justify-between     px-4  "
         >
             
                <motion.div className="relative flex flex-col items-center justify-center  w-full  ">
@@ -113,7 +113,7 @@ const betweenVariants = {
               Swirl
             </motion.div>
           </motion.div>
-            <div className="   flex w-full  items-center justify-center">
+            <div className="   flex w-full  items-center justify-center h-[15rem]">
                <div
   className="relative flex w-full  items-center justify-center ">
   <motion.img
