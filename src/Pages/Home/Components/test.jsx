@@ -159,10 +159,10 @@ const betweenVariants = {
 </div>
         </motion.div>
         {/* Bottom text */}
-        <div className="absolute bottom-20 z-10 flex items-center justify-center">
+        <div className="  mt-5 flex items-center justify-center">
           <motion.div
             variants={hiddenTextVariants}
-            className="font-R_regular text-[1rem] text-center uppercase tracking-[.2rem] text-primary"
+            className="font-R_regular text-[1.3rem] text-center uppercase tracking-[.2rem] text-primary"
           >
             WHERE SAFE IDEAS DON’T SURVIVE
           </motion.div>
