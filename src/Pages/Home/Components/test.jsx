@@ -21,8 +21,8 @@ const Test = () => {
     hidden: { opacity: 1, fontSize: "2.5rem", lineHeight: "2rem", y: 0 },
     show: {
       opacity: 1,
-      fontSize: "2.5rem",
-      lineHeight: "2.5rem",
+      fontSize: "2.8rem",
+      lineHeight: "2.8rem",
       y: direction === "down" ? 0 : -0,
       transition: { duration: 1, ease: "easeInOut", delay: 1 },
     },
@@ -120,7 +120,7 @@ const betweenVariants = {
 
 </div>
 </div>
-<div className=" flex items-center justify-center  w-full gap-5  mt-20">
+<div className=" flex items-center justify-center  w-full gap-5  mt-25">
           {/* Left column */}
           <motion.div className="relative flex flex-col items-start ">
             <motion.div

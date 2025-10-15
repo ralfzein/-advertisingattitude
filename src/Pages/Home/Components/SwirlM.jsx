@@ -80,7 +80,7 @@ const betweenVariants = {
     >
     
       <motion.div className="relative z-50 w-full" variants={navVariants}>
-        <Nav title={["DISRUPTIVE CREATIVITY","DISCIPLINED EXECUTION"]} tracking="!text-[1.5rem] tracking-[0.2rem]" />
+        <Nav title={["DISRUPTIVE CREATIVITY","DISCIPLINED EXECUTION"]} tracking="!text-[1.3rem] tracking-[0.2rem]" />
       </motion.div>
 
       <div className="relative flex h-screen  ">
