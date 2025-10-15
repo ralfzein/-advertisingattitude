@@ -105,7 +105,7 @@ const betweenVariants = {
               className="absolute top-3 font-R_regular text-[1.5rem] w-full pl-4 uppercase tracking-[.2rem] text-primary"
             >
               MEET THE
-            </motion.div>
+            </motion.div> 
 
             <motion.div
               variants={mainTextVariants("down")}
@@ -113,7 +113,7 @@ const betweenVariants = {
               Swirl
             </motion.div>
           </motion.div>
-            <div className="   flex w-full  items-center justify-center h-[15rem]">
+            <div className="   flex w-full  items-center justify-center h-[40vh] bg-amber-400">
                <div
   className="relative flex w-full  items-center justify-center ">
   <motion.img
