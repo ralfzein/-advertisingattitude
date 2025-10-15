@@ -12,38 +12,38 @@ import { useNavigate } from "react-router-dom";
 
 const slides = [
   {
-    id:6,
-    img: "/Images/Campaign/adf.webp",
-    title: "ABU DHABI DUTY FREE",
+    img: "/Images/bgaa.jpeg",
+    title: "Stop Branding  Blindly",
     subtitle:
-      "The Red Thread  —  vibrant, no-miss \n digital campaign to turn heads fast",
+      "Many brands don’t fail in marketing because  of weak visuals  —  they fail because they skip  strategy. But with AI, it’s no longer out of  reach  —  it’s a revolution. Will you harness it, or  fall behind?",
   },
   {
-    id:5,
-    img: "/Images/Campaign/mdf.webp",
-    title: "MUSCAT DUTY FREE",
+    img: "/Images/bgaa.jpeg",
+    img2: "/Images/TheAA/ac.webp",
+    title: "The New Marketing   Playbook",
     subtitle:
-      "Chocoflight Time  —  playful concept \n turning the chocolate section into the \n most irresistible stop",
+      "One marketer can’t do it all. An agency brings  the full arsenal  —  strategy, design, content, execution  —  all under one roof. Buy back your   time, cut the overhead, and focus on what  actually grows your business.",
   },
   {
-    id:2,
-    img: "/Images/Campaign/bdf.webp",
-    title: "BEIRUT DUTY FREE",
-    subtitle: "Click & Collect  —  a campaign built on \n consistency, clear and direct messaging",
+    img: "/Images/bgaa.jpeg",
+    img2: "/Images/TheAA/ad.webp",
+    title: "The Burnout   Whisperer",
+    subtitle:
+      "You love the craft. The chase. The next big   idea. But when every brief whispers “do more, be more,  ” burnout starts to speak louder than   creativity. This one’s for the marketers,  designers, and dreamers who feel the pressure    but keep showing up.",
   },
   {
-    id:9,
-    img: "/Images/Campaign/ka.webp",
-    title: "K&A MACHMOUCHI",
+    img: "/Images/bgaa.jpeg",
+    img2: "/Images/TheAA/ae.webp",
+    title: "The SwirlBold  Mentality",
     subtitle:
-      "The FastLane Screen  —  digital branding \n that turns screens into bold statement",
+      "Welcome to SwirlBold Thinking. Let’s stop   blending in. SwirlBold isn’t a style. It’s   a   mindset. It’s marketing that spins out of the   obvious and lands where impact lives. You   don’t think in straight lines. You think in   loops, angles, and questions others are too   scared to ask. Because bold ideas don’t follow   the rules. They bend them, break them, and   redraw the map.",
   },
   {
-    id:7,
-    img: "/Images/Campaign/aa.webp",
-    title: "ADVERTISING ATTITUDE",
+    img: "/Images/bgaa.jpeg",
+    img2: "/Images/TheAA/aa.webp",
+    title: "Every Agency   Is An Award   Winner",
     subtitle:
-      "Ignore This Ad  —  positioning a bold \n agency in a world of noise",
+      "Some win for real. Some win for reach. Either   way  —  congrats, truly. As for us? We’re not in it    (yet). We’re just keeping our heads down,    building loud ideas quietly. Because the best   kind of recognition? Comes after the work is   done.",
   },
 ];
 const containerVariants = {
@@ -74,7 +74,7 @@ const childVariants = {
     },
   },
 };
-export default function Cam() {
+export default function TheAAM() {
   const [current, setCurrent] = useState(0);
   const [api, setApi] = useState(null);
 
@@ -111,7 +111,7 @@ const navigate =useNavigate();
       className="relative md:h-screen w-full overflow-hidden snap-start"
     >
       <motion.div variants={childVariantsnav} className="relative z-50 w-full">
-        <Nav title="CAMPAIGN MADE BY AA" tracking="!text-[1.5rem] tracking-[0.1rem] md:tracking-[.8rem]" />
+        <Nav title="THE AA PERSPECTIVE" tracking="text-[1.5rem] tracking-[0.1rem] md:tracking-[.8rem]" />
       </motion.div>
       <Carousel
         opts={{ loop: true }}
@@ -137,24 +137,24 @@ const navigate =useNavigate();
                 variants={childVariants}
                 className="relative   z-10 flex flex-col items-center justify-center  h-full  text-center px-4  md:px-6  "
               >
-                <div className="relative  z-10 flex flex-col items-center justify-start  gap-5 md:gap-3  text-center md:mt-30 md:min-h-[15.5rem]   ">
+                <div className="relative  z-10 flex flex-col items-center justify-start  gap-2 md:gap-3  text-center md:mt-30 md:min-h-[15.5rem]   ">
                   <h1 className="font-R_regular tracking-[0.2rem]  text-[2.4rem] leading-[2.4rem] md:text-[4.6rem] md:leading-[5.4rem]  text-primary ">
                     {slides[current].title}
                   </h1>
                   <p  
-                    className="font-M_medium  text-[1.2rem]  md:text-[2rem]   
-          leading-[1.4rem]   md:leading-[2.4rem]   md:whitespace-pre-line  text-primary"
+                    className="font-M_medium  text-[1rem]  md:text-[2rem]   
+          leading-[1.2rem]   md:leading-[2.4rem]   md:whitespace-pre-line  text-primary line-clamp-4"
                   >
                     {slides[current].subtitle}
                   </p>
                 </div>
-             <div className=" h-[3rem] md:h-[5rem]" />
+        
               </motion.div>
             </CarouselItem>
           ))}
         
         </CarouselContent>
-        <div className=" absolute bottom-28 md:bottom-35 left-0 flex items-center justify-center w-full px-4 ">
+        <div className=" absolute bottom-20 md:bottom-35 left-0 flex items-center justify-center w-full px-4 ">
       <Button
                   className="  font-R_regular text-[1rem] md:text-[1.5rem] tracking-[0.12em] leading-[4rem] mt-0 
           flex items-center justify-center w-full md:w-[25rem] h-[3rem] md:h-[5rem] hover:bg-secondary hover:opacity-80 cursor-pointer

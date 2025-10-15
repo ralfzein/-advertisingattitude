@@ -224,7 +224,7 @@ useEffect(() => {
               }}>
               <div className="flex flex-col gap-3 ">
               <h3 className="text-secondary font-R_regular text-[2.5rem] leading-[2.6rem] line-clamp-1">{item.title}</h3>
-              <h3 className="text-primary font-M_medium text-[1rem]  line-clamp-2">{item.subTitle}</h3>
+              <h3 className="text-primary font-M_medium text-[1.3rem]  line-clamp-2">{item.cTitle}</h3>
               </div>
             </div>
           </div>

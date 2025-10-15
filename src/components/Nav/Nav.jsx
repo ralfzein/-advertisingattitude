@@ -82,7 +82,7 @@ const [isHovered, setIsHovered] = useState(false);
                 exit="exit"
                 transition={{ duration: 0.6, ease: "easeInOut" }}
             className={`font-R_regular font-bold ${color ? (menuOpen ? 'text-[#f2edd9]' : "text-background") : "text-primary"}
-                uppercase text-xl md:text-header md:leading-[1.1] tracking-[0.2rem] ${tracking} 
+                uppercase text-[1.8rem] md:text-header md:leading-[1.1]  ${tracking} 
                         lg:text-header`} 
           >
            {titles[currentIndex]}
@@ -181,7 +181,7 @@ const [isHovered, setIsHovered] = useState(false);
                     business@advertisingattitude.com
                   </a>
                   <br />
-                  Beirut — Beirut Digital District BDD 1499
+                  Beirut  —  Beirut Digital District BDD 1499
                 </motion.div>
 
                 <motion.img variants={itemVariants} src={'/Images/logo.svg'} loading='lazy'  decoding="sync" alt="Hero" className="w-[20%] h-auto object-contain" />

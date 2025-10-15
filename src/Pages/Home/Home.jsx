@@ -9,60 +9,15 @@ import Swirl from "./Components/Swirl";
 import TheAA from "./Components/TheAA";
 import RedSection2 from "./Components/RedSection2";
 import Footer from "../../components/Footer/Footer";
+import TheAAM from "./Components/TheAAM";
+import SwirlM from "./Components/SwirlM";
+import Test from "./Components/test";
 
 function Home() {
   const [showLogo, setShowLogo] = useState(false);
   const lenisRef = useRef(null);
 
-  useEffect(() => {
-    // Initialize Lenis
-    const lenis = new Lenis({
-      duration: 0.2,
-      easing: (t) => t,
-      smooth: true,
-    });
-    lenisRef.current = lenis;
-
-    // Attach RAF
-    const raf = (time) => {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    };
-    requestAnimationFrame(raf);
-
-    // Snap to nearest section
-    const snapToSection = () => {
-      const sections = document.querySelectorAll("section");
-      if (!sections.length) return;
-
-      const scrollY = lenis.scroll;
-      let closest = sections[0];
-      let min = Math.abs(scrollY - sections[0].offsetTop);
-      sections.forEach((s) => {
-        const dist = Math.abs(scrollY - s.offsetTop);
-        if (dist < min) {
-          min = dist;
-          closest = s;
-        }
-      });
-
-      lenis.scrollTo(closest.offsetTop, { duration: 0.8 });
-    };
-
-    let snapTimeout;
-    lenis.on("scroll", () => {
-      clearTimeout(snapTimeout);
-      snapTimeout = setTimeout(snapToSection, 150);
-    });
-
-    // ✅ Cleanup on unmount
-    return () => {
-      clearTimeout(snapTimeout);
-      lenis.destroy();
-      document.documentElement.style.scrollBehavior = "auto";
-      window.scrollTo(0, 0);
-    };
-  }, []);
+ 
 
   useEffect(() => {
     // Toggle floating logo visibility
@@ -91,7 +46,7 @@ function Home() {
                 ? lenisRef.current.scrollTo(0, { duration: 1 })
                 : window.scrollTo({ top: 0, behavior: "smooth" })
             }
-            className="fixed bottom-10 right-4 md:right-[4rem] w-18 md:w-32 z-40 cursor-pointer"
+            className="hidden md:block fixed bottom-10 right-4 md:right-[4rem] w-18 md:w-32 z-40 cursor-pointer"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
@@ -110,11 +65,23 @@ function Home() {
       <section className="h-screen">
         <Campaign />
       </section>
-      <section className="h-screen">
+            <section className="h-screen md:hidden">
+
+        <SwirlM />
+      </section>   
+        <section className="h-screen md:hidden mt-50">
+
+        <Test />
+      </section>   
+          <section className="h-screen hidden md:block ">
+
         <Swirl />
       </section>
-      <section className="h-screen">
+      <section className="h-screen hidden md:block ">
         <TheAA />
+      </section>
+       <section className="h-screen md:hidden">
+        <TheAAM />
       </section>
       <section>
         <RedSection2 />

@@ -88,8 +88,9 @@ const Grids = ({ data }) => {
         <div className="flex justify-start ">
           <button
             onClick={handleSeeMore}
-            className="h-[4rem] px-[2rem] flllex items-center justify-center  bg-secondary text-white font-R_regular text-[2rem] rounded-2xl hover:scale-105 transition-transform duration-300 ease-in-out"
-          >
+ className="  font-R_regular text-[1rem] md:text-[1.5rem] tracking-[0.12em] leading-[4rem] mt-0 
+          flex items-center justify-center w-full md:w-[25rem] h-[3rem] md:h-[5rem] hover:bg-secondary hover:opacity-80 cursor-pointer
+           rounded-full   text-primary bg-secondary  "          >
             See More Takes
           </button>
         </div>

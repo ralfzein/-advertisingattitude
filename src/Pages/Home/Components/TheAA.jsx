@@ -12,14 +12,14 @@ const slides = [
     img2: "/Images/TheAA/ab.webp",
     title: "Stop Branding \n Blindly",
     subtitle:
-      "Many brands don’t fail in marketing because  of weak visuals — they fail because they skip  strategy. But with AI, it’s no longer out of  reach — it’s a revolution. Will you harness it, or \n fall behind?",
+      "Many brands don’t fail in marketing because  of weak visuals  —  they fail because they skip  strategy. But with AI, it’s no longer out of  reach  —  it’s a revolution. Will you harness it, or \n fall behind?",
   },
   {
     img: "/Images/TheAA/ab.webp",
     img2: "/Images/TheAA/ac.webp",
     title: "The New Marketing   Playbook",
     subtitle:
-      "One marketer can’t do it all. An agency brings  the full arsenal — strategy, design, content, execution — all under one roof. Buy back your   time, cut the overhead, and focus on what  actually grows your business.",
+      "One marketer can’t do it all. An agency brings  the full arsenal  —  strategy, design, content, execution  —  all under one roof. Buy back your   time, cut the overhead, and focus on what  actually grows your business.",
   },
   {
     img: "/Images/TheAA/ac.webp",
@@ -40,7 +40,7 @@ const slides = [
     img2: "/Images/TheAA/aa.webp",
     title: "Every Agency   Is An Award   Winner",
     subtitle:
-      "Some win for real. Some win for reach. Either   way — congrats, truly. As for us? We’re not in it    (yet). We’re just keeping our heads down,    building loud ideas quietly. Because the best   kind of recognition? Comes after the work is   done.",
+      "Some win for real. Some win for reach. Either   way  —  congrats, truly. As for us? We’re not in it    (yet). We’re just keeping our heads down,    building loud ideas quietly. Because the best   kind of recognition? Comes after the work is   done.",
   },
 ];
 
@@ -149,7 +149,7 @@ const navigate =useNavigate();
     <motion.div
       variants={childVariantsScale}
    >
-      <div className="flex w-full gap-20 items-center justify-between  h-[30rem]   mt-40 px-[4rem] ">
+      <div className="flex bg w-full gap-20 items-center justify-between  h-[30rem]   mt-40 px-[4rem] ">
         {/* Text content */}
         <div
           className="flex-1 flex flex-col items-start justify-between bg-  h-full "
@@ -163,7 +163,7 @@ const navigate =useNavigate();
               {slides[index].title}
             </h3>
             <p
-              className="text-lg text-primary leading-[1.3rem] font-M_regular
+              className="text-lg text-primary leading-[1.3rem] font-M_regular 
                tracking-[0.1em] whitespace-pre-line"
             >
               {slides[index].subtitle}
