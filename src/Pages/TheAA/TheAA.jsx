@@ -161,7 +161,7 @@ const TheAA = () => {
               The way we see it, marketing, advertising, and attitude.{" "}
             </h4>
 
-            <div className=" relative w-full">
+            <div className=" relative w-full min-h-[20rem] ">
         {!isLoaded1 && <Skeleton className="absolute inset-0 w-full h-[20rem] bg-secondary/30" />}
 
               <img src={"/Images/TheAAP/img/first.svg"} 
