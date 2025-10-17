@@ -51,7 +51,7 @@ const Campaigns = () => {
         className="relative w-full snap-start bg-[#F2EDD9] pb-[10rem] bg-contain"
         style={{ backgroundImage: `url('/Images/Work/workBg.svg')` }}
       >
-        <motion.div variants={childVariantsnav} className="relative z-40 w-full">
+        <motion.div variants={childVariantsnav} className="z-50 w-full relative ">
           <Nav title={["CAMPAIGN MADE BY AA"]} tracking={"tracking-[0.6rem]"} color="text-black" />
         </motion.div>
 

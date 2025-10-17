@@ -41,7 +41,7 @@ const itemVariants = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 
     },
     {
       name:" The AA Perspective",
-      href:"/"
+      href:"/theAA"
     },
     {
       name:"About",
@@ -70,7 +70,7 @@ const [isHovered, setIsHovered] = useState(false);
   return (
     <>
       {/* Navbar */}
-      <nav className="absolute top-0 w-full flex items-center justify-between px-4 md:px-[4rem] mt-3 z-50 ">
+      <nav className="absolute top-3 w-full flex items-center justify-between px-4 md:px-[4rem] z-50 ">
         <div className={`flex items-center justify-between w-full border-b-[2px] md:border-b-[0.5rem]  0 uppercase ${color ? (menuOpen ? 'border-primary' : "border-background") : "border-primary"}`}>
           {/* Title */}
          <AnimatePresence mode="wait">

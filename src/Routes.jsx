@@ -6,6 +6,7 @@ import Campaigns from "./Pages/Campaigns/Campaigns";
 import Footer from "./components/Footer/Footer";
 import CaseStudy from "./Pages/CaseStudy/CaseStudy";
 import ScrollToTop from "./Pages/ScrollToTop";
+import TheAA from "./Pages/TheAA/TheAA";
 
 
 function AppRoutes() {
@@ -25,8 +26,8 @@ useEffect(() => {
       <Route path="/home" element={<Home />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/work" element={<Campaigns />} />
-      <Route path="/work" element={<Campaigns />} />
       <Route path="/case-study/:id" element={<CaseStudy />} />
+      <Route path="/theAA" element={<TheAA />} />
     </Routes>
 {/* <Footer/> */}
     </>
