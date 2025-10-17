@@ -111,9 +111,7 @@ const TheAA = () => {
       subTitle:
         "Subtle. Polite. Marketing approved by  everyone — and forgotten by everyone.",
       img: "/Images/TheAAP/img/111.svg",
-            rounded:" rounded-tl-0 rounded-tr-full rounded-bl-full rounded-br-full "
-
-
+            rounded:" rounded-tl-0 rounded-tr-full rounded-bl-full rounded-br-full"
     },
   ];
   const containerVariants = {
@@ -150,7 +148,7 @@ const TheAA = () => {
         className=" w-full  bg-[#F2EDD9] pb-[10rem] bg-contain"
         style={{ backgroundImage: `url('/Images/Work/workBg.svg')` }}
       >
-        <motion.div variants={childVariantsnav} className="top-3 relative z-50 w-full " >
+        <motion.div variants={childVariantsnav} className=" relative z-50 w-full " >
           <Nav title={["THE AA PERSPECTIVE"]} tracking={"tracking-[0.6rem]"} color="text-black" />
         </motion.div>
         <div className=" z-50 pt-40 px-4 md:px-[4rem]">

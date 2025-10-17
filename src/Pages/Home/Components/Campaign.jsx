@@ -111,7 +111,7 @@ const navigate =useNavigate();
       className="relative md:h-screen w-full overflow-hidden snap-start"
     >
       <motion.div variants={childVariantsnav} className="relative z-50 w-full">
-        <Nav title="CAMPAIGN MADE BY AA" tracking="!text-[1.5rem] tracking-[0.1rem] md:tracking-[.8rem]" />
+        <Nav title="CAMPAIGN MADE BY AA" tracking="text-[1.5rem] tracking-[0.1rem] md:tracking-[.8rem]" />
       </motion.div>
       <Carousel
         opts={{ loop: true }}
