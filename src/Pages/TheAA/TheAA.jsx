@@ -162,10 +162,10 @@ const TheAA = () => {
             </h4>
 
             <div className=" relative w-full">
-        {!isLoaded1 && <Skeleton className="absolute inset-0 w-full h-[20   rem] bg-secondary/30" />}
+        {!isLoaded1 && <Skeleton className="absolute inset-0 w-full h-[20rem] bg-secondary/30" />}
 
               <img src={"/Images/TheAAP/img/first.svg"} 
-          onLoad={() => setIsLoaded1(true)}
+              onLoad={() => setIsLoaded1(true)}
            className={`transition-opacity duration-500 ${
             isLoaded1 ? 'opacity-100' : 'opacity-0'
           } w-full h-full object-contain`}
