@@ -80,14 +80,14 @@ useEffect(() => {
             </div>
 
 
-            <div className='space-y-5 mt-10'>
+            <div className='space-y-3 mt-10'>
                 <p className='font-M_bold text-background'>{caseS?.time}</p>
-                <div className='flex gap-2'>
+                <div className='flex gap-2 '>
                     {caseS?.tags.map((tag, index) => (
                         <div className='bg-background text-white text-xs font-M_bold px-4 py-1 rounded-full'>{tag}</div>
                     ))}
                 </div>
-                <h1 className='font-R_regular text-secondary text-[3rem] leading-[3.2rem] uppercase'>
+                <h1 className='font-R_regular text-secondary text-[3rem] leading-[3.2rem] uppercase mt-6'>
                     Think boldly, Feel deeply, Act smartly <br/>
                         that’s Advertising Attitude.
 

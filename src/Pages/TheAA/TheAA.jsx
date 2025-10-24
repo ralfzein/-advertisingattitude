@@ -166,7 +166,7 @@ const [data,setData]=useState(theAA)
               The way we see it, marketing, advertising, and attitude.{" "}
             </h4>
 
-            <div className=" relative w-full min-h-[20rem] " >
+            <div className=" relative w-full min-h-[25rem] " >
         {!isLoaded1 && <Skeleton className="absolute inset-0 w-full h-[25rem] bg-secondary/30" />}
 
               <img src={data?.[0]?.img1} 
