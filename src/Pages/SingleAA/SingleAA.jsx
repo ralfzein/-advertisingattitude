@@ -65,7 +65,7 @@ useEffect(() => {
 
 
 <div className=" relative    ">
-        {!isLoaded1 && <Skeleton className="absolute inset-0 w-[25rem] h-[24rem] bg-background/30" />}
+        {!isLoaded1 && <Skeleton className="absolute inset-0 w-[18rem] h-[22rem] bg-background/30" />}
 
               
               
