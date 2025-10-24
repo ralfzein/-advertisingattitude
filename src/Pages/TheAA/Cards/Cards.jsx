@@ -7,7 +7,9 @@ const Cards = ({ data }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col items-center justify-start gap-4 w-full ">
+    <div className="flex flex-col items-center justify-start gap-4 w-full "
+    onClick={() => navigate(`/theAA/${data.id}`)}
+    >
       <div className="relative flex items-center justify-center overflow-hidden">
         {/* Skeleton behind the image */}
         {!isLoaded && <Skeleton className={`absolute  inset-0 w-[85%] h-[85%] ${data.rounded}  bg-secondary/30`} />}

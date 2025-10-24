@@ -4,116 +4,119 @@ import Nav from "../../components/Nav/Nav";
 import Footer from "../../components/Footer/Footer";
 import Cards from "./Cards/Cards";
 import { Skeleton } from "../../components/ui/skeleton";
+import NewsLetter from "../../components/NewsLetter/NewsLetter";
+import theAA from '../../../public/theAAdata';
+import { useNavigate } from "react-router-dom";
 
 
 const TheAA = () => {
-  const data = [
-    {
-      id: 1,
-      title: "AI Won’t Save  Bad Branding",
-      subTitle:
-        "But it’s rewriting the rules for those who   lead with strategy — not vibes.",
-      img: "/Images/TheAAP/img/aa.svg",
-      rounded:"rounded-tr-full rounded-tl-full  rounded-bl-0 rounded-br-full"
-    },
-    {
-      id: 2,
-      title: "Every Agency Is an\n  Award Winner",
-      subTitle: "We may not be in the puzzle. Yet.",
-      img: "/Images/TheAAP/img/ee.svg",
-      rounded:" rounded-tl-full rounded-tr-0 rounded-bl-full rounded-br-full"
+  // const data = [
+  //   {
+  //     id: 1,
+  //     title: "AI Won’t Save  Bad Branding",
+  //     subTitle:
+  //       "But it’s rewriting the rules for those who   lead with strategy — not vibes.",
+  //     img: "/Images/TheAAP/img/aa.svg",
+  //     rounded:"rounded-tr-full rounded-tl-full  rounded-bl-0 rounded-br-full"
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Every Agency Is an\n  Award Winner",
+  //     subTitle: "We may not be in the puzzle. Yet.",
+  //     img: "/Images/TheAAP/img/ee.svg",
+  //     rounded:" rounded-tl-full rounded-tr-0 rounded-bl-full rounded-br-full"
 
-    },
-    {
-      id: 3,
-      title: "Disrupt.\n  Leave Echoes.",
-      subTitle:
-        "Ideas start small. The loudest impact comes  from the ones that were once whispered.",
-      img: "/Images/TheAAP/img/33.svg",
-                rounded:"rounded-tr-full rounded-tl-full  rounded-bl-0 rounded-br-full"
-
-
-
-    },
-    {
-      id: 4,
-      title: "You Can’t Discount\n  Mastery",
-      subTitle: "When you pay for cheap, you pay twice.",
-      img: "/Images/TheAAP/img/44.svg",
-            rounded:" rounded-tl-full rounded-tr-full rounded-bl-full rounded-br-0"
-
-
-    },
-    {
-      id: 5,
-      title: "Even the Lion \n Needs a Roar",
-      subTitle:
-        "Ads are that roar — amplifying your strength and making sure you’re heard.",
-      img: "/Images/TheAAP/img/55.svg",
-            rounded:" rounded-tl-0 rounded-tr-full rounded-bl-full rounded-br-full"
-
-
-    },
-    {
-      id: 6,
-      title: "What Kind of \n Marketer Are You?",
-      subTitle:
-        "Whether you lead, craft, or analyze — the key is knowing your edge and owning it.",
-      img: "/Images/TheAAP/img/66.svg",
-                       rounded:" rounded-tl-full rounded-tr-full rounded-bl-full rounded-br-0"
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "Disrupt.\n  Leave Echoes.",
+  //     subTitle:
+  //       "Ideas start small. The loudest impact comes  from the ones that were once whispered.",
+  //     img: "/Images/TheAAP/img/33.svg",
+  //               rounded:"rounded-tr-full rounded-tl-full  rounded-bl-0 rounded-br-full"
 
 
 
-    },
-    {
-      id: 7,
-      title: "Marketing Teams Burn Hours. Agencies Build\n  Outcomes",
-      subTitle:
-        "CEOs don’t need babysitting — they need bandwidth. We deliver both.",
-      img: "/Images/TheAAP/img/77.svg",
-      rounded:"rounded-tr-full rounded-tl-full  rounded-bl-0 rounded-br-full"
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "You Can’t Discount\n  Mastery",
+  //     subTitle: "When you pay for cheap, you pay twice.",
+  //     img: "/Images/TheAAP/img/44.svg",
+  //           rounded:" rounded-tl-full rounded-tr-full rounded-bl-full rounded-br-0"
 
 
-    },
-    {
-      id: 8,
-      title: "Where Madness \n  Meets Mastery",
-      subTitle:
-        "Creativity isn’t born clean — it’s carved from chaos, grit, and the refusal to quit.",
-      img: "/Images/TheAAP/img/88.svg",
-            rounded:" rounded-tl-full rounded-tr-0 rounded-bl-full rounded-br-full"
+  //   },
+  //   {
+  //     id: 5,
+  //     title: "Even the Lion \n Needs a Roar",
+  //     subTitle:
+  //       "Ads are that roar — amplifying your strength and making sure you’re heard.",
+  //     img: "/Images/TheAAP/img/55.svg",
+  //           rounded:" rounded-tl-0 rounded-tr-full rounded-bl-full rounded-br-full"
 
 
-    },
-    {
-      id: 9,
-      title: "Safe Agencies Cost \n  More in Silence",
-      subTitle:
-        "If you’re doing the thinking and lifting — you’re not hiring an agency, you’re  sponsoring one.",
-      img: "/Images/TheAAP/img/99.svg",
-      rounded:"rounded-tr-full rounded-tl-full  rounded-bl-0 rounded-br-full"
+  //   },
+  //   {
+  //     id: 6,
+  //     title: "What Kind of \n Marketer Are You?",
+  //     subTitle:
+  //       "Whether you lead, craft, or analyze — the key is knowing your edge and owning it.",
+  //     img: "/Images/TheAAP/img/66.svg",
+  //                      rounded:" rounded-tl-full rounded-tr-full rounded-bl-full rounded-br-0"
 
 
-    },
-    {
-      id: 10,
-      title: "Ideas Don’t Age Well\n  in Drafts",
-      subTitle:
-        "You’re not polishing brilliance — you’re delaying momentum. Launch ugly, learn  fast, evolve loud.",
-      img: "/Images/TheAAP/img/100.svg",
-            rounded:" rounded-tl-full rounded-tr-full rounded-bl-full rounded-br-0"
+
+  //   },
+  //   {
+  //     id: 7,
+  //     title: "Marketing Teams Burn Hours. Agencies Build\n  Outcomes",
+  //     subTitle:
+  //       "CEOs don’t need babysitting — they need bandwidth. We deliver both.",
+  //     img: "/Images/TheAAP/img/77.svg",
+  //     rounded:"rounded-tr-full rounded-tl-full  rounded-bl-0 rounded-br-full"
 
 
-    },
-    {
-      id: 11,
-      title: " The Art of Losing  Without Knowing It",
-      subTitle:
-        "Subtle. Polite. Marketing approved by  everyone — and forgotten by everyone.",
-      img: "/Images/TheAAP/img/111.svg",
-            rounded:" rounded-tl-0 rounded-tr-full rounded-bl-full rounded-br-full"
-    },
-  ];
+  //   },
+  //   {
+  //     id: 8,
+  //     title: "Where Madness \n  Meets Mastery",
+  //     subTitle:
+  //       "Creativity isn’t born clean — it’s carved from chaos, grit, and the refusal to quit.",
+  //     img: "/Images/TheAAP/img/88.svg",
+  //           rounded:" rounded-tl-full rounded-tr-0 rounded-bl-full rounded-br-full"
+
+
+  //   },
+  //   {
+  //     id: 9,
+  //     title: "Safe Agencies Cost \n  More in Silence",
+  //     subTitle:
+  //       "If you’re doing the thinking and lifting — you’re not hiring an agency, you’re  sponsoring one.",
+  //     img: "/Images/TheAAP/img/99.svg",
+  //     rounded:"rounded-tr-full rounded-tl-full  rounded-bl-0 rounded-br-full"
+
+
+  //   },
+  //   {
+  //     id: 10,
+  //     title: "Ideas Don’t Age Well\n  in Drafts",
+  //     subTitle:
+  //       "You’re not polishing brilliance — you’re delaying momentum. Launch ugly, learn  fast, evolve loud.",
+  //     img: "/Images/TheAAP/img/100.svg",
+  //           rounded:" rounded-tl-full rounded-tr-full rounded-bl-full rounded-br-0"
+
+
+  //   },
+  //   {
+  //     id: 11,
+  //     title: " The Art of Losing  Without Knowing It",
+  //     subTitle:
+  //       "Subtle. Polite. Marketing approved by  everyone — and forgotten by everyone.",
+  //     img: "/Images/TheAAP/img/111.svg",
+  //           rounded:" rounded-tl-0 rounded-tr-full rounded-bl-full rounded-br-full"
+  //   },
+  // ];
   const containerVariants = {
     hidden: { opacity: 1 },
     show: {
@@ -130,11 +133,13 @@ const TheAA = () => {
       transition: { type: "tween", duration: 0.5, ease: "easeOut" },
     },
   };
- const [visibleCount, setVisibleCount] = useState(6); 
-
+ const [visibleCount, setVisibleCount] = useState(7); 
+const [data,setData]=useState(theAA)
   const handleShowMore = () => {
     setVisibleCount((prev) => prev + 6);
   };
+  const navigate = useNavigate();
+
     const [isLoaded1, setIsLoaded1] = useState(false);
   
   return (
@@ -161,21 +166,23 @@ const TheAA = () => {
               The way we see it, marketing, advertising, and attitude.{" "}
             </h4>
 
-            <div className=" relative w-full min-h-[20rem] ">
-        {!isLoaded1 && <Skeleton className="absolute inset-0 w-full h-[20rem] bg-secondary/30" />}
+            <div className=" relative w-full min-h-[20rem] " >
+        {!isLoaded1 && <Skeleton className="absolute inset-0 w-full h-[25rem] bg-secondary/30" />}
 
-              <img src={"/Images/TheAAP/img/first.svg"} 
+              <img src={data?.[0]?.img1} 
               onLoad={() => setIsLoaded1(true)}
-           className={`transition-opacity duration-500 ${
+           className={`transition-opacity duration-500 cursor-pointer ${
             isLoaded1 ? 'opacity-100' : 'opacity-0'
           } w-full h-full object-contain`}
+    onClick={() => navigate(`/theAA/${data[0].id}`)}
+
           />
               
             </div>
 
             <div className="flex items-center justify-center gap-2 flex-col w-full">
               <div className="font-R_regular text-secondary text-[1.3rem]   md:text-[2rem]  leading-[1.5rem] md:leading-[2rem]  uppercase">
-                Think Boldly. Feel Deeply. Act Smartly.
+              {data?.[0]?.title}
               </div>
               <div className="font-M_medium text-background text-[0.8rem] md:text-[1rem]  leading-[1.2rem]  md:leading-[1.2rem]">
                 The Attitude behind Advertising Attitude.
@@ -193,7 +200,7 @@ const TheAA = () => {
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-10 gap-y-15 mt-25">
-              {data.slice(0, visibleCount).map((item) => (
+              {data.slice(1, visibleCount).map((item) => (
             <Cards data={item} />
             ))}
           </div>
@@ -212,7 +219,9 @@ const TheAA = () => {
         </div>
     )}
         </div>
+      <NewsLetter/>
       </motion.section>
+
       <Footer />
     </div>
   );

@@ -7,6 +7,7 @@ import Footer from "./components/Footer/Footer";
 import CaseStudy from "./Pages/CaseStudy/CaseStudy";
 import ScrollToTop from "./Pages/ScrollToTop";
 import TheAA from "./Pages/TheAA/TheAA";
+import SingleAA from "./Pages/SingleAA/SingleAA";
 
 
 function AppRoutes() {
@@ -28,6 +29,7 @@ useEffect(() => {
       <Route path="/work" element={<Campaigns />} />
       <Route path="/case-study/:id" element={<CaseStudy />} />
       <Route path="/theAA" element={<TheAA />} />
+      <Route path="/theAA/:id" element={<SingleAA/>} />
     </Routes>
 {/* <Footer/> */}
     </>
