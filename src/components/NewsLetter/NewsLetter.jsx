@@ -7,7 +7,25 @@ const NewsLetter = () => {
   const ref = useRef(null)
 
   const isInView = useInView(ref, { once: false, amount: 0.5 })
-
+  const containerVariants = {
+    hidden: { opacity: 1 },
+    show: {
+      opacity: 1,
+      transition: { when: "beforeChildren", staggerChildren: 0.15 },
+    },
+  };
+  const childVariants = {
+  hidden: { opacity: 0, scale: 0.2 },
+  show: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      type: "tween",
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
   useEffect(() => {
     if (isInView && next === 1) {
       const timer = setTimeout(() => setNext(2), 1000) 
@@ -16,27 +34,54 @@ const NewsLetter = () => {
   }, [isInView, next])
 
   return (
-    <div ref={ref} className='mt-30'>
+    <motion.div ref={ref}
+  variants={containerVariants}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true, amount: 0.2 }}
+  id="hero-section"
+  className='mt-30'>
       <div className='px-[4rem] py-[2rem] bg-secondary mt-10 min-h-[82vh]'>
         
-        <h1 className='font-R_regular text-primary text-[5.5rem] leading-[5.7rem]'>
+        <motion.h1 
+          variants={childVariants} className='font-R_regular text-primary text-[5.5rem] leading-[5.7rem]'>
           Command the Noise <br />Stay Bold, Stay Sharp
-        </h1>
+        </motion.h1>
 
-        <p className='text-primary font-M_regular text-[1.6rem] leading-[1.8rem] mt-4'>
+        <motion.p 
+        variants={childVariants}  className='text-primary font-M_regular text-[1.6rem] leading-[1.8rem] mt-4'>
           Get our latest takes — fresh ideas, cutting strategies, and stories <br />
           built to stand out from the pack. Subscribe to the Newsletter.
-        </p>
+        </motion.p>
 
         <div className='flex flex-row items-start justify-end gap-2 mt-4'>
           <div className='relative flex items-start gap-2'>
             {(next !== 4 && next !== 1) && (
-              <p className='font-M_regular text-[0.9rem] text-primary absolute -bottom-4 leading-[1rem]'>
+              <motion.p 
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: 1,
+                 
+                  transition: {
+                    delay: 1.2, 
+                    duration: 0.8,
+                    ease: [0.45, 0, 0.55, 1],
+                  },
+                }}
+                exit={{
+                  opacity: 0,
+               
+                  transition: {
+                    duration: 0.5, 
+                    ease: [0.45, 0, 0.55, 1],
+                  },
+                }}
+                className='font-M_regular text-[0.9rem] text-primary absolute -bottom-4 leading-[1rem]'>
                 Advertising Attitude needs the contact information you provide to connect with You <br />
                 about our services, insights, and updates. You can unsubscribe at any time.<br />
                 For details on how we handle your data and protect your privacy, please review our <br />
                 <a href='' className='underline'>Privacy Policy.</a>
-              </p>
+              </motion.p>
             )}
 
             <div className='flex flex-col items-end justify-center gap-3 w-[30rem] overflow-hidden'>
@@ -99,7 +144,25 @@ const NewsLetter = () => {
               </AnimatePresence>
 
               {next !== 4 && next !== 1 && (
-                <div className='flex gap-1 w-full items-center justify-center'>
+                <motion.div 
+                 initial={{ opacity: 0 }}
+                animate={{
+                  opacity: 1,
+                 
+                  transition: {
+                    delay: 1.2, 
+                    duration: 0.8,
+                    ease: [0.45, 0, 0.55, 1],
+                  },
+                }}
+                exit={{
+                  opacity: 0,
+               
+                  transition: {
+                    duration: 0.5, 
+                    ease: [0.45, 0, 0.55, 1],
+                  },
+                }}className='flex gap-1 w-full items-center justify-center'>
                   <div
                     className={`w-5 h-5 bg-primary rounded-t-full rounded-bl-full cursor-pointer ${next === 2 ? 'opacity-100' : 'opacity-50'}`}
                     onClick={() => setNext(2)}
@@ -108,7 +171,7 @@ const NewsLetter = () => {
                     className={`w-5 h-5 bg-primary rounded-t-full rounded-br-full cursor-pointer ${next === 3 ? 'opacity-100' : 'opacity-50'}`}
                     onClick={() => setNext(3)}
                   ></div>
-                </div>
+                </motion.div>
               )}
             </div>
 
@@ -153,7 +216,7 @@ const NewsLetter = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

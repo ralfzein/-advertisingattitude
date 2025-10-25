@@ -51,15 +51,17 @@ const Campaigns = () => {
         className="relative w-full snap-start bg-[#F2EDD9] pb-[10rem] bg-contain"
         style={{ backgroundImage: `url('/Images/Work/workBg.svg')` }}
       >
-        <motion.div variants={childVariantsnav} className="z-50 w-full relative ">
+        <motion.div variants={childVariantsnav} className="z-50 w-full relative hidden md:block">
           <Nav title={["CAMPAIGN MADE BY AA"]} tracking={"tracking-[0.6rem]"} color="text-black" />
         </motion.div>
-
-        <motion.div variants={childVariantsnav} className='z-50 pt-40 px-[4rem]'>
-          <h3 className='font-M_bold text-secondary text-[4rem] tracking-[0.5rem] leading-[4rem] text-justify'>
-            THE SWIRL SPEAKS LOUDER <br/> THAN WORDS
+<motion.div className="relative z-50 w-full md:hidden">
+        <Nav title={["CAMPAIGN"]} tracking={"tracking-[0.8rem]"} color="text-black" />
+      </motion.div>
+        <motion.div variants={childVariantsnav} className='z-50 pt-20 md:pt-40 px-4 md:px-[4rem]'>
+          <h3 className='font-M_bold text-secondary text-left text-[2rem] leading-[2.3rem]  sm:text-[4rem] sm:tracking-[0.5rem] sm:leading-[4rem] sm:text-justify'>
+            THE SWIRL SPEAKS LOUDER <br className='hidden md:block'/> THAN WORDS
           </h3>
-          <p className='font-M_bold text-black text-[1.8rem] tracking-[0.2rem] mt-8'>
+          <p className='font-M_bold text-black text-[1.2rem] leading-[1.3rem] sm:text-[1.8rem] sm:leading-[2rem] tracking-[0.2rem] mt-8'>
             From airports to icons, our campaigns aren’t just seen, <br/> they’re remembered.
           </p>
 
@@ -76,7 +78,7 @@ const Campaigns = () => {
           loading="lazy"
           decoding="sync"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-10 right-[4rem] w-32 z-50 cursor-pointer"
+          className="fixed  bottom-10 right-4 md:right-[4rem] w-18 md:w-32 z-60 cursor-pointer"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: showLogo ? 1 : 0, y: showLogo ? 0 : 20 }}
           transition={{ duration: 0.6, ease: "easeOut" }}

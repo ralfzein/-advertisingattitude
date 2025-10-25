@@ -25,14 +25,14 @@
   transform: rotateY(-0deg) translateX(-110px) translateZ(50px) scale(0.9); /* left slide full size */
   z-index: 20;
   opacity: 1;
-  background-color: white;
+  /* background-color: white; */
 }
 
 .front-right {
   transform: rotateY(0deg) translateX(110px) translateZ(0px) scale(0.7); /* right slide smaller */
   z-index: 10;
   opacity: 0.5;
-  background-color: white;
+  /* background-color: white; */
 
 }
 
@@ -40,5 +40,32 @@
   transform: rotateY(0deg) translateZ(-200px) scale(0.6); /* hidden slides smaller */
   z-index: 1;
   opacity: 0;
+}
+
+@media (max-width: 640px) {
+ .carousel-container {
+    width: 12rem;
+    height: 14rem;
+    perspective: 600px;
+
+  }
+
+  .slide {
+    height: 14rem;
+   
+  }
+
+  .front-left {
+    transform: rotateY(0deg) translateX(-50px) translateZ(30px) scale(0.9);
+  }
+
+  .front-right {
+    transform: rotateY(0deg) translateX(50px) translateZ(0px) scale(0.7);
+  }
+
+  .back {
+    transform: rotateY(0deg) translateZ(-100px) scale(0.6);
+  }
+
 }
 

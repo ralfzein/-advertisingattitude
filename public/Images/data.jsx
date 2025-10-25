@@ -17,16 +17,16 @@ const CampaignsData = [
     Disciplines:["Campaigns", "Retail Marketing", "Brand Activation"," Concept Creation", "Creative Direction", "Experiential Marketing" ],
     date:"2025",
     section1:["/Images/Cases/Case1/section1.svg"],
-    description:  ` <h1 class="mt-8 font-M_bold text-[2.4rem] leading-[2.8rem] text-background tracking-[.12rem] ">Valentine’s is emotional. Airports are not.
+    description:  ` <h1 class="mt-8 font-M_bold text-[1.4rem] md:text-[2.4rem] leading-[1.6rem] md:leading-[2.8rem] text-background tracking-[.12rem] ">Valentine’s is emotional. Airports are not.
      Abu Dhabi Duty Free asked us to bridge that gap, to
       transform a transit space built for speed into a 
       destination for love, gifting, and sales.
 
-     <div class=" font-M_semibold text-[1.3rem] leading-[1.6rem] tracking-normal text-background"> 
+     <div class=" font-M_semibold text-[1.1rem] leading-[1.3rem] md:text-[1.3rem] md:leading-[1.6rem] tracking-normal text-background"> 
       
 <br/> Travel retail has scale, but rarely feeling. Most promotions blur into background noise. Valentine’s needed to stand out in a cluttered environment and become something passengers couldn’t ignore. Not just discounts on shelves, but a campaign that made travelers pause, engage, and buy.
 </div> </h1>
-      <p class=" font-M_semibold text-[1.3rem] leading-[1.6rem] text-background ">
+      <p class=" font-M_semibold text-[1.1rem] leading-[1.3rem] md:text-[1.3rem] md:leading-[1.6rem] text-background ">
   
 The ambition was to move Valentine’s beyond a transactional offer and into an experience. Our insight: airports are full of emotion, reunions, goodbyes, surprises. Valentine’s was the perfect moment to amplify that truth and connect it with Abu Dhabi Duty Free’s retail power. Instead of running a quiet promotion, we built a campaign designed to shout love, across corridors, activations, and prime storefronts.
 <br/>
@@ -78,15 +78,15 @@ Guided by our SwirlBold™ mentality, we pair disruptive creativity with discipl
     Disciplines:["Campaigns", "Retail Marketing", "Brand Activation"," Outreach Strategy", "Content & Digital Activation", "Concept & Creative Direction" ],
     date:"2025",
     section1:["/Images/Cases/Case2/1.mp4"],
-    description:` <h1 class="mt-8 font-M_bold text-[2.4rem] leading-[2.8rem] text-background tracking-[.12rem] ">Deals don’t sell themselves, visibility does. Beirut Duty Free challenged us with one of their most complex tasks: amplify more than 200 exclusive promotions in a way that passengers couldn’t miss.
+    description:` <h1 class="mt-8 font-M_bold text-[1.4rem] md:text-[2.4rem] leading-[1.6rem] md:leading-[2.8rem] text-background tracking-[.12rem] ">Deals don’t sell themselves, visibility does. Beirut Duty Free challenged us with one of their most complex tasks: amplify more than 200 exclusive promotions in a way that passengers couldn’t miss.
     
-     <div class=" font-M_semibold text-[1.3rem] leading-[1.6rem] tracking-normal text-background"> 
+     <div class=" font-M_semibold text-[1.1rem] leading-[1.3rem] md:text-[1.3rem] md:leading-[1.6rem] tracking-normal text-background"> 
 <br/>
      In travel retail, discounts are everywhere. Shoppers are bombarded with signs, shelf-talkers, and competing offers. The risk? Promotions fade into background noise, with passengers rushing past without engaging. Beirut Duty Free needed more than banners; they needed an outreach system, a way to turn discounts into conversations, and conversations into purchases. 
      </div>
 </h1>
       
-      <p class=" font-M_semibold text-[1.3rem] leading-[1.6rem] text-background ">
+      <p class=" font-M_semibold text-[1.1rem] leading-[1.3rem] md:text-[1.3rem] md:leading-[1.6rem] text-background ">
 
 Our insight was simple: passengers don’t buy what they don’t know exists. With over 200 offers, the challenge wasn’t price, it was visibility and clarity. Every promotion had to be seen, understood, and activated in the split seconds travelers spend moving through duty free. That meant rethinking outreach as not just signage, but as a strategic marketing engine.<br/><br/>
 We designed a cohesive system that blended digital storytelling, quantified messaging, and retail placement strategy. Instead of static signs, we built bold, high-contrast visuals that reframed offers into headlines passengers could digest instantly: “Save $30 vs Singles,” “Twinpacks Promo Bar,” “Exclusive $20 Off.” The creative direction leaned on sharp typographic cues, vibrant gradients, and repetition across zones to reinforce recall.<br/><br/>
@@ -124,15 +124,15 @@ testimonial2:["This was outreach with purpose. Customers stopped, asked, acted. 
     Disciplines:["Campaigns", "Retail Marketing", "Strategic Branding"," Concept & Creative Direction", "Content & Digital Activation", "Performance Marketing"],
     date:"2025",
     section1:["/Images/Cases/Case3/1.webp"],
-    description:` <h1 class="mt-8 font-M_bold text-[2.4rem] leading-[2.8rem] text-background tracking-[.12rem] ">
+    description:` <h1 class="mt-8 font-M_bold text-[1.4rem] md:text-[2.4rem] leading-[1.6rem] md:leading-[2.8rem] text-background tracking-[.12rem] ">
         Real estate marketing is usually passive: list specs, show floor plans, wait for calls. D-VIA by K&A demanded more. A brutalist tower on the Dbayeh highway, with seven premium office floors above a flagship pharmacy, needed to be more than a property listing. It needed to feel like a brand with edge, and sell out fast.
-  <div class=" font-M_semibold text-[1.3rem] leading-[1.6rem] tracking-normal text-background"> 
+  <div class=" font-M_semibold text-[1.1rem] leading-[1.3rem] md:text-[1.3rem] md:leading-[1.6rem] tracking-normal text-background"> 
 <br/>
 Our ambition: position D-VIA as a micro-community for growth-driven companies, then lease all seven floors and the rooftop. To get there, we rejected conventional real estate playbooks and built a led agency marketing model that fused concept design, performance marketing, and physical activation.
      </div>
     </h1>
       
-      <p class=" font-M_semibold text-[1.3rem] leading-[1.6rem] text-background">
+      <p class=" font-M_semibold text-[1.1rem] leading-[1.3rem] md:text-[1.3rem] md:leading-[1.6rem] text-background">
 The identity started with a name, D-VIA  —  blending “Dbayeh” with “via” (route, way). This turned a location into momentum. We designed a bold, brutalist-inspired system of typography, visuals, and copy that spoke in the language of business: scale, presence, visibility, edge.<br/><br/>
 Activation was omnichannel by design.<br/><br/>
 <span class="font-M_bold">Performance marketing </span>  —  Google Ads, retargeting funnels, affiliate PR features, and outbound email/WhatsApp pipelines to drive leads. <br/>
@@ -168,19 +168,19 @@ Guided by our SwirlBold™ mentality, we pair disruptive creativity with discipl
     Sector:"Airport / Travel Retail",
     Disciplines:["Campaigns"," Brand Activation", "Visual Identity", "Content & Digital Activation", "Brand Communication"],
     date:"2025",
-    description:  ` <h1 class="mt-8 font-M_bold text-[2.4rem] leading-[2.8rem] text-background tracking-[.12rem] ">
+    description:  ` <h1 class="mt-8 font-M_bold text-[1.4rem] md:text-[2.4rem] leading-[1.6rem] md:leading-[2.8rem] text-background tracking-[.12rem] ">
     This project started as a simple seasonal brief  —  to design a Ramadan and Eid greeting for TRSS, part of ARI Group.
      But we saw an opportunity to go beyond a card and create a cohesive internal and external communication system that
       carried both brand identity and cultural empathy.
       
-        <div class=" font-M_semibold text-[1.3rem] leading-[1.6rem] tracking-normal text-background"> 
+        <div class=" font-M_semibold text-[1.1rem] leading-[1.3rem] md:text-[1.3rem] md:leading-[1.6rem] tracking-normal text-background"> 
 <br/>
 We designed two complete visual directions for the holy season:<br/>
 ● Ramadan Kareem – reflecting spiritual warmth, reflection, and unity.<br/>
 ● Eid Mubarak – expressing festivity, generosity, and modern Arabian luxury.<br/>     </div>
      </h1>
       
-      <p class=" font-M_semibold text-[1.3rem] leading-[1.6rem] text-background ">
+      <p class=" font-M_semibold text-[1.1rem] leading-[1.3rem] md:text-[1.3rem] md:leading-[1.6rem] text-background ">
 
 Each concept was rooted in TRSS’s corporate  —  Abu Dhabi Duty Free’s Operator  —  tone but elevated through strategic storytelling and design consistency.<br/><br/>
 The Ramadan visuals featured abstract desert dunes, a guiding crescent, and warm gradients symbolizing growth and generosity  —  connecting brand communication to human meaning. For Eid, we introduced a premium gifting extension: a luxury box and card design featuring a golden airplane across a crescent  —  visually merging travel, culture, and celebration.<br/><br/>
@@ -215,15 +215,15 @@ Guided by our SwirlBold™ mentality, we pair disruptive creativity with discipl
     Sector:"Airport / Travel Retail",
     Disciplines:["Campaigns", "Brand Activation", "Retail Marketing", "Concept & Creative Direction", "Strategic Communication", "Content & Digital Activation"],
     date:"2025",
-    description:  ` <h1 class="mt-8 font-M_bold text-[2.4rem] leading-[2.8rem] text-background tracking-[.12rem] ">
+    description:  ` <h1 class="mt-8 font-M_bold text-[1.4rem] md:text-[2.4rem] leading-[1.6rem] md:leading-[2.8rem] text-background tracking-[.12rem] ">
     This project began with a simple truth: kids don’t skip the chocolate aisle. They’re the real decision-makers in travel retail  —  tugging sleeves, pointing fingers, and turning “just browsing” into a sale.
-     <div class=" font-M_semibold text-[1.3rem] leading-[1.6rem] tracking-normal text-background"> 
+     <div class=" font-M_semibold text-[1.1rem] leading-[1.3rem] md:text-[1.3rem] md:leading-[1.6rem] tracking-normal text-background"> 
 <br/>
       Muscat Duty Free’s Chocoflight Time campaign was born from that insight. We wanted to transform the chocolate section into a destination  —  playful, colorful, and irresistibly alive. The goal wasn’t to decorate shelves, but to create an experience built around behavior. 
      </div>
     </h1>
       
-      <p class=" font-M_semibold text-[1.3rem] leading-[1.6rem] text-background ">
+      <p class=" font-M_semibold text-[1.1rem] leading-[1.3rem] md:text-[1.3rem] md:leading-[1.6rem] text-background ">
 The concept introduced four mascot characters  —  Creamy, Caramel, Nutty, and Candy  —  each representing a chocolate type and personality. This segmentation gave structure to chaos, making the space easy to navigate and emotionally engaging  —  and intellectually delightful  —  for both kids and adults.<br/><br/>
 The design drew from toy and logo design logic  —  playful illustrations, simple storytelling, and a rhythm of color that made the section feel like its own world within the store. Visually, it was designed to scale: mascots that could walk the store floor, trail floor stickers, danglers, value and hero offer cases that could extend to promotions, and wobbler signage that could grow into full retail experiences. All built under one unified Muscat Duty Free brand world.<br/><br/>
 Commercially, the concept was designed to drive subconscious purchase behavior  —  boosting section sales while optimizing long-term brand positioning. The goal was clear: make the chocolate zone and offerings a must-visit destination, and make its products a must-buy for self, family, or gifting every time passengers travel.<br/><br/>
@@ -259,15 +259,15 @@ Guided by our SwirlBold™ mentality, we pair disruptive creativity with discipl
     Sector:"Airport / Travel Retail",
     Disciplines:["Campaigns", "Retail Marketing", "Brand Activation"," Concept & Creative Direction", "Content & Digital Activation"],
     date:"2025",
-    description:  ` <h1 class="mt-8 font-M_bold text-[2.4rem] leading-[2.8rem] text-background tracking-[.12rem] ">
+    description:  ` <h1 class="mt-8 font-M_bold text-[1.4rem] md:text-[2.4rem] leading-[1.6rem] md:leading-[2.8rem] text-background tracking-[.12rem] ">
     In an airport, attention is currency. Seconds decide whether passengers notice an offer or rush past it. Abu Dhabi Duty Free gave us one of the highest-stakes briefs in travel retail: dominate prime digital real estate with a 40% fragrance promotion and make it impossible to ignore.
-     <div class=" font-M_semibold text-[1.3rem] leading-[1.6rem] tracking-normal text-background"> 
+     <div class=" font-M_semibold text-[1.1rem] leading-[1.3rem] md:text-[1.3rem] md:leading-[1.6rem] tracking-normal text-background"> 
 <br/>
 The challenge wasn’t the deal  —  it was visibility. Travel retail is saturated with promotions. Passengers are bombarded by banners, shelf-talkers, and digital signs across every category. The risk was simple: the 40% offer would fade into the noise. We needed to build a campaign that cut through instantly, stuck in memory, and traveled with passengers across the terminal.
      </div>
     </h1>
       
-   <p class=" font-M_semibold text-[1.3rem] leading-[1.6rem] text-background ">
+   <p class=" font-M_semibold text-[1.1rem] leading-[1.3rem] md:text-[1.3rem] md:leading-[1.6rem] text-background ">
 Our strategy was radical minimalism with maximum impact. Instead of cluttered visuals, we built the campaign around one unmistakable device: red. A color that signals urgency, commands attention, and pulls focus even in motion-heavy spaces. Red wasn’t an aesthetic choice  —  it was the strategy.</br/><br/>
 We translated this intoThe Red Thread, a digital takeover system designed to follow passengers on their journey. Escalators, corridors, and gates became synchronized canvases. Ultra-high contrast visuals paired with ultra-minimal copy  —  “Save Up to 40%”  —  repeated across placements until it became impossible not to register. Custom 8K animations ensured sharpness across the airport’s massive screens, reinforcing the offer in every glance.</br/><br/>
 The execution leaned on discipline. Four design rules drove every asset:</br/><br/>
@@ -309,17 +309,17 @@ Guided by our SwirlBold™ mentality, we pair disruptive creativity with discipl
     Sector:"Marketing & Advertising",
     Disciplines:[ "Campaigns", "Strategic Branding", "Visual Identity", "Content & Digital Activation", "Out-of-Home Advertising"],
     date:"2025",
-    description:  ` <h1 class="mt-8 font-M_bold text-[2.4rem] leading-[2.8rem] text-background tracking-[.12rem] ">
+    description:  ` <h1 class="mt-8 font-M_bold text-[1.4rem] md:text-[2.4rem] leading-[1.6rem] md:leading-[2.8rem] text-background tracking-[.12rem] ">
 
 Most agencies advertise for clients. Few ever advertise themselves.<br/><br/>
 At Advertising Attitude, we flipped the script. If our philosophy is about disruption, clarity, and boldness, why keep it quiet? We took our own rules, turned them into billboards, and let them roar across the Emirates.
-     <div class=" font-M_semibold text-[1.3rem] leading-[1.6rem] tracking-normal text-background"> 
+     <div class=" font-M_semibold text-[1.1rem] leading-[1.3rem] md:text-[1.3rem] md:leading-[1.6rem] tracking-normal text-background"> 
 <br/>
 This wasn’t just a campaign  —  it was a challenge.<br/>
 A challenge to marketers, creatives, and brands stuck in the safe lane. A challenge to the industry playing nice when the only thing that wins is boldness.     </div>
     </h1>
       
-      <p class=" font-M_semibold text-[1.3rem] leading-[1.6rem] text-background ">
+      <p class=" font-M_semibold text-[1.1rem] leading-[1.3rem] md:text-[1.3rem] md:leading-[1.6rem] text-background ">
 Each billboard carried a truth:<br/><br/>
 “If you’re playing safe, you’re playing it wrong.”<br/>
 “Think boldly. Feel deeply. Act smartly.”<br/>
@@ -365,16 +365,16 @@ Guided by our SwirlBold™ mentality, we pair disruptive creativity with discipl
     Disciplines:[ "Campaigns", "Retail Marketing", "Brand Activation"," Concept & Creative Direction"," Content & Digital Activation", "Brand Positioning"
 ],       
     date:"2022",
-    description:  ` <h1 class="mt-8 font-M_bold text-[2.4rem] leading-[2.8rem] text-background tracking-[.12rem] ">
+    description:  ` <h1 class="mt-8 font-M_bold text-[1.4rem] md:text-[2.4rem] leading-[1.6rem] md:leading-[2.8rem] text-background tracking-[.12rem] ">
 Ramadan isn’t just another retail season  —  it’s sentiment, tradition, and celebration. For Beirut Duty Free, the challenge was clear: how do you turn a fast-moving airport into a space where passengers don’t just shop, but feel the spirit of Ramadan?
 
-     <div class=" font-M_semibold text-[1.3rem] leading-[1.6rem] tracking-normal text-background"> 
+     <div class=" font-M_semibold text-[1.1rem] leading-[1.3rem] md:text-[1.3rem] md:leading-[1.6rem] tracking-normal text-background"> 
 <br/>
 The answer was immersion. This campaign transformed the terminal into a sensory journey, one that blended tradition with modern retail storytelling. Lanterns, crescent moons, and arabesque patterns became the visual language, while luxury brands were seamlessly woven into the celebration  —  from perfumes to chocolates to gifting icons of the season.
      </div>
     </h1>
       
-      <p class=" font-M_semibold text-[1.3rem] leading-[1.6rem] text-background ">
+      <p class=" font-M_semibold text-[1.1rem] leading-[1.3rem] md:text-[1.3rem] md:leading-[1.6rem] text-background ">
 The strategy was simple but powerful: move beyond promotions and create experiences. Our activation covered every passenger touchpoint: panoramic digital screens that lit up departures with Eid greetings, retail displays infused with seasonal branding, and a photoshoot that captured the elegance of Abayas and the essence of Oud. The campaign didn’t shout offers  —  it invited travelers into a journey.<br/><br/>
 Digital storytelling carried the same energy online. Social-first visuals, seasonal content, and e-comm integration extended the campaign beyond the terminal, reminding passengers before, during, and after their journey that Beirut Duty Free was more than a store  —  it was part of their festive tradition.<br/><br/>
 The result was a campaign that made passengers stop, engage, and connect. Gifting felt effortless. Shopping felt elevated. And Ramadan at Beirut Duty Free became more than a retail event  —  it became a moment passengers remembered.<br/><br/>
@@ -418,15 +418,15 @@ Guided by our SwirlBold™ mentality, we pair disruptive creativity with discipl
     Disciplines:[ "Campaigns", "Brand Activation"," Visual Identity", "Content & Digital Activation"
 ],
     date:"2025",
-    description:  ` <h1 class="mt-8 font-M_bold text-[2.4rem] leading-[2.8rem] text-background tracking-[.12rem] ">
+    description:  ` <h1 class="mt-8 font-M_bold text-[1.4rem] md:text-[2.4rem] leading-[1.6rem] md:leading-[2.8rem] text-background tracking-[.12rem] ">
 Highway screens transformed into fast, clear pharmacy branding  —  digital activations built for visibility, speed, and instant recognition.
-     <div class=" font-M_semibold text-[1.3rem] leading-[1.6rem] tracking-normal text-background"> 
+     <div class=" font-M_semibold text-[1.1rem] leading-[1.3rem] md:text-[1.3rem] md:leading-[1.6rem] tracking-normal text-background"> 
 <br/>
 In roadside retail, speed is everything. Drivers and passengers have only seconds to notice a message, and in those seconds the brand either connects or disappears. For K&A Machmouchi Pharmacy, the challenge was clear: build a digital screen presence that wasn’t background noise, but a fast-lane impact statement.
      </div>
     </h1>
       
-      <p class=" font-M_semibold text-[1.3rem] leading-[1.6rem] text-background ">
+      <p class=" font-M_semibold text-[1.1rem] leading-[1.3rem] md:text-[1.3rem] md:leading-[1.6rem] text-background ">
 This wasn’t about animation tricks or endless motion graphics. It was about the punch. Visibility first, clarity always. With just seconds to catch the eye, the campaign had to speak boldly, instantly, and unmistakably.<br/><br/>
 We started by treating the screen not as decoration but as a pharmacy identity asset. A fast, vibrant system was built for the medium itself  —  high-contrast colors, oversized typography, and simplified message structures. The campaign avoided clutter and leaned on repetition, creating a rhythm of recognition every time commuters passed.<br/><br/>
 The FastLane concept was more than a name; it was the strategy. We designed frames to work at speed: strong pharmacy cues, bold product flashes, and one-line benefit claims. From “Health Made Visible” to direct promotional pushes, every message was cut to deliver in under three seconds.<br/><br/>
@@ -468,15 +468,15 @@ Guided by our SwirlBold™ mentality, we pair disruptive creativity with discipl
     Sector:"Marketing & Advertising",
     Disciplines:["Campaigns", "Concept & Creative Direction", "Content & Digital Activation", "Strategic Communication", "AI & Creative Tech", "Social Media Marketing"],
     date:"2025",
-    description:  ` <h1 class="mt-8 font-M_bold text-[2.4rem] leading-[2.8rem] text-background tracking-[.12rem] ">
+    description:  ` <h1 class="mt-8 font-M_bold text-[1.4rem] md:text-[2.4rem] leading-[1.6rem] md:leading-[2.8rem] text-background tracking-[.12rem] ">
 This wasn’t a product push. It was a cultural call-out.<br/>
 “Your Legacy Needs a Heartbeat” tackled one of the world’s most silent crises  —  the collapse in birth rates. What used to be a private choice is now a global shift: Japan, South Korea, Russia, and China are already below replacement levels. Elon Musk calls it a greater threat to civilization than climate change. Leaders from Putin to Kim Jong Un have called it national security. We chose to call it what it is: a cultural fracture.
-     <div class=" font-M_semibold text-[1.3rem] leading-[1.6rem] tracking-normal text-background"> 
+     <div class=" font-M_semibold text-[1.1rem] leading-[1.3rem] md:text-[1.3rem] md:leading-[1.6rem] tracking-normal text-background"> 
 <br/>
 Our ambition wasn’t to shock, but to provoke thought. To take Advertising Attitude’s philosophy of SwirlBold™  —  disruptive creativity paired with disciplined clarity  —  and apply it to something bigger than brands. We built a campaign designed to ask the questions no one else would:     </div>
     </h1>
       
-      <p class=" font-M_semibold text-[1.3rem] leading-[1.6rem] text-background ">
+      <p class=" font-M_semibold text-[1.1rem] leading-[1.3rem] md:text-[1.3rem] md:leading-[1.6rem] text-background ">
 What happens when success doesn’t hold you at night?<br/><br/>
 When dreams don’t breed?<br/><br/>
 When life is reduced to content, not creation?<br/><br/>
@@ -520,14 +520,14 @@ Guided by our SwirlBold™ mentality, we pair disruptive creativity with discipl
     Sector:"Airport / Travel Retail",
     Disciplines:[ "Campaigns"," Retail Marketing"," Brand Activation", "Concept & Creative Direction"," Content & Digital Activation", "Brand Positioning", "eCommerce"],
     date:"2021-24",
-    description:  ` <h1 class="mt-8 font-M_bold text-[2.4rem] leading-[2.8rem] text-background tracking-[.12rem] ">
+    description:  ` <h1 class="mt-8 font-M_bold text-[1.4rem] md:text-[2.4rem] leading-[1.6rem] md:leading-[2.8rem] text-background tracking-[.12rem] ">
 Click & Collect wasn’t just another service at Beirut Duty Free. It was the backbone of a new kind of passenger experience  —  one where “Fast, Easy & Convenient” became more than a slogan. When we began, awareness was minimal, and usage was scattered. Our mandate was clear: turn Click & Collect into a service passengers recognized, remembered, and relied on.
-     <div class=" font-M_semibold text-[1.3rem] leading-[1.6rem] tracking-normal text-background"> 
+     <div class=" font-M_semibold text-[1.1rem] leading-[1.3rem] md:text-[1.3rem] md:leading-[1.6rem] tracking-normal text-background"> 
 <br/>
 The task wasn’t seasonal. It was structural. For three years, we built and optimized the presence of Click & Collect across every channel, every activation, and every major shopping occasion. From Valentine’s hearts to summer sunglasses, from holiday gifting to chocolate season  —  the message stayed consistent. Campaign after campaign, we repeated it louder, clearer, sharper. Because marketing isn’t about saying something once; it’s about making it stick.
     </h1>
       
-      <p class=" font-M_semibold text-[1.3rem] leading-[1.6rem] text-background ">
+      <p class=" font-M_semibold text-[1.1rem] leading-[1.3rem] md:text-[1.3rem] md:leading-[1.6rem] text-background ">
 Our work covered more than visuals  —  it was brand positioning. The “blue rebranding” became a signature identity: vibrant, professional and instantly tied to ease of shopping. On digital, we designed social-first campaigns, landing pages, and media placements that drove passengers online before they even reached the airport. In-store, we amplified through high-impact signage, pillar placements, point-of-sale integration, and repetition across digital walls, cash desks, and gondolas. Even delivery trucks carried the message  —  taking Click & Collect beyond the terminal and into the city.<br/><br/>
 We also sold the benefits, not just the service. Skip the traffic, ditch the hassle. Reserve your gift early. Check the same deals online as in-store. Each benefit spoke to a different passenger voice  —  departures in a hurry, arrivals planning ahead, gift-givers buying smart. Click & Collect became more than online shopping; it became time saved, journeys simplified, novelties discovered along the journey.<br/><br/>
 This consistency paid off. Passengers began to shop frequently. It wasn’t a side service anymore; it became embedded in the shopping journey, shaping how Beirut Duty Free competed in a fast-moving travel retail market. Awareness turned into recall. Recall turned into transactions. And transactions built loyalty.<br/><br/>

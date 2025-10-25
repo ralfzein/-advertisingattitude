@@ -58,8 +58,8 @@ const Footer = () => {
         </motion.div>
         <div className='flex flex-col md:flex-row justify-between md:mt-5 gap-4 '>
             
- <div className='hidden md:flex flex-col md:flex-row  md:items-center gap-3 md:gap-10  '>
-                {[{label:'Facebook',link:"https://www.linkedin.com/company/advertisingattitude"},
+ <div className='flex flex-row flex-wrap sm:flex-col md:flex-row  md:items-center gap-4 md:gap-10  '>
+                {[{label:'Linkedin',link:"https://www.linkedin.com/company/advertisingattitude"},
                 {label: 'Instagram',link:"https://www.instagram.com/advertisingattitude"},
                 {label: 'Facebook',link:"https://www.facebook.com/advertisingattitude"},     
                 ].map((item, index) => (
@@ -68,27 +68,16 @@ const Footer = () => {
                 onClick={() => window.open(`${item.link}`, '_blank')}>{item.label}</span>
                 ))}
                 <span  className='text-sm font-M_bold text-primary tracking-[.1em] cursor-pointer hover:text-secondary'
-                                    onClick={() => navigate('/contact')}>Careers</span>
+                                    onClick={() => navigate('/contact')}>NewsLetter</span>
             </div>
 
-            <div className='flex flex-col md:flex-row items-center    md:items-center gap-1 md:gap-10 '> 
+            <div className='flex flex-wrap items-center  justify-between  md:items-center gap-2 md:gap-10 '> 
                 <span className=' text-xs md:text-sm font-M_bold text-primary tracking-[.1em] cursor-pointer hover:text-secondary'
                    onClick={() => window.open(``, '_blank')}>Privacy policy</span>
                 <span className='text-xs md:text-sm font-M_bold text-primary tracking-[.1em] cursor-pointer hover:text-secondary'>@2025 Advertising Attitude</span>
             </div> 
 
-            <div className='flex md:hidden  items-center justify-center gap-5  '>
-                {[{label:<LinkedinIcon size={26}/>,link:"https://www.linkedin.com/company/advertisingattitude"},
-                {label: <InstagramIcon size={26}/>,link:"https://www.instagram.com/advertisingattitude"},
-                {label: <FacebookIcon size={26}/>,link:"https://www.facebook.com/advertisingattitude"},     
-                ].map((item, index) => (
-                    
-                <span key={index} className='text-lg font-M_bold text-primary tracking-[.1em] cursor-pointer hover:text-secondary'
-                onClick={() => window.open(`${item.link}`, '_blank')}>{item.label}</span>
-                ))}
-                <span  className='text-sm font-M_bold text-primary tracking-[.1em] cursor-pointer hover:text-secondary'
-                                    onClick={() => navigate('/contact')}><BookUserIcon size={26}/></span>
-            </div>
+          
         </div>
         </div>
         <motion.div variants={childVariants} className=' py-2 w-full bg-bur flex items-center  '>
@@ -96,7 +85,7 @@ const Footer = () => {
                 <div className='flex  w-full md:w-auto items-center justify-start  '>
                     <span className='text-[10px] md:text-sm  font-M_medium text-primary tracking-[.1em]'>Beirut  —  Beirut Digital District BDD 1499</span>
                 </div>
-                <div className='  flex flex-col items-start gap-0 md:mr-[6.8rem] w-full md:w-auto '>
+                <div className='  flex flex-col items-start gap-0 md:mr-[6.8rem] w-full md:w-auto mt-1 sm:mt-0 '>
                     <span className='text-[10px] md:text-sm  font-M_medium text-primary tracking-[.1em]'>business@advertisingattitude.com
                       </span>
                     <span className='text-[10px] md:text-sm  font-M_medium text-primary tracking-[.1em]'>talent@advertisingattitude</span>

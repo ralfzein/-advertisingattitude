@@ -153,12 +153,18 @@ const [data,setData]=useState(theAA)
         className=" w-full  bg-[#F2EDD9] pb-[10rem] bg-contain"
         style={{ backgroundImage: `url('/Images/Work/workBg.svg')` }}
       >
-        <motion.div variants={childVariantsnav} className=" relative z-50 w-full " >
+        <motion.div variants={childVariantsnav} className=" relative z-50 w-full hidden md:block " >
           <Nav title={["THE AA PERSPECTIVE"]} tracking={"tracking-[0.6rem]"} color="text-black" />
         </motion.div>
-        <div className=" z-50 pt-40 px-4 md:px-[4rem]">
+
+
+         <motion.div variants={childVariantsnav} className=" relative z-50 w-full md:hidden" >
+          <Nav title={["PERSPECTIVE"]} tracking={"tracking-[0.5rem]"} color="text-black" />
+        </motion.div>
+
+        <div className=" z-50 pt-20 md:pt-40 px-4 md:px-[4rem]">
           <div className="space-y-8">
-            <h3 className="font-R_regular text-center md:text-left text-secondary text-[1.5rem] md:text-[3rem] tracking-[0.3rem] leading-[1.8rem]  md:leading-[3.2rem] ">
+            <h3 className="font-R_regular  text-secondary text-[1.5rem] md:text-[3rem] tracking-[0.1rem] md:tracking-[0.3rem] leading-[1.8rem]  md:leading-[3.2rem] ">
               WE’RE BIASED. TOWARD IDEAS THAT FIGHT HARDER, MOVE FASTER, AND HIT
               DEEPER.
             </h3>
@@ -166,14 +172,14 @@ const [data,setData]=useState(theAA)
               The way we see it, marketing, advertising, and attitude.{" "}
             </h4>
 
-            <div className=" relative w-full min-h-[25rem] " >
-        {!isLoaded1 && <Skeleton className="absolute inset-0 w-full h-[25rem] bg-secondary/30" />}
+            <div className=" relative w-full  h-[10rem] md:min-h-[25rem] " >
+        {!isLoaded1 && <Skeleton className="absolute inset-0 w-full h-[10rem]  md:h-[25rem] bg-secondary/30" />}
 
               <img src={data?.[0]?.img1} 
               onLoad={() => setIsLoaded1(true)}
            className={`transition-opacity duration-500 cursor-pointer ${
             isLoaded1 ? 'opacity-100' : 'opacity-0'
-          } w-full h-full object-contain`}
+          } w-full h-full object-cover md:object-contain`}
     onClick={() => navigate(`/theAA/${data[0].id}`)}
 
           />

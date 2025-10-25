@@ -46,7 +46,7 @@ function Home() {
                 ? lenisRef.current.scrollTo(0, { duration: 1 })
                 : window.scrollTo({ top: 0, behavior: "smooth" })
             }
-            className="hidden md:block fixed bottom-10 right-4 md:right-[4rem] w-18 md:w-32 z-40 cursor-pointer"
+            className=" fixed bottom-10 right-4 md:right-[4rem] w-18 md:w-32 z-40 cursor-pointer"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
@@ -65,24 +65,22 @@ function Home() {
       <section className="h-screen">
         <Campaign />
       </section>
-            <section className="h-screen md:hidden">
-
-        <SwirlM />
-      </section>   
-        <section className="h-screen md:hidden mt-50">
-
-        <Test />
-      </section>   
+             
+         
           <section className="h-screen hidden md:block ">
 
         <Swirl />
       </section>
-      <section className="h-screen hidden md:block ">
+      <section className="h-screen md:hidden">
+
+        <SwirlM />
+      </section>  
+      <section className="h-screen ">
         <TheAA />
       </section>
-       <section className="h-screen md:hidden">
+       {/* <section className="h-screen md:hidden">
         <TheAAM />
-      </section>
+      </section> */}
       <section>
         <RedSection2 />
       </section>

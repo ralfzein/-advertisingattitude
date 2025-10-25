@@ -36,7 +36,7 @@ const ExpandableText = ({ html = "" }) => {
             {/* ✅ Paragraph (only first two lines visible with fading opacity) */}
             {paragraph && (
               <div
-                className="font-M_semibold text-[1.3rem] leading-[1.6rem] tracking-[0.05rem] line-clamp-2 overflow-hidden mb-8"
+                className="font-M_semibold text-[1rem] md:text-[1.3rem] leading-[1.6rem] tracking-[0.05rem] line-clamp-2 overflow-hidden mb-8"
                 style={{
                   background:
                     "linear-gradient(to bottom, rgba(0,0,0,0.4) 30%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0) 100%)",

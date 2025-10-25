@@ -6,6 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import RenderMedia from "./MediaItem";
 import ExpandableText from "./ExpandText";
 import Footer from "../../components/Footer/Footer";
+import { ChevronRight } from "lucide-react";
 
 const CaseStudy = () => {
   const { id } = useParams();         
@@ -28,7 +29,6 @@ useEffect(() => {
   setNextCampaigns(nextThree);
 }, [id]);
 
-
   return (
     <div className='relative w-full snap-start bg-[#F2EDD9] 
     bg-contain'
@@ -36,32 +36,35 @@ useEffect(() => {
       >
       
 
-      <motion.div className="relative z-50 w-full">
+      <motion.div className="relative z-50 w-full hidden md:block">
         <Nav title={["CAMPAIGN MADE BY AA"]} tracking={"tracking-[0.6rem]"} color="text-black" />
       </motion.div>
+   <motion.div className="relative z-50 w-full md:hidden">
+        <Nav title={["CAMPAIGN"]} tracking={"tracking-[0.8rem]"} color="text-black" />
+      </motion.div>
+      <div className="z-50 pt-20 md:pt-40 px-4 md:px-[4rem] pb-30">
+        
+        <h2 className="font-R_regular text-[2.1rem] leading-[2.3rem] md:text-[5rem] md:leading-[5.4rem] tracking-[0.1rem] text-secondary uppercase">{caseS?.cTitle}</h2>
 
-      <div className="z-50 pt-40 px-[4rem] pb-30">
-        <h2 className="font-R_regular text-[5rem] leading-[5.4rem] tracking-[0.1rem] text-secondary uppercase">{caseS?.cTitle}</h2>
-
-        <div className="my-10">
-          <div className="flex items-center  gap-2">
-            <span className="font-M_extrabold text-secondary text-[1.8rem] tracking-[0.1rem]">Client: </span>
-            <span className="font-M_semibold text-background text-[1.5rem] leading-[1rem] tracking-[0.1rem] mt-1 ">{' '}{caseS?.client}</span>
+        <div className="my-6 md:my-10">
+          <div className="flex items-center  gap-1 md:gap-2">
+            <span className="font-M_extrabold text-secondary text-[1.1rem]  md:text-[1.8rem] tracking-[0.1rem]">Client: </span>
+            <span className="font-M_semibold text-background text-[1rem]  md:text-[1.5rem] leading-[1rem] tracking-[0.1rem] mt-1 ">{' '}{caseS?.client}</span>
           </div>
 
-          <div className="flex items-center gap-2">
-            <span className="font-M_extrabold text-secondary text-[1.8rem] tracking-[0.1rem]">Sector: </span>
-            <span className="font-M_semibold text-background text-[1.5rem] leading-[1rem] tracking-[0.1rem] mt-1">{' '}{caseS?.Sector}</span>
+          <div className="flex items-center gap-1 md:gap-2">
+            <span className="font-M_extrabold text-secondary text-[1.1rem]  md:text-[1.8rem] tracking-[0.1rem]">Sector: </span>
+            <span className="font-M_semibold text-background text-[1rem]  md:text-[1.5rem] leading-[1rem] tracking-[0.1rem] mt-1">{' '}{caseS?.Sector}</span>
           </div>
 
           <div className="flex flex-wrap gap-0 ">
-            <span className="font-M_extrabold text-secondary text-[1.8rem] tracking-[0.1rem] leading-[2rem] whitespace-nowrap mr-2">
+            <span className="font-M_extrabold text-secondary text-[1.1rem]  md:text-[1.8rem] tracking-[0.1rem] leading-[2rem] whitespace-nowrap mr-2">
               Disciplines:
             </span>
             {caseS?.Disciplines?.map((item, index) => (
               <span
                 key={index}
-                className="font-M_semibold  text-background text-[1.5rem] leading-[1.5rem] mt-[7px]  tracking-[0.1rem] "
+                className="font-M_semibold  text-background text-[1rem] leading-[1.1rem] md:text-[1.5rem] md:leading-[1.5rem] mt-[7px]  tracking-[0.1rem] "
               >
                 {item}
                 {index < caseS.Disciplines.length - 1 && ','}
@@ -70,8 +73,8 @@ useEffect(() => {
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="font-M_extrabold text-secondary text-[1.8rem] tracking-[0.1rem]">Year: </span>
-            <span className="font-M_semibold text-background text-[1.5rem] leading-[1rem] tracking-[0.1rem]">{' '}{caseS?.date}</span>
+            <span className="font-M_extrabold text-secondary text-[1.1rem]  md:text-[1.8rem] tracking-[0.1rem]">Year: </span>
+            <span className="font-M_semibold text-background text-[1rem]  md:text-[1.5rem] leading-[1rem] tracking-[0.1rem]">{' '}{caseS?.date}</span>
           </div>
         </div>
             {caseS?.id == 9 ?(
@@ -79,6 +82,7 @@ useEffect(() => {
           <div>
           <RenderMedia src={caseS?.section1?.[0]} className="!w-[28rem]  !object-cover " />
           </div>
+          
           <div>
 
           <RenderMedia src={caseS?.section1?.[1]} className="!w-[28rem] !object-cover" />
@@ -87,22 +91,25 @@ useEffect(() => {
 
             ):(
         <div>
-          <RenderMedia src={caseS?.section1?.[0]} className="min-h-[30rem]" />
+          <RenderMedia src={caseS?.section1?.[0]} className="h-[13rem] md:h-[30rem]" />
         </div>
 
             )}
 
-      
+      <div className='my-5 text-secondary font-R_regular capitalize flex items-center gap-0'>
+                                <p className='cursor-pointer hover:opacity-80'
+                               onClick={() => navigate(`/work`)}
+                                >Work</p> <ChevronRight className='opacity-70' /> <p className='opacity-70'> {caseS?.title} </p></div>
         <ExpandableText html={caseS?.description} />
  
         {/* Testimonial Section */}
-        <div className="my-20">
-          <h3 className="font-R_regular text-[3.6rem] leading-[4.2rem] text-secondary tracking-[0.1rem]">
-           “{caseS?.testimonial?.[0]}”
+        <div className="my-10 md:my-20">
+          <h3 className="font-R_regular text-center md:text-left text-[1.8rem] leading-[2rem] md:text-[3.6rem] md:leading-[4.2rem] text-secondary tracking-[0.1rem]">
+            “{caseS?.testimonial?.[0]}”
           </h3>
-          <div className="w-full items-end justify-end flex flex-col mt-5">
-            <div className="items-start justify-start flex flex-col">
-              <div className="font-R_regular text-black text-[2rem] leading-[2rem] tracking-[0.1rem]">-            {caseS?.testimonial?.[1]}
+          <div className="w-full items-center justify-center  md:items-end md:justify-end flex flex-col mt-5">
+            <div className="md:items-start md:justify-start items-center justify-center flex flex-col ">
+              <div className="font-R_regular text-black text-[1.8rem] md:text-[2rem] leading-[2rem] tracking-[0.1rem] text-center md:text-left ">-            {caseS?.testimonial?.[1]}
 </div>
               <div className="font-R_regular text-black text-sm ml-5 tracking-[0.1rem]">            {caseS?.testimonial?.[2]}
 </div>
@@ -114,7 +121,7 @@ useEffect(() => {
           {caseS?.section2.length > 0 &&
         (
         <div className="w-full">
-          <div className="w-full grid grid-cols-4 gap-5">
+          <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-5 bg">
             {caseS?.section2?.map((src, index) => (
               <div key={index} className={`
               ${caseS?.id===3 ? 
@@ -123,7 +130,7 @@ useEffect(() => {
                
                
                }`}>
-                <RenderMedia src={src} className={` h-[40rem] 
+                <RenderMedia src={src} className={` h-[20rem] md:h-[40rem] 
                   ${caseS.id === 2 ? (index===1 && "!object-contain") : ""
                   } `}  />
               </div>
@@ -133,13 +140,13 @@ useEffect(() => {
         )}
           {caseS?.testimonial2?.[0] &&(
 
-     <div className="my-20">
-          <h3 className="font-R_regular text-[3.6rem] leading-[4.2rem] text-secondary tracking-[0.1rem]">
+     <div className="my-10 md:my-20">
+          <h3 className="font-R_regular text-center md:text-left text-[1.8rem] leading-[2rem] md:text-[3.6rem] md:leading-[4.2rem] text-secondary tracking-[0.1rem]">
             “{caseS?.testimonial2?.[0]}”
           </h3>
-          <div className="w-full items-end justify-end flex flex-col mt-5">
-            <div className="items-start justify-start flex flex-col">
-              <div className="font-R_regular text-black text-[2rem] leading-[2rem] tracking-[0.1rem]">-            {caseS?.testimonial2?.[1]}
+          <div className="w-full items-center justify-center  md:items-end md:justify-end flex flex-col mt-5">
+            <div className="md:items-start md:justify-start items-center justify-center flex flex-col ">
+              <div className="font-R_regular text-black text-[1.8rem] md:text-[2rem] leading-[2rem] tracking-[0.1rem] text-center md:text-left ">-            {caseS?.testimonial2?.[1]}
 </div>
               <div className="font-R_regular text-black text-sm ml-5 tracking-[0.1rem]">            {caseS?.testimonial2?.[2]}
 </div>
@@ -151,10 +158,10 @@ useEffect(() => {
         {/* Section 3 */}
         {caseS?.id==4 ? 
         <div className="w-full">
-          <div className={`w-full flex items-center justify-center gap-10 ${caseS?.id==4 ? "  " : ""}`}>
+          <div className={`w-full flex items-center justify-center gap-4 md:gap-10 ${caseS?.id==4 ? "  " : ""}`}>
             {caseS?.section3?.map((src, index) => (
               <div key={index} className={`   flex items-center justify-center`}>
-                <RenderMedia src={src} className={`${caseS?.id==4 ? "!w-[30rem]  object-cover h-auto " : "h-[40rem]"}`} />
+                <RenderMedia src={src} className={`${caseS?.id==4 ? "!w-[30rem]  object-cover h-auto " : "h-[10rem] md:h-[40rem]"}`} />
               </div>
             ))}
           </div>
@@ -162,10 +169,10 @@ useEffect(() => {
         :
 
           <div className="w-full">
-          <div className="w-full grid grid-cols-2 gap-10">
+          <div className="w-full grid grid-cols-2 gap-4 md:gap-10">
             {caseS?.section3?.map((src, index) => (
               <div key={index} className={`col-span-1 ${  index === 2 ? "col-span-2" : ""}`}>
-                <RenderMedia src={src} className={`${index === 2 ? "" : "h-[40rem]"}`} />
+                <RenderMedia src={src} className={`${index === 2 ? "h-[10rem] md:h-auto" : "h-[10rem] md:h-[40rem]"}`} />
               </div>
             ))}
           </div>
@@ -173,13 +180,13 @@ useEffect(() => {
     }
 
 
-   <div className="my-20">
-          <h3 className="font-R_regular text-[3.6rem] leading-[4.2rem] text-secondary tracking-[0.1rem]">
+   <div className="my-10 md:my-20">
+          <h3 className="font-R_regular text-center md:text-left text-[1.8rem] leading-[2rem] md:text-[3.6rem] md:leading-[4.2rem] text-secondary tracking-[0.1rem]">
             “{caseS?.testimonial3?.[0]}”
           </h3>
-          <div className="w-full items-end justify-end flex flex-col mt-5">
-            <div className="items-start justify-start flex flex-col">
-              <div className="font-R_regular text-black text-[2rem] leading-[2rem] tracking-[0.1rem]">-            {caseS?.testimonial3?.[1]}
+          <div className="w-full items-center justify-center  md:items-end md:justify-end flex flex-col mt-5">
+            <div className="md:items-start md:justify-start items-center justify-center flex flex-col ">
+              <div className="font-R_regular text-black text-[1.8rem] md:text-[2rem] leading-[2rem] tracking-[0.1rem] text-center md:text-left ">-            {caseS?.testimonial3?.[1]}
 </div>
               <div className="font-R_regular text-black text-sm ml-5 tracking-[0.1rem]">            {caseS?.testimonial3?.[2]}
 </div>
@@ -190,10 +197,10 @@ useEffect(() => {
         {caseS?.section4.length > 0 &&
         (
         <div className="w-full">
-          <div className="w-full grid grid-cols-4 gap-10">
+          <div className="w-full grid grid-cols-4 gap-4 md:gap-10 ">
             {caseS?.section4?.map((src, index) => (
-              <div key={index} className="col-span-1">
-                <RenderMedia src={src} className={`${ caseS?.id==3 ? (index === 0 ? " h-[40rem] !object-contain" : " h-[40rem]"): " h-[40rem]"}  `} />
+              <div key={index} className=" col-span-2 md:col-span-1">
+                <RenderMedia src={src} className={`${ caseS?.id==3 ? (index === 0 ? " h-[15rem] md:h-[40rem] !object-contain" : " h-[15rem] md:h-[40rem]"): " h-[15rem] md:h-[40rem]"}  `} />
               </div>
             ))}
           </div>
@@ -203,12 +210,12 @@ useEffect(() => {
 }
 
 <div className="mt-30 space-y-10">
-      <h1 className="font-R_regular text-[5rem] leading-[5rem] tracking-[0.3rem] text-background ">More Bold Moves</h1>
+      <h1 className="font-R_regular text-[2rem]  leading-[2rem] md:text-[5rem] md:leading-[5rem] tracking-[0.1rem] md:tracking-[0.3rem] text-background ">More Bold Moves</h1>
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 ">
         {nextCampaigns.map((item, idx) => (
           <div
             key={item.id || idx}
-            className="relative h-[35rem]  overflow-hidden group cursor-pointer"
+            className="relative h-[16rem] md:h-[35rem]  overflow-hidden group cursor-pointer"
     onClick={() => navigate(`/case-study/${item.id}`)}
 
           >
@@ -227,6 +234,7 @@ useEffect(() => {
               <h3 className="text-primary font-M_medium text-[1.3rem]  line-clamp-2">{item.cTitle}</h3>
               </div>
             </div>
+
           </div>
         ))}
       </div>

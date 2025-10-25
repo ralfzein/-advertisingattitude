@@ -11,12 +11,12 @@ const TheAA = [
     tags: ["Brand Philosophy", "Creative Journey"],
     paragraph1: `
      
-       <h1 class="font-M_bold  text-[2rem] leading-[2rem] trancking-[0.1rem]" >
+       <h1 class="font-M_bold  text-[1.7rem] leading-[1.9rem] md:text-[2rem] md:leading-[2rem] trancking-[0.1rem]" >
        Before every bold campaign comes a bold way of thinking. </h1> 
        <p class="font-M_semibold text-[1rem]  leading-[1.2rem] ">
         Advertising Attitude didn’t start as a company. It started as a conviction — that great marketing isn’t made by tools, trends, or titles. It’s made by how you think, how you feel, and how you act.
         </p>
-       <h1 class="font-M_bold text-[2rem] leading-[2rem] trancking-[0.1rem]" >
+       <h1 class="font-M_bold text-[1.7rem] leading-[1.9rem] md:text-[2rem] md:leading-[2rem] trancking-[0.1rem]" >
 
         Thinking boldly starts with rebellion. 
         </h1>
@@ -24,14 +24,14 @@ const TheAA = [
 
         Safe thinking kills more ideas than bad execution. Every strategy we build begins with defiance — questioning rules, dissecting clichés, and refusing to copy what’s already loud. Thinking boldly means creating logic where others see chaos.
         </p>
-       <h1 class="font-M_bold text-[2rem] leading-[2rem] trancking-[0.1rem]" >
+       <h1 class="font-M_bold text-[1.7rem] leading-[1.9rem] md:text-[2rem] md:leading-[2rem] trancking-[0.1rem]" >
 
         Feeling deeply keeps it human.
         </h1>
        <p class="font-M_semibold text-[1rem]  leading-[1.2rem] "> 
         Marketing isn’t math — it’s pulse. A brand that doesn’t feel human is just another transaction. We dive into emotion, culture, and context until the story hurts enough to matter. If it doesn’t move you, it won’t move anyone else.
         </p>
-       <h1 class="font-M_bold text-[2rem] leading-[2rem] trancking-[0.1rem]" >
+       <h1 class="font-M_bold text-[1.7rem] leading-[1.9rem] md:text-[2rem] md:leading-[2rem] trancking-[0.1rem]" >
 
         Acting smartly separates the dreamers from the doers. 
         </h1>
@@ -59,7 +59,7 @@ const TheAA = [
     tags: ["Strategic Branding ", " AI in Marketing ", "Brand Transformation"],
     paragraph1: `
      
-       <h1 class="font-M_bold  text-[2rem] leading-[2rem] trancking-[0.1rem]" >
+       <h1 class="font-M_bold  text-[1.7rem] leading-[1.9rem] md:text-[2rem] md:leading-[2rem] trancking-[0.1rem]" >
       AI didn’t kill strategy — it exposed who never had one.  In a world of instant design, the only real advantage left is definition.
        </h1> 
 
@@ -67,13 +67,13 @@ const TheAA = [
        <p class="font-M_semibold text-[1rem]  leading-[1.2rem] ">
 Most brands skip the part that matters: who they are and why they exist. They jump straight to logos, colors, and campaigns — because those look productive. But without a strategic core, every design becomes decoration.
 Branding without direction is just art with invoices.
-<h1 class="font-M_bold text-[2rem] leading-[2rem] trancking-[0.1rem]" >
+<h1 class="font-M_bold text-[1.7rem] leading-[1.9rem] md:text-[2rem] md:leading-[2rem] trancking-[0.1rem]" >
 The Shift: Back to Strategic Branding
 </h1>
         <p class="font-M_semibold text-[1rem]  leading-[1.2rem] ">
 AI has accelerated everything — but it can’t think for you. It can generate a thousand brandboards in seconds, but none will mean anything unless the foundation is set. That foundation is strategic branding — defining purpose, audience, personality, promise, and standards before you draw anything. This is the part most skip — and the part AI can’t do for you.        </p>
 </p>    
-<h1 class="font-M_bold text-[2rem] leading-[2rem] trancking-[0.1rem]" >
+<h1 class="font-M_bold text-[1.7rem] leading-[1.9rem] md:text-[2rem] md:leading-[2rem] trancking-[0.1rem]" >
 
        AI can scale your creativity, but only if your clarity is strong enough to guide it.
 
@@ -128,7 +128,7 @@ The AA Framework
 
 AI didn’t make branding easier. It made it honest. It exposed the difference between identity and imagination — between marketers who lead with thought and those who hide behind aesthetics.
         </p>
-       <h1 class="font-M_bold text-[2rem] leading-[2rem] trancking-[0.1rem]" >
+       <h1 class="font-M_bold text-[1.7rem] leading-[1.9rem] md:text-[2rem] md:leading-[2rem] trancking-[0.1rem]" >
 
        In this new era, clarity is the new creativity.
         </h1>
@@ -150,7 +150,7 @@ AI won’t save bad branding — it will accelerate its failure. But it will rew
     tags: ["Strategic Marketing ", " Creative Courage"],
     paragraph1: `
      
-       <h1 class="font-M_bold  text-[2rem] leading-[2rem] trancking-[0.1rem]" >
+       <h1 class="font-M_bold  text-[1.7rem] leading-[1.9rem] md:text-[2rem] md:leading-[2rem] trancking-[0.1rem]" >
        Everyone talks about being bold. Few actually are. Boldness isn’t volume — it’s vulnerability with purpose.
         </h1> 
        <p class="font-M_semibold text-[1rem]  leading-[1.2rem] ">
@@ -158,7 +158,7 @@ AI won’t save bad branding — it will accelerate its failure. But it will rew
 
         </p>
     
-   <h1 class="font-M_bold  text-[2rem] leading-[2rem] trancking-[0.1rem]" >
+   <h1 class="font-M_bold  text-[1.7rem] leading-[1.9rem] md:text-[2rem] md:leading-[2rem] trancking-[0.1rem]" >
        Boldness is saying what others whisper — and owning it publicly.
         </h1> 
        <p class="font-M_semibold text-[1rem]  leading-[1.2rem] ">
@@ -203,14 +203,14 @@ Bold challenges people. And the right kind of bold makes them move.
     time: "3-minute read",
     tags: ["Brand Philosophy ", " Creative Courage"],
     paragraph1: `
-                   <h1 class="font-M_bold  text-[2rem] leading-[2rem] trancking-[0.1rem]" >
+                   <h1 class="font-M_bold  text-[1.7rem] leading-[1.9rem] md:text-[2rem] md:leading-[2rem] trancking-[0.1rem]" >
        
         </h1> 
        <p class="font-M_semibold text-[1rem]  leading-[1.2rem] ">
        Every big shift starts with a whisper — an idea that almost no one believes in at first. But the difference between noise and legacy is what you do with that whisper. You don’t need a crowd to be heard. You need conviction strong enough to outlive silence. We live in a world that rewards visibility, not originality. Everyone’s posting, launching, and shouting louder — but few are listening to their own ideas long enough to evolve them
         </p>
 
-           <h1 class="font-M_bold  text-[2rem] leading-[2rem] trancking-[0.1rem]" >
+           <h1 class="font-M_bold  text-[1.7rem] leading-[1.9rem] md:text-[2rem] md:leading-[2rem] trancking-[0.1rem]" >
        Disruption doesn’t begin with attention — it begins with authenticity.
 
 
@@ -242,7 +242,7 @@ Bold challenges people. And the right kind of bold makes them move.
 Advertising Attitude was built on this belief — that ideas evolve by being expressed, not protected. You can’t disrupt silently. You have to speak, create, and risk being misunderstood.
                 </p>
 
-                 <h1 class="font-M_bold  text-[2rem] leading-[2rem] trancking-[0.1rem]" >
+                 <h1 class="font-M_bold  text-[1.7rem] leading-[1.9rem] md:text-[2rem] md:leading-[2rem] trancking-[0.1rem]" >
        That’s how real brand voices, creators, and leaders are born — not by waiting for the right time, but by creating the right ripple.
         </h1> 
        <p class="font-M_semibold text-[1rem]  leading-[1.2rem] ">
@@ -273,14 +273,14 @@ Advertising Attitude was built on this belief — that ideas evolve by being exp
 
         </p>
 
-         <h1 class="font-M_bold  text-[2rem] leading-[2rem] trancking-[0.1rem]" >
+         <h1 class="font-M_bold  text-[1.7rem] leading-[1.9rem] md:text-[2rem] md:leading-[2rem] trancking-[0.1rem]" >
        You can’t shortcut experience. You can’t automate taste. And you definitely can’t scale burnout.
         </h1> 
        <p class="font-M_semibold text-[1rem]  leading-[1.2rem] ">
        When you underprice creative work, you don’t just devalue the outcome — you destroy the process. The team starts cutting corners, the strategy disappears, and the brand suffers quietly while the numbers look good for a moment. At the end of the day, you don’t pay for deliverables — you pay for discipline.
         </p>
 
-         <h1 class="font-M_bold  text-[2rem] leading-[2rem] trancking-[0.1rem]" >
+         <h1 class="font-M_bold  text-[1.7rem] leading-[1.9rem] md:text-[2rem] md:leading-[2rem] trancking-[0.1rem]" >
        
 You pay for discipline — the kind that comes from mastery.
         </h1> 
@@ -306,7 +306,7 @@ You pay for discipline — the kind that comes from mastery.
 
         </p>
 
-         <h1 class="font-M_bold  text-[2rem] leading-[2rem] trancking-[0.1rem]" >
+         <h1 class="font-M_bold  text-[1.7rem] leading-[1.9rem] md:text-[2rem] md:leading-[2rem] trancking-[0.1rem]" >
        We’d rather work with one high-ticket client than ten low-ticket ones who treat it like an experiment.
         </h1> 
        <p class="font-M_semibold text-[1rem]  leading-[1.2rem] ">
@@ -343,7 +343,7 @@ You pay for discipline — the kind that comes from mastery.
         </p>
             
 
-        <h1 class="font-M_bold  text-[2rem] leading-[2rem] trancking-[0.1rem]" >
+        <h1 class="font-M_bold  text-[1.7rem] leading-[1.9rem] md:text-[2rem] md:leading-[2rem] trancking-[0.1rem]" >
        Ads are not the enemy of authenticity — they’re the ally of momentum.
 
         </h1> 
@@ -393,7 +393,7 @@ You pay for discipline — the kind that comes from mastery.
                          <p class="font-M_semibold text-[1rem]  leading-[1.2rem] ">
                          Marketing isn’t one personality — it’s a spectrum of minds. Some build the narrative, some measure the pulse, and others shape the direction. But here’s the catch — 
                         </p>
-                     <h1 class="font-M_bold  text-[2rem] leading-[2rem] trancking-[0.1rem]" >
+                     <h1 class="font-M_bold  text-[1.7rem] leading-[1.9rem] md:text-[2rem] md:leading-[2rem] trancking-[0.1rem]" >
        The best marketers know who they are before they try to become everything.
 
         </h1> 
@@ -438,7 +438,7 @@ You pay for discipline — the kind that comes from mastery.
 <br/> <br/>The best marketers aren’t one archetype. They’re the fusion — the storyteller who understands data, the strategist who feels, the visionary who measures. In the end, it’s not about what kind of marketer you are.
 
         </p>
-     <h1 class="font-M_bold  text-[2rem] leading-[2rem] trancking-[0.1rem]" >
+     <h1 class="font-M_bold  text-[1.7rem] leading-[1.9rem] md:text-[2rem] md:leading-[2rem] trancking-[0.1rem]" >
       It’s about knowing your edge — and owning it so deeply that it becomes your advantage.
         </h1>
          <p class="font-M_semibold text-[1rem]  leading-[1.2rem] ">
@@ -461,7 +461,7 @@ You pay for discipline — the kind that comes from mastery.
 Marketing today isn’t about offices — it’s about outcomes. One marketer can’t do it all, and one team shouldn’t have to. The smartest CEOs are realizing
 
         </p>
-        <h1 class="font-M_bold  text-[2rem] leading-[2rem] trancking-[0.1rem]" >
+        <h1 class="font-M_bold  text-[1.7rem] leading-[1.9rem] md:text-[2rem] md:leading-[2rem] trancking-[0.1rem]" >
             It’s not about hiring more people. It’s about hiring more efficiently.
 
         </h1>
@@ -482,7 +482,7 @@ Most companies still treat marketing like payroll — not performance. Full-time
 
 
 
-          <h1 class="font-M_bold  text-[2rem] leading-[2rem] trancking-[0.1rem]" >
+          <h1 class="font-M_bold  text-[1.7rem] leading-[1.9rem] md:text-[2rem] md:leading-[2rem] trancking-[0.1rem]" >
 Modern CEOs buy outcomes, not hours.
 
         </h1>
@@ -520,7 +520,7 @@ Internal teams execute what you tell them. Agencies challenge what you assume. T
         </p>
 
 
-        <h1 class="font-M_bold  text-[2rem] leading-[2rem] trancking-[0.1rem]" >
+        <h1 class="font-M_bold  text-[1.7rem] leading-[1.9rem] md:text-[2rem] md:leading-[2rem] trancking-[0.1rem]" >
 One protects the status quo. The other breaks it — and rebuilds it better. 
 
         </h1>
@@ -545,7 +545,7 @@ If you’re a CEO still running your marketing like a payroll department, it’s
 
         </p>
 
-          <h1 class="font-M_bold  text-[2rem] leading-[2rem] trancking-[0.1rem]" >
+          <h1 class="font-M_bold  text-[1.7rem] leading-[1.9rem] md:text-[2rem] md:leading-[2rem] trancking-[0.1rem]" >
 Because the real power move isn’t doing more — it’s doing what matters, faster.
 
         </h1>
@@ -568,7 +568,7 @@ Creativity has no shift. No clock-in, no clock-out. It hits mid-coffee, mid-cris
         </p>
 
 
-      <h1 class="font-M_bold  text-[2rem] leading-[2rem] trancking-[0.1rem]" >
+      <h1 class="font-M_bold  text-[1.7rem] leading-[1.9rem] md:text-[2rem] md:leading-[2rem] trancking-[0.1rem]" >
 It’s a fight between the muse and the deadline, between obsession and exhaustion.
 
         </h1>
@@ -651,7 +651,7 @@ The Hidden Cost of Comfort
 “Good enough” is the most expensive phrase in marketing. Brands lose more in silent months — in stale ideas, unchallenged reports, and slow creative cycles — than they do on any campaign gone wrong. If your agency stopped making you uncomfortable, they’ve stopped making you grow.
 
         </p>
-          <h1 class="font-M_bold  text-[2rem] leading-[2rem] trancking-[0.1rem]" >
+          <h1 class="font-M_bold  text-[1.7rem] leading-[1.9rem] md:text-[2rem] md:leading-[2rem] trancking-[0.1rem]" >
 Because real partners don’t just execute briefs. They challenge them.
 
         </h1>
@@ -662,7 +662,7 @@ If you’re doing the thinking, the strategy, and the lifting — who’s really
         </p>
 
 
-          <h1 class="font-M_bold  text-[2rem] leading-[2rem] trancking-[0.1rem]" >
+          <h1 class="font-M_bold  text-[1.7rem] leading-[1.9rem] md:text-[2rem] md:leading-[2rem] trancking-[0.1rem]" >
 Next year’s wins start now.
 
         </h1>
@@ -692,7 +692,7 @@ Because the best partnerships — like the best campaigns — are built before t
 campaigns didn’t start perfect — they started moving. Every “almost ready” idea that stays in drafts loses its spark a little    
            </p>
     
-      <h1 class="font-M_bold  text-[2rem] leading-[2rem] trancking-[0.1rem]" >
+      <h1 class="font-M_bold  text-[1.7rem] leading-[1.9rem] md:text-[2rem] md:leading-[2rem] trancking-[0.1rem]" >
 Perfection doesn’t make ideas stronger — motion does.
 
         </h1>
@@ -706,7 +706,7 @@ The first version won’t be flawless — it’s not supposed to be. It’s supp
 
 
   </p>
-     <h1 class="font-M_bold  text-[2rem] leading-[2rem] trancking-[0.1rem]" >
+     <h1 class="font-M_bold  text-[1.7rem] leading-[1.9rem] md:text-[2rem] md:leading-[2rem] trancking-[0.1rem]" >
 Momentum > Masterpiece.
 
         </h1>
@@ -747,7 +747,7 @@ Stop waiting for perfect conditions. They don’t exist. Start with what you hav
     <p class="font-M_semibold text-[1rem]  leading-[1.2rem] ">
     You know what it takes to win — but you’re not doing it. You know what needs fixing — but you’re still in meetings explaining why you can’t. This is the paradox of the “almost” marketer. Brilliant on paper. Brave in theory. But somewhere between approval decks, fake urgency, and company politics — 
 </p>
- <h1 class="font-M_bold  text-[2rem] leading-[2rem] trancking-[0.1rem]" >
+ <h1 class="font-M_bold  text-[1.7rem] leading-[1.9rem] md:text-[2rem] md:leading-[2rem] trancking-[0.1rem]" >
 The fighter became a follower.
 
         </h1>
@@ -767,7 +767,7 @@ How Marketers Lose Without Knowing It
   </p>
 
 
- <h1 class="font-M_bold  text-[2rem] leading-[2rem] trancking-[0.1rem]" >
+ <h1 class="font-M_bold  text-[1.7rem] leading-[1.9rem] md:text-[2rem] md:leading-[2rem] trancking-[0.1rem]" >
 You stopped fighting for your ideas.
 
         </h1>
@@ -784,7 +784,7 @@ If you’re not hands-on, you’re not in the game. If you’re still getting th
 
   </p>
 
-   <h1 class="font-M_bold  text-[2rem] leading-[2rem] trancking-[0.1rem]" >
+   <h1 class="font-M_bold  text-[1.7rem] leading-[1.9rem] md:text-[2rem] md:leading-[2rem] trancking-[0.1rem]" >
 Brands don’t rise on ideas. They rise on marketers brave enough to lead them.
 
         </h1>

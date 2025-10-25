@@ -135,8 +135,13 @@ const navigate =useNavigate();
       whileInView="show"
       className="relative h-screen w-full overflow-hidden snap-start"
     >
-      <motion.div className="relative z-50 w-full" variants={childVariantsnav}>
-        <Nav title={"THE AA PERSPECTIVE"} tracking={"tracking-[.8rem]"} />
+      <motion.div className="relative z-50 w-full hidden md:block" variants={childVariantsnav}>
+        <Nav title={"THE AA PERSPECTIVE"} tracking={"text-[1.5rem] tracking-[0.8rem]"} />
+        {/* <Nav title={"THINK BOLDLY"} tracking={"tracking-[1.9rem]"} /> */}
+      </motion.div>
+
+        <motion.div className="relative z-50 w-full md:hidden" variants={childVariantsnav}>
+        <Nav title={"PERSPECTIVE"} tracking={"text-[1.5rem] tracking-[0.4rem]"} />
         {/* <Nav title={"THINK BOLDLY"} tracking={"tracking-[1.9rem]"} /> */}
       </motion.div>
 
@@ -149,43 +154,45 @@ const navigate =useNavigate();
     <motion.div
       variants={childVariantsScale}
    >
-      <div className="flex bg w-full gap-20 items-center justify-between  h-[30rem]   mt-40 px-[4rem] ">
+      <div className="flex flex-col-reverse sm:flex-row w-full  sm:gap-20 items-center justify-between h-[80vh]  md:h-[30rem]  mt-15  sm:mt-40 sm:px-[4rem] ">
         {/* Text content */}
         <div
-          className="flex-1 flex flex-col items-start justify-between bg-  h-full "
+          className="flex-1 flex flex-col items-start  md:justify-between  h-full  px-5 sm:px-0"
         >
           <motion.div
           key={index} // force remount when index changes
           variants={childVariants}
           initial="hidden"
-          animate="show" className=" flex flex-col items-start gap-5 ">
-            <h3 className="text-secondary font-R_regular text-[4.8rem] leading-[4.5rem] tracking-[0.1em] whitespace-pre-line">
+          animate="show" className=" flex flex-col items-start md:justify-between  gap-5  h-[12rem]   md:h-auto ">
+            <h3 className="w-full sm:w-auto   text-secondary font-R_regular text-[2.1rem] text-center sm:text-left leading-[2.3rem] sm:text-[4.8rem]
+             sm:leading-[4.5rem] sm:tracking-[0.1em] whitespace-pre-line   ">
               {slides[index].title}
             </h3>
             <p
-              className="text-lg text-primary leading-[1.3rem] font-M_regular 
-               tracking-[0.1em] whitespace-pre-line"
+              className="text-[0.8rem] sm:text-lg text-primary text-center sm:text-left sm:leading-[1.3rem] font-M_regular   px-4 sm:px-0
+               sm:tracking-[0.1em] whitespace-pre-line line-clamp-4"
             >
               {slides[index].subtitle}
             </p>
           </motion.div>
-
+ <div className="w-full sm:w-auto flex justify-center sm:justify-start mt-2 ">
           <Button
-            className=" font-R_regular  text-[1.5rem] tracking-[0.12em] leading-[4rem] mt-0
-          flex items-center justify-center w-[20rem] h-[5rem] hover:bg-secondary hover:opacity-80 cursor-pointer
-           rounded-full   text-primary bg-secondary"
+            className="w-[14rem] font-R_regular text-[0.8rem] md:text-[1.5rem] tracking-[0.12em] leading-[4rem] 
+          flex items-center justify-center sm:w-full md:w-[25rem] h-[2.5rem] md:h-[5rem] hover:bg-secondary hover:opacity-80 cursor-pointer
+           rounded-full text-primary bg-secondary"
             variant="default"
             size="default"
 
           >
             SEE THE TAKE
           </Button>
+          </div>
         </div>
 
-        <div className="relative flex-1 w-full flex items-center justify-center h-[30rem]">
+        <div className="relative flex-1 w-full flex items-center justify-center md:h-[30rem] ">
           <div className="absolute right-12">
             <div
-              className="carousel-container cursor-grab "
+              className="carousel-container cursor-grab"
               onMouseDown={handlePointerDown}
               onMouseUp={handlePointerUp}
               onTouchStart={handlePointerDown}
@@ -222,7 +229,7 @@ const navigate =useNavigate();
 
     </motion.div>
       {/* Dots */}
-      <div className="absolute  bottom-10 left-1/2 -translate-x-1/2 flex gap-5 z-30   cursor-pointer">
+      <div className="absolute bottom:35  md:bottom-15 left-1/2 -translate-x-1/2 flex gap-4 z-30   cursor-pointer">
         {slides.map((_, i) => (
           <button
             key={i}
@@ -230,7 +237,7 @@ const navigate =useNavigate();
               setIndex(i > index ? 1 : -1);
               setIndex(i);
             }}
-            className={`w-5 h-5 rounded-full border transition cursor-pointer ${
+            className={`w-3 h-3 md:w-5 md:h-5 rounded-full border transition cursor-pointer ${
               i === index
                 ? "bg-primary  border-transparent "
                 : "bg-transparent boder  border-primary"

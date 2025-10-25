@@ -18,22 +18,22 @@ const Grids = ({ data }) => {
   };
 
   return (
-    <div className="w-full h-full grid gap-20 mt-20">
+    <div className="w-full h-full grid gap-10 mt-6 md:mt-20">
       {chunks.slice(0, visibleChunks).map((group, index) => (
-        <div key={index} className="w-full h-full flex flex-col gap-20 ">
+        <div key={index} className="w-full h-full flex flex-col gap-8 md:gap-20 ">
           {/* First Grid - 2 cards */}
           {(group[0] || group[1]) && (
-            <div className="flex w-full gap-5">
+            <div className="flex flex-col md:flex-row w-full gap-5">
               {group[0] && (
-                <div className="w-full !flex-[0.8] max-w-[45%] pr-[6rem]">
-                  <Cards data={group[0]} style={"h-[36rem]   object-cover"} />
+                <div className="w-full md:!flex-[0.8] md:max-w-[45%] md:pr-[6rem]">
+                  <Cards data={group[0]} style={"h-[10rem] md:h-[36rem]   object-cover"} />
                 </div>
               )}
               {group[1] && (
-                <div className="w-full flex-[1.3] ">
+                <div className="w-full md:flex-[1.3] ">
                   <Cards
                     data={group[1]}
-                    style={" w-full  mt-[3rem]"}
+                    style={" h-[10rem] md:h-auto w-full  mt-[3rem]"}
                   />
                 </div>
               )}
@@ -49,18 +49,18 @@ const Grids = ({ data }) => {
 
           {/* Second Grid - reversed */}
           {(group[3] || group[4]) && (
-             <div className="flex w-full gap-5">
+             <div className="flex flex-col md:flex-row w-full gap-5">
               {group[3] && (
                 <div className="w-full flex-[1.3] ">
                   <Cards
                     data={group[3]}
-                    style={"  object-cover"}
+                    style={"h-[10rem] md:h-auto  object-cover"}
                     />
                 </div>
               )}
               {group[4] && (
-                <div className="w-full !flex-[0.8]  mt-[3rem]  pl-[6rem]">
-                  <Cards data={group[4]} style={" h-[35rem]   object-cover"} />
+                <div className="w-full md:!flex-[0.8]  mt-[3rem]  md:pl-[6rem]">
+                  <Cards data={group[4]} style={" h-[10rem] md:h-[35rem] object-cover"} />
                 </div>
               )}
             </div>
@@ -68,14 +68,14 @@ const Grids = ({ data }) => {
 
           {/* Only show title after the FIRST 5 cards */}
           {index === 0 && (
-            <div className="mt-12">
+            <div className="  md:mt-12">
               <h3
-                className="font-M_bold text-secondary text-[4rem] tracking-[0.5rem]
-                leading-[4rem] text-justify"
+                className="font-M_bold text-secondary text-[1.8rem] md:text-[4rem] tracking-[0.1rem] md:tracking-[0.5rem]
+             leading-[1.9rem]   md:leading-[4rem] md:text-justify"
               >
-                YOU’VE MISSED A LOT… <br /> BY NOT EXECUTING YOUR IDEAS
+                YOU’VE MISSED A LOT… <br className="hidden md:block" /> BY NOT EXECUTING YOUR IDEAS
               </h3>
-              <p className="font-M_bold text-black text-[1.8rem] tracking-[0.2rem] mt-8">
+              <p className="font-M_bold text-black text-[1.5rem] leading-[1.6rem] md:text-[1.8rem] tracking-[0.1rem] md:tracking-[0.2rem] mt-4 md:mt-8">
                 Bold ideas need bold defenders.
               </p>
             </div>

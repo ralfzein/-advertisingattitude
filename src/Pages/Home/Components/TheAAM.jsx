@@ -96,7 +96,7 @@ export default function TheAAM() {
     const interval = setInterval(() => {
       const nextIndex = (api.selectedScrollSnap() + 1) % slides.length;
       api.scrollTo(nextIndex);
-    }, 10000);
+    }, 100000);
 
     return () => clearInterval(interval);
   }, [api]);
@@ -118,7 +118,7 @@ const navigate =useNavigate();
         className="h-screen w-screen "
         setApi={setApi}
       >
-        <CarouselContent className="h-screen ">
+        <CarouselContent className="md:h-screen ">
           {slides.map((slide, index) => (
             <CarouselItem
               key={index}

@@ -6,7 +6,7 @@ const Cards = ({ data, style, center }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 const navigate =useNavigate();  
   return (
-    <div className={`flex flex-col gap-[10px] col-span-1 ${center ? 'px-[5rem]' : ''}`} 
+    <div className={`flex flex-col gap-4 md:gap-[10px] col-span-1 ${center ? 'md:px-[5rem]' : ''}`} 
     onClick={() => navigate(`/case-study/${data.id}`)}
     >
       <div className={`relative w-full overflow-hidden `}>
@@ -17,7 +17,7 @@ const navigate =useNavigate();
   src={data?.img}
   alt="img"
   onLoad={() => setIsLoaded(true)}
-  className={`w-full transform transition duration-700 min-h-[30rem]  ease-in-out ${style}  hover:scale-105 cursor-pointer  ${
+  className={`w-full transform transition duration-700 md:min-h-[30rem]  ease-in-out ${style}  hover:scale-105 cursor-pointer  ${
     isLoaded ? 'opacity-100' : 'opacity-0'
   }`}
 />
@@ -27,18 +27,18 @@ const navigate =useNavigate();
       {!isLoaded ? (
         <Skeleton className="w-[10rem] h-[1rem] bg-secondary/30" />
       ) : (
-        <h3 className="font-R_regular text-secondary text-[2rem] leading-[2rem] uppercase">
+        <h3 className="font-R_regular text-secondary text-[1.8rem] md:text-[2rem] leading-[2rem] uppercase">
           {data?.title}
         </h3>
       )}
-<div className='mt-1'>
+<div className='md:mt-1'>
       {!isLoaded ? (
         <div className="space-y-2">
           <Skeleton className="w-[80%] h-[1rem] bg-secondary/30" />
           <Skeleton className="w-[50%] h-[1rem] bg-secondary/30" />
         </div>
       ) : (
-        <p className='text- font-M_medium text-background leading-5 '>{data?.subTitle}</p>
+        <p className='text- font-M_medium text-background leading-5 text-smmd:text-md '>{data?.subTitle}</p>
       )}
 
       {!isLoaded ? (

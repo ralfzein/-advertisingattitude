@@ -93,16 +93,24 @@ const [isHovered, setIsHovered] = useState(false);
      <div className="relative">
       {/* The button */}
       <button
-  onClick={() => setMenuOpen(!menuOpen)}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        className="text-white flex flex-col gap-[2.5px] md:gap-[0.5rem] -translate-y-3 md:-translate-y-2 mt-7 cursor-none"
+         onClick={() => setMenuOpen(!menuOpen)}
+      
+        className="text-white flex md:hidden flex-col gap-[2.5px] md:gap-[0.5rem] -translate-y-3 md:-translate-y-2 mt-7 cursor-none"
       >
         <div className={` w-6 md:w-24 h-[2px] md:h-[0.5rem]  ${color ? (menuOpen ? 'bg-primary' : "bg-background") : "bg-primary"}`}></div>
         <div className={` w-6 md:w-24 h-[2px] md:h-[0.5rem]  ${color ? (menuOpen ? 'bg-primary' : "bg-background") : "bg-primary"}`}></div>
         <div className={` w-6 md:w-24 h-[2px] md:h-[0.5rem]  ${color ? (menuOpen ? 'bg-primary' : "bg-background") : "bg-primary"}`}></div>
       </button>
-
+  <button
+         onClick={() => setMenuOpen(!menuOpen)}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        className="text-white  flex-col gap-[2.5px] md:gap-[0.5rem] -translate-y-3 md:-translate-y-2 mt-7 cursor-none hidden md:flex"
+      >
+        <div className={` w-6 md:w-24 h-[2px] md:h-[0.5rem]  ${color ? (menuOpen ? 'bg-primary' : "bg-background") : "bg-primary"}`}></div>
+        <div className={` w-6 md:w-24 h-[2px] md:h-[0.5rem]  ${color ? (menuOpen ? 'bg-primary' : "bg-background") : "bg-primary"}`}></div>
+        <div className={` w-6 md:w-24 h-[2px] md:h-[0.5rem]  ${color ? (menuOpen ? 'bg-primary' : "bg-background") : "bg-primary"}`}></div>
+      </button>
       {/* Fake cursor icon */}
    
 <AnimatePresence>
@@ -143,12 +151,12 @@ const [isHovered, setIsHovered] = useState(false);
               y: "-100%",
               transition: { opacity: { duration: 0.6, ease: "easeInOut" }, y: { duration: 0.3, ease: "easeIn" } },
             }}
-            className="absolute top-0 inset-0 flex flex-col bg-[#202A43] h-screen items-start justify-center text-white bg-cover bg-center z-40"
+            className="absolute top-0 inset-0 flex flex-col bg-[#202A43] h-screen items-start justify- text-white bg-cover bg-center z-40"
                style={{ backgroundImage: `url(${'/Images/bg.svg'})` }}
           >
             {/* Animated content */}
             <motion.div
-              className="mt-12 sm:mt-16 md:mt-24 lg:mt-32 flex items-start flex-col px-[4rem] justify-between h-screen"
+              className="mt-12 sm:mt-16 md:mt-24 lg:mt-32 flex items-start flex-col px-4 md:px-[4rem] gap-5 sm:gap-0 sm:justify-between h-screen"
               initial="hidden"
               animate="visible"
               exit="exit"
@@ -156,8 +164,8 @@ const [isHovered, setIsHovered] = useState(false);
             >
               {/* Links */}
               <motion.div
-                className="mt-4 flex flex-col text-primary font-R_regular font-normal
-                           text-[2rem] sm:text-[2.8rem] md:text-[3.5rem] lg:text-[4rem] xl:text-[4.8rem]
+                className="mt-[3rem] md:mt-4 flex flex-col text-primary font-R_regular font-normal gap-[2rem] sm:gap-0
+                           text-[1.8rem] sm:text-[2.8rem] md:text-[3.5rem] lg:text-[4rem] xl:text-[4.8rem]
                            leading-tight sm:leading-[3rem] md:leading-[3.5rem] lg:leading-[5.5rem]
                            tracking-[0.05em] sm:tracking-[0.08em] md:tracking-[0.1em]"
                 variants={containerVariants}
@@ -176,7 +184,7 @@ const [isHovered, setIsHovered] = useState(false);
 
               {/* Footer */}
               <div className="flex justify-between w-full items-center">
-                <motion.div className="my-5 font-M_medium text-primary text-[1.3rem] tracking-[.1em]" variants={itemVariants}>
+                <motion.div className="my-5 font-M_medium text-primary text-[0.7rem] sm:text-[1.3rem] tracking-[.1em]" variants={itemVariants}>
                   <a href="mailto:business@advertisingattitude.com" className="hover:opacity-75">
                     business@advertisingattitude.com
                   </a>
@@ -184,21 +192,25 @@ const [isHovered, setIsHovered] = useState(false);
                   Beirut  —  Beirut Digital District BDD 1499
                 </motion.div>
 
-                <motion.img variants={itemVariants} src={'/Images/logo.svg'} loading='lazy'  decoding="sync" alt="Hero" className="w-[20%] h-auto object-contain" />
+                <motion.img variants={itemVariants} src={'/Images/logo.svg'} loading='lazy'  decoding="sync" alt="Hero" className="hidden sm:block w-[20%] h-auto object-contain" />
               </div>
 
               {/* Social Links */}
-              <motion.div className="flex items-center gap-8 sm:gap-10 md:gap-12 lg:gap-14 mb-6" variants={itemVariants}>
+              <motion.div className="flex items-center  flex-wrap justify-between w-full   sm:gap-10 md:gap-12 lg:gap-14 mb-6" variants={itemVariants}>
                 {["LinkedIn", "Instagram", "Facebook", "Newsletter"].map((item, i) => (
                   <div
                     key={i}
-                    className="cursor-pointer capitalize font-M_bold text-primary
-                     tracking-[.1em] hover:text-secondary text-[clamp(0.9rem,1.5vw,1.3rem)]"
+                    className="cursor-pointer capitalize font-M_bold text-primary text-[0.7rem]
+                     tracking-[.1em] hover:text-secondary sm:text-[clamp(0.9rem,1.5vw,1.3rem)]"
                   >
                     {item}
                   </div>
                 ))}
               </motion.div>
+              <div className="flex sm:hidden  mt-[3%]  w-full   items-end w-ful  justify-end">
+                <motion.img variants={itemVariants} src={'/Images/logo.svg'} loading='lazy'  decoding="sync" alt="Hero" className=" w-[40%] h-auto object-contain" />
+
+              </div>
             </motion.div>
           </motion.div>
         )}

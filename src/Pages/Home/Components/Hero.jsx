@@ -42,12 +42,14 @@ const childVariants = {
     >
       {/* Hero Background */}
       <div className="absolute inset-0 ">
+
         <img
           src={'/Images/herro.webp'}
           alt="Hero"
           loading='lazy'  decoding="sync"
           className="w-full h-full  object-cover "
         />
+       
          {/* <img
           src={opacity}
           alt="Hero"
@@ -74,13 +76,24 @@ const childVariants = {
           src={'/Images/logo.svg'}
           alt="Hero"
           loading='lazy'  decoding="sync"
-          className="w-full md:w-[50rem] max-w-full  object-contain md:mt-25"
+          className="w-full md:w-[50rem] max-w-full  object-contain md:mt-25 hidden sm:block "
+        />
+         <img
+          
+          src={'/Images/sLogo.svg'}
+          alt="Hero"
+          loading='lazy'  decoding="sync"
+          className=" max-w-[50%]  object-contain md:mt-25 sm:hidden"
         />
 
-          
-        <h1   className="font-R_regular text-[2rem] sm:text-[3rem] text-secondary
-         md:pt-14 sm:pt-8 tracking-[0.5rem] leading-[1.2] md:leading-[1.1] text-center ">
-          LEADING <br className="md:hidden" /> CREATIVE <br className="md:hidden"/> AGENCY
+          <h1 className="font-R_regular text-[3rem] sm:text-[3rem] text-primary leading-[3rem] md:hidden
+                md:pt-14 sm:pt-8    text-center ">
+                Advertising <br className="md:hidden" /> Attitude 
+          </h1>
+
+        <h1   className="font-R_regular text-[1.1rem] sm:text-[3rem] text-secondary
+         md:pt-14 sm:pt-8 tracking-[0.2rem] md:tracking-[0.5rem]  leading-[1.2] md:leading-[1.1] text-center ">
+          LEADING CREATIVE  AGENCY
         </h1>
       </motion.div></div>
     </motion.section>
