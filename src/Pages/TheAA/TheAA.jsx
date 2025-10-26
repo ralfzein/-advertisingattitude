@@ -151,7 +151,7 @@ const [data,setData]=useState(theAA)
         whileInView="show"
         viewport={{ once: false, amount: 0.2 }}
         className=" w-full  bg-[#F2EDD9] pb-[10rem] bg-contain"
-        style={{ backgroundImage: `url('/Images/Work/workBg.svg')` }}
+        style={{ backgroundImage: `url('/Images/Work/workBg.svg')`}}
       >
         <motion.div variants={childVariantsnav} className=" relative z-50 w-full hidden md:block " >
           <Nav title={["THE AA PERSPECTIVE"]} tracking={"tracking-[0.6rem]"} color="text-black" />
@@ -172,7 +172,7 @@ const [data,setData]=useState(theAA)
               The way we see it, marketing, advertising, and attitude.{" "}
             </h4>
 
-            <div className=" relative w-full  h-[10rem] md:min-h-[25rem] " >
+            <div className=" relative w-full  h-[10rem] md:h-auto md:min-h-[25rem] " >
         {!isLoaded1 && <Skeleton className="absolute inset-0 w-full h-[10rem]  md:h-[25rem] bg-secondary/30" />}
 
               <img src={data?.[0]?.img1} 
