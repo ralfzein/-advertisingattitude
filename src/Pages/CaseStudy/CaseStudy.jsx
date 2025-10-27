@@ -7,6 +7,7 @@ import RenderMedia from "./MediaItem";
 import ExpandableText from "./ExpandText";
 import Footer from "../../components/Footer/Footer";
 import { ChevronRight } from "lucide-react";
+import Tabs from "../../components/Tabs/Tabs";
 
 const CaseStudy = () => {
   const { id } = useParams();         
@@ -42,8 +43,15 @@ useEffect(() => {
    <motion.div className="relative z-50 w-full md:hidden">
         <Nav title={["CAMPAIGN"]} tracking={"tracking-[0.8rem]"} color="text-black" />
       </motion.div>
-      <div className="z-50 pt-20 md:pt-40 px-4 md:px-[4rem] pb-30">
-        
+      <div className="z-50 pt-40 md:pt-30 px-4 md:px-[4rem] pb-30">
+            <Tabs
+                            tabs={[
+                              { name: "Home", href: "/" },
+                              { name: "Work", href: "/work" },
+                              { name: caseS?.title, href:"" },
+                            ]}
+                            color="text-secondary"
+                          />
         <h2 className="font-R_regular text-[2.1rem] leading-[2.3rem] md:text-[5rem] md:leading-[5.4rem] tracking-[0.1rem] text-secondary uppercase">{caseS?.cTitle}</h2>
 
         <div className="my-6 md:my-10">
@@ -91,7 +99,7 @@ useEffect(() => {
 
             ):(
         <div>
-          <RenderMedia src={caseS?.section1?.[0]} className="h-[13rem] md:h-[30rem]" />
+          <RenderMedia src={caseS?.section1?.[0]} className="h-[13rem] md:h-auto " />
         </div>
 
             )}
@@ -132,6 +140,8 @@ useEffect(() => {
                }`}>
                 <RenderMedia src={src} className={` h-[20rem] md:h-[40rem] 
                   ${caseS.id === 2 ? (index===1 && "!object-contain") : ""
+                  }
+                  ${caseS.id === 2 ? (index===0 && "!object-contain !w-full bg-amber-600") : ""
                   } `}  />
               </div>
             ))}

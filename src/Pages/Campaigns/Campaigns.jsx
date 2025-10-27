@@ -4,6 +4,9 @@ import Nav from "../../components/Nav/Nav";
 import CampaignsData from '../../../public/Images/data';
 import Grids from './Components/Grid';
 import Footer from '../../components/Footer/Footer';
+import { useNavigate } from 'react-router-dom';
+import { ChevronRight } from 'lucide-react';
+import Tabs from '../../components/Tabs/Tabs';
 
 const Campaigns = () => {
   const containerVariants = {
@@ -40,7 +43,6 @@ const Campaigns = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
   return (
     <div>
       <motion.section
@@ -57,7 +59,15 @@ const Campaigns = () => {
 <motion.div className="relative z-50 w-full md:hidden">
         <Nav title={["CAMPAIGN"]} tracking={"tracking-[0.8rem]"} color="text-black" />
       </motion.div>
-        <motion.div variants={childVariantsnav} className='z-50 pt-20 md:pt-40 px-4 md:px-[4rem]'>
+        <motion.div variants={childVariantsnav} className='z-50 pt-20 md:pt-30 px-4 md:px-[4rem]'>
+          
+           <Tabs
+                            tabs={[
+                              { name: "Home", href: "/" },
+                              { name: "Work", href: "" },
+                            ]}
+                            color="text-secondary"
+                          />
           <h3 className='font-M_bold text-secondary text-left text-[2rem] leading-[2.3rem]  sm:text-[4rem] sm:tracking-[0.5rem] sm:leading-[4rem] sm:text-justify'>
             THE SWIRL SPEAKS LOUDER <br className='hidden md:block'/> THAN WORDS
           </h3>

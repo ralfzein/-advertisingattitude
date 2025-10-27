@@ -3,8 +3,9 @@ import { motion, AnimatePresence } from "framer-motion"
 import { useNavigate } from "react-router-dom"
 import { useEffect } from "react"
 import CustomCursor from "./CustomCursor"
+import { toast } from "sonner"
 
-const Nav = ({ title, tracking ,color }) => {
+const Nav = ({ title, tracking ,color,sectionRef  }) => {
    const [menuOpen, setMenuOpen] = useState(false)
   const navigate = useNavigate()
 
@@ -55,17 +56,40 @@ const itemVariants = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 
 const [isHovered, setIsHovered] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
-  useEffect(() => {
-    const handleMove = (e) => {
-      setMousePos({ x: e.clientX, y: e.clientY });
-    };
-    if (isHovered) {
-      window.addEventListener("mousemove", handleMove);
-    } else {
-      window.removeEventListener("mousemove", handleMove);
+useEffect(() => {
+  // Make sure we have a valid ref and it points to an element
+  if (!menuOpen || !sectionRef?.current) return;
+
+  const sectionEl = sectionRef.current;
+
+  // ✅ Scroll the section into view (top-0 in viewport)
+  const sectionTop = sectionEl.offsetTop;
+  window.scrollTo({
+    top: sectionTop,
+    behavior: "smooth",
+  });
+
+  // ✅ Lock page scrolling
+  document.body.style.overflow = "hidden";
+
+  // Cleanup on close or unmount
+  return () => {
+    document.body.style.overflow = "";
+  };
+}, [menuOpen, sectionRef]);
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText("business@advertisingattitude.com");
+      toast.success("Copied!", {
+        description: "Email address copied to clipboard.",
+        duration: 2000,
+      });
+    } catch (err) {
+      toast.error("Error", {
+        description: "Failed to copy email.",
+      });
     }
-    return () => window.removeEventListener("mousemove", handleMove);
-  }, [isHovered]);
+  };
 
   return (
     <>
@@ -185,18 +209,23 @@ const [isHovered, setIsHovered] = useState(false);
               {/* Footer */}
               <div className="flex justify-between w-full items-center">
                 <motion.div className="my-5 font-M_medium text-primary text-[0.7rem] sm:text-[1.3rem] tracking-[.1em]" variants={itemVariants}>
-                  <a href="mailto:business@advertisingattitude.com" className="hover:opacity-75">
+                  <a href="mailto:business@advertisingattitude.com" className="hover:opacity-75 cursor-pointer hover:text-secondary"  onClick={handleCopy}>
                     business@advertisingattitude.com
                   </a>
                   <br />
                   Beirut  —  Beirut Digital District BDD 1499
                 </motion.div>
 
-                <motion.img variants={itemVariants} src={'/Images/logo.svg'} loading='lazy'  decoding="sync" alt="Hero" className="hidden sm:block w-[20%] h-auto object-contain" />
+                <motion.img variants={itemVariants} src={'/Images/logo.svg'}                    
+ loading='lazy'  decoding="sync" alt="Hero" className="hidden sm:block w-[20%] h-auto object-contain cursor-pointer hover:opacity-50"
+  onClick={() =>{
+    setMenuOpen(false)
+    navigate("/")}}
+   />
               </div>
 
               {/* Social Links */}
-              <motion.div className="flex items-center  flex-wrap justify-between w-full   sm:gap-10 md:gap-12 lg:gap-14 mb-6" variants={itemVariants}>
+              <motion.div className="flex items-center  flex-wrap justify-between md:justify-start w-full   sm:gap-10 md:gap-12 lg:gap-14 mb-6" variants={itemVariants}>
                 {["LinkedIn", "Instagram", "Facebook", "Newsletter"].map((item, i) => (
                   <div
                     key={i}

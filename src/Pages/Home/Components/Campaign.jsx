@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -51,7 +51,7 @@ const containerVariants = {
   hidden: { opacity: 1 },
   show: {
     opacity: 1,
-    transition: { when: "beforeChildren", staggerChildren: 0.15 },
+    transition: { when: "beforeChildren", staggerChildren: 0.1 },
   },
 };
 
@@ -102,9 +102,10 @@ export default function Cam() {
     return () => clearInterval(interval);
   }, [api]);
   const navigate = useNavigate();
-
+const sectionRef = useRef(null);
   return (
     <motion.section
+    ref={sectionRef}
       variants={containerVariants}
       initial="hidden"
       viewport={{ once: true, amount: 0.4 }}
@@ -120,6 +121,7 @@ export default function Cam() {
             </>
           }
           tracking="text-[1.5rem] tracking-[0.8rem] md:tracking-[.8rem]"
+             sectionRef={sectionRef} 
         />
       </motion.div>
       <Carousel
@@ -159,7 +161,9 @@ export default function Cam() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <div className=" absolute bottom-50 md:bottom-35 left-0 flex items-center justify-center w-full px-10 md:px-4 ">
+        <motion.div 
+        variants={childVariants}
+        className=" absolute bottom-50 md:bottom-35 left-0 flex items-center justify-center w-full px-10 md:px-4 ">
           <Button
             className="w-[15rem]  font-R_regular text-[0.9rem] md:text-[1.5rem] tracking-[0.12em] leading-[4rem] 
           flex items-center justify-center sm:w-full md:w-[25rem] h-[2.8rem] md:h-[5rem] hover:bg-secondary hover:opacity-80 cursor-pointer
@@ -170,7 +174,7 @@ export default function Cam() {
           >
             SEE THE CAMPAIGN
           </Button>
-        </div>
+        </motion.div>
         <div className=" absolute  bottom-35 md:bottom-10 left-1/2 md:left-1/2 -translate-x-1/2 md:-translate-x-1/2 flex gap-4  cursor-pointer ">
           {slides.map((_, i) => (                              
             <button

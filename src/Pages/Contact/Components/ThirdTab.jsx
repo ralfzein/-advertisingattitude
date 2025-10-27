@@ -54,9 +54,9 @@ const handleSend = (e) => {
 
 
   return (
-    <motion.div variants={containerVariants} initial="hidden" animate="visible" className="mt-15">
+    <motion.div variants={containerVariants} initial="hidden" animate="visible" className="mt-8">
       <form ref={formRef} onSubmit={handleSend}>
-        <div className="font-R_regular text-primary text-[1.5rem] leading-[2rem] mt-8 tracking-[0.15rem]">
+        <div className="font-R_regular text-primary text-[1.5rem] leading-[2rem] mt-0 tracking-[0.15rem]">
            Talk is cheap. Sales aren’t. Got the network and the hustle? <br /> Let’s talk big commission.
         </div>
 
@@ -114,7 +114,7 @@ or email us at pr@advertisingattitude.com
                 {fileName && `( ${fileName} )`}
               </span>
             </div>
-            <input type="file" ref={fileInputRef} onChange={handleFileChange} className="hidden" name="file" />
+            <input type="file" ref={fileInputRef} onChange={handleFileChange} className="hidden" name="file[]" multiple />
           </div>
 
           {/* Checkbox */}
@@ -134,7 +134,7 @@ or email us at pr@advertisingattitude.com
           <div className="flex items-start justify-start w-full mt-20">
              <Button type="submit" className="font-R_regular text-[1.4rem] tracking-[0.12em] leading-[4rem] flex items-center 
                        justify-center w-[28rem] h-[5rem] hover:bg-secondary hover:opacity-80 cursor-pointer rounded-full text-primary bg-secondary">
-              LET’S MAKE THINGS HAPPEN
+             BRING THE CLIENTS
             </Button>
           </div>
         </div>

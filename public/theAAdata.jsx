@@ -6,7 +6,7 @@ const TheAA = [
       "The attitude behind Advertising Attitude.",
     img1: "/Images/TheAAP/img/first.svg",
     img: "/Images/TheAAP/img/firstt.svg",
-    rounded: "rounded-tr-full rounded-tl-full  rounded-bl-0 rounded-br-full",
+    rounded: "rounded-tr-full rounded-tl-full  rounded-bl-full rounded-br-full",
     time: "3-minute read",
     tags: ["Brand Philosophy", "Creative Journey"],
     paragraph1: `
@@ -54,7 +54,7 @@ const TheAA = [
     subTitle:
       "But it’s rewriting the rules for those who lead with strategy — not vibes",
     img: "/Images/TheAAP/img/aa.svg",
-    rounded: " rounded-tl-full rounded-tr-0 rounded-bl-full rounded-br-full",
+    rounded: " rounded-tl-full rounded-tr-full rounded-bl-0 rounded-br-full",
     time: "3-minute read",
     tags: ["Strategic Branding ", " AI in Marketing ", "Brand Transformation"],
     paragraph1: `
@@ -84,8 +84,7 @@ The AA Framework
 
 <br/>
        <p class="font-M_semibold text-[1rem]  leading-[1.2rem] ">
-
- • &nbsp;When we built Advertising Attitude, we used AI not to design, but to structure. We built prompts that forced brand articulation:
+When we built Advertising Attitude, we used AI not to design, but to structure. We built prompts that forced brand articulation:
 <br/>
 <br/>
 • &nbsp;What do we stand for?
@@ -145,7 +144,7 @@ AI won’t save bad branding — it will accelerate its failure. But it will rew
     title: "Every Agency Is an Award Winner",
     subTitle: "We may not be in the puzzle. Yet.",
     img: "/Images/TheAAP/img/ee.svg",
-    rounded: "rounded-tr-full rounded-tl-full  rounded-bl-0 rounded-br-full",
+    rounded: "rounded-tr-0 rounded-tl-full  rounded-bl-full rounded-br-full",
     time: "3-minute read",
     tags: ["Strategic Marketing ", " Creative Courage"],
     paragraph1: `
@@ -199,7 +198,7 @@ Bold challenges people. And the right kind of bold makes them move.
     subTitle:
       "Ideas start small. The loudest impact comes  from the ones that were once whispered.",
     img: "/Images/TheAAP/img/33.svg",
-    rounded: "rounded-tr-full rounded-tl-full  rounded-bl-0 rounded-br-full",
+    rounded: "rounded-tl-full rounded-tr-full rounded-bl-0 rounded-br-full",
     time: "3-minute read",
     tags: ["Brand Philosophy ", " Creative Courage"],
     paragraph1: `
@@ -227,10 +226,11 @@ Bold challenges people. And the right kind of bold makes them move.
         </p>
         
        <p class="font-M_semibold text-[1rem]  leading-[1.2rem] ">
-       Trust the small thought. Every major movement started as an unpopular opinion.
- 1. Don’t wait for approval — shape it, refine it, and say it anyway.
+        1. Trust the small thought. Every major movement started as an unpopular opinion.
+        Don’t wait for approval — shape it, refine it, and say it anyway.
+        <br/><br/>
 
-<br/><br/>
+
 2. Be consistent, not loud. Echoes are built through repetition — not shouting once, but standing for the same message again and again until it becomes identity.
 
 <br/>
@@ -261,7 +261,7 @@ Advertising Attitude was built on this belief — that ideas evolve by being exp
     img: "/Images/TheAAP/img/44.svg",
     rounded: " rounded-tl-full rounded-tr-full rounded-bl-full rounded-br-0",
     time: "3-minute read",
-    tags: ["Business Strategy ", "Creative Value - Brand Integrity"],
+    tags: ["Business Strategy ", "Creative Value ", " Brand Integrity"],
     paragraph1: `
         
       
@@ -283,7 +283,7 @@ Advertising Attitude was built on this belief — that ideas evolve by being exp
          <h1 class="font-M_bold  text-[1.7rem] leading-[1.9rem] md:text-[2rem] md:leading-[2rem] trancking-[0.1rem]" >
        
 You pay for discipline — the kind that comes from mastery.
-        </h1> 
+        </h1>   
        <p class="font-M_semibold text-[1.3rem]  leading-[1.2rem] ">
        Why Mastery Costs More (and Should)
         </p> 
@@ -689,7 +689,8 @@ Because the best partnerships — like the best campaigns — are built before t
     paragraph1: `
     
     <p class="font-M_semibold text-[1rem]  leading-[1.2rem] ">
-campaigns didn’t start perfect — they started moving. Every “almost ready” idea that stays in drafts loses its spark a little    
+The best campaigns didn’t start perfect — they started moving. Every “almost ready” idea that stays in drafts loses its spark a little more each day. Creativity isn’t a lab experiment. It’s momentum. And momentum dies in hesitation.
+  
            </p>
     
       <h1 class="font-M_bold  text-[1.7rem] leading-[1.9rem] md:text-[2rem] md:leading-[2rem] trancking-[0.1rem]" >
@@ -731,7 +732,7 @@ Stop waiting for perfect conditions. They don’t exist. Start with what you hav
   },
   {
     id: 11,
-    title: " The Art of Losing  Without Knowing It",
+    title:"The Art of Losing Without Knowing It",
     subTitle:
       "Subtle. Polite. Marketing approved by  everyone — and forgotten by everyone.",
     img: "/Images/TheAAP/img/111.svg",

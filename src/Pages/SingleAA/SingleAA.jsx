@@ -7,6 +7,7 @@ import { Skeleton } from "../../components/ui/skeleton";
 import { ChevronRight, MoveLeft, MoveRight } from "lucide-react";
 import NewsLetter from "../../components/NewsLetter/NewsLetter";
 import Footer from "../../components/Footer/Footer";
+import Tabs from "../../components/Tabs/Tabs";
 
 const SingleAA = () => {
   const { id } = useParams();
@@ -80,7 +81,15 @@ const SingleAA = () => {
         </motion.div>
 
         {/* ✅ Breadcrumbs */}
-        <div className="z-50 pt-20 md:pt-[7.3rem] px-4 md:px-[4rem]">
+        <div className="z-50 pt-20 md:pt-30 px-4 md:px-[4rem]">
+            <Tabs
+                            tabs={[
+                              { name: "Home", href: "/" },
+                              { name: "The AA Perspective", href:"/theAA" },
+                              { name:caseS?.title, href:"" },
+                            ]}
+                            color="text-secondary"
+                          />
           {/* <div className="mb-5 text-secondary font-R_regular capitalize flex items-center gap-1 md:gap-0 text-xs md:text-md">
             <p
               className="cursor-pointer hover:opacity-80 "
@@ -190,18 +199,18 @@ const SingleAA = () => {
                 className="flex items-center  md:gap-5 text-secondary font-R_regular text-[1rem] md:text-[2rem] uppercase cursor-pointer hover:opacity-80"
                 onClick={() => navigate(`/theAA/${caseS.id - 1}`)}
               >
-                <MoveLeft  className="w-10 md:w-15" strokeWidth={1.5} /> Previous <span className="hidden md:block">Perspective</span>
+                <MoveLeft  size={50} strokeWidth={1.5} /> Previous <span className="hidden md:block">Perspective</span>
               </div>
             )}
 
             <div className="flex-1" />
 
-            {caseS && caseS.id < theAA.length && (
+            {caseS && caseS.id < theAA.length-1 && (
               <div
                 className="flex items-center md:gap-5 text-secondary font-R_regular text-[1rem] md:text-[2rem] uppercase cursor-pointer hover:opacity-80"
                 onClick={() => navigate(`/theAA/${caseS.id + 1}`)}
               >
-                Next <span className="hidden md:block">Perspective</span> <MoveRight  className="w-10 md:w-15" strokeWidth={1.5} />
+                Next <span className="hidden md:block">Perspective</span> <MoveRight  className="" size={50} strokeWidth={1.5} />
               </div>
             )}
           </div>

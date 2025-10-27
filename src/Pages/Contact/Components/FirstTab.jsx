@@ -54,7 +54,7 @@ const handleSend = (e) => {
 
 
   return (
-    <motion.div variants={containerVariants} initial="hidden" animate="visible" className="mt-15">
+    <motion.div variants={containerVariants} initial="hidden" animate="visible" className="mt-8">
       <form ref={formRef} onSubmit={handleSend}>
         <div className="font-R_regular text-primary text-[1.5rem] leading-[2rem] mt-8 tracking-[0.15rem]">
           Something feel off? Need more wings? <br />

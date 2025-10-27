@@ -7,6 +7,7 @@ import { Skeleton } from "../../components/ui/skeleton";
 import NewsLetter from "../../components/NewsLetter/NewsLetter";
 import theAA from '../../../public/theAAdata';
 import { useNavigate } from "react-router-dom";
+import Tabs from "../../components/Tabs/Tabs";
 
 
 const TheAA = () => {
@@ -162,7 +163,14 @@ const [data,setData]=useState(theAA)
           <Nav title={["PERSPECTIVE"]} tracking={"tracking-[0.5rem]"} color="text-black" />
         </motion.div>
 
-        <div className=" z-50 pt-20 md:pt-40 px-4 md:px-[4rem]">
+        <div className=" z-50 pt-20 md:pt-30 px-4 md:px-[4rem]">
+           <Tabs
+                            tabs={[
+                              { name: "Home", href: "/" },
+                              { name: "The AA Perspective", href:"" },
+                            ]}
+                            color="text-secondary"
+                          />
           <div className="space-y-8">
             <h3 className="font-R_regular  text-secondary text-[1.5rem] md:text-[3rem] tracking-[0.1rem] md:tracking-[0.3rem] leading-[1.8rem]  md:leading-[3.2rem] ">
               WE’RE BIASED. TOWARD IDEAS THAT FIGHT HARDER, MOVE FASTER, AND HIT

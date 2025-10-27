@@ -5,8 +5,9 @@ import "./carousel.css";
 import Nav from "../../../components/Nav/Nav";
 import { Button } from "../../../components/ui/button";
 import { useNavigate } from "react-router-dom";
+import theAA from '../../../../public/theAAdata';
 
-const slides = [
+const slidess = [
   {
     img: "/Images/TheAA/aa.webp",
     img2: "/Images/TheAA/ab.webp",
@@ -45,6 +46,9 @@ const slides = [
 ];
 
 function TheAA() {
+  const selectedSlides = [theAA[0], theAA[1], theAA[4], theAA[11], theAA[10]];
+  
+  const [slides, setSlides] = useState(selectedSlides);
   const containerVariants = {
     hidden: { opacity: 1 },
     show: {
@@ -126,17 +130,20 @@ function TheAA() {
     return "slide back";
   };
 const navigate =useNavigate();
-
+const sectionRef = useRef(null);
   return (
     <motion.section
       variants={containerVariants}
       initial="hidden"
+    ref={sectionRef}
+
       viewport={{ once: true, amount: 0.4}}
       whileInView="show"
       className="relative h-screen w-full overflow-hidden snap-start"
     >
       <motion.div className="relative z-50 w-full hidden md:block" variants={childVariantsnav}>
-        <Nav title={"THE AA PERSPECTIVE"} tracking={"text-[1.5rem] tracking-[0.8rem]"} />
+
+        <Nav title={"THE AA PERSPECTIVE"} tracking={"text-[1.5rem] tracking-[0.8rem]"} sectionRef={sectionRef}  />
         {/* <Nav title={"THINK BOLDLY"} tracking={"tracking-[1.9rem]"} /> */}
       </motion.div>
 
@@ -154,7 +161,7 @@ const navigate =useNavigate();
     <motion.div
       variants={childVariantsScale}
    >
-      <div className="flex flex-col-reverse sm:flex-row w-full  sm:gap-20 items-center justify-between h-[80vh]  md:h-[30rem]  mt-15  sm:mt-40 sm:px-[4rem] ">
+      <div className="flex flex-col-reverse sm:flex-row w-full  sm:gap-20 items-center justify-between h-[80vh]  md:h-[30rem]  mt-15  sm:mt-50 sm:px-[4rem] ">
         {/* Text content */}
         <div
           className="flex-1 flex flex-col items-start  md:justify-between  h-full  px-5 sm:px-0"
@@ -165,24 +172,24 @@ const navigate =useNavigate();
           initial="hidden"
           animate="show" className=" flex flex-col items-start md:justify-between  gap-5  h-[12rem]   md:h-auto ">
             <h3 className="w-full sm:w-auto   text-secondary font-R_regular text-[2.1rem] text-center sm:text-left leading-[2.3rem] sm:text-[4.8rem]
-             sm:leading-[4.5rem] sm:tracking-[0.1em] whitespace-pre-line   ">
+             sm:leading-[4.5rem] sm:tracking-[0.1em]   ">
               {slides[index].title}
             </h3>
             <p
               className="text-[0.8rem] sm:text-lg text-primary text-center sm:text-left sm:leading-[1.3rem] font-M_regular   px-4 sm:px-0
                sm:tracking-[0.1em] whitespace-pre-line line-clamp-4"
             >
-              {slides[index].subtitle}
+              {slides[index].subTitle}
             </p>
           </motion.div>
  <div className="w-full sm:w-auto flex justify-center sm:justify-start mt-2 ">
           <Button
             className="w-[14rem] font-R_regular text-[0.8rem] md:text-[1.5rem] tracking-[0.12em] leading-[4rem] 
           flex items-center justify-center sm:w-full md:w-[25rem] h-[2.5rem] md:h-[5rem] hover:bg-secondary hover:opacity-80 cursor-pointer
-           rounded-full text-primary bg-secondary"
+           rounded-full text-primary bg-secondary z-40 "
             variant="default"
             size="default"
-
+            onClick={() => navigate(`/theAA/${slides[index].id}`)}
           >
             SEE THE TAKE
           </Button>
@@ -204,7 +211,7 @@ const navigate =useNavigate();
                     src={item.img}
                     alt="Hero"
                     loading="lazy"
-                    className="w-full h-auto object-cover  pointer-events-none  select-none"
+                    className="w-full h-full   pointer-events-none  select-none"
                   />
                 </div>
               ))}

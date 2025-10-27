@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"; 
 import Nav from "../../../components/Nav/Nav";
+import { useRef } from "react";
 
 function Hero() {
   const containerVariants = {
@@ -30,8 +31,9 @@ const childVariants = {
     },
   },
 };
+const sectionRef = useRef(null);
   return (
-    <motion.section
+    <motion.section ref={sectionRef} 
       variants={containerVariants}
       initial="hidden"
       id="hero-section"
@@ -65,7 +67,7 @@ const childVariants = {
         variants={childVariantsnav}
         className="relative z-50 w-full"
       >
-        <Nav title={["think boldly", "feel deeply", "act smartly"]} tracking={"tracking-[0.2rem] md:tracking-[1.6rem]"} />
+        <Nav   title={["think boldly", "feel deeply", "act smartly"]} tracking={"tracking-[0.2rem] md:tracking-[1.6rem]" }  sectionRef={sectionRef} />
       </motion.div>
 
       {/* Hero Content */}

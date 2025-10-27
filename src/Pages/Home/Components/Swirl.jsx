@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Nav from "../../../components/Nav/Nav";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation ,AnimatePresence } from "framer-motion";
 
 const Swirl = () => {
   const controls = useAnimation();
   const [logoSrc, setLogoSrc] = useState("/Images/sLogo.svg");
-
+  const [isHovered, setIsHovered] = useState(false);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   // Variants
   const containerVariants = {
     hidden: {},
@@ -54,6 +55,7 @@ const logoVariants = {
   }
 };
 
+
 const betweenVariants = {
   hidden: { justifyContent: "center"},
   show: {
@@ -61,8 +63,29 @@ const betweenVariants = {
     transition: { duration: 5, ease: "easeInOut", delay: 5 }
   }
 };
+const sectionRef = useRef(null);
+ useEffect(() => {
+    const handleMove = (e) => {
+      setMousePos({ x: e.clientX, y: e.clientY });
+    };
+
+    if (isHovered) {
+      window.addEventListener("mousemove", handleMove);
+      document.body.style.cursor = "none";
+    } else {
+      window.removeEventListener("mousemove", handleMove);
+      document.body.style.cursor = "auto";
+    }
+
+    return () => {
+      window.removeEventListener("mousemove", handleMove);
+      document.body.style.cursor = "auto";
+    };
+  }, [isHovered]);
   return (
     <motion.section
+    ref={sectionRef}
+
       variants={containerVariants}
       initial="hidden"
       whileInView="show"
@@ -72,7 +95,7 @@ const betweenVariants = {
     >
       {/* Navbar */}
       <motion.div className="relative z-50 w-full" variants={navVariants}>
-        <Nav title={["DISRUPTIVE CREATIVITY","DISCIPLINED EXECUTION"]} tracking="tracking-[.7rem]" />
+        <Nav title={["DISRUPTIVE CREATIVITY","DISCIPLINED EXECUTION"]} tracking="tracking-[.7rem]"sectionRef={sectionRef}  />
       </motion.div>
 
       <div className="relative flex h-screen flex-col items-center justify-center">
@@ -134,17 +157,44 @@ const betweenVariants = {
     viewport={{ once: true, amount: 0.8 }}
     transition={{ duration: 0.8, ease: "easeInOut", delay: 1 }}
   />
-<motion.img
-  src="/Images/contactLogo.png"
-  loading="lazy"
-  alt="logo"
-  className="absolute "
-  variants={logoVariants}
-  initial="hidden"
-  whileInView="show"
-  viewport={{ once: true, amount: 0.8 }}
+ <div
+      className="relative flex items-center justify-center cursor-none"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* 🌀 Apply variants directly on the image */}
+      <motion.img
+        src="/Images/contactLogo.png"
+        loading="lazy"
+        alt="Logo"
+        className="object-contain select-none"
+        variants={logoVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.8 }}
+      />
 
-/>
+      {/* ✨ Floating “Coming Soon” text follows the cursor */}
+      <AnimatePresence>
+        {isHovered && (
+          <motion.div
+            key="coming-soon"
+            className="fixed z-50 bg- text-primary px-6 py-3 rounded-full font-M_bold
+             text-[1rem] sm:text-[1.2rem] pointer-events-none "
+            style={{
+              top: mousePos.y - 40 + "px",
+              left: mousePos.x - 80 + "px",
+            }}
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+          >
+            Coming Soon
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
 
 </motion.div>
 

@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from 'react-router-dom';
 import {  BookUserIcon, FacebookIcon, FactoryIcon, InstagramIcon, LinkedinIcon } from 'lucide-react';
 
-
+import { toast } from "sonner";
 
 const Footer = () => {
 
@@ -31,6 +31,20 @@ const Footer = () => {
   },
   };
   const navigate = useNavigate()
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText("business@advertisingattitude.com");
+      toast.success("Copied!", {
+        description: "Email address copied to clipboard.",
+        duration: 2000,
+      });
+    } catch (err) {
+      toast.error("Error", {
+        description: "Failed to copy email.",
+      });
+    }
+  };
+
 
   return (
     <motion.section
@@ -54,7 +68,11 @@ const Footer = () => {
                <div className="hidden md:block" />
 
         <motion.div  variants={childVariants}  className='  flex'>
-            <img src={'/Images/logo2.svg'} alt="Hero" loading='lazy'  decoding="sync" className="w-full h-auto object-cover " />
+            <img src={'/Images/logo2.svg'} alt="Hero" loading='lazy'  decoding="sync" className="w-full h-auto object-cover  cursor-pointer"   onClick={() =>{
+    navigate("/")}
+              
+  }
+    />
         </motion.div>
         <div className='flex flex-col md:flex-row justify-between md:mt-5 gap-4 '>
             
@@ -67,6 +85,8 @@ const Footer = () => {
                 <span key={index} className='text-sm font-M_bold text-primary tracking-[.1em] cursor-pointer hover:text-secondary'
                 onClick={() => window.open(`${item.link}`, '_blank')}>{item.label}</span>
                 ))}
+                                    <span  className='text-sm font-M_bold text-primary tracking-[.1em] cursor-pointer hover:text-secondary'
+                                    onClick={() => navigate('/contact')}>Career</span>
                 <span  className='text-sm font-M_bold text-primary tracking-[.1em] cursor-pointer hover:text-secondary'
                                     onClick={() => navigate('/contact')}>NewsLetter</span>
             </div>
@@ -86,9 +106,9 @@ const Footer = () => {
                     <span className='text-[10px] md:text-sm  font-M_medium text-primary tracking-[.1em]'>Beirut  —  Beirut Digital District BDD 1499</span>
                 </div>
                 <div className='  flex flex-col items-start gap-0 md:mr-[6.8rem] w-full md:w-auto mt-1 sm:mt-0 '>
-                    <span className='text-[10px] md:text-sm  font-M_medium text-primary tracking-[.1em]'>business@advertisingattitude.com
+                    <span className='text-[10px] md:text-sm  font-M_medium text-primary tracking-[.1em] cursor-pointer hover:text-secondary' onClick={handleCopy}>business@advertisingattitude.com
                       </span>
-                    <span className='text-[10px] md:text-sm  font-M_medium text-primary tracking-[.1em]'>talent@advertisingattitude</span>
+                    <span className='text-[10px] md:text-sm  font-M_medium text-primary tracking-[.1em] cursor-pointer hover:text-secondary'  onClick={handleCopy}>talent@advertisingattitude</span>
                 </div> 
             </div>
         </motion.div>
