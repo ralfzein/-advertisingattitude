@@ -63,7 +63,6 @@ const betweenVariants = {
     transition: { duration: 5, ease: "easeInOut", delay: 5 }
   }
 };
-const sectionRef = useRef(null);
  useEffect(() => {
     const handleMove = (e) => {
       setMousePos({ x: e.clientX, y: e.clientY });
@@ -82,6 +81,8 @@ const sectionRef = useRef(null);
       document.body.style.cursor = "auto";
     };
   }, [isHovered]);
+const sectionRef = useRef(null);
+
   return (
     <motion.section
     ref={sectionRef}
@@ -89,13 +90,14 @@ const sectionRef = useRef(null);
       variants={containerVariants}
       initial="hidden"
       whileInView="show"
-           viewport={{ once: true,amount:0.4}}
+      viewport={{ once: true,amount:0.4}}
 
       className="relative  h-screen w-full overflow-hidden snap-start"
     >
       {/* Navbar */}
       <motion.div className="relative z-50 w-full" variants={navVariants}>
-        <Nav title={["DISRUPTIVE CREATIVITY","DISCIPLINED EXECUTION"]} tracking="tracking-[.7rem]"sectionRef={sectionRef}  />
+        <Nav title={["DISRUPTIVE CREATIVITY","DISCIPLINED EXECUTION"]}
+         tracking="tracking-[.7rem]" sectionRef={sectionRef} />
       </motion.div>
 
       <div className="relative flex h-screen flex-col items-center justify-center">
@@ -162,7 +164,6 @@ const sectionRef = useRef(null);
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* 🌀 Apply variants directly on the image */}
       <motion.img
         src="/Images/contactLogo.png"
         loading="lazy"

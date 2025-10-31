@@ -27,9 +27,8 @@ const Contact = () => {
 const navigate =  useNavigate();
   return (
     <>
-      <section id="contact-section" className="relative  ">
-        <Nav title={"let's talk"} tracking={"tracking-[1.6rem]"} />
-
+      <section id="contact-section " className="relative ">
+        <Nav title={"let's talk"} tracking={"tracking-[0.8rem] lg:tracking-[1.6rem]"} />
         <div
           className="absolute inset-0 w-full h-full bg-center "
           style={{ backgroundImage: `url('/Images/bg.svg')` }}
@@ -37,7 +36,7 @@ const navigate =  useNavigate();
           <div className="absolute inset-0 bg-[#202A43] -z-[1]" />
         </div>
 
-        <div className="relative px-[4rem] pt-30 border-b-[1px] border-b-primary pb-20 ">
+        <div className="relative px-4 md:px-[4rem] pt-[3.2rem] md:pt-30 border-b-[1px] border-b-primary pb-20 ">
  
                            <Tabs
                             tabs={[
@@ -47,14 +46,18 @@ const navigate =  useNavigate();
                             color="text-primary"
                           />
 
-          <div className="grid grid-cols-3 gap-18   pb-8  ">
-            {title.map((item) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 flex-wrap gap-3 md:gap-18   pb-8  ">
+            {title.map((item,index) => (
               <div
                 key={item.value}
                 onClick={() => setSelected(item.value)}
-                className={`h-[5rem] flex items-center justify-center px-4 border-[3px] font-M_extrabold text-center text-[1.5rem]
+                className={` h-[2.3rem] md:h-[5rem] flex  items-center justify-center md:px-4 border-[3px] font-M_extrabold text-center text-[0.8rem] md:text-[1.5rem]
                 border-secondary text-primary rounded-full cursor-pointer tracking-[.15rem]
-                ${selected === item.value ? "bg-secondary text-white" : ""}`}
+                ${selected === item.value ? "bg-secondary text-white" : ""}
+                ${index === 2 ? " col-span-2 w-[50%] mx-auto md:mx-0 md:col-span-1 md:w-auto" : ""}
+                
+                `}
+            
               >
                 {item.label}
               </div>

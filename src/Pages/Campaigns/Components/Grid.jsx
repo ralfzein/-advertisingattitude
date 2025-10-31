@@ -1,21 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Cards from "./Cards";
 
-const Grids = ({ data }) => {
+const Grids = ({ data ,onCardClick }) => {
   const chunkSize = 5;
-  const [visibleChunks, setVisibleChunks] = useState(1); // how many groups of 5 are shown
+  const [visibleChunks, setVisibleChunks] = useState(1); 
 
-  // Split data into groups of 5
+   useEffect(() => {
+    const saved = sessionStorage.getItem("campaignVisibleChunks");
+    if (saved) setVisibleChunks(parseInt(saved));
+  }, []);
+
+
+
   const chunks = [];
   for (let i = 0; i < data.length; i += chunkSize) {
     chunks.push(data.slice(i, i + chunkSize));
   }
 
-  const handleSeeMore = () => {
-    if (visibleChunks < chunks.length) {
-      setVisibleChunks((prev) => prev + 1);
-    }
-  };
+const handleSeeMore = () => {
+  if (visibleChunks < chunks.length) {
+    setVisibleChunks((prev) => {
+      const next = prev + 1;
+      sessionStorage.setItem("campaignVisibleChunks", next); 
+      return next;
+    });
+  }
+};
+
 
   return (
     <div className="w-full h-full grid gap-10 mt-6 md:mt-20">
@@ -23,17 +34,17 @@ const Grids = ({ data }) => {
         <div key={index} className="w-full h-full flex flex-col gap-8 md:gap-20 ">
           {/* First Grid - 2 cards */}
           {(group[0] || group[1]) && (
-            <div className="flex flex-col md:flex-row w-full gap-5">
+            <div className="flex flex-row w-full gap-8 md:gap-5">
               {group[0] && (
-                <div className="w-full md:!flex-[0.8] md:max-w-[45%] md:pr-[6rem]">
-                  <Cards data={group[0]} style={"h-[10rem] md:h-[36rem]   object-cover"} />
+                <div className="w-full !flex-1 md:!flex-[0.8] md:max-w-[45%] md:pr-[6rem] ">
+                  <Cards data={group[0]} style={"h-[10rem]    md:h-[36rem]   object-cover"} onClick={onCardClick}  />
                 </div>
               )}
               {group[1] && (
-                <div className="w-full md:flex-[1.3] ">
+                <div className="w-full flex-[1.1] md:flex-[1.3] ">
                   <Cards
                     data={group[1]}
-                    style={" h-[10rem] md:h-auto w-full  mt-[3rem]"}
+                    style={" h-[9rem] md:h-auto w-full mt-[1rem]  md:mt-[3rem]"} onClick={onCardClick} 
                   />
                 </div>
               )}
@@ -43,24 +54,24 @@ const Grids = ({ data }) => {
           {/* Center Card */}
           {group[2] && (
             <div className="w-full">
-              <Cards data={group[2]} center={true} />
+              <Cards data={group[2]} center={true} onClick={onCardClick}  />
             </div>
           )}
 
           {/* Second Grid - reversed */}
           {(group[3] || group[4]) && (
-             <div className="flex flex-col md:flex-row w-full gap-5">
+             <div className="flex flex-row w-full gap-8 md:gap-5">
               {group[3] && (
-                <div className="w-full flex-[1.3] ">
+                <div className="w-full flex-[1.4] md:flex-[1.3]">
                   <Cards
                     data={group[3]}
-                    style={"h-[10rem] md:h-auto  object-cover"}
+                    style={"h-[10rem] md:h-auto  object-cover"} onClick={onCardClick} 
                     />
                 </div>
               )}
               {group[4] && (
-                <div className="w-full md:!flex-[0.8]  mt-[3rem]  md:pl-[6rem]">
-                  <Cards data={group[4]} style={" h-[10rem] md:h-[35rem] object-cover"} />
+                <div className="w-full flex-1  md:!flex-[0.8] mt-[1rem]  md:mt-[3rem]  md:pl-[6rem]">
+                  <Cards data={group[4]} style={" h-[9rem]   md:h-[39rem] object-cover"} onClick={onCardClick}  />
                 </div>
               )}
             </div>

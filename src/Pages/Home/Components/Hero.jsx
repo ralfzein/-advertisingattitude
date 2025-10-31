@@ -67,7 +67,9 @@ const sectionRef = useRef(null);
         variants={childVariantsnav}
         className="relative z-50 w-full"
       >
-        <Nav   title={["think boldly", "feel deeply", "act smartly"]} tracking={"tracking-[0.2rem] md:tracking-[1.6rem]" }  sectionRef={sectionRef} />
+        <Nav   title={["think boldly", "feel deeply", "act smartly"]}
+         tracking={"tracking-[0.2rem] md:tracking-[1.6rem]" } 
+          sectionRef={sectionRef} />
       </motion.div>
 
       {/* Hero Content */}

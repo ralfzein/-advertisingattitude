@@ -12,15 +12,18 @@ import Footer from "../../components/Footer/Footer";
 import TheAAM from "./Components/TheAAM";
 import SwirlM from "./Components/SwirlM";
 import Test from "./Components/test";
+import Nav from "../../components/Nav/Nav";
 
 function Home() {
   const [showLogo, setShowLogo] = useState(false);
   const lenisRef = useRef(null);
 
- 
+ useEffect(() => {
+  const bg = new Image();
+  bg.src = "/Images/bg.svg";
+}, []);
 
   useEffect(() => {
-    // Toggle floating logo visibility
     const handleScroll = () => {
       const hero = document.getElementById("hero-section")?.offsetHeight || 0;
       const footer = document.getElementById("footer-section")?.offsetTop || Infinity;
@@ -32,6 +35,7 @@ function Home() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+const sectionRef = useRef(null);
 
   return (
     <div className="overflow-hidden">
@@ -56,7 +60,8 @@ function Home() {
       </AnimatePresence>
 
       {/* Sections */}
-      <section id="hero-section" className="h-screen">
+      <section id="hero-section" className="h-screen"  >
+      
         <Hero />
       </section>
       <section className="flex items-center justify-center bg-background">

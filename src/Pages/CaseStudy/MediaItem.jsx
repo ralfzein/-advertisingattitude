@@ -34,7 +34,7 @@ const RenderMedia = ({ src, className = "" }) => {
           alt=""
           loading="lazy"
           decoding="async"
-          className={`w-full ${className} object-cover transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+          className={`w-full object-cover ${className}  transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
           onLoad={() => setIsLoaded(true)}
         />
       )}

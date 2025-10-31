@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
    optimizeDeps: {
-    include: ["scroll-snap",'@studio-freight/lenis']
+    include: ["scroll-snap",'@studio-freight/line-clamp']
   },
   
 })

@@ -1,82 +1,93 @@
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { useNavigate } from "react-router-dom"
-import { useEffect } from "react"
-import CustomCursor from "./CustomCursor"
-import { toast } from "sonner"
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import CustomCursor from "./CustomCursor";
+import { toast } from "sonner";
 
-const Nav = ({ title, tracking ,color,sectionRef  }) => {
-   const [menuOpen, setMenuOpen] = useState(false)
-  const navigate = useNavigate()
+const Nav = ({ title, tracking, color, sectionRef }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const [isHovered2, setIsHovered2] = useState(false);
 
   // 👉 for title cycling
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const titles = Array.isArray(title) ? title : [title]
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const titles = Array.isArray(title) ? title : [title];
 
   useEffect(() => {
     if (titles.length > 1) {
       const interval = setInterval(() => {
-        setCurrentIndex((prev) => (prev + 1) % titles.length)
-      }, 4000) // every 3s
-      return () => clearInterval(interval)
+        setCurrentIndex((prev) => (prev + 1) % titles.length);
+      }, 4000); // every 3s
+      return () => clearInterval(interval);
     }
-  }, [titles])
+  }, [titles]);
 
   // Animation variants for title
   const titleVariants = {
     hidden: { opacity: 0, y: -5 },
     visible: { opacity: 1, y: 0 },
     exit: { opacity: 0, y: 5 },
-  }
+  };
 
-const containerVariants = { open: { transition: { staggerChildren: 0.15, delayChildren: 0.3, }, }, closed: {}, }
-const itemVariants = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }, exit: { opacity: 0, y: 20, transition: { duration: 0.3, ease: "easeIn" } }, }
-  const navigation=[
+  const containerVariants = {
+    open: { transition: { staggerChildren: 0.15, delayChildren: 0.3 } },
+    closed: {},
+  };
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+    exit: { opacity: 0, y: 20, transition: { duration: 0.3, ease: "easeIn" } },
+  };
+  const navigation = [
     {
-      name:"work",
-      href:"/work"
+      name: "work",
+      href: "/work",
     },
     {
-      name:"swirlbold",
-      href:"/"
+      name: "swirlbold",
+      href: "#",
     },
     {
-      name:" The AA Perspective",
-      href:"/theAA"
+      name: " The AA Perspective",
+      href: "/theAA",
     },
     {
-      name:"About",
-      href:"/"
+      name: "About",
+      href: "/",
     },
     {
-      name:"Let’s Talk",
-      href:"/contact"
-    }
-  ]
-const [isHovered, setIsHovered] = useState(false);
+      name: "Let’s Talk",
+      href: "/contact",
+    },
+  ];
+  const [isHovered, setIsHovered] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
-useEffect(() => {
-  // Make sure we have a valid ref and it points to an element
-  if (!menuOpen || !sectionRef?.current) return;
+  useEffect(() => {
+    const sectionEl = sectionRef?.current;
 
-  const sectionEl = sectionRef.current;
+    if (menuOpen && sectionEl) {
+      const sectionTop = sectionEl.offsetTop;
+      window.scrollTo({ top: sectionTop, behavior: "smooth" });
 
-  // ✅ Scroll the section into view (top-0 in viewport)
-  const sectionTop = sectionEl.offsetTop;
-  window.scrollTo({
-    top: sectionTop,
-    behavior: "smooth",
-  });
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    }
 
-  // ✅ Lock page scrolling
-  document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    };
+  }, [menuOpen, sectionRef]);
 
-  // Cleanup on close or unmount
-  return () => {
-    document.body.style.overflow = "";
-  };
-}, [menuOpen, sectionRef]);
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText("business@advertisingattitude.com");
@@ -91,72 +102,169 @@ useEffect(() => {
     }
   };
 
+  useEffect(() => {
+    const handleMove = (e) => {
+      setMousePos({ x: e.clientX, y: e.clientY });
+    };
+
+    if (isHovered2) {
+      window.addEventListener("mousemove", handleMove);
+      document.body.style.cursor = "none";
+    } else {
+      window.removeEventListener("mousemove", handleMove);
+      document.body.style.cursor = "auto";
+    }
+
+    return () => {
+      window.removeEventListener("mousemove", handleMove);
+      document.body.style.cursor = "auto";
+    };
+  }, [isHovered2]);
+
+  useEffect(() => {
+    const handleMove = (e) => {
+      setMousePos({ x: e.clientX, y: e.clientY });
+    };
+
+    if (isHovered) {
+      window.addEventListener("mousemove", handleMove);
+      document.body.style.cursor = "none"; // hide system cursor only when hovering burger
+    } else {
+      window.removeEventListener("mousemove", handleMove);
+      document.body.style.cursor = "auto"; // restore normal cursor
+    }
+
+    return () => {
+      window.removeEventListener("mousemove", handleMove);
+      document.body.style.cursor = "auto";
+    };
+  }, [isHovered]);
+
   return (
     <>
       {/* Navbar */}
-      <nav className="absolute top-3 w-full flex items-center justify-between px-4 md:px-[4rem] z-50 ">
-        <div className={`flex items-center justify-between w-full border-b-[2px] md:border-b-[0.5rem]  0 uppercase ${color ? (menuOpen ? 'border-primary' : "border-background") : "border-primary"}`}>
+      <nav className="h-[3rem] md:h-[8rem] absolute  w-full flex items-center justify-between px-4 md:px-[4rem] z-50 ">
+        <div
+          className={`flex items-center justify-between w-full border-b-[2px] md:border-b-[0.5rem]  0 uppercase ${
+            color
+              ? menuOpen
+                ? "border-primary"
+                : "border-background"
+              : "border-primary"
+          }`}
+        >
           {/* Title */}
-         <AnimatePresence mode="wait">
-              <motion.h1
-                key={titles[currentIndex]}
-                variants={titleVariants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-                transition={{ duration: 0.6, ease: "easeInOut" }}
-            className={`font-R_regular font-bold ${color ? (menuOpen ? 'text-[#f2edd9]' : "text-background") : "text-primary"}
+          <AnimatePresence mode="wait">
+            <motion.h1
+              key={titles[currentIndex]}
+              variants={titleVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+              className={`font-R_regular font-bold ${
+                color
+                  ? menuOpen
+                    ? "text-[#f2edd9]"
+                    : "text-background"
+                  : "text-primary"
+              }
                 uppercase text-[1.8rem] md:text-header md:leading-[1.1]  ${tracking} 
-                        lg:text-header`} 
-          >
-           {titles[currentIndex]}
-          </motion.h1>
-            </AnimatePresence>
+                        lg:text-header`}
+            >
+              {titles[currentIndex]}
+            </motion.h1>
+          </AnimatePresence>
 
           {/* Burger */}
-     <div className="relative">
-      {/* The button */}
-      <button
-         onClick={() => setMenuOpen(!menuOpen)}
-      
-        className="text-white flex md:hidden flex-col gap-[2.5px] md:gap-[0.5rem] -translate-y-3 md:-translate-y-2 mt-7 cursor-none"
-      >
-        <div className={` w-6 md:w-24 h-[2px] md:h-[0.5rem]  ${color ? (menuOpen ? 'bg-primary' : "bg-background") : "bg-primary"}`}></div>
-        <div className={` w-6 md:w-24 h-[2px] md:h-[0.5rem]  ${color ? (menuOpen ? 'bg-primary' : "bg-background") : "bg-primary"}`}></div>
-        <div className={` w-6 md:w-24 h-[2px] md:h-[0.5rem]  ${color ? (menuOpen ? 'bg-primary' : "bg-background") : "bg-primary"}`}></div>
-      </button>
-  <button
-         onClick={() => setMenuOpen(!menuOpen)}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        className="text-white  flex-col gap-[2.5px] md:gap-[0.5rem] -translate-y-3 md:-translate-y-2 mt-7 cursor-none hidden md:flex"
-      >
-        <div className={` w-6 md:w-24 h-[2px] md:h-[0.5rem]  ${color ? (menuOpen ? 'bg-primary' : "bg-background") : "bg-primary"}`}></div>
-        <div className={` w-6 md:w-24 h-[2px] md:h-[0.5rem]  ${color ? (menuOpen ? 'bg-primary' : "bg-background") : "bg-primary"}`}></div>
-        <div className={` w-6 md:w-24 h-[2px] md:h-[0.5rem]  ${color ? (menuOpen ? 'bg-primary' : "bg-background") : "bg-primary"}`}></div>
-      </button>
-      {/* Fake cursor icon */}
-   
-<AnimatePresence>
-  {isHovered && (
-    <motion.img
-      key="cursor"
-      src="/Images/swirl.svg"
-      alt="cursor icon"
-      className="fixed w-12 h-12 pointer-events-none"
-      style={{
-        left: mousePos.x - 24 + "px",
-        top: mousePos.y - 24 + "px",
-      }}
-      initial={{ scale: 0, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      exit={{ scale: 0, opacity: 0 }}
-      transition={{ duration: 0.3, ease: "easeOut" }}
-    />
-  )}
-</AnimatePresence>
-    </div>
-
+          <div className="relative">
+            {/* The button */}
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="text-white flex md:hidden flex-col gap-[2.5px] md:gap-[0.5rem] -translate-y-3 md:-translate-y-2 mt-7 cursor-none"
+            >
+              <div
+                className={` w-6 md:w-24 h-[2px] md:h-[0.5rem]  ${
+                  color
+                    ? menuOpen
+                      ? "bg-primary"
+                      : "bg-background"
+                    : "bg-primary"
+                }`}
+              ></div>
+              <div
+                className={` w-6 md:w-24 h-[2px] md:h-[0.5rem]  ${
+                  color
+                    ? menuOpen
+                      ? "bg-primary"
+                      : "bg-background"
+                    : "bg-primary"
+                }`}
+              ></div>
+              <div
+                className={` w-6 md:w-24 h-[2px] md:h-[0.5rem]  ${
+                  color
+                    ? menuOpen
+                      ? "bg-primary"
+                      : "bg-background"
+                    : "bg-primary"
+                }`}
+              ></div>
+            </button>
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              className="text-white  flex-col gap-[2.5px] md:gap-[0.5rem] -translate-y-3 md:-translate-y-2 mt-7 cursor-none hidden md:flex"
+            >
+              <div
+                className={` w-6 md:w-24 h-[2px] md:h-[0.5rem]  ${
+                  color
+                    ? menuOpen
+                      ? "bg-primary"
+                      : "bg-background"
+                    : "bg-primary"
+                }`}
+              ></div>
+              <div
+                className={` w-6 md:w-24 h-[2px] md:h-[0.5rem]  ${
+                  color
+                    ? menuOpen
+                      ? "bg-primary"
+                      : "bg-background"
+                    : "bg-primary"
+                }`}
+              ></div>
+              <div
+                className={` w-6 md:w-24 h-[2px] md:h-[0.5rem]  ${
+                  color
+                    ? menuOpen
+                      ? "bg-primary"
+                      : "bg-background"
+                    : "bg-primary"
+                }`}
+              ></div>
+            </button>
+            {/* Fake cursor icon */}
+            <AnimatePresence>
+              {isHovered && (
+                <motion.img
+                  key="cursor"
+                  src="/Images/swirl.svg"
+                  alt="cursor icon"
+                  className="fixed w-12 h-12 pointer-events-none z-[9999]"
+                  style={{
+                    left: `${mousePos.x - 24}px`,
+                    top: `${mousePos.y - 24}px`,
+                  }}
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0, opacity: 0 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                />
+              )}
+            </AnimatePresence>
+          </div>
         </div>
       </nav>
 
@@ -168,19 +276,25 @@ useEffect(() => {
             animate={{
               opacity: 1,
               y: 0,
-              transition: { opacity: { duration: 0.8, ease: "easeInOut" }, y: { duration: 0.4, ease: "easeOut" } },
+              transition: {
+                opacity: { duration: 0.8, ease: "easeInOut" },
+                y: { duration: 0.4, ease: "easeOut" },
+              },
             }}
             exit={{
               opacity: 0,
               y: "-100%",
-              transition: { opacity: { duration: 0.6, ease: "easeInOut" }, y: { duration: 0.3, ease: "easeIn" } },
+              transition: {
+                opacity: { duration: 0.6, ease: "easeInOut" },
+                y: { duration: 0.3, ease: "easeIn" },
+              },
             }}
-            className="absolute top-0 inset-0 flex flex-col bg-[#202A43] h-screen items-start justify- text-white bg-cover bg-center z-40"
-               style={{ backgroundImage: `url(${'/Images/bg.svg'})` }}
+            className="absolute top-0 inset-0 flex flex-col bg-[#202A43]  h-screen items-start justify- text-white bg-cover bg-center z-40"
+            style={{ backgroundImage: `url(${"/Images/bg.svg"})` }}
           >
             {/* Animated content */}
             <motion.div
-              className="mt-12 sm:mt-16 md:mt-24 lg:mt-32 flex items-start flex-col px-4 md:px-[4rem] gap-5 sm:gap-0 sm:justify-between h-screen"
+              className="mt-12 sm:mt-16 md:mt-24 w-full lg:mt-32 flex items-start flex-col px-4 md:px-[4rem] gap-5 sm:gap-0 sm:justify-between h-screen"
               initial="hidden"
               animate="visible"
               exit="exit"
@@ -198,54 +312,143 @@ useEffect(() => {
                   <motion.div
                     key={i}
                     variants={itemVariants}
-                    className="cursor-pointer hover:text-secondary w-fit capitalize"
+                    className={`cursor-pointer  w-fit capitalize ${
+                      item.name === "swirlbold"
+                        ? "cursor-none"
+                        : "hover:text-secondary"
+                    }`}
                     onClick={() => navigate(item.href)}
                   >
-                    {item.name}
+                    {item.name === "swirlbold" ? (
+                      <div
+                        className="relative flex items-center justify-center cursor-none"
+                        onMouseEnter={() => setIsHovered2(true)}
+                        onMouseLeave={() => setIsHovered2(false)}
+                      >
+                        {item.name}
+
+                        {/* ✨ Floating “Coming Soon” text follows the cursor */}
+                        <AnimatePresence>
+                          {isHovered2 && (
+                            <motion.div
+                              key="coming-soon"
+                              className="fixed z-50 bg- text-secondary px-6 py-3 rounded-full font-M_bold
+                                   text-[1rem] sm:text-[1.2rem] pointer-events-none tracking-normal  "
+                              style={{
+                                top: mousePos.y - 40 + "px",
+                                left: mousePos.x - 80 + "px",
+                              }}
+                              initial={{ scale: 0, opacity: 0 }}
+                              animate={{ scale: 1, opacity: 1 }}
+                              exit={{ scale: 0, opacity: 0 }}
+                              transition={{ duration: 0.3, ease: "easeOut" }}
+                            >
+                              Coming Soon
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    ) : (
+                      <> {item.name}</>
+                    )}
                   </motion.div>
                 ))}
               </motion.div>
 
               {/* Footer */}
               <div className="flex justify-between w-full items-center">
-                <motion.div className="my-5 font-M_medium text-primary text-[0.7rem] sm:text-[1.3rem] tracking-[.1em]" variants={itemVariants}>
-                  <a href="mailto:business@advertisingattitude.com" className="hover:opacity-75 cursor-pointer hover:text-secondary"  onClick={handleCopy}>
+                <motion.div
+                  className="my-5 font-M_medium text-primary text-[0.7rem] sm:text-[1.3rem] tracking-[.1em]"
+                  variants={itemVariants}
+                >
+                  <a
+                    href="mailto:business@advertisingattitude.com"
+                    className="hover:opacity-75 cursor-pointer hover:text-secondary"
+                    onClick={handleCopy}
+                  >
                     business@advertisingattitude.com
                   </a>
                   <br />
-                  Beirut  —  Beirut Digital District BDD 1499
+                  Beirut — Beirut Digital District BDD 1499
                 </motion.div>
 
-                <motion.img variants={itemVariants} src={'/Images/logo.svg'}                    
- loading='lazy'  decoding="sync" alt="Hero" className="hidden sm:block w-[20%] h-auto object-contain cursor-pointer hover:opacity-50"
-  onClick={() =>{
-    setMenuOpen(false)
-    navigate("/")}}
-   />
+                <motion.img
+                  variants={itemVariants}
+                  src={"/Images/logo.svg"}
+                  loading="lazy"
+                  decoding="sync"
+                  alt="Hero"
+                  className="hidden sm:block w-[20%] h-auto object-contain cursor-pointer hover:opacity-50"
+                  onClick={() => {
+                    setMenuOpen(false);
+                    navigate("/");
+                  }}
+                />
               </div>
 
               {/* Social Links */}
-              <motion.div className="flex items-center  flex-wrap justify-between md:justify-start w-full   sm:gap-10 md:gap-12 lg:gap-14 mb-6" variants={itemVariants}>
-                {["LinkedIn", "Instagram", "Facebook", "Newsletter"].map((item, i) => (
+              <motion.div
+                className="flex items-center  flex-wrap justify-between md:justify-start w-full   sm:gap-10 md:gap-12 lg:gap-14 mb-6"
+                variants={itemVariants}
+              >
+                {/* {["LinkedIn", "Instagram", "Facebook", "Newsletter"].map((item, i) => ( */}
+                {[
+                  {
+                    label: "Linkedin",
+                    link: "https://www.linkedin.com/company/advertisingattitude",
+                  },
+                  {
+                    label: "Instagram",
+                    link: "https://www.instagram.com/advertisingattitude",
+                  },
+                  {
+                    label: "Facebook",
+                    link: "https://www.facebook.com/advertisingattitude",
+                  },
+                ].map((item, index) => (
                   <div
-                    key={i}
+                    onClick={() => window.open(`${item.link}`, "_blank")}
+                    key={index}
                     className="cursor-pointer capitalize font-M_bold text-primary text-[0.7rem]
                      tracking-[.1em] hover:text-secondary sm:text-[clamp(0.9rem,1.5vw,1.3rem)]"
                   >
-                    {item}
+                    {item.label}
                   </div>
                 ))}
+                <div
+                  onClick={() => navigate("/theAA#newsletter")}
+                  className="cursor-pointer capitalize font-M_bold text-primary text-[0.7rem]
+                     tracking-[.1em] hover:text-secondary sm:text-[clamp(0.9rem,1.5vw,1.3rem)]"
+                >
+                  Newsletter
+                </div>
               </motion.div>
-              <div className="flex sm:hidden  mt-[3%]  w-full   items-end w-ful  justify-end">
-                <motion.img variants={itemVariants} src={'/Images/logo.svg'} loading='lazy'  decoding="sync" alt="Hero" className=" w-[40%] h-auto object-contain" />
-
+              <div className="flex sm:hidden  mt-[3%]  w-full items-end   justify-end">
+                <div className="flex items-end gap-2 justify-end w-full" onClick={() => {
+                    setMenuOpen(false);
+                    navigate("/");
+                  }} >
+                <motion.img
+                 
+                  
+                  src={"/Images/sLogo.svg"}
+                  loading="lazy"  
+                  decoding="sync"
+                  alt="Hero"
+                  className=" w-[20%] h-auto object-contain"
+                />
+          <h1 className="font-R_regular text-[1.3rem] text-left  text-primary leading-[1.2rem] md:hidden
+                md:pt-14 sm:pt-8 ">
+                Advertising <br className="md:hidden" /> Attitude 
+          </h1>
+                </div>
               </div>
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
     </>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;

@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -101,17 +101,23 @@ export default function TheAAM() {
     return () => clearInterval(interval);
   }, [api]);
 const navigate =useNavigate();
+const sectionRef = useRef(null);
 
   return (
     <motion.section
+    ref={sectionRef}
+
       variants={containerVariants}
       initial="hidden"
       viewport={{ once: true,amount:0.4}}
       whileInView="show"
-      className="relative md:h-screen w-full overflow-hidden snap-start"
+      className="relative  md:h-screen w-full overflow-hidden snap-start"
     >
       <motion.div variants={childVariantsnav} className="relative z-50 w-full">
-        <Nav title="THE AA PERSPECTIVE" tracking="text-[1.5rem] tracking-[0.1rem] md:tracking-[.8rem]" />
+        <Nav title="THE AA PERSPECTIVE"
+         tracking="text-[1.5rem] tracking-[0.1rem] md:tracking-[.8rem]"
+         sectionRef={sectionRef}
+         />
       </motion.div>
       <Carousel
         opts={{ loop: true }}
@@ -161,7 +167,7 @@ const navigate =useNavigate();
            rounded-full   text-primary bg-secondary  "
                   variant="default"
                   size="default"
-    onClick={() => navigate(`/case-study/${slides[current].id}`)}
+    onClick={() => navigate(`/work/casestudy/${slides[current].id}`)}
 
                 >
                   SEE THE CAMPAIGN

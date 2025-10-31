@@ -7,43 +7,7 @@ import { Button } from "../../../components/ui/button";
 import { useNavigate } from "react-router-dom";
 import theAA from '../../../../public/theAAdata';
 
-const slidess = [
-  {
-    img: "/Images/TheAA/aa.webp",
-    img2: "/Images/TheAA/ab.webp",
-    title: "Stop Branding \n Blindly",
-    subtitle:
-      "Many brands don’t fail in marketing because  of weak visuals  —  they fail because they skip  strategy. But with AI, it’s no longer out of  reach  —  it’s a revolution. Will you harness it, or \n fall behind?",
-  },
-  {
-    img: "/Images/TheAA/ab.webp",
-    img2: "/Images/TheAA/ac.webp",
-    title: "The New Marketing   Playbook",
-    subtitle:
-      "One marketer can’t do it all. An agency brings  the full arsenal  —  strategy, design, content, execution  —  all under one roof. Buy back your   time, cut the overhead, and focus on what  actually grows your business.",
-  },
-  {
-    img: "/Images/TheAA/ac.webp",
-    img2: "/Images/TheAA/ad.webp",
-    title: "The Burnout   Whisperer",
-    subtitle:
-      "You love the craft. The chase. The next big   idea. But when every brief whispers “do more, be more,  ” burnout starts to speak louder than   creativity. This one’s for the marketers,  designers, and dreamers who feel the pressure    but keep showing up.",
-  },
-  {
-    img: "/Images/TheAA/ad.webp",
-    img2: "/Images/TheAA/ae.webp",
-    title: "The SwirlBold  Mentality",
-    subtitle:
-      "Welcome to SwirlBold Thinking. Let’s stop   blending in. SwirlBold isn’t a style. It’s   a   mindset. It’s marketing that spins out of the   obvious and lands where impact lives. You   don’t think in straight lines. You think in   loops, angles, and questions others are too   scared to ask. Because bold ideas don’t follow   the rules. They bend them, break them, and   redraw the map.",
-  },
-  {
-    img: "/Images/TheAA/ae.webp",
-    img2: "/Images/TheAA/aa.webp",
-    title: "Every Agency   Is An Award   Winner",
-    subtitle:
-      "Some win for real. Some win for reach. Either   way  —  congrats, truly. As for us? We’re not in it    (yet). We’re just keeping our heads down,    building loud ideas quietly. Because the best   kind of recognition? Comes after the work is   done.",
-  },
-];
+
 
 function TheAA() {
   const selectedSlides = [theAA[0], theAA[1], theAA[4], theAA[11], theAA[10]];
@@ -119,7 +83,6 @@ function TheAA() {
     } else if (diff < -10) {
       nextSlide();
     }
-
     startX.current = null;
   };
 
@@ -143,12 +106,17 @@ const sectionRef = useRef(null);
     >
       <motion.div className="relative z-50 w-full hidden md:block" variants={childVariantsnav}>
 
-        <Nav title={"THE AA PERSPECTIVE"} tracking={"text-[1.5rem] tracking-[0.8rem]"} sectionRef={sectionRef}  />
+        <Nav title={"THE AA PERSPECTIVE"}
+         tracking={"text-[1.5rem] tracking-[0.8rem]"}
+          sectionRef={sectionRef}  />
         {/* <Nav title={"THINK BOLDLY"} tracking={"tracking-[1.9rem]"} /> */}
       </motion.div>
 
-        <motion.div className="relative z-50 w-full md:hidden" variants={childVariantsnav}>
-        <Nav title={"PERSPECTIVE"} tracking={"text-[1.5rem] tracking-[0.4rem]"} />
+        <motion.div className="relative z-50 w-full md:hidden"
+         variants={childVariantsnav}>
+        <Nav title={"PERSPECTIVE"} 
+        tracking={"text-[1.5rem] tracking-[0.4rem]"} 
+        sectionRef={sectionRef}/>
         {/* <Nav title={"THINK BOLDLY"} tracking={"tracking-[1.9rem]"} /> */}
       </motion.div>
 

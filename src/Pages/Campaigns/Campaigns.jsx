@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { motion, useScroll } from 'framer-motion'
 import Nav from "../../components/Nav/Nav";
 import CampaignsData from '../../../public/Images/data';
@@ -17,49 +17,66 @@ const Campaigns = () => {
     },
   };
 
-  const childVariantsnav = {
-    hidden: { opacity: 1 ,y:-20 },
-    show: {
-      opacity: 1,
-      y :0,
-      transition: { type: "tween", duration: 0.5, ease: "easeOut" },
-    },
-  };
-  
-
+  const navigate =useNavigate();  
   const [data, setData] = useState(CampaignsData);
   const [showLogo, setShowLogo] = useState(false);
+  const handleNavigate = (id) => {
+    sessionStorage.setItem('campaignScroll', window.scrollY);
+    navigate(`/work/casestudy/${id}`);
+  };
 
+  // 🧭 Restore scroll when coming back
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = (scrollPosition / pageHeight) * 100;
-
-      // Show the logo only after 30% scroll
-      setShowLogo(scrollPercent >= 30);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const savedScroll = sessionStorage.getItem('campaignScroll');
+    if (savedScroll) {
+      setTimeout(() => {
+        window.scrollTo(0, parseInt(savedScroll));
+      }, 100);
+    }
   }, []);
+  useEffect(() => {
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+    const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollPosition / pageHeight) * 100;
+
+    // Check footer visibility
+    const footer = document.getElementById("footer");
+    const footerTop = footer?.getBoundingClientRect().top ?? 0;
+
+    const isFooterVisible = footerTop <= window.innerHeight && footerTop > 0;
+    setShowLogo(scrollPercent >= 20 && !isFooterVisible);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+  const sectionRef = useRef(null);
+
   return (
-    <div>
+    <div ref={sectionRef}>
+
       <motion.section
         variants={containerVariants}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.2 }}
-        className="relative w-full snap-start bg-[#F2EDD9] pb-[10rem] bg-contain"
+        viewport={{ once: true, amount: 0.2 }}
+        className="relative w-full  bg-[#F2EDD9] pb-[10rem] bg-contain "
         style={{ backgroundImage: `url('/Images/Work/workBg.svg')` }}
       >
-        <motion.div variants={childVariantsnav} className="z-50 w-full relative hidden md:block">
-          <Nav title={["CAMPAIGN MADE BY AA"]} tracking={"tracking-[0.6rem]"} color="text-black" />
+        <motion.div  className="z-50 w-full relative hidden md:block ">
+          <Nav title={["CAMPAIGN MADE BY AA"]} 
+          tracking={"tracking-[0.6rem]"}
+           color="text-black" 
+           sectionRef={sectionRef}/>
         </motion.div>
 <motion.div className="relative z-50 w-full md:hidden">
-        <Nav title={["CAMPAIGN"]} tracking={"tracking-[0.8rem]"} color="text-black" />
+        <Nav title={["AA’S CAMPAIGNS"]}
+         tracking={"tracking-[0.2rem]"}
+          color="text-black"
+          sectionRef={sectionRef} />
       </motion.div>
-        <motion.div variants={childVariantsnav} className='z-50 pt-20 md:pt-30 px-4 md:px-[4rem]'>
+        <motion.div  className='z-50 pt-[3.2rem] md:pt-30 px-4 md:px-[4rem]'>
           
            <Tabs
                             tabs={[
@@ -68,15 +85,15 @@ const Campaigns = () => {
                             ]}
                             color="text-secondary"
                           />
-          <h3 className='font-M_bold text-secondary text-left text-[2rem] leading-[2.3rem]  sm:text-[4rem] sm:tracking-[0.5rem] sm:leading-[4rem] sm:text-justify'>
+          <h3 className='font-M_bold text-secondary text-left text-[1.5rem] leading-[1.7rem]  sm:text-[4rem] sm:tracking-[0.5rem] sm:leading-[4rem] sm:text-justify'>
             THE SWIRL SPEAKS LOUDER <br className='hidden md:block'/> THAN WORDS
           </h3>
-          <p className='font-M_bold text-black text-[1.2rem] leading-[1.3rem] sm:text-[1.8rem] sm:leading-[2rem] tracking-[0.2rem] mt-8'>
-            From airports to icons, our campaigns aren’t just seen, <br/> they’re remembered.
+          <p className='font-M_bold text-black text-[0.8rem] leading-[1rem] sm:text-[1.8rem] sm:leading-[2rem] tracking-[0.08rem]  md:tracking-[0.2rem] mt-4 md:mt-8'>
+            From airports to icons, our campaigns aren’t just seen, <br className='hidden md:block'/> they’re remembered.
           </p>
 
           <div>
-            <Grids data={CampaignsData}/>
+            <Grids data={CampaignsData} onCardClick={handleNavigate}/>
           </div>
         </motion.div>
 
@@ -94,8 +111,9 @@ const Campaigns = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
         />
       </motion.section>
-
+<div id="footer">
       <Footer />
+      </div>
     </div>
   )
 }

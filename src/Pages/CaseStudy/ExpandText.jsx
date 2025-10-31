@@ -36,7 +36,7 @@ const ExpandableText = ({ html = "" }) => {
             {/* ✅ Paragraph (only first two lines visible with fading opacity) */}
             {paragraph && (
               <div
-                className="font-M_semibold text-[1rem] md:text-[1.3rem] leading-[1.6rem] tracking-[0.05rem] line-clamp-2 overflow-hidden mb-8"
+                className="font-M_semibold text-[1rem] md:text-[1.3rem] leading-[1.6rem] tracking-[0.05rem] line-clamp-2  overflow-hidden  mb-8"
                 style={{
                   background:
                     "linear-gradient(to bottom, rgba(0,0,0,0.4) 30%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0) 100%)",
@@ -54,8 +54,8 @@ const ExpandableText = ({ html = "" }) => {
 
               <motion.button
                 onClick={() => setExpanded(true)}
-                className="  font-R_regular text-[1rem] md:text-[1.5rem] tracking-[0.12em] leading-[4rem] mt-0 
-          flex items-center justify-center w-full md:w-[25rem] h-[3rem] md:h-[5rem] hover:bg-secondary shadow-md hover:scale-105 transition-transform duration-300 cursor-pointer
+                className="  font-R_regular text-[1.3rem] md:text-[1.5rem] tracking-[0.12em] leading-[4rem] mt-8 md:mt-0 
+          flex items-center justify-center w-[90%] md:w-[25rem] h-[3.5rem] md:h-[5rem] hover:bg-secondary shadow-md hover:scale-105 transition-transform duration-300 cursor-pointer
            rounded-full   text-primary bg-secondary "
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}

@@ -170,7 +170,7 @@ const sectionRef = useRef(null);
            rounded-full text-primary bg-secondary"
             variant="default"
             size="default"
-            onClick={() => navigate(`/case-study/${slides[current].id}`)}
+            onClick={() => navigate(`/work/casestudy/${slides[current].id}`)}
           >
             SEE THE CAMPAIGN
           </Button>

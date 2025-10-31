@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Nav from "../../../components/Nav/Nav";
 import { motion, useAnimation } from "framer-motion";
 
@@ -60,8 +60,12 @@ const betweenVariants = {
     transition: { duration: 5, ease: "easeInOut", delay: 5 }
   }
 };
+const sectionRef = useRef(null);
+
   return (
     <motion.section
+    ref={sectionRef}
+
       variants={containerVariants}
       initial="hidden"
       whileInView="show"
@@ -73,7 +77,8 @@ const betweenVariants = {
       <motion.div className="relative z-50 w-full md:hidden" variants={navVariants}>
         <Nav title={["DISRUPTIVE","CREATIVITY"]}
         
-        tracking="text-[1.5rem] tracking-[0.5rem]" />
+        tracking="text-[1.5rem] tracking-[0.5rem]"
+        sectionRef={sectionRef} />
       </motion.div>
 
       <motion.div className="relative z-50 w-full hidden md:block" variants={navVariants}>

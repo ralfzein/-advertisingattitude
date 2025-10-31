@@ -50,14 +50,13 @@ const Footer = () => {
     <motion.section
       variants={containerVariants}
       initial="hidden"
-
       whileInView="show"
-       className='relative  h-screen flex flex-col   bg-background   'id="footer"
+       className='relative  h-screen flex flex-col   bg-background' id="footer"
        style={{ backgroundImage: `url('/Images/bg.svg')` }}>
-      <div className='flex flex-col px-4 md:px-[4rem] justify-around ween h-full mb-5 '>
-        <motion.p  variants={childVariants} className=' mt-5
-          font-M_bold  text-primary tracking-[.1em] text-xs md:text-[1rem]
-           leading-[1rem]  md:leading-[1.3rem] text-justify
+      <div className='flex flex-col px-4 md:px-[4rem] justify-around  h-full md:mb-5 '>
+        <motion.p  variants={childVariants} className=' md:mt-5 
+          font-M_bold  text-primary tracking-[.1em] text-sm md:text-[1rem] 
+           leading-[1rem]  md:leading-[1.3rem] text-justify 
           '>Advertising Attitude is a leading creative agency built for brands that 
             refuse to blend in. We don’t just craft campaigns — we train ideas to fight harder,
              lastlonger, and leave echoes. Rooted in clarity, rebellion, and bold thinking, 
@@ -88,7 +87,9 @@ const Footer = () => {
                                     <span  className='text-sm font-M_bold text-primary tracking-[.1em] cursor-pointer hover:text-secondary'
                                     onClick={() => navigate('/contact')}>Career</span>
                 <span  className='text-sm font-M_bold text-primary tracking-[.1em] cursor-pointer hover:text-secondary'
-                                    onClick={() => navigate('/contact')}>NewsLetter</span>
+                                    onClick={() => navigate('/theAA#newsletter')}>
+                         NewsLetter
+                                    </span>
             </div>
 
             <div className='flex flex-wrap items-center  justify-between  md:items-center gap-2 md:gap-10 '> 
@@ -100,7 +101,7 @@ const Footer = () => {
           
         </div>
         </div>
-        <motion.div variants={childVariants} className=' py-2 w-full bg-bur flex items-center  '>
+        <motion.div variants={childVariants} className=' py-2 w-full bg-bur flex items-center    '>
             <div className='flex flex-col md:flex-row  gap-1 justify-between  items-center w-full  px-4 md:px-[4rem] '>
                 <div className='flex  w-full md:w-auto items-center justify-start  '>
                     <span className='text-[10px] md:text-sm  font-M_medium text-primary tracking-[.1em]'>Beirut  —  Beirut Digital District BDD 1499</span>

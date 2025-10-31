@@ -2,12 +2,15 @@ import React, { useState } from 'react'
 import { Skeleton } from '../../../components/ui/skeleton';
 import { useNavigate } from 'react-router-dom';
 
-const Cards = ({ data, style, center }) => {
+const Cards = ({ data, style, center ,onClick }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 const navigate =useNavigate();  
+ const handleClick = () => {
+    if (onClick) onClick(data.id);
+  };
   return (
-    <div className={`flex flex-col gap-4 md:gap-[10px] col-span-1 ${center ? 'md:px-[5rem]' : ''}`} 
-    onClick={() => navigate(`/case-study/${data.id}`)}
+    <div className={`flex flex-col gap-2 md:gap-[10px] col-span-1 ${center ? 'md:px-[5rem]' : ''}`} 
+     onClick={handleClick}
     >
       <div className={`relative w-full overflow-hidden `}>
         {!isLoaded && (
@@ -27,7 +30,7 @@ const navigate =useNavigate();
       {!isLoaded ? (
         <Skeleton className="w-[10rem] h-[1rem] bg-secondary/30" />
       ) : (
-        <h3 className="font-R_regular text-secondary text-[1.8rem] md:text-[2rem] leading-[2rem] uppercase">
+        <h3 className="font-R_regular text-secondary text-[1.2rem] leading-[1.2rem] md:text-[2rem] md:leading-[2rem] uppercase">
           {data?.title}
         </h3>
       )}
@@ -38,7 +41,7 @@ const navigate =useNavigate();
           <Skeleton className="w-[50%] h-[1rem] bg-secondary/30" />
         </div>
       ) : (
-        <p className='text- font-M_medium text-background leading-5 text-smmd:text-md '>{data?.subTitle}</p>
+        <p className='text- font-M_medium text-background md:leading-5 text-xs md:text-md '>{data?.subTitle}</p>
       )}
 
       {!isLoaded ? (
@@ -48,11 +51,11 @@ const navigate =useNavigate();
           <Skeleton className="w-[5rem] h-[1rem] bg-secondary/30" />
         </div>
       ) : (
-        <div className="flex flex-row flex-wrap gap-1 mt-2">
+        <div className="flex flex-row flex-wrap gap-[2px] md:gap-1 mt-2">
           {data?.tags?.map((tag, index) => (
             <span
               key={index}
-              className="font-M_bold text-white text-xs bg-background rounded-full px-3 py-[2px]"
+              className="font-M_bold text-white text-[10px] md:text-xs w-fit bg-background rounded-full px-3 py-[2px] line-clamp-1"
             >
               {tag}
             </span>
