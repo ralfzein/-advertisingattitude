@@ -160,14 +160,13 @@ const handleNavigate = (id) => {
   const navigate = useNavigate();
  const location = useLocation();
 
-  useEffect(() => {
-    if (location.hash) {
-      const element = document.querySelector(location.hash);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  }, [location]);
+
+
+
+
+
+
+
     const [isLoaded1, setIsLoaded1] = useState(false);
   const [showLogo, setShowLogo] = useState(false);
   
@@ -196,8 +195,37 @@ const handleNavigate = (id) => {
   return () => window.removeEventListener("scroll", handleScroll);
 }, []);
 const sectionRef = useRef(null);
+useEffect(() => {
+  if (location.hash) {
+    const element = document.querySelector(location.hash);
+    if (!element) return;
 
-  
+    const handleScrollTo = () => {
+      const rect = element.getBoundingClientRect();
+      const scrollTop = window.scrollY || window.pageYOffset;
+
+      const y =
+        rect.top +
+        scrollTop -
+        parseFloat(getComputedStyle(element).marginTop || 0);
+
+      window.scrollTo({
+        top: y,
+        behavior: "smooth",
+      });
+    };
+
+    const timer = setTimeout(() => {
+      requestAnimationFrame(handleScrollTo);
+    }, 800); 
+
+    return () => clearTimeout(timer);
+  }
+}, [location]);
+
+
+
+
   return (
     <div   ref={sectionRef} >
       <div className="relative">

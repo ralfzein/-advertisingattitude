@@ -79,30 +79,33 @@ const ThirdTab = () => {
     }
   } ;
 
-  const handleSend = (e) => {
-    e.preventDefault();
 
-    if (!formRef.current) return;
+const [sendingEmail, setSendingEmail] = useState(false);
 
-    emailjs
-      .sendForm(
-        "YOUR_REAL_SERVICE_ID",
-        "YOUR_REAL_TEMPLATE_ID",
-        formRef.current,
-        "YOUR_REAL_PUBLIC_KEY"
-      )
-      .then(
-        (result) => {
-          console.log("Email sent:", result.text);
-          alert("Form sent successfully!");
-        },
-        (error) => {
-          console.error("Email error:", error.text);
-          alert("Failed to send the form. Check console for details.");
-        }
-      );
-  };
+const handleSend = async (e) => {
+  e.preventDefault();
+  const formData = new FormData(formRef.current);
 
+  const email = formData.get("email");
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      setSendingEmail(true);
+  if (!emailRegex.test(email)) {
+    toast.error("Please enter a valid email address.");
+      setSendingEmail(false);
+
+    return;
+  }
+ formData.append("category", "I am a PR");
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/api/send-email`, {
+    method: "POST",
+    body: formData,
+  });
+
+      
+  if (response.ok) {toast.success("Form sent successfully!"); setSendingEmail(false); }
+  else{ toast.error("Failed to send the form."); ; setSendingEmail(false);}
+};
   return ( 
     <motion.div
       variants={containerVariants}
@@ -253,11 +256,15 @@ const ThirdTab = () => {
               {/* Submit button */}
               <div className="flex items-center justify-between md:items-start md:justify-start w-full mt-20">
                 <Button
+            disabled={sendingEmail}
+
                   type="submit"
                   className="font-R_regular text-[0.8rem] tracking-[0.05rem] leading-[] md:text-[1.4rem] md:tracking-[0.12em] md:leading-[4rem] flex items-center 
             justify-center flex-1 md:flex-none  w-auto md:w-[28rem] h-[3rem] md:h-[5rem] hover:bg-secondary hover:opacity-80 cursor-pointer rounded-full text-primary bg-secondary"
                 >
-                  BRING THE CLIENTS
+             {sendingEmail ? "Sending Email..." : "BRING THE CLIENTS"}  
+
+                
                 </Button>
 
                 <div className="!flex-1 md:hidden ">

@@ -7,6 +7,7 @@ import { Button } from "../../../components/ui/button";
 import { useNavigate } from "react-router-dom";
 import theAA from '../../../../public/theAAdata';
 
+import { Skeleton } from "../../../components/ui/skeleton";
 
 
 function TheAA() {
@@ -64,6 +65,7 @@ function TheAA() {
     }, 10000);
     return () => clearInterval(interval);
   }, []);
+const [loadedImages, setLoadedImages] = useState(Array(slides.length).fill(false));
 
   const nextSlide = () => setIndex((prev) => (prev + 1) % slides.length);
   const prevSlide = () =>
@@ -165,26 +167,41 @@ const sectionRef = useRef(null);
         </div>
 
         <div className="relative flex-1 w-full flex items-center justify-center md:h-[30rem] ">
-          <div className="absolute right-12">
-            <div
-              className="carousel-container cursor-grab"
-              onMouseDown={handlePointerDown}
-              onMouseUp={handlePointerUp}
-              onTouchStart={handlePointerDown}
-              onTouchEnd={handlePointerUp}
-            >
-              {slides.map((item, i) => (
-                <div key={i} className={getSlideClass(i)}>
-                  <img
-                    src={item.img}
-                    alt="Hero"
-                    loading="lazy"
-                    className="w-full h-full   pointer-events-none  select-none"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+         <div className="absolute right-12">
+  <div
+    className="carousel-container cursor-grab"
+    onMouseDown={handlePointerDown}
+    onMouseUp={handlePointerUp}
+    onTouchStart={handlePointerDown}
+    onTouchEnd={handlePointerUp}
+  >
+    {slides.map((item, i) => (
+      <div key={i} className={getSlideClass(i)}>
+        {/* Show skeleton if image not yet loaded */}
+        {!loadedImages[i] && (
+          <Skeleton className="absolute inset-0 w-full h-full bg-secondary/30" />
+        )}
+
+        <img
+          src={item.img}
+          alt="Hero"
+          loading="lazy"
+          className={`w-full h-full object-cover pointer-events-none select-none transition-opacity duration-500 ${
+            loadedImages[i] ? "opacity-100" : "opacity-0"
+          }`}
+          onLoad={() =>
+            setLoadedImages((prev) => {
+              const next = [...prev];
+              next[i] = true;
+              return next;
+            })
+          }
+        />
+      </div>
+    ))}
+  </div>
+</div>
+
         </div>
         {/* Images */}
         {/* <div className="relative flex-1 w-full flex items-start justify-center h-full">

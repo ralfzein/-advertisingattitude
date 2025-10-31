@@ -5,7 +5,7 @@ const TheAA = [
     subTitle:
       "The attitude behind Advertising Attitude.",
     img1: "/Images/TheAAP/img/first.svg",
-    img: "/Images/TheAAP/img/firstt.svg",
+    img: "/Images/TheAAP/img/firs.webp",
     rounded: "rounded-tr-full rounded-tl-full  rounded-bl-full rounded-br-full",
     time: "3-minute read",
     tags: ["Brand Philosophy", "Creative Journey"],

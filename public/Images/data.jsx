@@ -51,7 +51,7 @@ Guided by our SwirlBold™ mentality, we pair disruptive creativity with discipl
             </p>`
 ,
       section2:["/Images/Cases/Case1/section2a.svg","/Images/Cases/Case1/Photo 3.png","/Images/Cases/Case1/Photo 4.svg"],
-      section3:["/Images/Cases/Case1/section3a.svg","/Images/Cases/Case1/section3b.svg","/Images/Cases/Case1/section3c.svg"],
+      section3:["/Images/Cases/Case1/section3a.svg","/Images/Cases/Case1/section3b.webp","/Images/Cases/Case1/section3c.svg"],
       section4:["/Images/Cases/Case1/section4a.svg","/Images/Cases/Case1/section4b.svg","/Images/Cases/Case1/section4c.svg","/Images/Cases/Case1/section4d.svg"
       ],
 

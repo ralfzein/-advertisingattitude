@@ -77,14 +77,15 @@ body {
   scrollbar-width: thin;
   scrollbar-color: #f87171 #202A43; /* thumb track */
 }
-.menu-bg {
-  background-image: url('/Images/bg.svg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+html.no-scroll,
+body.no-scroll {
+  overflow: hidden !important;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
-
-
 
 
 

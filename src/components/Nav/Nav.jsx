@@ -10,7 +10,6 @@ const Nav = ({ title, tracking, color, sectionRef }) => {
   const navigate = useNavigate();
   const [isHovered2, setIsHovered2] = useState(false);
 
-  // 👉 for title cycling
   const [currentIndex, setCurrentIndex] = useState(0);
   const titles = Array.isArray(title) ? title : [title];
 
@@ -23,7 +22,6 @@ const Nav = ({ title, tracking, color, sectionRef }) => {
     }
   }, [titles]);
 
-  // Animation variants for title
   const titleVariants = {
     hidden: { opacity: 0, y: -5 },
     visible: { opacity: 1, y: 0 },
@@ -82,9 +80,18 @@ const Nav = ({ title, tracking, color, sectionRef }) => {
       document.documentElement.style.overflow = "";
     }
 
+    const preventScroll = (e) => e.preventDefault();
+
+    if (menuOpen) {
+      document.addEventListener("touchmove", preventScroll, { passive: false });
+    } else {
+      document.removeEventListener("touchmove", preventScroll);
+    }
+
     return () => {
       document.body.style.overflow = "";
       document.documentElement.style.overflow = "";
+      document.removeEventListener("touchmove", preventScroll);
     };
   }, [menuOpen, sectionRef]);
 
@@ -416,7 +423,9 @@ const Nav = ({ title, tracking, color, sectionRef }) => {
                   </div>
                 ))}
                 <div
-                  onClick={() => navigate("/theAA#newsletter")}
+                  onClick={() =>{
+                     setMenuOpen(false);
+                     navigate("/theAA#newsletter")}}
                   className="cursor-pointer capitalize font-M_bold text-primary text-[0.7rem]
                      tracking-[.1em] hover:text-secondary sm:text-[clamp(0.9rem,1.5vw,1.3rem)]"
                 >
@@ -424,23 +433,26 @@ const Nav = ({ title, tracking, color, sectionRef }) => {
                 </div>
               </motion.div>
               <div className="flex sm:hidden  mt-[3%]  w-full items-end   justify-end">
-                <div className="flex items-end gap-2 justify-end w-full" onClick={() => {
+                <div
+                  className="flex items-end gap-2 justify-end w-full"
+                  onClick={() => {
                     setMenuOpen(false);
                     navigate("/");
-                  }} >
-                <motion.img
-                 
-                  
-                  src={"/Images/sLogo.svg"}
-                  loading="lazy"  
-                  decoding="sync"
-                  alt="Hero"
-                  className=" w-[20%] h-auto object-contain"
-                />
-          <h1 className="font-R_regular text-[1.3rem] text-left  text-primary leading-[1.2rem] md:hidden
-                md:pt-14 sm:pt-8 ">
-                Advertising <br className="md:hidden" /> Attitude 
-          </h1>
+                  }}
+                >
+                  <motion.img
+                    src={"/Images/sLogo.svg"}
+                    loading="lazy"
+                    decoding="sync"
+                    alt="Hero"
+                    className=" w-[20%] h-auto object-contain"
+                  />
+                  <h1
+                    className="font-R_regular text-[1.3rem] text-left  text-primary leading-[1.2rem] md:hidden
+                md:pt-14 sm:pt-8 "
+                  >
+                    Advertising <br className="md:hidden" /> Attitude
+                  </h1>
                 </div>
               </div>
             </motion.div>

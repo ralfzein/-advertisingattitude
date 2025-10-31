@@ -33,6 +33,9 @@ const NewsLetter = () => {
     }
   }, [isInView, next])
 
+const [name, setName] = useState("");
+const [email, setEmail] = useState("");
+
   return (
     <motion.div ref={ref}
   variants={containerVariants}
@@ -90,6 +93,8 @@ const NewsLetter = () => {
                  <motion.input
   key="name"
   placeholder="Name"
+   value={name}
+    onChange={(e) => setName(e.target.value)}
   initial={{ opacity: 0, y: 20 }}
   animate={{
     opacity: 1,
@@ -116,6 +121,8 @@ const NewsLetter = () => {
                   <motion.input
                     key='email'
                     placeholder='E-mail'
+                     value={email}
+    onChange={(e) => setEmail(e.target.value)}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
@@ -131,7 +138,7 @@ const NewsLetter = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.9 }}
                     transition={{ delay:0.4,duration: 0.4, ease: [0.45, 0, 0.55, 1] }}
-                    className='rounded-l-full w-[12rem] h-10  md:h-16   md:-translate-x-10 mt-9 md:mt-14 rounded-tr-full
+                    className='rounded-l-full w-[12rem] md:w-auto h-10  md:h-16   md:-translate-x-10 mt-9 md:mt-14 rounded-tr-full
                      bg-primary text-secondary font-R_regular text-[1.5rem] md:text-[2rem]
                    px-4 md:px-6 flex items-center justify-center'
                     onClick={() => setNext(1)}
@@ -184,10 +191,30 @@ const NewsLetter = () => {
                   transition={{delay:1, duration: 0.4, ease: [0.45, 0, 0.55, 1] }}
                   className='w-18 h-11 md:h-[3.75rem] mt-8 md:mt-14 translate-x-5 md:translate-x-0 text-secondary
                    z-10 flex items-center justify-center bg-primary rounded-tl-[50%] cursor-pointer'
-                  onClick={() => setNext((prev) => prev + 1)}
+                 onClick={() => {
+                      if (next === 3) {
+                        // Send newsletter data to backend
+                       fetch(`${process.env.REACT_APP_API_URL}/api/send-email`, {
+                          method: "POST",
+                          headers: {
+                            "Content-Type": "application/json",
+                          },
+                          body: JSON.stringify({ name, email }),
+                        })
+                          .then((res) => res.json())
+                          .then((data) => {
+                            console.log("✅ Subscription sent:", data);
+                          })
+                          .catch((err) => {
+                            console.error("❌ Error:", err);
+                          });
+                      }
+                      setNext((prev) => prev + 1); // Move to next step
+                    }}
+
                 > 
                   <MoveRight size={50} strokeWidth={1} className='cursor-pointer hidden md:block' />
-                  <MoveRight size={40} strokeWidth={1} className='cursor-pointer block mdLhidden' />
+                  <MoveRight size={40} strokeWidth={1} className='cursor-pointer block md:hidden' />
                 </motion.div>
               )}
 

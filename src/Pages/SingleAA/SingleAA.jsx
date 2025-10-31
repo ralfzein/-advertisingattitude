@@ -181,9 +181,9 @@ const plainText = caseS?.paragraph1?.replace(/<[^>]*>/g, '');
                 <img
                   src={caseS?.img}
                   alt={caseS?.title || "AA image"}
-                  className={`transition-opacity duration-500  ${
+                  className={`transition-opacity duration-500 ${
                     isLoaded1 ? "opacity-100" : "opacity-0"
-                  }  h-[15rem]  md:w-[20rem] md:h-[25rem]`}
+                  }  h-[15rem]  md:w-[20rem] md:h-[25rem] object-cover`}
                   onLoad={() => setIsLoaded1(true)}
                 />
               </div>

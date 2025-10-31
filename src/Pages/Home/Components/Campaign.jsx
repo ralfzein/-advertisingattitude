@@ -102,10 +102,10 @@ export default function Cam() {
     return () => clearInterval(interval);
   }, [api]);
   const navigate = useNavigate();
-const sectionRef = useRef(null);
+const sectionRefc = useRef(null);
   return (
     <motion.section
-    ref={sectionRef}
+    ref={sectionRefc}
       variants={containerVariants}
       initial="hidden"
       viewport={{ once: true, amount: 0.4 }}
@@ -121,7 +121,7 @@ const sectionRef = useRef(null);
             </>
           }
           tracking="text-[1.5rem] tracking-[0.8rem] md:tracking-[.8rem]"
-             sectionRef={sectionRef} 
+             sectionRef={sectionRefc}
         />
       </motion.div>
       <Carousel

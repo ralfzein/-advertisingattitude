@@ -71,26 +71,31 @@ const handleFileChange = (e) => {
 };
 
 
-const handleSend = (e) => {
+const [sendingEmail, setSendingEmail] = useState(false);
+
+const handleSend = async (e) => {
   e.preventDefault();
+  const formData = new FormData(formRef.current);
 
-  if (!formRef.current) return;
+  const email = formData.get("email");
 
-  emailjs.sendForm(
-    "YOUR_REAL_SERVICE_ID",
-    "YOUR_REAL_TEMPLATE_ID",
-    formRef.current,
-    "YOUR_REAL_PUBLIC_KEY"
-  ).then(
-    (result) => {
-      console.log("Email sent:", result.text);
-      alert("Form sent successfully!");
-    },
-    (error) => {
-      console.error("Email error:", error.text);
-      alert("Failed to send the form. Check console for details.");
-    }
-  );
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      setSendingEmail(true);
+  if (!emailRegex.test(email)) {
+    toast.error("Please enter a valid email address.");
+      setSendingEmail(false);
+
+    return;
+  }
+ formData.append("category", "I am a Creator");
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/api/send-email`, {
+    method: "POST",
+    body: formData,
+  });
+
+      
+  if (response.ok) {toast.success("Form sent successfully!"); setSendingEmail(false); }
+  else{ toast.error("Failed to send the form."); ; setSendingEmail(false);}
 };
 
 
@@ -121,7 +126,7 @@ const handleSend = (e) => {
           <div className="flex items-center justify-start w-full gap-5">
             <label htmlFor="Portfolio" className="font-M_medium md:w-[14rem]  text-[1rem] md:text-[1.5rem] whitespace-nowrap
               cursor-pointer    text-primary">Portfolio Link</label>
-            <input id="Portfolio" name="Portfolio" className="border-b  border-primary/10
+            <input id="Portfolio" name="Portfolio" type="link" className="border-b  border-primary/10
              caret-secondary focus:outline-none font-M_medium w-full text-primary text-[1rem] md:text-[1.4rem]" />
           </div>
 
@@ -186,9 +191,14 @@ const handleSend = (e) => {
 
           {/* Submit button */}
           <div className="flex items-center justify-between md:items-start md:justify-start w-full mt-20">
-            <Button type="submit" className="font-R_regular text-[0.8rem] tracking-[0.05rem] leading-[] md:text-[1.4rem] md:tracking-[0.12em] md:leading-[4rem] flex items-center 
+            <Button 
+            disabled={sendingEmail}
+
+             type="submit" className="font-R_regular text-[0.8rem] tracking-[0.05rem] leading-[] md:text-[1.4rem] md:tracking-[0.12em] md:leading-[4rem] flex items-center 
             justify-center flex-1 md:flex-none  w-auto md:w-[28rem] h-[3rem] md:h-[5rem] hover:bg-secondary hover:opacity-80 cursor-pointer rounded-full text-primary bg-secondary">
-              PROVE IT
+             
+             {sendingEmail ? "Sending Email..." : "PROVE IT"}  
+
             </Button>
 
              <div className="!flex-1 md:hidden " >

@@ -1,7 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Lenis from "@studio-freight/lenis";
-
 import Hero from "./Components/Hero";
 import RedSection from "./Components/RedSection";
 import Campaign from "./Components/Campaign";
@@ -9,10 +7,7 @@ import Swirl from "./Components/Swirl";
 import TheAA from "./Components/TheAA";
 import RedSection2 from "./Components/RedSection2";
 import Footer from "../../components/Footer/Footer";
-import TheAAM from "./Components/TheAAM";
 import SwirlM from "./Components/SwirlM";
-import Test from "./Components/test";
-import Nav from "../../components/Nav/Nav";
 
 function Home() {
   const [showLogo, setShowLogo] = useState(false);
@@ -83,9 +78,7 @@ const sectionRef = useRef(null);
       <section className="h-screen ">
         <TheAA />
       </section>
-       {/* <section className="h-screen md:hidden">
-        <TheAAM />
-      </section> */}
+     
       <section>
         <RedSection2 />
       </section>

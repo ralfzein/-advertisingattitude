@@ -10,10 +10,8 @@ const FirstTab = () => {
   const [active, setActive] = useState(false);
   const [fileName, setFileName] = useState("");
   const [file, setFile] = useState(null);
-
   const fileInputRef = useRef(null);
   const formRef = useRef();
-
   const MAX_CHARS = 400;
 
   // Variants for animations
@@ -66,31 +64,46 @@ const handleFileChange = (e) => {
     // Reset if all files invalid
     setFile([]);
     setFileName("");
-    e.target.value = "";
+    e.target.value = "";  
   }
 };
 
+const [sendingEmail, setSendingEmail] = useState(false);
 
-
-const handleSend = (e) => {
+const handleSend = async (e) => {
   e.preventDefault();
+  const formData = new FormData(formRef.current);
 
-  if (!formRef.current) return;
+  const email = formData.get("email");
 
-  emailjs.sendForm(
-    "YOUR_REAL_SERVICE_ID",
-    "YOUR_REAL_TEMPLATE_ID",
-    formRef.current,
-    "YOUR_REAL_PUBLIC_KEY"
-  ).then(
-    (result) => {
-      console.log("Email sent:", result.text);
-      alert("Form sent successfully!");
-    },
-    (error) => {
-      console.error("Email error:", error.text);
-      alert("Failed to send the form. Check console for details.");
-    }
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      setSendingEmail(true);
+  if (!emailRegex.test(email)) {
+    toast.error("Please enter a valid email address.");
+      setSendingEmail(false);
+
+    return;
+  }
+ formData.append("category", "I am a Brand");
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/api/send-email`, {
+    method: "POST",
+    body: formData,
+  });
+
+      
+  if (response.ok) {toast.success("Form sent successfully!"); setSendingEmail(false); }
+  else{ toast.error("Failed to send the form."); ; setSendingEmail(false);}
+};
+
+const isFormValid = () => {
+  return (
+    formRef.current &&
+    formRef.current.email.value.trim() !== "" &&
+    formRef.current.name.value.trim() !== "" &&
+    formRef.current.country.value.trim() !== "" &&
+    text.trim() !== "" &&
+    file?.length > 0 &&
+    active
   );
 };
 
@@ -107,19 +120,19 @@ const handleSend = (e) => {
           {/* Email */}
           <div className="flex items-center justify-start w-full gap-2 md:gap-5">
             <label htmlFor="email" className="font-M_medium md:w-[8rem]  text-[1rem] md:text-[1.5rem] text-primary cursor-pointer">Email</label>
-            <input id="email" name="email" type="text" className="border-b  border-primary/10 focus:outline-none caret-secondary font-M_medium w-full text-primary text-[1rem] md:text-[1.4rem]" />
+            <input id="email" required name="email" type="text" className="border-b  border-primary/10 focus:outline-none caret-secondary font-M_medium w-full text-primary text-[1rem] md:text-[1.4rem]" />
           </div>
 
           {/* Name */}
           <div className="flex items-center justify-start w-full gap-2 md:gap-5">
             <label htmlFor="name" className="font-M_medium md:w-[8rem]  cursor-pointer text-[1rem] md:text-[1.5rem] text-primary">Name</label>
-            <input id="name" name="name" className="border-b  border-primary/10 caret-secondary focus:outline-none font-M_medium w-full text-primary text-[1rem] md:text-[1.4rem]" />
+            <input id="name" required name="name" className="border-b  border-primary/10 caret-secondary focus:outline-none font-M_medium w-full text-primary text-[1rem] md:text-[1.4rem]" />
           </div>
 
           {/* Country */}
           <div className="flex items-center justify-start w-full gap-2 md:gap-5">
             <label htmlFor="country" className="font-M_medium md:w-[8rem]  text-[1rem] md:text-[1.5rem] text-primary">Country</label>
-            <input id="country" name="country" className="border-b  border-primary/10 caret-secondary focus:outline-none font-M_medium w-full text-primary text-[1rem] md:text-[1.4rem]" />
+            <input id="country" required name="country" className="border-b  border-primary/10 caret-secondary focus:outline-none font-M_medium w-full text-primary text-[1rem] md:text-[1.4rem]" />
           </div>
 
           {/* Textarea */}
@@ -132,6 +145,7 @@ const handleSend = (e) => {
               <textarea
                 name="message"
                 rows={4}
+                required
                 value={text}
                 onChange={handleChange}
                 maxLength={MAX_CHARS}
@@ -159,6 +173,7 @@ const handleSend = (e) => {
               <input
                 type="file"
                 ref={fileInputRef}
+                required
                 onChange={handleFileChange}
                 className="hidden"
                 name="file"
@@ -182,9 +197,11 @@ const handleSend = (e) => {
 
           {/* Submit button */}
           <div className="flex items-center justify-between+ md:items-start md:justify-start w-full mt-20">
-            <Button type="submit" className="font-R_regular text-[0.8rem] tracking-[0.05rem] leading-[] md:text-[1.4rem] md:tracking-[0.12em] md:leading-[4rem] flex items-center 
+            <Button
+            disabled={sendingEmail || !isFormValid()}
+            type="submit" className="font-R_regular text-[0.8rem] tracking-[0.05rem] leading-[] md:text-[1.4rem] md:tracking-[0.12em] md:leading-[4rem] flex items-center 
             justify-center flex-1 md:flex-none  w-auto md:w-[28rem] h-[3rem] md:h-[5rem] hover:bg-secondary hover:opacity-80 cursor-pointer rounded-full text-primary bg-secondary">
-               LET’S MAKE THINGS HAPPEN
+             {sendingEmail ? "Sending Email..." : "LET’S MAKE THINGS HAPPEN"}  
             </Button>
 
              <div className="!flex-1 md:hidden " >
