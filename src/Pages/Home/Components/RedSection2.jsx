@@ -38,7 +38,7 @@ const RedSection2 = () => {
             hear they remember.
         </motion.h1> */}
           {!isLoaded && (
-        <Skeleton className={`absolute inset-0 w-full h-full bg-secondary/20`} />
+        <Skeleton className={`absolute h-full md:h-[40rem] inset-0 w-full bg-secondary/20`} />
       )}
       <video
         
