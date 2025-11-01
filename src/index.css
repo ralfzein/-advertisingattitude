@@ -21,38 +21,42 @@
 --font-M_extrabold: "M_extrabold";
 
 }
-
+@layer base {
 @font-face {
   font-family: "R_regular";
-  src: url("./assets/fonts/Righteous-Regular.ttf") format("truetype");
+  src: url("/fonts/Righteous-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "M_medium";
-  src: url("./assets/fonts/Montserrat-Medium.ttf") format("truetype");
+  src: url("/fonts/Montserrat-Medium.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "M_regular";
-  src: url("./assets/fonts/Montserrat-Regular.ttf") format("truetype");
+  src: url("/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 
 
 @font-face {
   font-family: "M_bold";
-  src: url("./assets/fonts/Montserrat-Bold.ttf") format("truetype");
+  src: url("/fonts/Montserrat-Bold.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "M_semibold";
-  src: url("./assets/fonts/Montserrat-SemiBold.ttf") format("truetype");
+  src: url("/fonts/Montserrat-SemiBold.ttf") format("truetype");
+  font-display: swap;
 }
 @font-face {
   font-family: "M_extrabold";
-  src: url("./assets/fonts/Montserrat-ExtraBold.ttf") format("truetype");
+  src: url("/fonts/Montserrat-ExtraBold.ttf") format("truetype");
+  font-display: swap;
 }
-body {
-  /* user-select: none; */
 }
 
 
