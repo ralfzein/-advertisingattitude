@@ -131,7 +131,7 @@ const sectionRef = useRef(null);
     transition={{ duration: 0.8, ease: "easeInOut", delay: 2 }}
   />
 <motion.img
-  src="/Images/contactLogo.png"
+  src="/Images/contactLogo.webp"
   loading="lazy"
   alt="logo"
   className="absolute "

@@ -5,7 +5,6 @@ import CampaignsData from '../../../public/Images/data';
 import Grids from './Components/Grid';
 import Footer from '../../components/Footer/Footer';
 import { useNavigate } from 'react-router-dom';
-import { ChevronRight } from 'lucide-react';
 import Tabs from '../../components/Tabs/Tabs';
 
 const Campaigns = () => {

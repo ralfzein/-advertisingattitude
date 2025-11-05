@@ -23,7 +23,7 @@ const RedSection = () => {
 };
   return (
    <motion.section
-  className="bg-bur bg-cover bg-center snap-start w-full"
+  className="!bg-bur bg-cover bg-center snap-start w-full"
   variants={containerVariants}
   initial="hidden"
   whileInView="show" 

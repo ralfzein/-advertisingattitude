@@ -106,6 +106,20 @@ const handleSend = async (e) => {
   if (response.ok) {toast.success("Form sent successfully!"); setSendingEmail(false); }
   else{ toast.error("Failed to send the form."); ; setSendingEmail(false);}
 };
+
+const removeFile = (indexToRemove) => {
+  const updatedFiles = file.filter((_, index) => index !== indexToRemove);
+  setFile(updatedFiles);
+
+  const updatedNames = updatedFiles.map((f) => f.name).join(", ");
+  setFileName(updatedNames);
+
+  // Clear input value if no files are left
+  if (updatedFiles.length === 0) {
+    fileInputRef.current.value = "";
+  }
+};
+
   return ( 
     <motion.div
       variants={containerVariants}
@@ -204,14 +218,27 @@ const handleSend = async (e) => {
                 </span>
                 <div className="flex flex-col gap-1">
                   <span className="font-M_regular text-[7px] md:text-xs text-primary tracking-[.12em]">
-                    (deck, moodboard, or supporting brief (PDF, JPG, PNG – max
-                    25MB) <br />
-                    Need more space? Include a link in your message or email us
-                    at business@advertisingattitude.com)
+                
+                    Network Showcase e.g. client list, references, or anything that proves you can close <br />
+or email us at pr@advertisingattitude.com
                   </span>
-                  <span className="font-M_medium text-[7px] md:text-xs text-secondary tracking-[.12em]">
-                    {fileName && `( ${fileName} )`}
-                  </span>
+                 <div className="flex flex-wrap gap-2 mt-1">
+  {file?.map((fileItem, index) => (
+    <div
+      key={index}
+      className="flex items-center gap-1 px-2 py-1 rounded-md text-[8px] md:text-xs text-primary"
+    >
+      <span>{fileItem.name}</span>
+      <button
+        type="button"
+        onClick={() => removeFile(index)}
+        className="text-secondary font-bold hover:text-red-600"
+      >
+        ✕
+      </button>
+    </div>
+  ))}
+</div>
                 </div>
                 <input
                   type="file"
@@ -273,7 +300,7 @@ const handleSend = async (e) => {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: false, amount: 0.5 }}
-                    src={"/Images/contactLogo.png"}
+                    src={"/Images/contactLogo.webp"}
                     className=" "
                     alt=""
                   />
@@ -288,7 +315,7 @@ const handleSend = async (e) => {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: false, amount: 0.5 }}
-                src={"/Images/contactLogo.png"}
+                src={"/Images/contactLogo.webp"}
                 className="h-[22rem] -translate-y-12"
                 alt=""
               />

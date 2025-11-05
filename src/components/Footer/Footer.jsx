@@ -51,15 +51,15 @@ const Footer = () => {
       variants={containerVariants}
       initial="hidden"
       whileInView="show"
-       className='relative  h-screen flex flex-col   bg-background' id="footer"
-       style={{ backgroundImage: `url('/Images/bg.svg')` }}>
+       className="relative  h-screen flex flex-col  bg-cover  bg-no-repeat bg-background bg-[url('/Images/bg.svg')]  " id="footer"
+      >
       <div className='flex flex-col px-4 md:px-[4rem] justify-around  h-full md:mb-5 '>
         <motion.p  variants={childVariants} className=' md:mt-5 
           font-M_bold  text-primary tracking-[.1em] text-sm md:text-[1rem] 
            leading-[1rem]  md:leading-[1.3rem] text-justify 
           '>Advertising Attitude is a leading creative agency built for brands that 
             refuse to blend in. We don’t just craft campaigns — we train ideas to fight harder,
-             lastlonger, and leave echoes. Rooted in clarity, rebellion, and bold thinking, 
+             last longer, and leave echoes. Rooted in clarity, rebellion, and bold thinking, 
              we work with creators, leaders, and brands to reshape narratives, break  patterns, 
              andpunch through the noise. With a SwirlBold™ mindset at our core, we fuse creative 
              chaos with strategic intent — making work that’s  unignorable, unforgettable,and unapologetically sharp.

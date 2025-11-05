@@ -177,7 +177,6 @@ const sectionRef = useRef(null);
   >
     {slides.map((item, i) => (
       <div key={i} className={getSlideClass(i)}>
-        {/* Show skeleton if image not yet loaded */}
         {!loadedImages[i] && (
           <Skeleton className="absolute inset-0 w-full h-full bg-secondary/30" />
         )}
@@ -203,19 +202,7 @@ const sectionRef = useRef(null);
 </div>
 
         </div>
-        {/* Images */}
-        {/* <div className="relative flex-1 w-full flex items-start justify-center h-full">
-              <img
-                src={slides[current].img}
-                alt="work1" loading='lazy'  decoding="sync"
-                className="z-10 h-[30rem] pointer-events-none"
-              />
-              <img
-                src={slides[current].img2}
-                alt="work2" loading='lazy'  decoding="sync"
-                className="absolute z-0 h-[20rem] right-0 top-[20%] opacity-[25%] pointer-events-none"
-              />
-            </div> */}
+      
       </div>
 
 

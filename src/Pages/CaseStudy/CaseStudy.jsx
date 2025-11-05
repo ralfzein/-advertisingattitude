@@ -213,12 +213,14 @@ const CaseStudy = () => {
                 >
                   <RenderMedia
                     src={src}
-                    className={` h-[12rem] md:h-[40rem]  
-                  ${caseS.id === 2 ? index === 1 && "!object-cover" : ""}
-                  ${caseS.id === 6 &&  " !h-[10rem] md:!h-[38rem] "}
-                  
-                  `}
-                  />
+                    // className="!object-cover h-[42rem]"
+                      className={` h-[12rem] md:h-[40rem]  
+                        ${caseS.id === 2 ?  "md:h-[45rem]" : "md:h-[40rem]"}
+                        ${caseS.id === 6 &&  "md:!h-[38rem]"}
+                        `} 
+                        //  ${caseS.id === 2 ? index === 1 && "!object-cover" : ""}
+                        //  ${caseS.id === 6 &&  " !h-[10rem] md:!h-[40rem] "}
+                    />
                 </div>
               ))}
             </div>
@@ -316,8 +318,13 @@ const CaseStudy = () => {
                           ? " h-[13rem] md:h-[40rem] md:!object-contain"
                           : " h-[13rem] md:h-[40rem]"
                         : "h-[11rem] md:h-[40rem]"
-                    } 
+
+                        
+                        } 
+                       ${ caseS?.id == 1 && "!object-cover !h-auto" }
+                       ${ caseS?.id ==3 && "bg-[#d7c4b2]" }
                         `}
+                    // className=""
                   />
                 </div>
               ))}
@@ -337,7 +344,7 @@ const CaseStudy = () => {
                 onClick={() => navigate(`/work/casestudy/${item.id}`)}
               >
                 <img
-                  src={item.img}
+                  src={item.cover ? item.cover : item.img}
                   alt={item.title}
                   className="w-full h-full md:object-cover transition-transform duration-500 group-hover:scale-105"
                 />

@@ -44,23 +44,28 @@ const SingleAA = () => {
 
     const [showLogo, setShowLogo] = useState(false);
     
-      useEffect(() => {
-      const handleScroll = () => {
-        const scrollPosition = window.scrollY;
-        const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const scrollPercent = (scrollPosition / pageHeight) * 100;
-    
-        // Check footer visibility
-        const footer = document.getElementById("footer");
-        const footerTop = footer?.getBoundingClientRect().top ?? 0;
-    
-        const isFooterVisible = footerTop <= window.innerHeight && footerTop > 0;
-        setShowLogo(scrollPercent >= 20 && !isFooterVisible);
-      };
-    
-      window.addEventListener("scroll", handleScroll);
-      return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+useEffect(() => {
+  const handleScroll = () => {
+    const shareSection = document.getElementById("share");
+    const footer = document.getElementById("footer");
+
+    if (!shareSection || !footer) return;
+
+    const shareTop = shareSection.getBoundingClientRect().top;
+    const footerTop = footer.getBoundingClientRect().top;
+
+    const viewportHeight = window.innerHeight;
+
+    const hideAtShare = shareTop < viewportHeight * 1.2; 
+    const hideAtFooter = footerTop < viewportHeight;
+
+    setShowLogo(!(hideAtShare || hideAtFooter));
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
 
  const handleShare = async () => {
 
@@ -162,7 +167,7 @@ const plainText = caseS?.paragraph1?.replace(/<[^>]*>/g, '');
           <div className="relative w-full flex items-center justify-center flex-col gap-5  md:h-[80vh]">
             {/* Skeleton while background loads */}
             {!isBgLoaded && (
-              <div className="absolute inset-0 bg-gray-200 animate-pulse z-0" />
+              <Skeleton   className="absolute inset-0 bg-secondary/30  animate-pulse z-0" />
             )}
 
             {/* Actual content section */}
@@ -237,7 +242,11 @@ const plainText = caseS?.paragraph1?.replace(/<[^>]*>/g, '');
           </div>
 
           {/* ✅ Share Section */}
-          <div className="flex items-center justify-end gap-2 mt-5 md:mt-10 ">
+        </div>
+
+       <div className="px-4 md:px-[4rem]" id="share">
+        {/* <NewsLetter /> */}
+          <div className="flex items-center justify-end gap-2 mt-5 md:mt-10 " >
             <div className="rounded-full font-M_semibold text-background text-[1rem] md:text-[1.3rem] cursor-pointer  hover:opacity-80"   onClick={handleShare}>
               Share
             </div>
@@ -280,10 +289,7 @@ const plainText = caseS?.paragraph1?.replace(/<[^>]*>/g, '');
               </div>
             )}
           </div>
-        </div>
-
-       
-        {/* <NewsLetter /> */}
+          </div>
       </motion.section>
       <Footer />
     </div>

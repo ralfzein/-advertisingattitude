@@ -17,6 +17,7 @@ const navigate =useNavigate();
           <Skeleton className={`absolute inset-0 w-full min-h-[30rem]  bg-secondary/30`} />
         )}
       <img
+      loading="lazy"
   src={data?.img}
   alt="img"
   onLoad={() => setIsLoaded(true)}

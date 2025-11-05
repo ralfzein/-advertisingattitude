@@ -11,113 +11,7 @@ import Tabs from "../../components/Tabs/Tabs";
 
 
 const TheAA = () => {
-  // const data = [
-  //   {
-  //     id: 1,
-  //     title: "AI Won’t Save  Bad Branding",
-  //     subTitle:
-  //       "But it’s rewriting the rules for those who   lead with strategy — not vibes.",
-  //     img: "/Images/TheAAP/img/aa.svg",
-  //     rounded:"rounded-tr-full rounded-tl-full  rounded-bl-0 rounded-br-full"
-  //   },
-  //   {
-  //     id: 2,
-  //     title: "Every Agency Is an\n  Award Winner",
-  //     subTitle: "We may not be in the puzzle. Yet.",
-  //     img: "/Images/TheAAP/img/ee.svg",
-  //     rounded:" rounded-tl-full rounded-tr-0 rounded-bl-full rounded-br-full"
 
-  //   },
-  //   {
-  //     id: 3,
-  //     title: "Disrupt.\n  Leave Echoes.",
-  //     subTitle:
-  //       "Ideas start small. The loudest impact comes  from the ones that were once whispered.",
-  //     img: "/Images/TheAAP/img/33.svg",
-  //               rounded:"rounded-tr-full rounded-tl-full  rounded-bl-0 rounded-br-full"
-
-
-
-  //   },
-  //   {
-  //     id: 4,
-  //     title: "You Can’t Discount\n  Mastery",
-  //     subTitle: "When you pay for cheap, you pay twice.",
-  //     img: "/Images/TheAAP/img/44.svg",
-  //           rounded:" rounded-tl-full rounded-tr-full rounded-bl-full rounded-br-0"
-
-
-  //   },
-  //   {
-  //     id: 5,
-  //     title: "Even the Lion \n Needs a Roar",
-  //     subTitle:
-  //       "Ads are that roar — amplifying your strength and making sure you’re heard.",
-  //     img: "/Images/TheAAP/img/55.svg",
-  //           rounded:" rounded-tl-0 rounded-tr-full rounded-bl-full rounded-br-full"
-
-
-  //   },
-  //   {
-  //     id: 6,
-  //     title: "What Kind of \n Marketer Are You?",
-  //     subTitle:
-  //       "Whether you lead, craft, or analyze — the key is knowing your edge and owning it.",
-  //     img: "/Images/TheAAP/img/66.svg",
-  //                      rounded:" rounded-tl-full rounded-tr-full rounded-bl-full rounded-br-0"
-
-
-
-  //   },
-  //   {
-  //     id: 7,
-  //     title: "Marketing Teams Burn Hours. Agencies Build\n  Outcomes",
-  //     subTitle:
-  //       "CEOs don’t need babysitting — they need bandwidth. We deliver both.",
-  //     img: "/Images/TheAAP/img/77.svg",
-  //     rounded:"rounded-tr-full rounded-tl-full  rounded-bl-0 rounded-br-full"
-
-
-  //   },
-  //   {
-  //     id: 8,
-  //     title: "Where Madness \n  Meets Mastery",
-  //     subTitle:
-  //       "Creativity isn’t born clean — it’s carved from chaos, grit, and the refusal to quit.",
-  //     img: "/Images/TheAAP/img/88.svg",
-  //           rounded:" rounded-tl-full rounded-tr-0 rounded-bl-full rounded-br-full"
-
-
-  //   },
-  //   {
-  //     id: 9,
-  //     title: "Safe Agencies Cost \n  More in Silence",
-  //     subTitle:
-  //       "If you’re doing the thinking and lifting — you’re not hiring an agency, you’re  sponsoring one.",
-  //     img: "/Images/TheAAP/img/99.svg",
-  //     rounded:"rounded-tr-full rounded-tl-full  rounded-bl-0 rounded-br-full"
-
-
-  //   },
-  //   {
-  //     id: 10,
-  //     title: "Ideas Don’t Age Well\n  in Drafts",
-  //     subTitle:
-  //       "You’re not polishing brilliance — you’re delaying momentum. Launch ugly, learn  fast, evolve loud.",
-  //     img: "/Images/TheAAP/img/100.svg",
-  //           rounded:" rounded-tl-full rounded-tr-full rounded-bl-full rounded-br-0"
-
-
-  //   },
-  //   {
-  //     id: 11,
-  //     title: " The Art of Losing  Without Knowing It",
-  //     subTitle:
-  //       "Subtle. Polite. Marketing approved by  everyone — and forgotten by everyone.",
-  //     img: "/Images/TheAAP/img/111.svg",
-  //           rounded:" rounded-tl-0 rounded-tr-full rounded-bl-full rounded-br-full"
-  //   },
-  // ];
   const containerVariants = {
     hidden: { opacity: 1 },
     show: {
@@ -170,30 +64,32 @@ const handleNavigate = (id) => {
     const [isLoaded1, setIsLoaded1] = useState(false);
   const [showLogo, setShowLogo] = useState(false);
   
-   useEffect(() => {
+
+useEffect(() => {
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
     const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
     const scrollPercent = (scrollPosition / pageHeight) * 100;
 
-    // Elements
     const newsletter = document.getElementById("newsletter");
     const footer = document.getElementById("footer");
 
-    const newsletterTop = newsletter?.getBoundingClientRect().top ?? Infinity;
-    const footerTop = footer?.getBoundingClientRect().top ?? Infinity;
+    const isInView = (el) => {
+      if (!el) return false;
+      const rect = el.getBoundingClientRect();
+      return rect.top < window.innerHeight && rect.bottom > 0;
+    };
 
-    // Check visibility (when either is in view)
-    const isNewsletterVisible = newsletterTop <= window.innerHeight && newsletterTop > 0;
-    const isFooterVisible = footerTop <= window.innerHeight && footerTop > 0;
+    const isNewsletterVisible = isInView(newsletter);
+    const isFooterVisible = isInView(footer);
 
-    // Show logo only if scrolled enough and not in newsletter or footer
     setShowLogo(scrollPercent >= 20 && !isNewsletterVisible && !isFooterVisible);
   };
 
   window.addEventListener("scroll", handleScroll);
   return () => window.removeEventListener("scroll", handleScroll);
 }, []);
+
 const sectionRef = useRef(null);
 useEffect(() => {
   if (location.hash) {
@@ -218,7 +114,6 @@ useEffect(() => {
     const timer = setTimeout(() => {
       requestAnimationFrame(handleScrollTo);
     }, 800); 
-
     return () => clearTimeout(timer);
   }
 }, [location]);
@@ -334,14 +229,14 @@ useEffect(() => {
     )}
         </div>
       </motion.section>
+
+</div>
        <div id="newsletter">
   <NewsLetter />
 </div>
 
 <div id="footer">
   <Footer />
-</div>
-
 </div>
     </div>
   );

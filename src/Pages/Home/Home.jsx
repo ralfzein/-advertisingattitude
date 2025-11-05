@@ -8,6 +8,7 @@ import TheAA from "./Components/TheAA";
 import RedSection2 from "./Components/RedSection2";
 import Footer from "../../components/Footer/Footer";
 import SwirlM from "./Components/SwirlM";
+import TextIntro from "./Components/text";
 
 function Home() {
   const [showLogo, setShowLogo] = useState(false);
@@ -56,13 +57,15 @@ const sectionRef = useRef(null);
 
       {/* Sections */}
       <section id="hero-section" className="h-screen"  >
-      
+
         <Hero />
       </section>
       <section className="flex items-center justify-center bg-background">
         <RedSection />
+
       </section>
       <section className="h-screen">
+        
         <Campaign />
       </section>
              
@@ -80,7 +83,9 @@ const sectionRef = useRef(null);
       </section>
      
       <section>
-        <RedSection2 />
+        {/* <RedSection2 /> */}
+          <TextIntro />
+
       </section>
       <section id="footer-section" className="h-screen">
         <Footer />

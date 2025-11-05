@@ -3,8 +3,6 @@ import Nav from "../../../components/Nav/Nav";
 import { motion, useAnimation ,AnimatePresence } from "framer-motion";
 
 const Swirl = () => {
-  const controls = useAnimation();
-  const [logoSrc, setLogoSrc] = useState("/Images/sLogo.svg");
   const [isHovered, setIsHovered] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   // Variants
@@ -165,7 +163,7 @@ const sectionRef = useRef(null);
       onMouseLeave={() => setIsHovered(false)}
     >
       <motion.img
-        src="/Images/contactLogo.png"
+        src="/Images/contactLogo.webp"
         loading="lazy"
         alt="Logo"
         className="object-contain select-none"

@@ -16,7 +16,7 @@ const CampaignsData = [
     Sector:"Airport / Travel Retail",
     Disciplines:["Campaigns", "Retail Marketing", "Brand Activation"," Concept Creation", "Creative Direction", "Experiential Marketing" ],
     date:"2025",
-    section1:["/Images/Cases/Case1/section1.svg"],
+    section1:["/Images/Cases/Case1/section1.webp"],
     description:  ` <h1 class="mt-8 font-M_bold text-[1rem] md:text-[2.4rem] leading-[1.2rem] md:leading-[2.8rem] text-background tracking-[.12rem] ">Valentine’s is emotional. Airports are not.
      Abu Dhabi Duty Free asked us to bridge that gap, to
       transform a transit space built for speed into a 
@@ -50,9 +50,9 @@ This project reflects how Advertising Attitude operates. We’re not a content s
 Guided by our SwirlBold™ mentality, we pair disruptive creativity with disciplined execution. The result? Not just seasonal engagement, but a campaign that moved passengers, activated retail, and proved what emotional branding can do in airports.
             </p>`
 ,
-      section2:["/Images/Cases/Case1/section2a.svg","/Images/Cases/Case1/Photo 3.png","/Images/Cases/Case1/Photo 4.svg"],
-      section3:["/Images/Cases/Case1/section3a.svg","/Images/Cases/Case1/section3b.webp","/Images/Cases/Case1/section3c.svg"],
-      section4:["/Images/Cases/Case1/section4a.svg","/Images/Cases/Case1/section4b.svg","/Images/Cases/Case1/section4c.svg","/Images/Cases/Case1/section4d.svg"
+      section2:["/Images/Cases/Case1/section2a.svg","/Images/Cases/Case1/Photo 3.webp","/Images/Cases/Case1/Photo 4.webp"],
+      section3:["/Images/Cases/Case1/section3a.webp","/Images/Cases/Case1/section3b.webp","/Images/Cases/Case1/section3c.webp"],
+      section4:["/Images/Cases/Case1/8.webp","/Images/Cases/Case1/9.webp","/Images/Cases/Case1/10.webp","/Images/Cases/Case1/11.webp"
       ],
 
 
@@ -97,7 +97,7 @@ This project reflects how Advertising Attitude operates. We’re not a content s
 Guided by our SwirlBold™ mentality, we pair disruptive creativity with disciplined execution. The result? Outreach that resonates, campaigns that don’t just sell, but stick.
       </p>`
 ,
-      section2:["/Images/Cases/Case2/2.webp","/Images/Cases/Case2/3.webp","/Images/Cases/Case2/4.webp"],
+      section2:["/Images/Cases/Case2/2.webp","/Images/Cases/Case2/media 3.webp","/Images/Cases/Case2/media 4.webp"],
       section3:["/Images/Cases/Case2/5.webp","/Images/Cases/Case2/6.webp","/Images/Cases/Case2/7.webp"],
       section4:["/Images/Cases/Case2/8.webp","/Images/Cases/Case2/9.webp","/Images/Cases/Case2/10.webp","/Images/Cases/Case2/11.webp"],
       testimonial:["Two hundred offers could’ve been noise. AA made them clarity. Our promotions weren’t hidden anymore  —  they became impossible to miss.",
@@ -145,8 +145,9 @@ This project reflects how Advertising Attitude operates. We’re not a content s
 Guided by our SwirlBold™ mentality, we pair disruptive creativity with disciplined execution. The result? Not just leased offices, but a sold-out tower  —  proof that when demand is engineered with strategy, markets move.
       </p>`
 ,
+cover:"/Images/Work/dviaCover.webp",
       section2:["/Images/Cases/Case3/2.webp","/Images/Cases/Case3/3.webp","/Images/Cases/Case3/4.webp"],
-      section3:["/Images/Cases/Case3/5.webp","/Images/Cases/Case3/6.webp","/Images/Cases/Case3/7.webp"],
+      section3:["/Images/Cases/Case3/5.webp","/Images/Cases/Case3/5.webp","/Images/Cases/Case3/7.webp"],
       section4:["/Images/Cases/Case3/8.mp4","/Images/Cases/Case3/9.mp4","/Images/Cases/Case3/10.mp4","/Images/Cases/Case3/11.mp4"
       ],
       testimonial:["Seven floors and a rooftop  —  gone. AA didn’t just market a tower, they engineered demand and gave D-VIA its own momentum.",
@@ -190,8 +191,9 @@ TRSS’s Ramadan and Eid campaign demonstrated how design can strengthen culture
 This project reflects how Advertising Attitude operates. We’re not a content studio or a signage vendor  —  we’re a strategic marketing agency. We build clarity-first systems that scale across bold creativity, emotional depth, and commercial precision.<br/><br/>
 Guided by our SwirlBold™ mentality, we pair disruptive creativity with disciplined execution. The result? A chocolate section that stopped being a shelf  —  and became a story. One that drew smiles, drove sales, and proved that in travel retail, emotion sells before logic does.</p>`
 ,
+cover:"/Images/Work/eidCover.webp",
        section1:["/Images/Cases/Case4/1.webp"],
-      section2:["/Images/Cases/Case4/2.webp","/Images/Cases/Case4/3.mp4","/Images/Cases/Case4/4.webp"],
+      section2:["/Images/Cases/Case4/2.webp","/Images/Cases/Case4/media 3.mp4","/Images/Cases/Case4/media 4.webp"],
       section3:["/Images/Cases/Case4/5.webp","/Images/Cases/Case4/6.webp"],
       section4:[],
        testimonial:["Advertising Attitude understood that greetings could be more than a formality  —  they made them feel like a brand experience.",
@@ -232,8 +234,9 @@ This project reflects how Advertising Attitude operates. We’re not a content s
 Guided by our SwirlBold™ mentality, we pair disruptive creativity with disciplined execution. The result? A chocolate section that stopped being a shelf  —  and became a story. One that drew smiles, drove sales, and proved that in travel retail, emotion sells before logic does.
 </p>`
 ,
+cover:"/Images/Work/muscatCover.webp",
        section1:["/Images/Cases/Case5/1.webp"],
-      section2:["/Images/Cases/Case5/2.webp","/Images/Cases/Case5/3.webp","/Images/Cases/Case5/4.webp"],
+      section2:["/Images/Cases/Case5/2.webp","/Images/Cases/Case5/media 3.webp","/Images/Cases/Case5/media 4.webp"],
       section3:["/Images/Cases/Case5/5.webp","/Images/Cases/Case5/6.webp","/Images/Cases/Case5/7.webp"],
       section4:[],
        testimonial:["Advertising Attitude turned a routine retail zone into something kids dragged their parents to. The energy, color, and storytelling connected instantly  —  it wasn’t just design, it was behaviorally smart marketing.",
@@ -336,6 +339,7 @@ Guided by our SwirlBold™ mentality, we pair disruptive creativity with discipl
 
 </p>`
 ,
+      cover:"/Images/Work/ignore.webp",
        section1:["/Images/Cases/Case7/1.webp"],
       section2:[],
       section3:["/Images/Cases/Case7/2.webp","/Images/Cases/Case7/3.webp","/Images/Cases/Case7/4.webp"],
@@ -384,6 +388,7 @@ Guided by our SwirlBold™ mentality, we pair disruptive creativity with discipl
 
 </p>`
 ,
+cover:"/Images/Work/bRamadanCover.webp",
        section1:["/Images/Cases/Case8/1.webp"],
       section2:["/Images/Cases/Case8/2.mp4","/Images/Cases/Case8/3.webp","/Images/Cases/Case8/4.mp4"],
       section3:["/Images/Cases/Case8/5.webp","/Images/Cases/Case8/6.webp","/Images/Cases/Case8/7.webp"],
@@ -536,7 +541,7 @@ Guided by our SwirlBold™ mentality, we pair disruptive creativity with discipl
 </p>`
 ,
       section1:["/Images/Cases/Case11/1.mp4"],
-      section2:["/Images/Cases/Case11/2.webp","/Images/Cases/Case11/4.webp","/Images/Cases/Case11/4.webp"],
+      section2:["/Images/Cases/Case11/media 2.webp","/Images/Cases/Case11/media 3.mp4","/Images/Cases/Case11/media 4.webp"],
       section3:["/Images/Cases/Case11/5.webp","/Images/Cases/Case11/6.webp","/Images/Cases/Case11/7.mp4"],
       section4:[],
        testimonial:["We saw it every day on the shop floor  —  passengers asking, staff repeating. AA made Click & Collect part of the retail rhythm.",
