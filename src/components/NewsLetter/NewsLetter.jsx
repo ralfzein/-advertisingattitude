@@ -1,6 +1,7 @@
 import { ArrowRight, MoveRight } from 'lucide-react'
 import React, { useRef, useState, useEffect } from 'react'
 import { motion, AnimatePresence, useInView } from 'framer-motion'
+import { toast } from 'sonner'
 
 const NewsLetter = () => {
   const [next, setNext] = useState(1)
@@ -191,26 +192,50 @@ const [email, setEmail] = useState("");
                   transition={{delay:1, duration: 0.4, ease: [0.45, 0, 0.55, 1] }}
                   className='w-18 h-11 md:h-[3.75rem] mt-8 md:mt-14 translate-x-5 md:translate-x-0 text-secondary
                    z-10 flex items-center justify-center bg-primary rounded-tl-[50%] cursor-pointer'
-                 onClick={() => {
-                      if (next === 3) {
-                        // Send newsletter data to backend
-                       fetch(`${process.env.REACT_APP_API_URL}/api/send-email`, {
-                          method: "POST",
-                          headers: {
-                            "Content-Type": "application/json",
-                          },
-                          body: JSON.stringify({ name, email }),
-                        })
-                          .then((res) => res.json())
-                          .then((data) => {
-                            console.log("✅ Subscription sent:", data);
-                          })
-                          .catch((err) => {
-                            console.error("❌ Error:", err);
-                          });
-                      }
-                      setNext((prev) => prev + 1); // Move to next step
-                    }}
+          onClick={async () => {
+  if (next === 3) {
+    // ✅ Validation – Name and Email must be filled
+    if (!name.trim() || !email.trim()) {
+      toast.error("Please complete all fields.");
+      return setNext(2); // take user back to name input if anything missing
+    }
+
+    // ✅ Email format validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast.error("Please enter a valid email address.");
+      return setNext(3); // stay on email input
+    }
+
+    // ✅ Submit to backend if valid
+    try {
+      const resp = await fetch(`${import.meta.env.VITE_API_URL}/api/newsletter`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email }),
+      });
+
+      const data = await resp.json();
+
+      if (resp.ok && data.success) {
+        toast.success("Thanks! You’ve been subscribed.");
+        setNext(4); // go to Thank You screen only after success
+      } else {
+        toast.error(data.message || "Subscription failed. Try again later.");
+      }
+    } catch (err) {
+      console.error("❌ Network/Error:", err);
+      toast.error("Network error — please try again.");
+    }
+
+    return; // stop advancing automatically
+  }
+
+  // Default behavior for next step
+  setNext((prev) => prev + 1);
+}}
+
+
 
                 > 
                   <MoveRight size={50} strokeWidth={1} className='cursor-pointer hidden md:block' />

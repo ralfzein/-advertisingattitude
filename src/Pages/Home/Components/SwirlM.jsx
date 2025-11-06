@@ -30,7 +30,7 @@ const SwirlM = () => {
     hidden: { opacity: 0, y: 0 },
     show: {
       opacity: 1,
-      y: 60,
+      y: 70,
       transition: { duration: 0.8, ease: "easeOut", delay: 2.5 },
     },
   };
@@ -47,7 +47,7 @@ const SwirlM = () => {
 const logoVariants = {
   hidden: { width: "8rem", opacity: 0 },
   show: {
-    width: "15rem",
+    width: "19rem",
     opacity: 1,
     transition: { duration: 0.8, ease: "easeInOut", delay: 2.5 }
   }
@@ -77,43 +77,39 @@ const sectionRef = useRef(null);
       <motion.div className="relative z-50 w-full md:hidden" variants={navVariants}>
         <Nav title={["DISRUPTIVE","CREATIVITY"]}
         
-        tracking="text-[1.5rem] tracking-[0.5rem]"
+        tracking="text-[1.5rem] 
+        tracking-[0.8rem]"
         sectionRef={sectionRef} />
       </motion.div>
 
-      <motion.div className="relative z-50 w-full hidden md:block" variants={navVariants}>
-        <Nav title={["DISRUPTIVE CREATIVITY","DISCIPLINED EXECUTION"]}
-        
-        tracking="!text-[1.5rem] tracking-[0.2rem]" />
-      </motion.div>
-
+  
       <div className="relative flex h-screen  ">
    
-        <video
+      <video
           src="/Images/swirl.mp4" 
           autoPlay
           muted
           loop
           playsInline
-          className="absolute   h-full w-full left-0   object-cover "
+          className="absolute   h-full w-full left-0   object-cover " 
         />
-            <div className="flex flex-col items-center justify-center w-full   pt-[5rem]  ">
+            <div className="flex flex-col items-center justify-center w-full     ">
         <motion.div
 
-          className="relative z-10 flex flex-col w-full items-center justify-between     px-4  "
+          className="relative z-10 flex flex-col w-full items-center justify-between py-[8rem]    h-screen   px-4  "
         >
             
                <motion.div className="relative flex flex-col items-start justify-center  w-full  ">
             <motion.div
               variants={hiddenTextVariants}
-              className="absolute top-3 font-R_regular text-[2rem] w-full  uppercase tracking-[.2rem] text-primary"
+              className="absolute top-3 font-R_regular text-[2.5rem] w-full  uppercase tracking-[.2rem] text-primary"
             >
               MEET THE
             </motion.div> 
 
             <motion.div
               variants={mainTextVariants("down")}
-              className="font-R_regular uppercase text-[4rem] text-left   leading-[4rem] tracking-[.7rem]  text-primary">
+              className="font-R_regular uppercase text-[5rem] text-left mt-3  leading-[5rem] tracking-[.7rem]  text-primary">
               Swirl
             </motion.div>
           </motion.div>
@@ -125,7 +121,7 @@ const sectionRef = useRef(null);
     loading="lazy"
     alt="logo"
     className="absolute"
-    initial={{ width: "14rem", opacity: 1 }}
+    initial={{ width: "16rem", opacity: 1 }}
     whileInView={{ width: "7rem", opacity: 1 }}
     viewport={{ once: true, amount: 0.8 }}
     transition={{ duration: 0.8, ease: "easeInOut", delay: 2 }}
@@ -151,16 +147,16 @@ const sectionRef = useRef(null);
           <motion.div className=" flex flex-col  items-start justify-center  ">
             <motion.div
               variants={hiddenTextVariants2}
-              className="absolute bottom-5      font-R_regular text-[2rem] uppercase tracking-[.2rem] text-primary"
+              className="absolute bottom-5      font-R_regular text-[2.5rem] uppercase tracking-[.2rem] text-primary"
             >
               MENTALITY
             </motion.div>
 
             <motion.div
               variants={mainTextVariants("up")}
-              className="font-R_regular ] uppercase text-[4rem]  leading-[4rem] tracking-[.7rem] text-primary relative"
+              className="font-R_regular ] uppercase text-[5rem]  leading-[4rem] tracking-[.7rem] text-primary relative"
             >
-              <span className="flex items-start justify-start">
+              <span className="flex items-start justify-start mb-3">
                 Bold
                {/* <sub className=" text-[1.5rem] font-R_regular text-primary  -translate-x-6   tracking-normal">tm</sub> */}
               </span>

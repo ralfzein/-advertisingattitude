@@ -44,14 +44,14 @@
 
 @media (max-width: 640px) {
  .carousel-container {
-    width: 12rem;
-    height: 14rem;
+    width: 15rem;
+    height: 16rem;
     perspective: 600px;
 
   }
 
   .slide {
-    height: 15rem;
+    height: 16rem;
    
   }
 

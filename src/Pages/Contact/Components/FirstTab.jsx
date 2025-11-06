@@ -85,7 +85,14 @@ const handleSend = async (e) => {
     return;
   }
  formData.append("category", "I am a Brand");
-  const response = await fetch(`${process.env.REACT_APP_API_URL}/api/send-email`, {
+  if (file && file.length > 0) {
+    file.forEach(f => {
+      formData.append("file", f, f.name);
+    });
+  }
+
+
+  const response = await fetch(`${import.meta.env.VITE_API_UR}/api/send-email`, {
     method: "POST",
     body: formData,
   });

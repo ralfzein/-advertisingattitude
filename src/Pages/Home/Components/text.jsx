@@ -1,7 +1,7 @@
 import { motion, useAnimation, AnimatePresence, useInView } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 
-const words = ["Disrupt", "Leaver", "Echoas"];
+const words = ["Disrupt", "Leave", "Echoes"];
 const finalText = [
   "When you speak your voice clearly,",
   " people don’t just",
@@ -20,7 +20,7 @@ const TextIntro = () => {
   useEffect(() => {
     if (!isInView) return; // doesn't start unless visible
 
-    const duration = phase === "scrolling" ? 5000 : 4000;
+    const duration = phase === "scrolling" ? 7000 : 4000;
 
     const timer = setTimeout(() => {
       setPhase((prev) => (prev === "scrolling" ? "final" : "scrolling"));
@@ -36,12 +36,12 @@ const TextIntro = () => {
   const initialX = direction === "left" 
     ? "100%" 
     : isSmallScreen 
-      ? "-195%" 
+      ? "-180%" 
       : "-154%";
 
   const animateX = direction === "left" 
     ? isSmallScreen 
-      ? "-170%" 
+      ? "-180%" 
       : "-154%" 
     : "100%";
 

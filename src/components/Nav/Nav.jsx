@@ -176,7 +176,7 @@ const Nav = ({ title, tracking, color, sectionRef }) => {
                     : "text-background"
                   : "text-primary"
               }
-                uppercase text-[1.8rem] md:text-header md:leading-[1.1]  ${tracking} 
+                uppercase mt-8 md:mt-0 text-[1.8rem] md:text-header md:leading-[1.1]  ${tracking} 
                         lg:text-header`}
             >
               {titles[currentIndex]}
@@ -188,7 +188,7 @@ const Nav = ({ title, tracking, color, sectionRef }) => {
             {/* The button */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="text-white flex md:hidden flex-col gap-[2.5px] md:gap-[0.5rem] -translate-y-3 md:-translate-y-2 mt-7 cursor-none"
+              className="text-white flex md:hidden flex-col gap-[2.5px] md:gap-[0.5rem]  -translate-y-3 md:-translate-y-2 mt-13 cursor-none"
             >
               <div
                 className={` w-6 md:w-24 h-[2px] md:h-[0.5rem]  ${

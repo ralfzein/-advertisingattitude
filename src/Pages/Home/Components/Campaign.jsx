@@ -120,7 +120,7 @@ const sectionRefc = useRef(null);
               <span className="hidden md:block">CAMPAIGN MADE BY AA</span>
             </>
           }
-          tracking="text-[1.5rem] tracking-[0.8rem] md:tracking-[.8rem]"
+          tracking="text-[1.5rem] tracking-[1rem] md:tracking-[.8rem]"
              sectionRef={sectionRefc}
         />
       </motion.div>
@@ -146,12 +146,12 @@ const sectionRefc = useRef(null);
                 className="relative   z-10 flex flex-col items-center  pt-[13rem] md:pt-0 justify-start md:justify-center  h-full  text-center px-4 md:px-6 "
               >
                 <div className="relative  z-10 flex flex-col items-center justify-start gap-7 md:gap-3 text-center md:mt-30 md:min-h-[15.5rem] ">
-                  <h1 className="font-R_regular mx-10 sm:mx-0  tracking-[0.2rem] text-[2rem] leading-[2.3rem] md:text-[4.6rem] md:leading-[5.4rem]  text-primary ">
+                  <h1 className="font-R_regular mx-10 sm:mx-0  tracking-[0.2rem] text-[2.5rem] leading-[3rem] md:text-[4.6rem] md:leading-[5.4rem]  text-primary ">
                     {slides[current].title}
                   </h1>
                   <p
-                    className="font-M_medium  text-[1rem]  md:text-[2rem]   px-7 md:px-0 
-          leading-[1.4rem]   md:leading-[2.4rem]   md:whitespace-pre-line  text-primary"
+                    className="font-M_medium  text-[1.3rem]  md:text-[2rem]   px-7 md:px-0 
+          leading-[1.6rem]   md:leading-[2.4rem]   md:whitespace-pre-line  text-primary"
                   >
                     {slides[current].subtitle}
                   </p>
@@ -165,8 +165,8 @@ const sectionRefc = useRef(null);
         variants={childVariants}
         className=" absolute bottom-50 md:bottom-35 left-0 flex items-center justify-center w-full px-10 md:px-4 ">
           <Button
-            className="w-[15rem]  font-R_regular text-[0.9rem] md:text-[1.5rem] tracking-[0.12em] leading-[4rem] 
-          flex items-center justify-center sm:w-full md:w-[25rem] h-[2.8rem] md:h-[5rem] hover:bg-secondary hover:opacity-80 cursor-pointer
+            className="w-[16rem]  font-R_regular text-[1rem] md:text-[1.5rem] tracking-[0.12em] leading-[4rem] 
+          flex items-center justify-center sm:w-full md:w-[25rem] h-[3rem] md:h-[5rem] hover:bg-secondary hover:opacity-80 cursor-pointer
            rounded-full text-primary bg-secondary"
             variant="default"
             size="default"

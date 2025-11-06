@@ -117,7 +117,7 @@ const sectionRef = useRef(null);
         <motion.div className="relative z-50 w-full md:hidden"
          variants={childVariantsnav}>
         <Nav title={"PERSPECTIVE"} 
-        tracking={"text-[1.5rem] tracking-[0.4rem]"} 
+        tracking={"text-[1.5rem] tracking-[0.7rem]"} 
         sectionRef={sectionRef}/>
         {/* <Nav title={"THINK BOLDLY"} tracking={"tracking-[1.9rem]"} /> */}
       </motion.div>
@@ -146,7 +146,7 @@ const sectionRef = useRef(null);
               {slides[index].title}
             </h3>
             <p
-              className="text-[0.8rem] sm:text-lg text-primary text-center sm:text-left sm:leading-[1.3rem] font-M_regular   px-4 sm:px-0
+              className="text-[0.8rem] sm:text-lg text-primary text-center w-full md:w-fit sm:text-left sm:leading-[1.3rem] font-M_regular   px-4 sm:px-0
                sm:tracking-[0.1em] whitespace-pre-line line-clamp-4"
             >
               {slides[index].subTitle}
@@ -154,8 +154,8 @@ const sectionRef = useRef(null);
           </motion.div>
  <div className="w-full sm:w-auto flex justify-center sm:justify-start mt-2 ">
           <Button
-            className="w-[14rem] font-R_regular text-[0.8rem] md:text-[1.5rem] tracking-[0.12em] leading-[4rem] 
-          flex items-center justify-center sm:w-full md:w-[25rem] h-[2.5rem] md:h-[5rem] hover:bg-secondary hover:opacity-80 cursor-pointer
+            className="w-[16rem] font-R_regular text-[1rem] md:text-[1.5rem] tracking-[0.12em] leading-[4rem] 
+          flex items-center justify-center sm:w-full md:w-[25rem] h-[3rem] md:h-[5rem] hover:bg-secondary hover:opacity-80 cursor-pointer
            rounded-full text-primary bg-secondary z-40 "
             variant="default"
             size="default"
