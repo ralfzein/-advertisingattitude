@@ -6,6 +6,7 @@ import Grids from './Components/Grid';
 import Footer from '../../components/Footer/Footer';
 import { useNavigate } from 'react-router-dom';
 import Tabs from '../../components/Tabs/Tabs';
+import GridsM from './Components/GridM';
 
 const Campaigns = () => {
   const containerVariants = {
@@ -84,15 +85,19 @@ const Campaigns = () => {
                             ]}
                             color="text-secondary"
                           />
-          <h3 className='font-M_bold text-secondary text-left text-[1.5rem] leading-[1.7rem]  sm:text-[4rem] sm:tracking-[0.5rem] sm:leading-[4rem] sm:text-justify'>
+          <h3 className='font-R_regular text-secondary text-left text-[1.55rem] leading-[2rem]  tracking-[0.1rem]
+           sm:text-[4rem] sm:tracking-[0.5rem] sm:leading-[4rem] sm:text-justify'>
             THE SWIRL SPEAKS LOUDER <br className='hidden md:block'/> THAN WORDS
           </h3>
           <p className='font-M_bold text-black text-[0.8rem] leading-[1rem] sm:text-[1.8rem] sm:leading-[2rem] tracking-[0.08rem]  md:tracking-[0.2rem] mt-4 md:mt-8'>
             From airports to icons, our campaigns aren’t just seen, <br className='hidden md:block'/> they’re remembered.
           </p>
 
-          <div>
+          <div className='hidden sm:block'>
             <Grids data={CampaignsData} onCardClick={handleNavigate}/>
+          </div>
+           <div className='block sm:hidden'>
+            <GridsM data={CampaignsData} onCardClick={handleNavigate}/>
           </div>
         </motion.div>
 

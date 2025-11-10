@@ -7,7 +7,7 @@ const Tabs = ({ tabs, color }) => {
 
   return (
     <div
-      className={`my-3 md:my-5 ${color} font-R_regular capitalize flex items-center gap-0 tracking-[0.1rem] md:tracking-[0.2rem]`}
+      className={`my-5 md:my-5 ${color} font-R_regular capitalize flex items-center gap-0 tracking-[0.1rem] md:tracking-[0.2rem]`}
     >
       {tabs?.map((tab, index) => {
         const isLast = index === tabs.length - 1

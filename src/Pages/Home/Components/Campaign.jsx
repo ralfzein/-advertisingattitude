@@ -14,6 +14,7 @@ const slides = [
   {
     id: 6,
     img: "/Images/Campaign/adf.webp",
+    img2: "/Images/Campaign/addf.webp",
     title: "ABU DHABI DUTY FREE",
     subtitle:
       "The Red Thread  —  vibrant, no-miss \n digital campaign to turn heads fast",
@@ -21,6 +22,7 @@ const slides = [
   {
     id: 5,
     img: "/Images/Campaign/mdf.webp",
+    img2: "/Images/Campaign/muscat.webp",
     title: "MUSCAT DUTY FREE",
     subtitle:
       "Chocoflight Time  —  playful concept \n turning the chocolate section into the \n most irresistible stop",
@@ -28,6 +30,7 @@ const slides = [
   {
     id: 2,
     img: "/Images/Campaign/bdf.webp",
+    img2: "/Images/Campaign/bdf2.webp",
     title: "BEIRUT DUTY FREE",
     subtitle:
       "Click & Collect  —  a campaign built on \n consistency, clear and direct messaging",
@@ -35,6 +38,7 @@ const slides = [
   {
     id: 9,
     img: "/Images/Campaign/ka.webp",
+    img2: "/Images/Campaign/k&a.webp",
     title: "K&A MACHMOUCHI",
     subtitle:
       "The FastLane Screen  —  digital branding \n that turns screens into bold statement",
@@ -42,6 +46,7 @@ const slides = [
   {
     id: 7,
     img: "/Images/Campaign/aa.webp",
+    img2: "/Images/Campaign/ignore.webp",
     title: "ADVERTISING ATTITUDE",
     subtitle:
       "Ignore This Ad  —  positioning a bold \n agency in a world of noise",
@@ -116,11 +121,11 @@ const sectionRefc = useRef(null);
         <Nav
           title={
             <>
-              <span className="block md:hidden">CAMPAIGN</span>
+              <span className="block md:hidden">AA’S CAMPAIGNS</span>
               <span className="hidden md:block">CAMPAIGN MADE BY AA</span>
             </>
           }
-          tracking="text-[1.5rem] tracking-[1rem] md:tracking-[.8rem]"
+          tracking="text-[1.5rem] tracking-[0.2rem] md:tracking-[.8rem]"
              sectionRef={sectionRefc}
         />
       </motion.div>
@@ -135,10 +140,13 @@ const sectionRefc = useRef(null);
               key={index}
               className="md:h-screen w-full relative flex items-center justify-center    "
             >
-              <div
-                className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url(${slide.img})` }}
-              />
+           <div
+  className="absolute inset-0 bg-contain md:bg-cover bg-center md:bg-center"
+  style={{
+    backgroundImage: `url(${window.innerWidth >= 768 ? slide.img : slide.img2})`,
+  }}
+></div>
+
               <div className="absolute inset-0 bg-[#202A43] opacity-80" />
 
               <motion.div

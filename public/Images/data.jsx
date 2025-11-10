@@ -11,6 +11,11 @@ const CampaignsData = [
       "Retail Marketing",
       "Content & Digital Activation",
     ],
+      tagsM: [
+      "Airport",
+      "Campaigns",
+      "Retail Marketing",
+    ],
     cTitle:"Valentine’s All Over the Emirates",
     client:"Abu Dhabi Duty Free",
     Sector:"Airport / Travel Retail",
@@ -72,6 +77,7 @@ Guided by our SwirlBold™ mentality, we pair disruptive creativity with discipl
       "200+ promotions amplified into passenger conversations with bold visibility, smart placement, and measurable impact.",
     img: "/Images/Work/second.webp",
     tags: ["Airport", "Campaigns", "Retail Marketing", "Brand Activation"],
+    tagsM: ["Airport", "Retail Marketing", "Brand Activation","Campaigns"],
         cTitle:"The Power of Outreach",
     client:"Beirut Duty Free",
     Sector:"Airport / Travel Retail",
@@ -118,6 +124,11 @@ testimonial2:["This was outreach with purpose. Customers stopped, asked, acted. 
       "Campaigns",
       "Strategic Branding", "Concept & Creative Direction", "Performance Marketing"
     ],
+       tagsM: [
+      "Real Estate",
+    
+      "Strategic Branding", "Concept & Creative Direction", "Performance Marketing" , "Campaigns",
+    ],
        cTitle:"D-VIA by K&A  —  Your Route to Dbayeh",
     client:"D-VIA by K&A",
      Sector:"Real Estate",
@@ -163,6 +174,7 @@ cover:"/Images/Work/dviaCover.webp",
     subTitle: "Eid elevated into a luxury brand experience  —  through crafted design, visual identity, and premium customer engagement.",
     img: "/Images/Work/4.webp",
     tags: ["Airport", "Campaigns", "Visual Identity", " Brand Activation"],
+    tagsM: ["Airport",  "Visual Identity", " Brand Activation","Campaigns"],
    
  cTitle:"Creating Moments People Remember",
     client:"TSS – Part of ARI Group – Abu Dhabi Duty Free’s Operator",
@@ -212,6 +224,7 @@ cover:"/Images/Work/eidCover.webp",
       "A playful retail activation turned the chocolate section into a mascot-driven stop  —  mixing design, storytelling, and impulse offers.",
     img: "/Images/Work/5.webp",
     tags: ["Airport", "Campaigns", "Retail Marketing", "Brand Activation"],
+    tagsM: ["Airport", "Campaigns", "Retail Marketing"],
      cTitle:"Chocolate Has Boarded",
     client:"Muscat Duty Free",
     Sector:"Airport / Travel Retail",
@@ -257,6 +270,7 @@ cover:"/Images/Work/muscatCover.webp",
       "A high-speed digital takeover: bold visuals, minimalist messaging, and 8K impact to turn airport attention into sales.",
     img: "/Images/Work/6.webp",
     tags: ["Airport", "Campaigns", "Visual Identity", "Digital Activation"],
+    tagsM: ["Airport", "Campaigns", "Visual Identity"],
     cTitle:"The Red Thread",
     client:"Abu Dhabi Duty Free",
     Sector:"Airport / Travel Retail",
@@ -306,7 +320,10 @@ Guided by our SwirlBold™ mentality, we pair disruptive creativity with discipl
          "Marketing & Advertising", "Campaigns, Strategic Branding", "Visual Identity", "Out-of-Home Advertising"
 
     ],
+  tagsM: [
+         "Marketing & Advertising", "Campaigns, Strategic Branding",  "Out-of-Home Advertising","Visual Identity"
 
+    ],
       cTitle:"The Disruptive Billboard Series",
     client:"Advertising Attitude",
     Sector:"Marketing & Advertising",
@@ -362,6 +379,7 @@ Guided by our SwirlBold™ mentality, we pair disruptive creativity with discipl
       "Ramadan & Eid transformed into an immersive retail journey  —  blending tradition, luxury brands, and sentiment-driven activations.",
     img: "/Images/Work/8.webp",
     tags: ["Airport", "Campaigns", "Retail Marketing", "Brand Activation"],
+    tagsM: ["Airport", "Campaigns", "Retail Marketing", "Brand Activation"],
     
       cTitle:"Step In, Feel Ramadan",
     client:"Beirut Duty Free",
@@ -416,7 +434,12 @@ cover:"/Images/Work/bRamadanCover.webp",
       "Visual Identity",
       " Digital Activation",
     ],
-
+  tagsM: [
+      "Pharma & Healthcare",
+      "Campaigns",
+      "Visual Identity",
+      " Digital Activation",
+    ],
         cTitle:"The FastLane Screen",
     client:" K&A Machmouchi Pharmacy",
     Sector:"Pharma & Healthcare",
@@ -467,6 +490,11 @@ Guided by our SwirlBold™ mentality, we pair disruptive creativity with discipl
       " Digital Activation",
       "AI & Creative Tech",
       "Social Media Marketing",
+    ],
+      tagsM: [
+      "Marketing & Advertising",
+      " Digital Activation",
+      "AI & Creative Tech",
     ],
           cTitle:"Your Legacy Needs a Heartbeat",
     client:" Advertising Attitude",
@@ -519,6 +547,11 @@ Guided by our SwirlBold™ mentality, we pair disruptive creativity with discipl
       "Retail Marketing",
       "Content & Digital Activation",
       "eCommerce"
+    ],
+      tagsM: [
+      "Airport",
+      "Campaigns",
+      "Retail Marketing",
     ],
              cTitle:"Making ‘Fast, Easy & Convenient’ Stick",
     client:"Beirut Duty Free",

@@ -116,8 +116,8 @@ const sectionRef = useRef(null);
 
         <motion.div className="relative z-50 w-full md:hidden"
          variants={childVariantsnav}>
-        <Nav title={"PERSPECTIVE"} 
-        tracking={"text-[1.5rem] tracking-[0.7rem]"} 
+        <Nav title={"AA’S PERSPECTIVE"} 
+        tracking={"text-[1.5rem] tracking-[0.2rem]"} 
         sectionRef={sectionRef}/>
         {/* <Nav title={"THINK BOLDLY"} tracking={"tracking-[1.9rem]"} /> */}
       </motion.div>

@@ -31,7 +31,7 @@ const navigate =useNavigate();
       {!isLoaded ? (
         <Skeleton className="w-[10rem] h-[1rem] bg-secondary/30" />
       ) : (
-        <h3 className="font-R_regular text-secondary text-[1.2rem] leading-[1.2rem] md:text-[2rem] md:leading-[2rem] uppercase">
+        <h3 className="font-R_regular text-secondary text-[1.40rem] leading-[1.6rem] md:text-[2rem] md:leading-[2rem] uppercase">
           {data?.title}
         </h3>
       )}
@@ -42,7 +42,7 @@ const navigate =useNavigate();
           <Skeleton className="w-[50%] h-[1rem] bg-secondary/30" />
         </div>
       ) : (
-        <p className='text- font-M_medium text-background md:leading-5 text-xs md:text-md '>{data?.subTitle}</p>
+        <p className='text- font-M_medium text-background leading-[0.9rem] md:leading-5 text-xs md:text-md line-clamp-4 '>{data?.subTitle}</p>
       )}
 
       {!isLoaded ? (
@@ -52,16 +52,28 @@ const navigate =useNavigate();
           <Skeleton className="w-[5rem] h-[1rem] bg-secondary/30" />
         </div>
       ) : (
-        <div className="flex flex-row flex-wrap gap-[2px] md:gap-1 mt-2">
+        <>
+        <div className="hidden md:flex  flex-row flex-wrap gap-[2px] md:gap-1 mt-2">
           {data?.tags?.map((tag, index) => (
             <span
               key={index}
-              className="font-M_bold text-white text-[10px] md:text-xs w-fit bg-background rounded-full px-3 py-[2px] line-clamp-1"
+              className="font-M_bold text-white text-[9px] md:text-xs w-fit bg-background rounded-full px-2 py-[2px] line-clamp-1"
             >
               {tag}
             </span>
           ))}
         </div>
+ <div className="flex md:hidden  flex-row flex-wrap gap-[2px] md:gap-1 mt-2">
+          {data?.tagsM?.map((tagM, index) => (
+            <span
+              key={index}
+              className="font-M_bold text-white text-[9px] md:text-xs w-fit bg-background rounded-full px-2 py-[2px] line-clamp-1"
+            >
+              {tagM}
+            </span>
+          ))}
+        </div>
+        </>
       )}
       </div>
     </div>

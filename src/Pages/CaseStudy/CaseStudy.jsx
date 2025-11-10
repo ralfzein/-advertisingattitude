@@ -335,18 +335,19 @@ const CaseStudy = () => {
         <div className="mt-15 md:mt-30 space-y-10">
           <h1 className="font-R_regular text-[2rem]  leading-[2rem] md:text-[5rem] md:leading-[5rem] tracking-[0.1rem] md:tracking-[0.3rem] text-background ">
             More Bold Moves
+            
           </h1>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 md:gap-6 ">
             {nextCampaigns.map((item, idx) => (
               <div
                 key={item.id || idx}
-                className="relative h-[18rem] md:h-[35rem]  overflow-hidden group cursor-pointer"
+                className="relative h-[28rem] md:h-[35rem]  overflow-hidden group cursor-pointer"
                 onClick={() => navigate(`/work/casestudy/${item.id}`)}
               >
                 <img
                   src={item.cover ? item.cover : item.img}
                   alt={item.title}
-                  className="w-full h-full md:object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div
                   className="absolute inset-0    transition duration-300  flex items-end p-4 pb-6"

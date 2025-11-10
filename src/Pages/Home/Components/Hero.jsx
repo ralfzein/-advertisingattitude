@@ -49,9 +49,14 @@ const sectionRef = useRef(null);
           src={'/Images/herro.webp'}
           alt="Hero"
           loading='lazy'  decoding="sync"
-          className="w-full h-full  object-cover "
+          className="hidden sm:block w-full h-full  object-cover "
         />
-       
+          <img
+          src={'/Images/Homepage hero.webp'}
+          alt="Hero"
+          loading='lazy'  decoding="sync"
+          className=" sm:hidden w-full h-full  object-cover "
+        />
          {/* <img
           src={opacity}
           alt="Hero"
@@ -68,12 +73,12 @@ const sectionRef = useRef(null);
         className="relative z-50 w-full"
       >
         <Nav   title={["think boldly", "feel deeply", "act smartly"]}
-         tracking={"tracking-[0.2rem] md:tracking-[1.6rem]" } 
+         tracking={"tracking-[0.5rem] md:tracking-[1.6rem]" } 
           sectionRef={sectionRef} />
       </motion.div>
 
       {/* Hero Content */}
-      <div className="flex flex-col items-center justify-center h-full relative z-10 px-4">
+      <div className="flex flex-col items-center pt-[25vh] md:justify-center h-full relative z-10 px-4">
         <motion.div variants={childVariants} className=" flex flex-col items-center gap-6 md:gap-10 ">
         <img
           
@@ -90,12 +95,12 @@ const sectionRef = useRef(null);
           className=" max-w-[50%]  object-contain md:mt-25 sm:hidden"
         />
 
-          <h1 className="font-R_regular text-[3rem] sm:text-[3rem] text-primary leading-[3rem] md:hidden
+          <h1 className="font-R_regular text-[3.5rem] sm:text-[3rem] text-primary leading-[3.4rem] md:hidden
                 md:pt-14 sm:pt-8    text-center ">
                 Advertising <br className="md:hidden" /> Attitude 
           </h1>
 
-        <h1   className="font-R_regular text-[1.1rem] sm:text-[3rem] text-secondary
+        <h1   className="font-R_regular text-[1.2rem] sm:text-[3rem] text-secondary
          md:pt-14 sm:pt-8 tracking-[0.2rem] md:tracking-[0.5rem]  leading-[1.2] md:leading-[1.1] text-center ">
           LEADING CREATIVE  AGENCY
         </h1>
