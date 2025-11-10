@@ -27,12 +27,7 @@ const NewsLetter = () => {
     },
   },
 };
-  useEffect(() => {
-    if (isInView && next === 1) {
-      const timer = setTimeout(() => setNext(2), 1000) 
-      return () => clearTimeout(timer)
-    }
-  }, [isInView, next])
+ 
 
 const [name, setName] = useState("");
 const [email, setEmail] = useState("");
@@ -60,7 +55,7 @@ const [email, setEmail] = useState("");
 
         <div className='flex flex-row items-start w-full justify-between   md:justify-end gap-2 mt-4'>
           <div className='relative flex items-start justify-between gap-2  w-full md:w-auto'>
-            {(next !== 4 && next !== 1) && (
+            {(next !== 3 ) && (
               <motion.p 
                 initial={{ opacity: 0 }}
                 animate={{
@@ -90,27 +85,27 @@ const [email, setEmail] = useState("");
 
             <div className='flex flex-col md:items-end justify-center gap-3   md:w-[30rem] overflow-hidden '>
               <AnimatePresence mode='wait'>
-                {next === 2 ? (
+                {next === 1 ? (
                  <motion.input
   key="name"
   placeholder="Name"
    value={name}
     onChange={(e) => setName(e.target.value)}
-  initial={{ opacity: 0, y: 20 }}
+  initial={{ opacity: 0 }}
   animate={{
     opacity: 1,
-    y: 0,
+   
     transition: {
-      delay: 1, // delay only on entrance
-      duration: 0.8,
+ 
+      duration: 0.4,
       ease: [0.45, 0, 0.55, 1],
     },
   }}
   exit={{
     opacity: 0,
-    y: -20,
+   
     transition: {
-      duration: 0.5, // no delay on exit
+      duration: 0.4, // no delay on exit
       ease: [0.45, 0, 0.55, 1],
     },
   }}
@@ -118,31 +113,31 @@ const [email, setEmail] = useState("");
              placeholder:-[#909090] placeholder:text-[1rem] md:placeholder:text-[1.5rem]
              rounded-l-full rounded-tr-full bg-primary border-0 bg"
 />
-                ) : next === 3 ? (
+                ) : next === 2 ? (
                   <motion.input
                     key='email'
                     placeholder='E-mail'
                      value={email}
     onChange={(e) => setEmail(e.target.value)}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{duration: 0.4, ease: [0.45, 0, 0.55, 1] }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ ease: [0.45, 0, 0.55, 1] }}
                     className='w-full md:w-[30rem] h-10 md:h-16 mt-9 md:mt-14  p-4 d:p-6 font-M_regular 
                                placeholder:text-[#909090] placeholder:text-[1rem] md:placeholder:text-[1.5rem]  focus:outline-none 
                                rounded-l-full rounded-tr-full bg-primary border-0'
                   />
-                ) : next === 4 ? (
+                ) : next === 3 ? (
                   <motion.div
                     key='thankyou'
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.9 }}
-                    transition={{ delay:0.4,duration: 0.4, ease: [0.45, 0, 0.55, 1] }}
-                    className='rounded-l-full w-[12rem] md:w-auto h-10  md:h-16   md:-translate-x-10 mt-9 md:mt-14 rounded-tr-full
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.4, ease: [0.45, 0, 0.55, 1] }}
+                    className='rounded-l-full w-[12rem] md:w-auto h-10  md:h-16   md:-translate-x-10 mt-9 md:mt-14 rounded-tr-full cursor-pointer
                      bg-primary text-secondary font-R_regular text-[1.5rem] md:text-[2rem]
                    px-4 md:px-6 flex items-center justify-center'
-                    onClick={() => setNext(1)}
+                    // onClick={() => setNext(1)}
                   >
                     Thank You!
                   </motion.div>
@@ -151,7 +146,7 @@ const [email, setEmail] = useState("");
                 )}
               </AnimatePresence>
 
-              {next !== 4 && next !== 1 && (
+              {next !== 3  && (
                 <motion.div 
                  initial={{ opacity: 0 }}
                 animate={{
@@ -172,19 +167,19 @@ const [email, setEmail] = useState("");
                   },
                 }} className='flex gap-1 w-full items-center justify-center'>
                   <div
-                    className={`w-5 h-5 bg-primary rounded-t-full rounded-bl-full cursor-pointer ${next === 2 ? 'opacity-100' : 'opacity-50'}`}
-                    onClick={() => setNext(2)}
+                    className={`w-5 h-5 bg-primary rounded-t-full rounded-bl-full cursor-pointer ${next === 1 ? 'opacity-100' : 'opacity-50'}`}
+                    onClick={() => setNext(1)}
                   ></div>
                   <div
-                    className={`w-5 h-5 bg-primary rounded-t-full rounded-br-full cursor-pointer ${next === 3 ? 'opacity-100' : 'opacity-50'}`}
-                    onClick={() => setNext(3)}
+                    className={`w-5 h-5 bg-primary rounded-t-full rounded-br-full cursor-pointer ${next === 2 ? 'opacity-100' : 'opacity-50'}`}
+                    onClick={() => setNext(2)}
                   ></div>
                 </motion.div>
               )}
             </div>
 
             <div className='flex items-start justify-center h-[223px]  -translate-x-4 md:-translate-x-0  '>
-              {next !== 4 && next !== 1 && (
+              {next !== 3 && (
                 <motion.div
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -244,23 +239,23 @@ const [email, setEmail] = useState("");
               )}
 
               <AnimatePresence mode='wait'>
-                {next !== 4 && next !== 1 ? (
+                {next !== 3 ? (
                   <motion.img
                     key='news1'
                     src='/Images/TheAAP/news1.svg'
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    transition={{ duration: 0.4, ease: [0.45, 0, 0.55, 1] }}
+                    initial={{ opacity: 0}}
+                    animate={{ opacity: 1}}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2, ease: [0.45, 0, 0.55, 1] }}
                     className=' w-[8rem] md:w-[13rem] z-50 md:-translate-x-10'
                   />
                 ) : (
                   <motion.img
                     key='news2'
                     src='/Images/TheAAP/news2.svg'
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{  opacity: 0, scale: 0.95 }}
+                    initial={{ opacity: 0}}
+                    animate={{ opacity: 1}}
+                    exit={{  opacity: 0 }}
                     transition={{ duration: 0.4, ease: [0.45, 0, 0.55, 1] }}
                     className='w-[8rem] md:w-[13rem] z-50 md:-translate-x-10'
                   />
