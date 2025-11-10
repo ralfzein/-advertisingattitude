@@ -55,8 +55,8 @@ const Footer = () => {
       >
       <div className='flex flex-col px-4 md:px-[4rem] justify-around  h-full md:mb-5 '>
         <motion.p  variants={childVariants} className=' md:mt-5 
-          font-M_bold  text-primary tracking-[.1em] text-sm md:text-[1rem] 
-           leading-[1rem]  md:leading-[1.3rem] text-justify 
+          font-M_bold  text-primary tracking-[.1em] text-[1rem] md:text-[1rem] 
+           leading-[1.2rem]  md:leading-[1.3rem] text-justify 
           '>Advertising Attitude is a leading creative agency built for brands that 
             refuse to blend in. We don’t just craft campaigns — we train ideas to fight harder,
              last longer, and leave echoes. Rooted in clarity, rebellion, and bold thinking, 
