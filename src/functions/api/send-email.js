@@ -1,9 +1,5 @@
 import { createTransport } from "nodemailer";
 
-/**
- * POST /api/send-email
- * Accepts: form data (multipart/form-data)
- */
 export async function onRequestPost({ request, env }) {
   try {
     const formData = await request.formData();
@@ -16,35 +12,28 @@ export async function onRequestPost({ request, env }) {
     const portfolio = formData.get("Portfolio");
     const files = formData.getAll("file");
 
-    // Choose the right sender based on category
+    // Choose correct sender credentials
     const senderEmail =
-      category === "I am a Creator"
-        ? env.TALENT_EMAIL
-        : env.BRAND_EMAIL;
-
+      category === "I am a Creator" ? env.TALENT_EMAIL : env.BRAND_EMAIL;
     const senderPass =
-      category === "I am a Creator"
-        ? env.TALENT_PASS
-        : env.BRAND_PASS;
+      category === "I am a Creator" ? env.TALENT_PASS : env.BRAND_PASS;
 
-    // Create the transporter (Zoho SMTP)
+    // Create transporter
     const transporter = createTransport({
       host: "smtp.zoho.com",
       port: 465,
       secure: true,
-      auth: {
-        user: senderEmail,
-        pass: senderPass,
-      },
+      auth: { user: senderEmail, pass: senderPass },
     });
 
+    // Build attachments safely for Cloudflare
     const attachments = [];
     for (const file of files) {
       if (file && typeof file.name === "string") {
-        const buffer = Buffer.from(await file.arrayBuffer());
+        const arrayBuffer = await file.arrayBuffer();
         attachments.push({
           filename: file.name,
-          content: buffer,
+          content: new Uint8Array(arrayBuffer),
         });
       }
     }
