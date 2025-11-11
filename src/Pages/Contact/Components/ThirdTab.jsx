@@ -102,7 +102,7 @@ const handleSend = async (e) => {
       formData.append("file", f, f.name);
     });
   }
-  const response = await fetch(`${import.meta.env.VITE_API_URL}/api/send-email`, {
+ const response = await fetch(`${import.meta.env.VITE_API_URL}/api/send-email`, {
     method: "POST",
     body: formData,
   });

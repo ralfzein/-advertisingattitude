@@ -92,8 +92,8 @@ const handleSend = async (e) => {
   }
 
 
-  const response = await fetch(`${import.meta.env.VITE_API_UR}/api/send-email`, {
-    method: "POST",
+ const response = await fetch(`${import.meta.env.VITE_API_URL}/api/send-email`, { 
+     method: "POST",
     body: formData,
   });
 
