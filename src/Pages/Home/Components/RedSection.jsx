@@ -31,11 +31,11 @@ const RedSection = () => {
   style={{ backgroundImage: `url('/Images/bg.svg')` }}
 >
 
-    <div className='relative flex flex-wrap py-[3.5rem] w-full  px-4 md:px-[4rem]' >
+    <div className='relative flex flex-wrap py-[2rem] md:py-[3.5rem] w-full  px-4 md:px-[4rem]' >
 
-       <motion.h1     variants={childVariants} className= 'md:hidden text-primary text-center md:text-left inline-block tracking-[.1rem]  md:tracking-[.4rem] font-R_regular text-[2rem] md:text-[5rem] leading-[2.2rem] md:leading-[6.5rem]  -ml-[5px] pl-0  font-normal     uppercase'
-      >we don't just build brands. <br/> we train them to fight,<br/> evolve, and lead. 
-      </motion.h1>
+       <motion.h1     variants={childVariants} className= "md:hidden text-primary   tracking-[.2rem]   font-R_regular text-[2rem] leading-[2.7rem] md:leading-[6.5rem]  -ml-[5px] pl-0  font-normal     uppercase">
+          we don't just build brands.<br/>  we train them <br/> to fight, evolve, and lead. 
+      </motion.h1>  
 
 
 
