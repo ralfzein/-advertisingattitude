@@ -202,7 +202,7 @@ const [email, setEmail] = useState("");
       return setNext(3); // stay on email input
     }
 
-    // ✅ Submit to backend if valid
+    // ✅ Submit to backend if valid 
     try {
       const resp = await fetch(`${import.meta.env.VITE_API_URL}/api/newsletter`, {
         method: "POST",
