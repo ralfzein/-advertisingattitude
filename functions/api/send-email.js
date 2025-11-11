@@ -1,9 +1,6 @@
-import { createTransport } from "nodemailer";
-
 export async function onRequestPost({ request, env }) {
   try {
     const formData = await request.formData();
-
     const name = formData.get("name");
     const email = formData.get("email");
     const country = formData.get("country");
@@ -12,57 +9,58 @@ export async function onRequestPost({ request, env }) {
     const portfolio = formData.get("Portfolio");
     const files = formData.getAll("file");
 
-    // Choose correct sender credentials
     const senderEmail =
-      category === "I am a Creator" ? env.TALENT_EMAIL : env.BRAND_EMAIL;
-    const senderPass =
-      category === "I am a Creator" ? env.TALENT_PASS : env.BRAND_PASS;
+      category === "I am a Creator"
+        ? env.TALENT_EMAIL
+        : env.BRAND_EMAIL;
 
-    // Create transporter
-    const transporter = createTransport({
-      host: "smtp.zoho.com",
-      port: 465,
-      secure: true,
-      auth: { user: senderEmail, pass: senderPass },
-    });
-
-    // Build attachments safely for Cloudflare
-    const attachments = [];
+    let attachments = [];
     for (const file of files) {
       if (file && typeof file.name === "string") {
         const arrayBuffer = await file.arrayBuffer();
         attachments.push({
           filename: file.name,
-          content: new Uint8Array(arrayBuffer),
+          content: Buffer.from(arrayBuffer).toString("base64"),
         });
       }
     }
 
-    // Send the email
-    await transporter.sendMail({
-      from: `Website Form <${senderEmail}>`,
-      to: senderEmail,
-      replyTo: email,
-      subject: `New message from ${name}`,
-      text: `Category: ${category}
-From: ${name}
-Email: ${email}
-${country ? `Country: ${country}` : ""}
-${portfolio ? `Portfolio Link: ${portfolio}` : ""}
+    const emailBody = `
+      Category: ${category}
+      From: ${name}
+      Email: ${email}
+      ${country ? `Country: ${country}` : ""}
+      ${portfolio ? `Portfolio: ${portfolio}` : ""}
 
-${message}`,
-      attachments,
+      ${message}
+    `;
+
+    const response = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${env.RESEND_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: `Website Form <${senderEmail}>`,
+        to: [senderEmail],
+        subject: `New message from ${name}`,
+        text: emailBody,
+        attachments,
+      }),
     });
+
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.error || "Failed to send email");
 
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
       headers: { "Content-Type": "application/json" },
     });
-  } catch (error) {
-    console.error("Email send error:", error);
-    return new Response(
-      JSON.stringify({ success: false, error: error.message }),
-      { status: 500, headers: { "Content-Type": "application/json" } }
-    );
+  } catch (err) {
+    return new Response(JSON.stringify({ success: false, error: err.message }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 }

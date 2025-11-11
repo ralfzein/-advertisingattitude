@@ -1,8 +1,3 @@
-import { createTransport } from "nodemailer";
-
-/**
- * POST /api/newsletter
- */
 export async function onRequestPost({ request, env }) {
   try {
     const { name, email } = await request.json();
@@ -15,43 +10,35 @@ export async function onRequestPost({ request, env }) {
     }
 
     const senderEmail = env.BRAND_EMAIL;
-    const senderPass = env.BRAND_PASS;
 
-    const transporter = createTransport({
-      host: "smtp.zoho.com",
-      port: 465,
-      secure: true,
-      auth: {
-        user: senderEmail,
-        pass: senderPass,
+    const subject = `New newsletter signup: ${name || "No name provided"}`;
+    const text = `New newsletter signup from ${email}\n\nName: ${name || "(not provided)"}`;
+
+    const response = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${env.RESEND_API_KEY}`,
+        "Content-Type": "application/json",
       },
-    });
-
-    await transporter.sendMail({
-      from: `Website Newsletter <${senderEmail}>`,
-      to: senderEmail,
-      subject: `New newsletter signup: ${name || "No name provided"}`,
-      text: `New signup:\nName: ${name || "(not provided)"}\nEmail: ${email}`,
-      html: `<p><strong>Name:</strong> ${name || "(not provided)"}<br>
-             <strong>Email:</strong> ${email}</p>`,
-    });
-
-    return new Response(
-      JSON.stringify({
-        success: true,
-        message: "Subscription received and email sent.",
+      body: JSON.stringify({
+        from: `Website Newsletter <${senderEmail}>`,
+        to: [senderEmail],
+        subject,
+        text,
       }),
-      { status: 200, headers: { "Content-Type": "application/json" } }
-    );
+    });
+
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.error || "Failed to send newsletter email");
+
+    return new Response(JSON.stringify({ success: true }), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
   } catch (err) {
-    console.error("Newsletter send error:", err);
-    return new Response(
-      JSON.stringify({
-        success: false,
-        message: "Failed to send notification email.",
-        error: err.message,
-      }),
-      { status: 500, headers: { "Content-Type": "application/json" } }
-    );
+    return new Response(JSON.stringify({ success: false, error: err.message }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 }
