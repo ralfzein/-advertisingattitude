@@ -27,6 +27,7 @@
     "react-router-dom": "^7.9.1",
     "react-spring": "^10.0.3",
     "react-transition-group": "^4.4.5",
+    "resend": "^6.4.2",
     "scroll-snap": "^5.0.2",
     "shadcn-ui": "^0.9.5",
     "sonner": "^2.0.7",
