@@ -188,7 +188,7 @@ const [email, setEmail] = useState("");
                   className='w-18 h-11 md:h-[3.75rem] mt-8 md:mt-14 translate-x-5 md:translate-x-0 text-secondary
                    z-10 flex items-center justify-center bg-primary rounded-tl-[50%] cursor-pointer'
           onClick={async () => {
-  if (next === 3) {
+  if (next === 2) {
     // ✅ Validation – Name and Email must be filled
     if (!name.trim() || !email.trim()) {
       toast.error("Please complete all fields.");
