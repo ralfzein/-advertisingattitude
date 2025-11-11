@@ -72,7 +72,7 @@ const CaseStudy = () => {
            initial="hidden"
            whileInView="show"
            viewport={{ once: true, amount: 0.2 }}
-           className="relative w-full  bg-[#F2EDD9] pb-[10rem] bg-contain"
+           className="relative w-full  bg-[#F2EDD9]  pb-[5rem] md:pb-[10rem] bg-contain"
            style={{ backgroundImage: `url('/Images/Work/workBg.svg')` }}
          >
 

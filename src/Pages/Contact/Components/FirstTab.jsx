@@ -13,17 +13,12 @@ const FirstTab = () => {
   const fileInputRef = useRef(null);
   const formRef = useRef();
   const MAX_CHARS = 400;
-
   // Variants for animations
   const containerVariants = { hidden: { opacity: 0.1 }, visible: { opacity: 1, transition: { duration: 2, ease: "easeOut" } } };
   const imageVariants = { hidden: { opacity: 0, scale: 0.5 }, show: { opacity: 1, scale: 1, transition: { type: "tween", duration: 0.8, ease: "easeOut" } } };
-
   const handleChange = (e) => setText(e.target.value);
-
   const handleClick = () => fileInputRef.current.click();
-
 const MAX_SIZE = 25 * 1024 * 1024; // 25MB
-
 const handleFileChange = (e) => {
   const files = Array.from(e.target.files);
 
@@ -98,7 +93,15 @@ const handleSend = async (e) => {
   });
 
       
-  if (response.ok) {toast.success("Form sent successfully!"); setSendingEmail(false); }
+  if (response.ok) {toast.success("Form sent successfully!");
+     formRef.current.reset();
+
+  // Reset React states
+  setText("");
+  setActive(false);
+  setFile([]);
+  setFileName("");
+  setSendingEmail(false); setSendingEmail(false); }
   else{ toast.error("Failed to send the form."); ; setSendingEmail(false);}
 };
 
@@ -181,8 +184,8 @@ const removeFile = (indexToRemove) => {
           <div className="flex items-center justify-start w-full gap-2 md:gap-10 mt-5">
             <span className="font-M_medium text-[1.5rem] text-primary cursor-pointer hover:text-secondary" onClick={handleClick}>Upload</span>
             <div className="flex flex-col gap-1">
-              <span className="font-M_regular text-[7px] md:text-xs text-primary tracking-[.12em]">
-            
+              <span className="font-M_regular text-[6px] md:text-xs text-primary tracking-[.12em]">
+          
                 (deck, moodboard, or supporting brief (PDF, JPG, PNG ,MP4 – max 25MB)<br />
 Need more space? Include a link in your message or email us at business@advertisingattitude.com
               </span>
@@ -220,7 +223,7 @@ Need more space? Include a link in your message or email us at business@advertis
 
           {/* Checkbox */}
           <div className="flex items-center justify-start w-full gap-2 md:gap-5 mt-10">
-            <div className={`flex font-M_medium text-[1.5rem] border w-14 h-14 min-w-14 min-h-14  items-center justify-center cursor-pointer transition-colors duration-300 border-primary relative`} onClick={() => setActive(!active)}>
+            <div className={`flex font-M_medium text-[1.5rem] border w-10 h-10 min-w-10 min-h-10 md:w-10 md:h-14 md:min-w-14 md:min-h-14  items-center justify-center cursor-pointer transition-colors duration-300 border-primary relative`} onClick={() => setActive(!active)}>
               <img src="/Images/swirl.svg" alt="logo" className={`  transition-scale transition-rotate duration-600 absolute top-0 left-0 w-full h-full ${active ? "opacity-100 scale-90 rotate-0" : "scale-0 opacity-0 rotate-120"}`} />
             </div>
             <span className="font-M_regular text-[7px] md:text-xs text-primary tracking-[.12em]">

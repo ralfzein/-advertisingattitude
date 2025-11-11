@@ -141,7 +141,7 @@ useEffect(() => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
-        className=" w-full  bg-[#F2EDD9]  bg-contain pb-[10rem]"
+        className=" w-full  bg-[#F2EDD9]  bg-contain pb-[4rem] md:pb-[10rem]"
         style={{ backgroundImage: `url('/Images/Work/workBg.svg')`}}
       >
         <motion.div  className=" relative z-50 w-full hidden md:block " >
@@ -167,11 +167,13 @@ useEffect(() => {
                             color="text-secondary"
                           />
           <div className=" space-y-4 md:space-y-8">
-            <h3 className="font-R_regular  text-secondary text-[1.5rem] md:text-[3rem] tracking-[0.1rem] md:tracking-[0.3rem] leading-[1.8rem]  md:leading-[3.2rem] ">
+            <h3 className="font-R_regular  text-secondary text-[1.3rem] md:text-[3rem] 
+            tracking-[0.1rem] md:tracking-[0.3rem] leading-[1.6rem]  md:leading-[3.2rem] ">
               WE’RE BIASED. TOWARD IDEAS THAT FIGHT HARDER, MOVE FASTER, AND HIT
               DEEPER.
             </h3>
-            <h4 className="font-M_bold text-background text-[1.1rem]   md:text-[2rem] tracking-[0.1rem] leading-[1.5rem] md:leading-[2rem] ">
+            <h4 className="font-M_bold text-background text-[0.8rem] 
+              md:text-[2rem] tracking-[0.1rem] leading-[1rem] md:leading-[2rem] ">
               The way we see it, marketing, advertising, and attitude.{" "}
             </h4>
 
@@ -190,19 +192,22 @@ useEffect(() => {
             </div>
 
             <div className="flex items-center justify-center gap-2 flex-col w-full">
-              <div className="font-R_regular text-secondary text-[1.3rem]   md:text-[2rem]  leading-[1.5rem] md:leading-[2rem]  uppercase">
+              <div className="font-R_regular text-secondary text-[1.1rem] text-center md:text-left  md:text-[2rem]  leading-[1.5rem] md:leading-[2rem]  uppercase">
               {data?.[0]?.title}
               </div>
-              <div className="font-M_medium text-background text-[0.8rem] md:text-[1rem]  leading-[1.2rem]  md:leading-[1.2rem]">
+              <div className="font-M_medium text-background text-[0.8rem]
+               md:text-[1rem]  leading-[1.2rem]  md:leading-[1.2rem]">
                 The Attitude behind Advertising Attitude.
               </div>
             </div>
 
-            <div className="space-y-5">
-              <h3 className="font-R_regular text-secondary text-[1.5rem] md:text-[3rem] tracking-[0.3rem] leading-[2rem]  md:leading-[3.2rem] ">
+            <div className="mt-6 md:mt-0 space-y-2 md:space-y-5">
+              <h3 className="font-R_regular text-secondary text-[1.5rem] md:text-[3rem]
+               tracking-[0.3rem] leading-[1rem]  md:leading-[3.2rem] ">
                 SWIRL OFF SCRIPT
               </h3>
-              <h4 className="font-M_bold text-background text-[1rem] tracking-[0.05rem] md:text-[2rem] md:tracking-[0.1rem] leading-[1.5rem] md:leading-[2rem] ">
+              <h4 className="font-M_bold text-background text-[0.8rem] 
+              tracking-[0.05rem] md:text-[2rem] md:tracking-[0.1rem] leading-[1.5rem] md:leading-[2rem] ">
                 AA’s unfiltered take on marketing, creativity, and the battles
                 shaping the industry.{" "}
               </h4>
@@ -218,9 +223,8 @@ useEffect(() => {
 
       <div className="flex justify-center  mt-10">
           <button
-                   onClick={handleShowMore}
-
-      className="  font-R_regular text-[1rem] md:text-[1.5rem] tracking-[0.12em] leading-[4rem] mt-0 
+            onClick={handleShowMore}
+          className=" mx-10 md:mx-0  font-R_regular text-[1rem] md:text-[1.5rem] tracking-[0.12em] leading-[4rem] mt-0 
           flex items-center justify-center w-full md:w-[25rem] h-[3rem] md:h-[5rem] hover:bg-secondary hover:opacity-80 cursor-pointer
            rounded-full   text-primary bg-secondary  uppercase"          >
             See More Takes

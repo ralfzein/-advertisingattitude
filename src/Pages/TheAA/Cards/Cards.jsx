@@ -67,7 +67,9 @@ const Cards = ({ data ,onClick}) => {
           <Skeleton className="w-[70%] h-[1rem] bg-secondary/30" />
         </div>
       ) : (
-        <p className="md:whitespace-pre-line font-M_medium text-background text-[0.8rem] md:text-[1rem] leading-[1rem] md:leading-[1.2rem] text-center  mx:px-5">
+        <p className="md:whitespace-pre-line 
+        font-M_medium text-background text-[0.8rem] md:text-[1rem] 
+        leading-[1rem] md:leading-[1.2rem] text-center  mx:px-5 line-clamp-3">
           {data.subTitle}
         </p>
       )}

@@ -99,7 +99,15 @@ const handleSend = async (e) => {
   });
 
       
-  if (response.ok) {toast.success("Form sent successfully!"); setSendingEmail(false); }
+  if (response.ok) {toast.success("Form sent successfully!");
+    formRef.current.reset();
+
+  // Reset React states
+  setText("");
+  setActive(false);
+  setFile([]);
+  setFileName("");
+   setSendingEmail(false); }
   else{ toast.error("Failed to send the form."); ; setSendingEmail(false);}
 };
 

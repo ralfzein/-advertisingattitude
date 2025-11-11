@@ -107,9 +107,16 @@ const handleSend = async (e) => {
     body: formData,
   });
 
-  if (response.ok) {toast.success("Form sent successfully!"); setSendingEmail(false); }
+  if (response.ok) {toast.success("Form sent successfully!");
+     formRef.current.reset();
+  setText("");
+  setActive(false);
+  setFile([]);
+  setFileName("");
+   setSendingEmail(false); }
   else{ toast.error("Failed to send the form."); ; setSendingEmail(false);}
 };
+
 
 const removeFile = (indexToRemove) => {
   const updatedFiles = file.filter((_, index) => index !== indexToRemove);
@@ -290,8 +297,9 @@ or email us at pr@advertisingattitude.com
             disabled={sendingEmail}
 
                   type="submit"
-                  className="font-R_regular text-[0.8rem] tracking-[0.05rem] leading-[] md:text-[1.4rem] md:tracking-[0.12em] md:leading-[4rem] flex items-center 
-            justify-center flex-1 md:flex-none  w-auto md:w-[28rem] h-[3rem] md:h-[5rem] hover:bg-secondary hover:opacity-80 cursor-pointer rounded-full text-primary bg-secondary"
+                  className="font-R_regular text-primary bg-secondary text-[0.8rem] tracking-[0.05rem] leading-[] md:text-[1.4rem] md:tracking-[0.12em] md:leading-[4rem] flex items-center 
+            justify-center flex-1 md:flex-none  w-auto md:w-[28rem] h-[3rem] md:h-[5rem] hover:bg-secondary hover:opacity-80 cursor-pointer rounded-full
+             "
                 >
              {sendingEmail ? "Sending Email..." : "BRING THE CLIENTS"}  
 

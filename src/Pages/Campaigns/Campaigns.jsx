@@ -34,23 +34,30 @@ const Campaigns = () => {
       }, 100);
     }
   }, []);
-  useEffect(() => {
+ useEffect(() => {
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
     const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
     const scrollPercent = (scrollPosition / pageHeight) * 100;
 
-    // Check footer visibility
     const footer = document.getElementById("footer");
-    const footerTop = footer?.getBoundingClientRect().top ?? 0;
+    if (!footer) return;
 
-    const isFooterVisible = footerTop <= window.innerHeight && footerTop > 0;
+    const footerRect = footer.getBoundingClientRect();
+
+    // Hide if any part of footer is visible on screen
+    const isFooterVisible =
+      footerRect.top < window.innerHeight && footerRect.bottom > 0;
+
+    // Show logo only after 20% scroll and when footer is NOT visible
     setShowLogo(scrollPercent >= 20 && !isFooterVisible);
   };
 
   window.addEventListener("scroll", handleScroll);
+  handleScroll(); // run once on mount
   return () => window.removeEventListener("scroll", handleScroll);
 }, []);
+
   const sectionRef = useRef(null);
 
   return (
@@ -61,7 +68,7 @@ const Campaigns = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
-        className="relative w-full  bg-[#F2EDD9] pb-[10rem] bg-contain "
+        className="relative w-full  bg-[#F2EDD9] pb-[4rem] md:pb-[10rem] bg-contain "
         style={{ backgroundImage: `url('/Images/Work/workBg.svg')` }}
       >
         <motion.div  className="z-50 w-full relative hidden md:block ">

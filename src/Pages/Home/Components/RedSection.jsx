@@ -46,7 +46,7 @@ const RedSection = () => {
      > we train them to fight, </motion.h1>
 
       <motion.h1     variants={childVariants} className= 'hidden text-primary text-center md:text-left md:inline-block tracking-[.2rem]  md:tracking-[.4rem] font-R_regular text-[2rem] md:text-[5rem] leading-[2.2rem] md:leading-[6.5rem]  -ml-[5px] pl-0  font-normal     uppercase'
-     > evolve, and lead.
+     > evolve, and lead.-+
         </motion.h1>
     </div>
     </motion.section>

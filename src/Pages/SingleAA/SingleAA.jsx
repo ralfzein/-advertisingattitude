@@ -43,28 +43,32 @@ const SingleAA = () => {
 
 
     const [showLogo, setShowLogo] = useState(false);
-    
 useEffect(() => {
   const handleScroll = () => {
     const shareSection = document.getElementById("share");
     const footer = document.getElementById("footer");
+    const scrollY = window.scrollY;
+    const pageHeight = document.body.scrollHeight - window.innerHeight;
 
     if (!shareSection || !footer) return;
 
     const shareTop = shareSection.getBoundingClientRect().top;
     const footerTop = footer.getBoundingClientRect().top;
-
     const viewportHeight = window.innerHeight;
 
-    const hideAtShare = shareTop < viewportHeight * 1.2; 
+    const hideAtTop = scrollY < pageHeight * 0.2; // 👈 hide for first 20% of scroll
+    const hideAtShare = shareTop < viewportHeight * 1.2;
     const hideAtFooter = footerTop < viewportHeight;
 
-    setShowLogo(!(hideAtShare || hideAtFooter));
+    // 👇 Show logo only when scrolled past 20% and not overlapping share/footer
+    setShowLogo(!(hideAtTop || hideAtShare || hideAtFooter));
   };
 
   window.addEventListener("scroll", handleScroll);
+  handleScroll(); // run once on mount
   return () => window.removeEventListener("scroll", handleScroll);
 }, []);
+
 
 
  const handleShare = async () => {
@@ -107,7 +111,7 @@ const plainText = caseS?.paragraph1?.replace(/<[^>]*>/g, '');
           loading="lazy"
           decoding="sync"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed  bottom-10 right-4 md:right-[4rem] w-18 md:w-32 z-60 cursor-pointer"
+          className="fixed bottom-10 right-4 md:right-[4rem] w-18 md:w-32 z-40 cursor-pointer"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: showLogo ? 1 : 0, y: showLogo ? 0 : 20 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -175,9 +179,11 @@ const plainText = caseS?.paragraph1?.replace(/<[^>]*>/g, '');
               initial={{ opacity: 0 }}
               animate={{ opacity: isBgLoaded ? 1 : 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
-              className="relative z-10 py-6 md:py-15 flex items-center justify-center flex-col gap-2 md:gap-5  w-full md:h-[80vh]"
+              className="relative z-10 py-6 md:py-15 bg-cover flex items-center justify-center flex-col gap-2 md:gap-5  w-full md:h-[80vh]"
               style={{ backgroundImage: `url("/Images/TheAAP/sBg.svg")` }}
             >
+              
+          
               {/* Inner Image with Skeleton */}
               <div className="relative  flex !items-center !justify-center w-full  h-[15rem] md:h-[25rem]">
                 {!isLoaded1 && (
@@ -188,7 +194,7 @@ const plainText = caseS?.paragraph1?.replace(/<[^>]*>/g, '');
                   alt={caseS?.title || "AA image"}
                   className={`transition-opacity duration-500 ${
                     isLoaded1 ? "opacity-100" : "opacity-0"
-                  }  h-[15rem]  md:w-[20rem] md:h-[25rem] object-cover`}
+                  } w-[12rem]  h-[15rem]  md:w-[20rem] md:h-[25rem] object-cover`}
                   onLoad={() => setIsLoaded1(true)}
                 />
               </div>

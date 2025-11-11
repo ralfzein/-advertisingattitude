@@ -40,7 +40,7 @@ const [email, setEmail] = useState("");
   viewport={{ once: true, amount: 0.2 }}
   id="hero-section"
   className=''>
-      <div className='px-4 md:px-[4rem] bg-secondary h-screen flex flex-col items-start justify-center gap-10 md:gap-0'>
+      <div className='px-4 md:px-[4rem] bg-secondary py-[2rem] md:py-0 h-auto md:h-screen flex flex-col items-start justify-center gap-10 md:gap-0'>
         
         <motion.h1 
           variants={childVariants} className='font-R_regular text-primary text-[2.6rem] md:text-[5.5rem] leading-[2.8rem] md:leading-[5.7rem]'>

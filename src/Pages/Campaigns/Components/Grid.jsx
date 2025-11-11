@@ -100,7 +100,8 @@ const handleSeeMore = () => {
           <button
             onClick={handleSeeMore}
  className="  font-R_regular text-[1rem] md:text-[1.5rem] tracking-[0.12em] leading-[4rem] mt-0 
-          flex items-center justify-center w-full md:w-[25rem] h-[3rem] md:h-[5rem] hover:bg-secondary hover:opacity-80 cursor-pointer
+          flex items-center justify-center w-full md:w-[25rem] h-[3rem] md:h-[5rem]
+           hover:bg-secondary hover:opacity-80 cursor-pointer
            rounded-full   text-primary bg-secondary uppercase  "          >
           see more campaigns
           </button>
