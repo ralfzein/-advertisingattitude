@@ -51,7 +51,8 @@ const Footer = () => {
       variants={containerVariants}
       initial="hidden"
       whileInView="show"
-       className="relative  h-screen flex flex-col  bg-cover  bg-no-repeat bg-background bg-[url('/Images/bg.svg')]  " id="footer"
+       className="relative  h-screen flex flex-col   bg-no-repeat bg-background  bg-[url('/Images/newbg.webp')] bg-contain md:bg-cover
+    md:bg-[url('/Images/bg.svg')] " id="footer"
       >
       <div className='flex flex-col px-4 md:px-[4rem] justify-around  h-full md:mb-5 '>
         <motion.p  variants={childVariants} className=' md:mt-5 

@@ -121,7 +121,7 @@ const plainText = caseS?.paragraph1?.replace(/<[^>]*>/g, '');
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
-        className="w-full bg-[#F2EDD9] bg-contain"
+        className="w-full bg-[#F2EDD9] bg-cover"
         style={{ backgroundImage: `url('/Images/Work/workBg.svg')` }}
       >
         {/* ✅ Navigation */}

@@ -30,8 +30,8 @@ const navigate =  useNavigate();
       <section id="contact-section " className="relative ">
         <Nav title={"let's talk"} tracking={"tracking-[0.8rem] lg:tracking-[1.6rem]"} />
         <div
-          className="absolute inset-0 w-full h-full bg-center "
-          style={{ backgroundImage: `url('/Images/bg.svg')` }}
+          className="absolute inset-0 w-full h-full bg-center bg-contain md:bg-cover  bg-[url('/Images/newbg.webp')] 
+    md:bg-[url('/Images/bg.svg')]"
         >
           <div className="absolute inset-0 bg-[#202A43] -z-[1]" />
         </div>

@@ -296,8 +296,9 @@ const Nav = ({ title, tracking, color, sectionRef }) => {
                 y: { duration: 0.3, ease: "easeIn" },
               },
             }}
-            className="absolute top-0 inset-0 flex flex-col bg-[#202A43]  h-screen items-start justify- text-white bg-cover bg-center z-40"
-            style={{ backgroundImage: `url(${"/Images/bg.svg"})` }}
+            className="absolute top-0 inset-0 flex flex-col bg-[#202A43]  h-screen items-start justify-
+             text-white bg-[url('/Images/newbg.webp')] bg-contain md:bg-cover
+    md:bg-[url('/Images/bg.svg')] bg-center z-40"
           >
             {/* Animated content */}
             <motion.div
