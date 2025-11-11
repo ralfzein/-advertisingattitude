@@ -199,7 +199,7 @@ const [email, setEmail] = useState("");
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       toast.error("Please enter a valid email address.");
-      return setNext(3); // stay on email input
+      return setNext(2); // stay on email input
     }
 
     // ✅ Submit to backend if valid 
@@ -214,7 +214,7 @@ const [email, setEmail] = useState("");
 
       if (resp.ok && data.success) {
         toast.success("Thanks! You’ve been subscribed.");
-        setNext(4); // go to Thank You screen only after success
+        setNext(3); // go to Thank You screen only after success
       } else {
         toast.error(data.message || "Subscription failed. Try again later.");
       }
