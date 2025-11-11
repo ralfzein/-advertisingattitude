@@ -1,9 +1,21 @@
 import { Resend } from "resend";
 
+// Helper to convert large files safely to base64 in chunks
+async function fileToBase64(file) {
+  const reader = file.stream().getReader();
+  const chunks = [];
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    // Convert bytes to base64 without stack overflow
+    chunks.push(btoa(String.fromCharCode(...value)));
+  }
+  return chunks.join("");
+}
+
 export async function onRequestPost({ request, env }) {
   try {
     const formData = await request.formData();
-
     const name = formData.get("name");
     const email = formData.get("email");
     const country = formData.get("country");
@@ -12,31 +24,23 @@ export async function onRequestPost({ request, env }) {
     const portfolio = formData.get("Portfolio");
     const files = formData.getAll("file");
 
-    // choose the correct recipient
     const toEmail =
-      category === "I am a Creator"
-        ? env.TALENT_EMAIL
-        : env.BRAND_EMAIL;
+      category === "I am a Creator" ? env.TALENT_EMAIL : env.BRAND_EMAIL;
 
-    // initialize resend client
     const resend = new Resend(env.RESEND_API_KEY);
 
-    // convert attachments to base64 manually
+    // Convert all attachments safely
     const attachments = [];
     for (const file of files) {
       if (file && typeof file.name === "string") {
-        const arrayBuffer = await file.arrayBuffer();
-        const base64Content = btoa(
-          String.fromCharCode(...new Uint8Array(arrayBuffer))
-        );
+        const base64 = await fileToBase64(file);
         attachments.push({
           filename: file.name,
-          content: base64Content,
+          content: base64,
         });
       }
     }
 
-    // send email via Resend
     const data = await resend.emails.send({
       from: `Website Form <${toEmail}>`,
       to: [toEmail],
