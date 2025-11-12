@@ -141,7 +141,7 @@ useEffect(() => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
-        className=" w-full  bg-[#F2EDD9]  bg-contain pb-[4rem] md:pb-[10rem]"
+        className=" w-full  bg-[#F2EDD9]  bg-cover pb-[4rem] md:pb-[10rem]"
         style={{ backgroundImage: `url('/Images/Work/workBg.svg')`}}
       >
         <motion.div  className=" relative z-50 w-full hidden md:block " >
