@@ -110,7 +110,7 @@ const Footer = () => {
                 <div className='  flex flex-col items-start gap-0 md:mr-[6.8rem] w-full md:w-auto mt-1 sm:mt-0 '>
                     <span className='text-[10px] md:text-sm  font-M_medium text-primary tracking-[.1em] cursor-pointer hover:text-secondary' onClick={handleCopy}>business@advertisingattitude.com
                       </span>
-                    <span className='text-[10px] md:text-sm  font-M_medium text-primary tracking-[.1em] cursor-pointer hover:text-secondary'  onClick={handleCopy}>talent@advertisingattitude</span>
+                    <span className='text-[10px] md:text-sm  font-M_medium text-primary tracking-[.1em] cursor-pointer hover:text-secondary'  onClick={handleCopy}>talent@advertisingattitude.com</span>
                 </div> 
             </div>
         </motion.div>

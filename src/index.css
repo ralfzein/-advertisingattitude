@@ -95,6 +95,10 @@ body.no-scroll {
 
 
 
+/* Optional CSS: you can also do this in JS */
+#newsletter {
+  scroll-margin-top: 0px; /* we'll set dynamically in JS */
+}
 
 
 

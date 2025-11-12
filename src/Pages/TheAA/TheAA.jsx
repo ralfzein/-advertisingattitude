@@ -91,34 +91,29 @@ useEffect(() => {
 }, []);
 
 const sectionRef = useRef(null);
+
+
 useEffect(() => {
   if (location.hash) {
     const element = document.querySelector(location.hash);
     if (!element) return;
 
-    const handleScrollTo = () => {
-      const rect = element.getBoundingClientRect();
-      const scrollTop = window.scrollY || window.pageYOffset;
-
-      const y =
-        rect.top +
-        scrollTop -
-        parseFloat(getComputedStyle(element).marginTop || 0);
+    const scrollToElement = () => {
+      const elementTop = element.getBoundingClientRect().top + window.scrollY;
+      const navHeight = document.querySelector('#navbar')?.offsetHeight || 0;
 
       window.scrollTo({
-        top: y,
-        behavior: "smooth",
+        top: elementTop - navHeight,
+        behavior: 'smooth',
       });
     };
 
-    const timer = setTimeout(() => {
-      requestAnimationFrame(handleScrollTo);
-    }, 800); 
-    return () => clearTimeout(timer);
+    // Use requestAnimationFrame twice to wait for layout
+    requestAnimationFrame(() => requestAnimationFrame(scrollToElement));
+  } else {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }, [location]);
-
-
 
 
   return (
@@ -144,7 +139,7 @@ useEffect(() => {
         className=" w-full  bg-[#F2EDD9]  bg-cover pb-[4rem] md:pb-[10rem]"
         style={{ backgroundImage: `url('/Images/Work/workBg.svg')`}}
       >
-        <motion.div  className=" relative z-50 w-full hidden md:block " >
+        <motion.div id="navbar" className=" relative z-50 w-full hidden md:block " >
           <Nav title={["THE AA PERSPECTIVE"]}
            tracking={"tracking-[0.6rem]"} color="text-black"
              sectionRef={sectionRef}

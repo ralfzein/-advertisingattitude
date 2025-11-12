@@ -43,25 +43,29 @@ const CaseStudy = () => {
   }, [id]);
 
   const [showLogo, setShowLogo] = useState(false);
+ useEffect(() => {
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+    const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollPosition / pageHeight) * 100;
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const pageHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = (scrollPosition / pageHeight) * 100;
+    const footer = document.getElementById("footer");
+    if (!footer) return;
 
-      // Check footer visibility
-      const footer = document.getElementById("footer");
-      const footerTop = footer?.getBoundingClientRect().top ?? 0;
+    const footerRect = footer.getBoundingClientRect();
 
-      const isFooterVisible = footerTop <= window.innerHeight && footerTop > 0;
-      setShowLogo(scrollPercent >= 20 && !isFooterVisible);
-    };
+    // Hide if any part of footer is visible on screen
+    const isFooterVisible =
+      footerRect.top < window.innerHeight && footerRect.bottom > 0;
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    // Show logo only after 20% scroll and when footer is NOT visible
+    setShowLogo(scrollPercent >= 20 && !isFooterVisible);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  handleScroll(); // run once on mount
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
   const sectionRef = useRef(null);
 
   return (

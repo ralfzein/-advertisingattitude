@@ -230,7 +230,7 @@ const removeFile = (indexToRemove) => {
 
           {/* Submit button */}
           <div className="flex items-center justify-between md:items-start md:justify-start w-full mt-20">
-            <Button 
+            <button 
             disabled={sendingEmail}
 
              type="submit" className="font-R_regular text-[0.8rem] tracking-[0.05rem] leading-[] md:text-[1.4rem] md:tracking-[0.12em] md:leading-[4rem] flex items-center 
@@ -238,7 +238,7 @@ const removeFile = (indexToRemove) => {
              
              {sendingEmail ? "Sending Email..." : "PROVE IT"}  
 
-            </Button>
+            </button>
 
              <div className="!flex-1 md:hidden " >
           <motion.img variants={imageVariants} initial="hidden" whileInView="show"

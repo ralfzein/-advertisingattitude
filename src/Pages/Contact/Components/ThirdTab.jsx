@@ -293,7 +293,7 @@ or email us at pr@advertisingattitude.com
 
               {/* Submit button */}
               <div className="flex items-center justify-between md:items-start md:justify-start w-full mt-20">
-                <Button
+                <button
             disabled={sendingEmail}
 
                   type="submit"
@@ -304,7 +304,7 @@ or email us at pr@advertisingattitude.com
              {sendingEmail ? "Sending Email..." : "BRING THE CLIENTS"}  
 
                 
-                </Button>
+                </button>
 
                 <div className="!flex-1 md:hidden ">
                   <motion.img

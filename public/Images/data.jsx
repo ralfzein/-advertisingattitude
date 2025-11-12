@@ -317,11 +317,11 @@ Guided by our SwirlBold™ mentality, we pair disruptive creativity with discipl
       "Our own OOH campaign in Dubai  —  bold, witty, and unapologetic. Turning the street into a live brand strategy that proves disruption isn’t theory but practice.",
     img: "/Images/Work/7.webp",
     tags: [
-         "Marketing & Advertising", "Campaigns, Strategic Branding", "Visual Identity", "Out-of-Home Advertising"
+         "Marketing & Advertising", "Campaigns" ,"Strategic Branding", "Visual Identity", "Out-of-Home Advertising"
 
     ],
   tagsM: [
-         "Marketing & Advertising", "Campaigns, Strategic Branding",  "Out-of-Home Advertising","Visual Identity"
+         "Marketing & Advertising","Strategic Branding",  "Out-of-Home Advertising","Visual Identity"
 
     ],
       cTitle:"The Disruptive Billboard Series",

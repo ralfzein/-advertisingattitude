@@ -236,12 +236,13 @@ Need more space? Include a link in your message or email us at business@advertis
 
           {/* Submit button */}
           <div className="flex items-center justify-between+ md:items-start md:justify-start w-full mt-20">
-            <Button
+            <button
             disabled={sendingEmail || !isFormValid()}
             type="submit" className="font-R_regular text-[0.8rem] tracking-[0.05rem] leading-[] md:text-[1.4rem] md:tracking-[0.12em] md:leading-[4rem] flex items-center 
             justify-center flex-1 md:flex-none  w-auto md:w-[28rem] h-[3rem] md:h-[5rem] hover:bg-secondary hover:opacity-80 cursor-pointer rounded-full text-primary bg-secondary">
              {sendingEmail ? "Sending Email..." : "LET’S MAKE THINGS HAPPEN"}  
-            </Button>
+            </button>
+               
 
              <div className="!flex-1 md:hidden " >
           <motion.img variants={imageVariants} initial="hidden" whileInView="show"

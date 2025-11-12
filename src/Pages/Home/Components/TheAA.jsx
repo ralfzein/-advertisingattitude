@@ -142,7 +142,7 @@ const sectionRef = useRef(null);
           initial="hidden"
           animate="show" className=" flex flex-col items-start md:justify-between  gap-5  h-[12rem]   md:h-auto ">
             <h3 className="w-full sm:w-auto   text-secondary font-R_regular text-[2.1rem] text-center sm:text-left leading-[2.3rem] sm:text-[4.8rem]
-             sm:leading-[4.5rem] sm:tracking-[0.1em]   ">
+             sm:leading-[5rem] sm:tracking-[0.1em]   ">
               {slides[index].title}
             </h3>
             <p
@@ -153,16 +153,16 @@ const sectionRef = useRef(null);
             </p>
           </motion.div>
  <div className="w-full sm:w-auto flex justify-center sm:justify-start mt-2 ">
-          <Button
-            className="w-[16rem] font-R_regular text-[1rem] md:text-[1.5rem] tracking-[0.12em] leading-[4rem] 
+      
+
+             <button
+                    onClick={() => navigate(`/theAA/${slides[index].id}`)}
+
+          className=" w-[16rem] font-R_regular text-[1rem] md:text-[1.5rem] tracking-[0.12em] leading-[4rem] 
           flex items-center justify-center sm:w-full md:w-[25rem] h-[3rem] md:h-[5rem] hover:bg-secondary hover:opacity-80 cursor-pointer
-           rounded-full text-primary bg-secondary z-40 "
-            variant="default"
-            size="default"
-            onClick={() => navigate(`/theAA/${slides[index].id}`)}
-          >
-            SEE THE TAKE
-          </Button>
+           rounded-full text-primary bg-secondary z-40"          >
+           SEE THE TAKE
+          </button>
           </div>
         </div>
 

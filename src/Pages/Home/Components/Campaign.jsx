@@ -172,16 +172,16 @@ const sectionRefc = useRef(null);
         <motion.div 
         variants={childVariants}
         className=" absolute bottom-50 md:bottom-35 left-0 flex items-center justify-center w-full px-10 md:px-4 ">
-          <Button
-            className="w-[16rem]  font-R_regular text-[1rem] md:text-[1.5rem] tracking-[0.12em] leading-[4rem] 
+      
+
+             <button
+                      onClick={() => navigate(`/work/casestudy/${slides[current].id}`)}
+          className="w-[16rem]  font-R_regular text-[1rem] md:text-[1.5rem] tracking-[0.12em] leading-[4rem] 
           flex items-center justify-center sm:w-full md:w-[25rem] h-[3rem] md:h-[5rem] hover:bg-secondary hover:opacity-80 cursor-pointer
-           rounded-full text-primary bg-secondary"
-            variant="default"
-            size="default"
-            onClick={() => navigate(`/work/casestudy/${slides[current].id}`)}
-          >
-            SEE THE CAMPAIGN
-          </Button>
+           rounded-full text-primary bg-secondary"          >
+                       SEE THE CAMPAIGN
+
+          </button>
         </motion.div>
         <div className=" absolute  bottom-35 md:bottom-10 left-1/2 md:left-1/2 -translate-x-1/2 md:-translate-x-1/2 flex gap-4  cursor-pointer ">
           {slides.map((_, i) => (                              

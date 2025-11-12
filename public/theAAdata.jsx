@@ -1,7 +1,7 @@
 const TheAA = [
   {
     id: 1,
-    title: "Think Boldly. Feel Deeply. Act Smartly.",
+    title: "Think Boldly. Feel Deeply. \n Act Smartly.",
     subTitle:
       "The attitude behind Advertising Attitude.",
     img1: "/Images/TheAAP/img/first.svg",
