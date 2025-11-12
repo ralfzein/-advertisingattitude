@@ -16,7 +16,11 @@ function Home() {
 
  useEffect(() => {
   const bg = new Image();
+  const bg2 = new Image();
+  const bg3 = new Image();
   bg.src = "/Images/bg.svg";
+  bg2.src = "/Images/news1.svg";
+  bg3.src = "/Images/news2.svg";
 }, []);
 
   useEffect(() => {
