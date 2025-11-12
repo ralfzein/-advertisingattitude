@@ -207,7 +207,7 @@ useEffect(() => {
                 SWIRL OFF SCRIPT
               </h3>
               <h4 className="font-M_bold text-background text-[0.8rem] 
-              tracking-[0.05rem] md:text-[2rem] md:tracking-[0.1rem] leading-[1.5rem] md:leading-[2rem] ">
+              tracking-[0.05rem] md:text-[2rem] md:tracking-[0.1rem] leading-[1rem] md:leading-[2rem] ">
                 AA’s unfiltered take on marketing, creativity, and the battles
                 shaping the industry.{" "}
               </h4>
