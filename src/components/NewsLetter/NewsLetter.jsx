@@ -33,7 +33,7 @@ const [name, setName] = useState("");
 const [email, setEmail] = useState("");
 
   return (
-    <motion.div 
+    <motion.div ref={ref}
   variants={containerVariants}
   initial="hidden"
   whileInView="show"
