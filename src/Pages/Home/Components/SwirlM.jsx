@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import Nav from "../../../components/Nav/Nav";
 import { motion, useAnimation } from "framer-motion";
+import { Skeleton } from "../../../components/ui/skeleton";
 
 const SwirlM = () => {
   const controls = useAnimation();
@@ -61,7 +62,7 @@ const betweenVariants = {
   }
 };
 const sectionRef = useRef(null);
-
+ const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   return (
     <motion.section
     ref={sectionRef}
@@ -71,11 +72,11 @@ const sectionRef = useRef(null);
       whileInView="show"
            viewport={{ once: true,amount:0.4}}
 
-      className="relative  h-screen  w-full overflow-hidden "
+      className="relative  h-screen  w-full overflow-hidden  "
     >
     
       <motion.div className="relative z-50 w-full md:hidden" variants={navVariants}>
-        <Nav title={["DISRUPTIVE","CREATIVITY"]}
+        <Nav title={["DISRUPTIVE","CREATIVITY","DISCIPLINED ","EXECUTION"]}
         
         tracking="text-[1.5rem] 
         tracking-[0.5rem]"
@@ -83,15 +84,20 @@ const sectionRef = useRef(null);
       </motion.div>
 
   
-      <div className="relative flex h-screen  ">
-   
+      <div className="relative flex h-[101vh] overflow-hidden  ">
+     {!isVideoLoaded && (
+        <div className="absolute inset-0 h-screen w-full z-10">
+          <Skeleton className="h-screen w-full bg-secondary/80" />
+        </div>
+      )}
       <video
           src="/Images/swirlM.mp4" 
           autoPlay
           muted
           loop
           playsInline
-          className="absolute   h-full w-full left-0   object-cover " 
+           onLoadedData={() => setIsVideoLoaded(true)}
+          className="absolute inset-0 w-full h-full object-cover "
         />
             <div className="flex flex-col items-center justify-center w-full     ">
         <motion.div

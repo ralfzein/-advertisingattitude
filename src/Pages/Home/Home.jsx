@@ -22,39 +22,46 @@ function Home() {
   bg2.src = "/Images/TheAAP/news1.svg";
   bg3.src = "/Images/TheAAP/news2.svg";
 }, []);
+
+
 useEffect(() => {
   const handleScroll = () => {
     const hero = document.getElementById("hero-section");
     const footer = document.getElementById("footer-section");
     const swirl = document.getElementById("mobile-swirl");
-    const logo = document.getElementById("fixed-logo");
     const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
 
     const heroHeight = hero?.offsetHeight || 0;
     const footerTop = footer?.offsetTop || Infinity;
 
     let hideLogo = false;
 
-    if (swirl && logo) {
-      const swirlRect = swirl.getBoundingClientRect();
-      const logoRect = logo.getBoundingClientRect();
+    if (swirl) {
+      // Absolute positions for swirl section
+      const swirlTop = swirl.offsetTop;
+      const swirlBottom = swirlTop + swirl.offsetHeight;
 
-      // Hide logo if it overlaps the swirl section
-      hideLogo =
-        logoRect.bottom > swirlRect.top && logoRect.top < swirlRect.bottom;
+      // Assume your logo is fixed at bottom (100px from bottom)
+      const logoTop = scrollY + windowHeight - 100 - 128; // 128 = approx. logo height
+      const logoBottom = scrollY + windowHeight - 100;
+
+      // Hide if logo overlaps swirl range
+      hideLogo = logoBottom > swirlTop && logoTop < swirlBottom;
     }
 
-    // Show logo if past hero, not overlapping swirl, and before footer
-    const isVisible = scrollY > heroHeight && !hideLogo && scrollY + window.innerHeight < footerTop;
+    // Logo visible only when: passed hero, not overlapping swirl, before footer
+    const isVisible =
+      scrollY > heroHeight && !hideLogo && scrollY + windowHeight < footerTop;
 
     setShowLogo(isVisible);
   };
 
-  handleScroll(); // run on mount in case page loaded mid-scroll
+  handleScroll();
   window.addEventListener("scroll", handleScroll, { passive: true });
-
   return () => window.removeEventListener("scroll", handleScroll);
 }, []);
+
 
 
 
@@ -103,7 +110,7 @@ const sectionRef = useRef(null);
 
         <Swirl />
       </section>
-      <section id="mobile-swirl" className="h-screen md:hidden">
+      <section id="mobile-swirl" className=" h-screen md:hidden">
 
         <SwirlM />
       </section>  

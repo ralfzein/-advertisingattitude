@@ -141,7 +141,7 @@ const sectionRefc = useRef(null);
               className="md:h-screen w-full relative flex items-center justify-center    "
             >
            <div
-  className="absolute inset-0 bg-contain md:bg-cover bg-center md:bg-center"
+  className="absolute inset-0 bg-cover md:bg-cover bg-center md:bg-center"
   style={{
     backgroundImage: `url(${window.innerWidth >= 768 ? slide.img : slide.img2})`,
   }}
