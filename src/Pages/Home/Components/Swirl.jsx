@@ -80,7 +80,7 @@ const betweenVariants = {
     };
   }, [isHovered]);
 const sectionRef = useRef(null);
-
+const [canHover, setCanHover] = useState(false);
   return (
     <motion.section
     ref={sectionRef}
@@ -159,18 +159,20 @@ const sectionRef = useRef(null);
   />
  <div
       className="relative flex items-center justify-center cursor-none"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+  
     >
       <motion.img
-        src="/Images/contactLogo.webp"
-        loading="lazy"
-        alt="Logo"
-        className="object-contain select-none"
-        variants={logoVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.8 }}
+         src="/Images/contactLogo.webp"
+  loading="lazy"
+  alt="Logo"
+  className="object-contain select-none"
+  variants={logoVariants}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true, amount: 0.8 }}
+  onAnimationComplete={() => setCanHover(true)} // enable hover after animation
+  onMouseEnter={() => canHover && setIsHovered(true)}
+  onMouseLeave={() => canHover && setIsHovered(false)}
       />
 
       {/* ✨ Floating “Coming Soon” text follows the cursor */}

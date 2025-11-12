@@ -78,7 +78,7 @@ const sectionRef = useRef(null);
         <Nav title={["DISRUPTIVE","CREATIVITY"]}
         
         tracking="text-[1.5rem] 
-        tracking-[0.8rem]"
+        tracking-[0.5rem]"
         sectionRef={sectionRef} />
       </motion.div>
 
@@ -86,7 +86,7 @@ const sectionRef = useRef(null);
       <div className="relative flex h-screen  ">
    
       <video
-          src="/Images/swirl.mp4" 
+          src="/Images/swirlM.mp4" 
           autoPlay
           muted
           loop
@@ -158,7 +158,7 @@ const sectionRef = useRef(null);
             >
               <span className="flex items-start justify-start mb-3">
                 Bold
-               {/* <sub className=" text-[1.5rem] font-R_regular text-primary  -translate-x-6   tracking-normal">tm</sub> */}
+               <sub className=" text-[1.2rem] font-R_regular text-primary  -translate-x-4   tracking-normal">tm</sub>
               </span>
             </motion.div>
             </motion.div>

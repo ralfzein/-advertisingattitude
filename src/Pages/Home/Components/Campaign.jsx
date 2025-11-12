@@ -153,7 +153,7 @@ const sectionRefc = useRef(null);
                 variants={childVariants}
                 className="relative   z-10 flex flex-col items-center  pt-[13rem] md:pt-0 justify-start md:justify-center  h-full  text-center px-4 md:px-6 "
               >
-                <div className="relative  z-10 flex flex-col items-center justify-start gap-7 md:gap-3 text-center md:mt-30 md:min-h-[15.5rem] ">
+                <div className="relative  z-10 flex flex-col items-center justify-start gap-4 md:gap-3 text-center md:mt-30 md:min-h-[15.5rem] ">
                   <h1 className="font-R_regular mx-10 sm:mx-0  tracking-[0.2rem] text-[2.5rem] leading-[3rem] md:text-[4.6rem] md:leading-[5.4rem]  text-primary ">
                     {slides[current].title}
                   </h1>

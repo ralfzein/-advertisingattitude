@@ -88,13 +88,14 @@ const sectionRef = useRef(null);
           loading='lazy'  decoding="sync"
           className="w-full md:w-[16rem] max-w-full  object-contain hidden sm:block "
         />
+       <div className="h-[10rem] max-w-[50%]">
          <img
-          
           src={'/Images/sLogo.svg'}
           alt="Hero"
           loading='lazy'  decoding="sync"
-          className=" max-w-[50%]  object-contain md:mt-25 sm:hidden"
-        />
+          className="w-full object-contain md:mt-25 sm:hidden"
+          />
+          </div>
 
           <h1 className="font-R_regular text-[3.5rem]  sm:text-[6rem] text-primary leading-[3.4rem] md:leading-[5.2rem]  translate-y-2 md:translate-y-0
                  sm:pt-0    text-center  sm:text-left">

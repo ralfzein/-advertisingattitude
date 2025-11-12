@@ -76,7 +76,7 @@ const CaseStudy = () => {
            initial="hidden"
            whileInView="show"
            viewport={{ once: true, amount: 0.2 }}
-           className="relative w-full  bg-[#F2EDD9]  pb-[5rem] md:pb-[10rem] bg-contain"
+           className="relative w-full  bg-[#F2EDD9]  pb-[4rem] md:pb-[10rem] bg-contain"
            style={{ backgroundImage: `url('/Images/Work/workBg.svg')` }}
          >
 
@@ -95,7 +95,7 @@ const CaseStudy = () => {
                   sectionRef={sectionRef} />
 
       </motion.div>
-      <div className="z-50 pt-[3.2rem] md:pt-30 px-4 md:px-[4rem] pb-30">
+      <div className="z-50 pt-[3.2rem] md:pt-30 px-4 md:px-[4rem] pb-">
         <Tabs
           tabs={[
             { name: "Home", href: "/" },
@@ -108,51 +108,53 @@ const CaseStudy = () => {
           {caseS?.cTitle}
         </h2>
 
-        <div className="my-6 md:my-10">
-          <div className="flex items-center  gap-1 md:gap-2">
-            <span className="font-M_extrabold text-secondary text-[0.9rem]  md:text-[1.8rem] tracking-[0.1rem]">
+        <div className="my-6 md:my-10 ">
+          <div className="flex items-start  gap-1 md:gap-2  mt-2 md:mt-4   ">
+           
+            <span className="font-M_semibold text-background text-[0.9rem]  md:text-[1.5rem] leading-[1rem] md:-translate-y-[2px] tracking-[0.1rem] md:mt-1 ">
+              <span className="font-M_extrabold text-secondary text-[0.9rem]  md:text-[1.8rem] leading-[1rem]  tracking-[0.1rem]">
               Client:{" "}
             </span>
-            <span className="font-M_semibold text-background text-[0.9rem]  md:text-[1.5rem] leading-[1rem] tracking-[0.1rem] md:mt-1 ">
-              {" "}
               {caseS?.client}
             </span>
           </div>
 
-          <div className="flex items-center gap-1 md:gap-2 ">
-            <span className="font-M_extrabold text-secondary text-[0.9rem]  md:text-[1.8rem] tracking-[0.1rem]">
+            <div className="flex items-start  gap-1 md:gap-2  mt-2 md:mt-4   ">
+           
+            <span className="font-M_semibold text-background text-[0.9rem]  md:text-[1.5rem] leading-[1rem] md:-translate-y-[2px] tracking-[0.1rem] md:mt-1 ">
+              <span className="font-M_extrabold text-secondary text-[0.9rem]  md:text-[1.8rem] leading-[1rem]  tracking-[0.1rem]">
               Sector:{" "}
             </span>
-            <span className="font-M_semibold text-background text-[0.9rem]  md:text-[1.5rem] leading-[1rem] tracking-[0.1rem] md:mt-1">
-              {" "}
               {caseS?.Sector}
             </span>
           </div>
 
-          <div className="flex flex-wrap gap-0 -translate-y-1 md:translate-y-0">
-            <span className="font-M_extrabold text-secondary text-[0.9rem]  md:text-[1.8rem] tracking-[0.1rem] leading-[1.5rem] translate-y-1 md:translate-y-0 md:leading-[2rem]  whitespace-nowrap mr-2">
-              Disciplines:
-            </span>
-            {caseS?.Disciplines?.map((item, index) => (
-              <span
-                key={index}
-                className="font-M_semibold  text-background text-[0.9rem] leading-[1rem] md:text-[1.5rem] md:leading-[1.5rem] mt-[8px] md:mt-[7px]  tracking-[0.1rem] "
-              >
-                {item}
-                {index < caseS.Disciplines.length - 1 && ","}
-              </span>
-            ))}
-          </div>
 
-          <div className="flex items-center gap-2">
-            <span className="font-M_extrabold text-secondary text-[0.9rem]  md:text-[1.8rem] tracking-[0.1rem]">
+  <div className="flex items-start  gap-1 md:gap-2  mt-2 md:mt-4   ">
+           
+            <span className="font-M_semibold text-background text-[0.9rem]  md:text-[1.5rem] leading-[1.2rem] md:leading-[1.8rem] md:-translate-y-[2px] tracking-[0.1rem] md:mt-1 ">
+              <span className="font-M_extrabold text-secondary text-[0.9rem]  md:text-[1.8rem] leading-[1rem]   tracking-[0.1rem]">
+              Disciplines:{" "}
+            </span>
+               {caseS?.Disciplines?.map((item, index) => (
+                item + (index < caseS.Disciplines.length - 1 ? ", " : "")
+               ))}
+            </span>
+          </div>
+        
+
+           <div className="flex items-start  gap-1 md:gap-2  mt-2 md:mt-4    ">
+           
+            <span className="font-M_semibold text-background text-[0.9rem]  md:text-[1.5rem] leading-[1rem] md:-translate-y-[2px] tracking-[0.1rem] md:mt-1 ">
+              <span className="font-M_extrabold text-secondary text-[0.9rem]  md:text-[1.8rem] leading-[1rem]  tracking-[0.1rem]">
               Year:{" "}
             </span>
-            <span className="font-M_semibold text-background text-[0.9rem]  md:text-[1.5rem] leading-[1rem] tracking-[0.1rem]">
-              {" "}
-              {caseS?.date}
+                          {caseS?.date}
+
             </span>
           </div>
+
+         
         </div>
         {caseS?.id == 9 ? (
           <div className="flex items-center justify-center gap-5 px-4 md:px-[5rem] ">
@@ -284,7 +286,7 @@ const CaseStudy = () => {
                 >
                   <RenderMedia
                     src={src}
-                    className={`${index === 2 ? "" : "h-[10rem] md:h-[40rem] "}`}
+                    className={`${index === 2 ? "" : "h-[11rem] md:h-[40rem] "}`}
                   />
                 </div>
               ))}

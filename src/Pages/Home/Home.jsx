@@ -19,22 +19,46 @@ function Home() {
   const bg2 = new Image();
   const bg3 = new Image();
   bg.src = "/Images/bg.svg";
-  bg2.src = "/Images/news1.svg";
-  bg3.src = "/Images/news2.svg";
+  bg2.src = "/Images/TheAAP/news1.svg";
+  bg3.src = "/Images/TheAAP/news2.svg";
+}, []);
+useEffect(() => {
+  const handleScroll = () => {
+    const hero = document.getElementById("hero-section");
+    const footer = document.getElementById("footer-section");
+    const swirl = document.getElementById("mobile-swirl");
+    const logo = document.getElementById("fixed-logo");
+    const scrollY = window.scrollY;
+
+    const heroHeight = hero?.offsetHeight || 0;
+    const footerTop = footer?.offsetTop || Infinity;
+
+    let hideLogo = false;
+
+    if (swirl && logo) {
+      const swirlRect = swirl.getBoundingClientRect();
+      const logoRect = logo.getBoundingClientRect();
+
+      // Hide logo if it overlaps the swirl section
+      hideLogo =
+        logoRect.bottom > swirlRect.top && logoRect.top < swirlRect.bottom;
+    }
+
+    // Show logo if past hero, not overlapping swirl, and before footer
+    const isVisible = scrollY > heroHeight && !hideLogo && scrollY + window.innerHeight < footerTop;
+
+    setShowLogo(isVisible);
+  };
+
+  handleScroll(); // run on mount in case page loaded mid-scroll
+  window.addEventListener("scroll", handleScroll, { passive: true });
+
+  return () => window.removeEventListener("scroll", handleScroll);
 }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const hero = document.getElementById("hero-section")?.offsetHeight || 0;
-      const footer = document.getElementById("footer-section")?.offsetTop || Infinity;
-      const y = window.scrollY;
 
-      setShowLogo(y > hero && y + window.innerHeight < footer);
-    };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+
 const sectionRef = useRef(null);
 
   return (
@@ -43,6 +67,7 @@ const sectionRef = useRef(null);
         {showLogo && (
           <motion.img
             key="slogo"
+              id="fixed-logo"
             src="/Images/sLogo.svg"
             alt="logo"
             onClick={() =>
@@ -78,7 +103,7 @@ const sectionRef = useRef(null);
 
         <Swirl />
       </section>
-      <section className="h-screen md:hidden">
+      <section id="mobile-swirl" className="h-screen md:hidden">
 
         <SwirlM />
       </section>  
