@@ -329,6 +329,7 @@ const CaseStudy = () => {
                         } 
                        ${ caseS?.id == 1 && "!object-cover !h-auto" }
                        ${ caseS?.id ==3 && "bg-[#d7c4b2]" }
+                        bg-primary
                         `}
                     // className=""
                   />
