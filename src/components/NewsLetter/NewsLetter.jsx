@@ -6,6 +6,7 @@ import { toast } from 'sonner'
 const NewsLetter = () => {
   const [next, setNext] = useState(1)
   const ref = useRef(null)
+const [sendNews, setsendNews] = useState(false);
 
   const isInView = useInView(ref, { once: false, amount: 0.5 })
   const containerVariants = {
@@ -180,62 +181,66 @@ const [email, setEmail] = useState("");
 
             <div className='flex items-start justify-center h-[223px]  -translate-x-4 md:-translate-x-0  '>
               {next !== 3 && (
-                <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{delay:1, duration: 0.4, ease: [0.45, 0, 0.55, 1] }}
-                  className='w-18 h-11 md:h-[3.75rem] mt-8 md:mt-14 translate-x-5 md:translate-x-0 text-secondary
-                   z-10 flex items-center justify-center bg-primary rounded-tl-[50%] cursor-pointer'
-          onClick={async () => {
-  if (next === 2) {
-    // ✅ Validation – Name and Email must be filled
-    if (!name.trim() || !email.trim()) {
-      toast.error("Please complete all fields.");
-      return setNext(2); // take user back to name input if anything missing
-    }
+<motion.div
+  initial={{ opacity: 0, x: 20 }}
+  animate={{ opacity: 1, x: 0 }}
+  exit={{ opacity: 0, x: -20 }}
+  transition={{ delay: 1, duration: 0.4, ease: [0.45, 0, 0.55, 1] }}
+  className={`w-18 h-11 md:h-[3.75rem] mt-8 md:mt-14 translate-x-5 md:translate-x-0
+              text-secondary z-10 flex items-center justify-center bg-primary
+              rounded-tl-[50%] cursor-pointer transition-opacity duration-300
+              ${sendNews ? "  !opacity-40 !cursor-not-allowed !pointer-events-none" : " "}`}
+  onClick={async () => {
+    if (sendNews) return; 
 
-    // ✅ Email format validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      toast.error("Please enter a valid email address.");
-      return setNext(2); // stay on email input
-    }
+    if (next === 2) {
+      setsendNews(true);
 
-    // ✅ Submit to backend if valid 
-    try {
-      const resp = await fetch(`${import.meta.env.VITE_API_URL}/api/newsletter`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email }),
-      });
-
-      const data = await resp.json();
-
-      if (resp.ok && data.success) {
-        toast.success("Thanks! You’ve been subscribed.");
-        setNext(3); // go to Thank You screen only after success
-      } else {
-        toast.error(data.message || "Subscription failed. Try again later.");
+      if (!name.trim() || !email.trim()) {
+        toast.error("Please complete all fields.");
+        setsendNews(false);
+        return setNext(2);
       }
-    } catch (err) {
-      console.error("❌ Network/Error:", err);
-      toast.error("Network error — please try again.");
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        toast.error("Please enter a valid email address.");
+        setsendNews(false);
+        return setNext(2);
+      }
+
+      try {
+        const resp = await fetch(`${import.meta.env.VITE_API_URL}/api/newsletter`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email }),
+        });
+
+        const data = await resp.json();
+
+        if (resp.ok && data.success) {
+          toast.success("Thanks! You’ve been subscribed.");
+          setNext(3);
+        } else {
+          toast.error(data.message || "Subscription failed. Try again later.");
+        }
+      } catch (err) {
+        console.error("❌ Network/Error:", err);
+        toast.error("Network error — please try again.");
+      } finally {
+        setsendNews(false); // ✅ always re-enable after request completes
+      }
+
+      return;
     }
 
-    return; // stop advancing automatically
-  }
+    setNext((prev) => prev + 1);
+  }}
+>
+  <MoveRight size={50} strokeWidth={1} className="cursor-pointer hidden md:block" />
+  <MoveRight size={40} strokeWidth={1} className="cursor-pointer block md:hidden" />
+</motion.div>
 
-  // Default behavior for next step
-  setNext((prev) => prev + 1);
-}}
-
-
-
-                > 
-                  <MoveRight size={50} strokeWidth={1} className='cursor-pointer hidden md:block' />
-                  <MoveRight size={40} strokeWidth={1} className='cursor-pointer block md:hidden' />
-                </motion.div>
               )}
 
               <AnimatePresence mode='wait'>
