@@ -217,7 +217,7 @@ const removeFile = (indexToRemove) => {
 
           {/* Checkbox */}
           <div className="flex items-center justify-start w-full gap-2 md:gap-5 mt-10">
-            <div className={`flex font-M_medium text-[1.5rem] border w-14 h-14 min-w-14 min-h-14  items-center justify-center cursor-pointer transition-colors duration-300 border-primary relative`} onClick={() => setActive(!active)}>
+            <div className={`flex font-M_medium text-[1.5rem] border w-10 h-10 min-w-10 min-h-10 md:w-10 md:h-14 md:min-w-14 md:min-h-14  items-center justify-center cursor-pointer transition-colors duration-300 border-primary relative`} onClick={() => setActive(!active)}>
               <img src="/Images/swirl.svg" alt="logo" className={`  transition-scale transition-rotate duration-600 absolute top-0 left-0 w-full h-full ${active ? "opacity-100 scale-90 rotate-0" : "scale-0 opacity-0 rotate-120"}`} />
             </div>
             <span className="font-M_regular text-[7px] md:text-xs text-primary tracking-[.12em]">

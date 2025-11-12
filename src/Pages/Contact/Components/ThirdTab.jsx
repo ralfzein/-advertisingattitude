@@ -265,7 +265,7 @@ or email us at pr@advertisingattitude.com
               {/* Checkbox */}
               <div className="flex items-center justify-start w-full gap-2 md:gap-5 mt-10">
                 <div
-                  className={`flex font-M_medium text-[1.5rem] border w-14 h-14 min-w-14 min-h-14  items-center justify-center cursor-pointer transition-colors duration-300 border-primary relative`}
+                  className={`flex font-M_medium text-[1.5rem] border w-10 h-10 min-w-10 min-h-10 md:w-10 md:h-14 md:min-w-14 md:min-h-14  items-center justify-center cursor-pointer transition-colors duration-300 border-primary relative`}
                   onClick={() => setActive(!active)}
                 >
                   <img
