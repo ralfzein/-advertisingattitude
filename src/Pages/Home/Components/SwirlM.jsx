@@ -1,6 +1,6 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Nav from "../../../components/Nav/Nav";
-import { motion, useAnimation } from "framer-motion";
+import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { Skeleton } from "../../../components/ui/skeleton";
 
 const SwirlM = () => {
@@ -17,6 +17,9 @@ const SwirlM = () => {
     hidden: { opacity: 0, y: -20 },
     show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
   };
+  const [isHovered, setIsHovered] = useState(false);
+const [canHover, setCanHover] = useState(false);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   const mainTextVariants = (direction = "down") => ({
     hidden: { opacity: 0 },
@@ -61,6 +64,24 @@ const betweenVariants = {
     transition: { duration: 5, ease: "easeInOut", delay: 5 }
   }
 };
+ useEffect(() => {
+    const handleMove = (e) => {
+      setMousePos({ x: e.clientX, y: e.clientY });
+    };
+
+    if (isHovered) {
+      window.addEventListener("mousemove", handleMove);
+      document.body.style.cursor = "none";
+    } else {
+      window.removeEventListener("mousemove", handleMove);
+      document.body.style.cursor = "auto";
+    }
+
+    return () => {
+      window.removeEventListener("mousemove", handleMove);
+      document.body.style.cursor = "auto";
+    };
+  }, [isHovered]);
 const sectionRef = useRef(null);
  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   return (
@@ -141,8 +162,30 @@ const sectionRef = useRef(null);
   initial="hidden"
   whileInView="show"
   viewport={{ once: true, amount: 0.8 }}
+    onAnimationComplete={() => setCanHover(true)} // enable hover after animation
+  onClick={() => canHover && setIsHovered(true)}
+  onMouseLeave={() => canHover && setIsHovered(false)}
 
 />
+ <AnimatePresence>
+        {isHovered && (
+          <motion.div
+            key="coming-soon"
+            className="fixed z-50 bg- text-primary px-6 py-3 rounded-full font-M_bold
+             text-[1rem] sm:text-[1.2rem] pointer-events-none "
+            style={{
+              top: mousePos.y - 40 + "px",
+              left: mousePos.x - 80 + "px",
+            }}
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+          >
+            Coming Soon
+          </motion.div>
+        )}
+      </AnimatePresence>
 
 </div>
 </div>
