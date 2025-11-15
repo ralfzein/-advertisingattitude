@@ -62,8 +62,8 @@ const Footer = () => {
             refuse to blend in. We don’t just craft campaigns — we train ideas to fight harder,
              last longer, and leave echoes. Rooted in clarity, rebellion, and bold thinking, 
              we work with creators, leaders, and brands to reshape narratives, break  patterns, 
-             andpunch through the noise. With a SwirlBold™ mindset at our core, we fuse creative 
-             chaos with strategic intent — making work that’s  unignorable, unforgettable,and unapologetically sharp.
+             and punch through the noise. With a SwirlBold™ mindset at our core, we fuse creative 
+             chaos with strategic intent — making work that’s  unignorable, unforgettable, and unapologetically sharp.
              </motion.p>
                <div className="hidden md:block" />
 
