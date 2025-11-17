@@ -55,7 +55,7 @@ This project reflects how Advertising Attitude operates. We’re not a content s
 Guided by our SwirlBold™ mentality, we pair disruptive creativity with disciplined execution. The result? Not just seasonal engagement, but a campaign that moved passengers, activated retail, and proved what emotional branding can do in airports.
             </p>`
 ,
-      section2:["/Images/Cases/Case1/section2a.svg","/Images/Cases/Case1/Photo 3.webp","/Images/Cases/Case1/Photo 4.webp"],
+      section2:["/Images/Cases/Case1/media 2.webp","/Images/Cases/Case1/media 3.webp","/Images/Cases/Case1/media 4.webp"],
       section3:["/Images/Cases/Case1/section3a.webp","/Images/Cases/Case1/section3b.webp","/Images/Cases/Case1/section3c.webp"],
       section4:["/Images/Cases/Case1/8.webp","/Images/Cases/Case1/9.webp","/Images/Cases/Case1/10.webp","/Images/Cases/Case1/11.webp"
       ],

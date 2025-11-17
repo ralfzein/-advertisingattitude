@@ -221,6 +221,7 @@ const CaseStudy = () => {
                     src={src}
                     // className="!object-cover h-[42rem]"
                       className={` h-[12rem] md:h-[40rem]  
+                        ${caseS.id === 1 &&  "h-[12rem] md:h-[43rem] "}
                         ${caseS.id === 2 ?  "md:h-[45rem]" : "md:h-[40rem]"}
                         ${caseS.id === 6 &&  "md:!h-[38rem]"}
                         `} 
