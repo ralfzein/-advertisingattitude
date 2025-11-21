@@ -22,7 +22,7 @@ const About = () => {
         </motion.div>
 
 
-        <div className=' pb-[2rem]  pt-[4rem]   md:pb-15  md:pt-40   px-4 md:px-[4rem] flex flex-col md:flex-row '>
+        <div className=' pb-[2rem]  pt-[4.5rem]   md:pb-15  md:pt-40   px-4 md:px-[4rem] flex flex-col md:flex-row '>
           <div className='flex-[0.8] flex flex-col justify-between'>
             <div className='flex flex-col gap-0 items-end w-fit'>
               <div className='flex flex-col gap-0 items-end'>
