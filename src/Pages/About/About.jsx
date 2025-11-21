@@ -15,11 +15,13 @@ const About = () => {
       {/* SECTION 1 */}
       <section className="     bg-secondary bg-center bg-cover md:bg-[url('/Images/bg.svg')] bg-[url('/Images/newbg.webp')] ">
         
-          <motion.div  className="z-50 w-full relative hidden md:block ">
+          <motion.div  className="z-50 w-full relative  ">
           <Nav title={["About AA"]} 
-          tracking={"tracking-[0.6rem]"}
+          tracking={"tracking-[0.5rem] md:tracking-[0.6rem]"}
           />
         </motion.div>
+
+
         <div className='py-[2rem]  md:pb-15  md:pt-40   px-4 md:px-[4rem] flex flex-col md:flex-row '>
           <div className='flex-[0.8] flex flex-col justify-between'>
             <div className='flex flex-col gap-0 items-end w-fit'>
