@@ -56,7 +56,7 @@ const Nav = ({ title, tracking, color, sectionRef }) => {
     },
     {
       name: "About",
-      href: "/",
+      href: "/about",
     },
     {
       name: "Let’s Talk",

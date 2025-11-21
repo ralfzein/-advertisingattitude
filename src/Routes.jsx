@@ -8,6 +8,7 @@ import CaseStudy from "./Pages/CaseStudy/CaseStudy";
 import TheAA from "./Pages/TheAA/TheAA";
 import SingleAA from "./Pages/SingleAA/SingleAA";
 import Nav from "./components/Nav/Nav";
+import About from "./Pages/About/About";
 
 
 function AppRoutes() {
@@ -52,6 +53,7 @@ useEffect(() => {
       <Route path="/work/casestudy/:id" element={<CaseStudy />} />
       <Route path="/theAA" element={<TheAA />} />
       <Route path="/theAA/:id" element={<SingleAA/>} />
+      <Route path="/about" element={<About/>} />
     </Routes>
 {/* <Footer/> */}
     </>
