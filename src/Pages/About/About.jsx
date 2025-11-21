@@ -55,11 +55,11 @@ const About = () => {
             </motion.h3>
           </div>
 
-          <div className='flex mt-15 md:hidden mx-6 justify-between'>
-            <motion.img variants={fadeUp} src='Images/About/img1.svg' className='h-[12rem] md:h-[16rem] w-fit' alt='icon' />
-            <div className='flex items-start justify-center'>
-              <motion.img variants={fadeUp} src='Images/About/dots.svg' className='w-[7rem] md:w-[8rem] mt-5 ml-8' alt='icon' />
-            </div>
+          <div className='flex mt-15 md:hidden mx-6 justify-center'>
+            <motion.img variants={fadeUp} src='Images/About/img1.svg' className='h-[12rem] md:h-[16rem] w-fit ' alt='icon' />
+          
+              <motion.img variants={fadeUp} src='Images/About/dots.svg' className='w-[7rem] -translate-x-5  -translate-y-5 ' alt='icon' />
+           
           </div>
         </div>
       </section>
@@ -132,12 +132,13 @@ const About = () => {
       <section className=" px-4 md:px-[4rem] py-[2rem] md:py-15 bg-secondary bg-center bg-cover md:bg-[url('/Images/bg.svg')] bg-[url('/Images/newbg.webp')] ">
         <div className='flex flex-col md:flex-row'>
           <div className='flex-[0.8] flex flex-col justify-between'>
-            <div className='flex flex-col gap-0 items-end w-full'>
+            <div className='flex flex-col gap-0 md:items-end w-full'>
               <div className='flex flex-col gap-0 items-end w-fit md:w-full'>
                 <motion.h1 variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className='font-R_regular text-[3rem] leading-[3.5rem] md:text-[5.8rem] text-primary md:leading-[6rem] w-full'>
                   How We <br className='hidden md:block'/> Think
                 </motion.h1>
-                <motion.img variants={fadeUp} src='Images/About/icon.svg' className=' w-[8rem] md:w-[15rem] -translate-x-3 md:-translate-x-25 md:-translate-y-5' alt='icon' />
+                <motion.img variants={fadeUp} src='Images/About/icon.svg'
+                 className=' w-[8rem] md:w-[15rem] -translate-x-0 md:-translate-x-25 md:-translate-y-5' alt='icon' />
               </div>
             </div>
 
@@ -166,11 +167,11 @@ const About = () => {
               Seeing every angle, daring every move, looping through chaos until clarity hits. Creativity that doesn’t walk in straight lines; it twists, challenges, and strikes.
             </motion.h3>
 
-            <div className='flex md:hidden  mt-6 items-center w-full justify-between px-10'>
+            <div className='flex md:hidden  mt-6 items-center w-full justify-between pr-6'>
               <div className='flex items-center justify-center'>
-                <motion.img variants={fadeUp} src='Images/About/dots.svg' className='w-[6rem] md:rotate-200' alt='icon ' />
+                <motion.img variants={fadeUp} src='Images/About/dots.svg' className='w-[12rem]  md:rotate-200' alt='icon ' />
               </div>
-              <motion.img variants={fadeUp} src='Images/About/img3.svg' className=' h-[8rem] md:h-[17rem] w-fit' alt='icon' />
+              <motion.img variants={fadeUp} src='Images/About/img3.svg' className=' h-[12rem] md:h-[17rem] w-fit' alt='icon' />
             </div>
           </div>
         </div>
@@ -195,9 +196,14 @@ const About = () => {
             </motion.h3>
 
             <div className='flex md:hidden'>
-              <div className='w-full flex items-start justify-center gap-'>
-                <motion.img variants={fadeUp} src='Images/About/dots3.svg' className='w-[4rem]' alt='icon' />
-                <motion.img variants={fadeUp} src='Images/About/img4.svg' className='w-fit h-[10rem]' alt='icon' />
+              <div className='w-full flex items-start justify- '>
+                <div>
+                <motion.img variants={fadeUp} src='Images/About/dots3.svg' className=' w-[7rem] ml-12 ' alt='icon' />
+                </div>
+                <div>
+
+                <motion.img variants={fadeUp} src='Images/About/img4.svg' className=' h-[12rem]  ' alt='icon' />
+              </div>
               </div>
             </div>
           </div>
@@ -205,8 +211,9 @@ const About = () => {
           <div className='flex-1 flex flex-col justify-between'>
             <div className='flex flex-col gap-0 items-end w-fit'>
               <div className='flex flex-col gap-0 items-start'>
-                <motion.h1 variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className='font-R_regular text-[3rem] md:text-[6rem] text-secondary leading-[6rem]'>OUR VISION</motion.h1>
-                <motion.img variants={fadeUp} src='Images/About/icon2.svg' className='w-[15rem]' alt='icon' />
+                <motion.h1 variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
+                 className='font-R_regular text-[3rem] leading-[3.2rem] md:text-[6rem] text-secondary md:leading-[6rem]'>OUR VISION</motion.h1>
+                <motion.img variants={fadeUp} src='Images/About/icon2.svg' className='w-[8rem] md:w-[15rem]' alt='icon' />
               </div>
             </div>
 
@@ -256,10 +263,10 @@ const About = () => {
             </motion.h3>
 
             <div className='md:hidden flex items-center justify-center mt-10 px-6'>
-              <div className='w-full flex items-center justify-center'>
-                <motion.img variants={fadeUp} src='Images/About/dots.svg' className='w-[7rem]' alt='icon ' />
+              <div className='w-full flex items-center justify-center gap-3'>
+                <motion.img variants={fadeUp} src='Images/About/dots.svg' className='h-[5rem]' alt='icon ' />
               </div>
-              <motion.img variants={fadeUp} src='Images/About/img5.svg' className='h-[8rem]' alt='icon' />
+              <motion.img variants={fadeUp} src='Images/About/img55.svg' className='h-[12rem]' alt='icon' />
             </div>
           </div>
         </div>
