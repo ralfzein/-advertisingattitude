@@ -50,7 +50,7 @@ const About = () => {
               Think boldly. Feel deeply. <br/> Act smartly.
             </motion.h3>
 
-            <motion.h3 variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className='font-M_regular text-white text-[1rem] leading-[1.2rem] md:text-[1.8em] md:leading-[2rem] pr-16'>
+            <motion.h3 variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className='font-M_regular text-white text-[1rem] leading-[1.2rem] md:text-[1.8em] md:leading-[2rem] md:pr-16'>
               That’s not a slogan. That’s survival. Marketing never lost its roots — it just got buried under noise. Brands stopped standing for something real. We help them think like the originals: clear, bold, built to last. In a loud world, we stand beside them — refining vision, shaping story, making them felt, not just seen.
             </motion.h3>
           </div>
@@ -94,7 +94,7 @@ const About = () => {
               “Advertising isn’t about making brands louder. It’s about making them felt — real, human, unforgettable.”
             </motion.h3>
 
-            <div className='flex items-end justify-end font-M_bold text-secondary w-full pr-8'>
+            <div className='flex items-end justify-end font-M_bold text-secondary w-full pr-4 md:pr-8'>
               <div className='flex items-end justify-end flex-col w-fit md:gap-2'>
                 <span className='!text-[0.8em] leading-[0.8rem] md:leading-[1rem]'>— Ralf Zein</span>
                 <span className='!text-[0.8em] md:leading-[1rem]'>Founder</span>
