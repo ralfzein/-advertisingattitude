@@ -133,7 +133,7 @@ const About = () => {
         <div className='flex flex-col md:flex-row'>
           <div className='flex-[0.8] flex flex-col justify-between'>
             <div className='flex flex-col gap-0 items-end w-full'>
-              <div className='flex flex-col gap-0 items-end w-full'>
+              <div className='flex flex-col gap-0 items-end w-fit md:w-full'>
                 <motion.h1 variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className='font-R_regular text-[3rem] leading-[3.5rem] md:text-[5.8rem] text-primary md:leading-[6rem] w-full'>
                   How We <br className='hidden md:block'/> Think
                 </motion.h1>
