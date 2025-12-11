@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const PrivacyPolicy = () => {
     const navigate = useNavigate();
   return (
-    <div className="bg-background bg-[url('/Images/newbg.webp')]  tracking-[0.16rem] bg-contain md:bg-cover  px-4 md:px-[4rem] py-4 md:py-[4rem]
+    <div className="bg-background bg-[url('/Images/newbg.webp')]  tracking-[0.16rem] bg-contain md:bg-cover  px-4 md:px-[4rem] py-4 pb-20 md:py-[4rem]
         md:bg-[url('/Images/bg.svg')] bg-center text-primary relative ">
             <div className='absolute top-8 right-4 md:top-10 md:right-10 cursor-pointer hover:text-secondary text-primary '
           onClick={() => navigate('/')}><X /></div>
@@ -16,11 +16,10 @@ const PrivacyPolicy = () => {
 Last updated: October 2024
 
 </p>
-    <br/><br/>
+    <br/><br className='hidden md:block'/>
 
 <div className='text-primary whitespace-break-spaces  leading-[24px] font-M_regular text-sm     '>
-<h3 className='font-M_bold '>
-1. Introduction </h3> 
+<h3 className='font-M_bold '>1. Introduction </h3> 
 Advertising Attitude(“we”, “our”, “us”) is committed to protecting your personal information and your right to privacy.
 This Privacy Policy explains what information we collect, how we use it, and your rights regarding your data.
 <br/><br/>
