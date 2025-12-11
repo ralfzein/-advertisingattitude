@@ -9,6 +9,8 @@ import TheAA from "./Pages/TheAA/TheAA";
 import SingleAA from "./Pages/SingleAA/SingleAA";
 import Nav from "./components/Nav/Nav";
 import About from "./Pages/About/About";
+import PrivacyPolicy from "./Pages/PrivacyPolicy/PrivacyPolicy";
+import ThankYou from "./Pages/ThankYou/ThankYou";
 
 
 function AppRoutes() {
@@ -54,6 +56,8 @@ useEffect(() => {
       <Route path="/theAA" element={<TheAA />} />
       <Route path="/theAA/:id" element={<SingleAA/>} />
       <Route path="/about" element={<About/>} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy/>} />
+      <Route path="/thank-you" element={<ThankYou/>} />
     </Routes>
 {/* <Footer/> */}
     </>

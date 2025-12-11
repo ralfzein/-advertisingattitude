@@ -133,7 +133,7 @@ const Footer = () => {
 
             <div className='flex flex-wrap items-center  justify-between  md:items-center mt-3 md:mt-0 gap-2 md:gap-10 '> 
                 <span className=' text-xs md:text-sm font-M_bold text-primary tracking-[.1em] cursor-pointer hover:text-secondary'
-                   onClick={() => window.open(``, '_blank')}>Privacy policy</span>
+                    onClick={() => navigate('/privacy-policy')}>Privacy policy</span>
                 <span className='text-xs md:text-sm font-M_bold text-primary tracking-[.1em] cursor-pointer hover:text-secondary'>@2025 Advertising Attitude</span>
             </div> 
 

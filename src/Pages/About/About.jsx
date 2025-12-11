@@ -2,6 +2,7 @@ import Footer from '../../components/Footer/Footer'
 import React from 'react'
 import { motion } from 'framer-motion'
 import Nav from '../../components/Nav/Nav'
+import Tabs from '../../components/Tabs/Tabs'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -20,9 +21,25 @@ const About = () => {
           tracking={"tracking-[0.5rem] md:tracking-[0.6rem]"}
           />
         </motion.div>
+        <div className="relative px-4 md:px-[4rem]  pt-[5rem]    md:pt-30  ">
+ 
+                           <Tabs
+                            tabs={[
+                              { name: "Home", href: "/" },
+                              { name: "About AA", href: "" },
+                            ]}
+                            color="text-primary"
+                          />
+                          </div>
 
-
-        <div className=' pb-[2rem]  pt-[5rem]   md:pb-15  md:pt-40   px-4 md:px-[4rem] flex flex-col md:flex-row '>
+          {/* <Tabs
+                            tabs={[
+                              { name: "Home", href: "/" },
+                              { name: "Let's Talk", href: "" },
+                            ]}
+                            color="text-primary"
+                          /> */}
+        <div className=' pb-[2rem]    md:pb-15    px-4 md:px-[4rem] flex flex-col md:flex-row '>
           <div className='flex-[0.8] flex flex-col justify-between'>
             <div className='flex flex-col gap-0 items-end w-fit'>
               <div className='flex flex-col gap-0 items-end'>
@@ -67,6 +84,7 @@ const About = () => {
 
       {/* SECTION 2 */}
       <section className=" px-4 md:px-[4rem] py-[2rem] md:py-15 h- bg-primary bg-center bg-cover md:bg-[url('/Images/bg.svg')] bg-[url('/Images/newbg.webp')] ">
+       
         <div className='flex flex-col-reverse md:flex-row'>
 
           <div className='flex flex-col mt-5 md:mt-0 flex-1 gap-5 md:gap-6 md:pr-20 text-[1rem] md:text-[1.7rem]'>
@@ -251,6 +269,7 @@ const About = () => {
           <div className='flex flex-col flex-1 justify-between mt-5 md:mt-0'>
             <motion.h3 variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
              className='font-M_medium text-white text-[1rem] leading-[1.2rem] md:text-[1.8em] md:leading-[2rem] gap-2 md:gap-6 flex flex-col md:ml-25'>
+              <span>Creative Storytelling & Brand Narrative</span>
               <span>Strategic Branding & Positioning</span>
               <span>Visual & Verbal Identity</span>
               <span>Concept & Creative Direction</span>

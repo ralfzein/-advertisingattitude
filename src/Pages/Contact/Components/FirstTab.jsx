@@ -93,15 +93,22 @@ const handleSend = async (e) => {
   });
 
       
-  if (response.ok) {toast.success("Form sent successfully!");
+  if (response.ok) {
+    toast.success("Form sent successfully!")
+  
      formRef.current.reset();
 
   // Reset React states
-  setText("");
-  setActive(false);
-  setFile([]);
-  setFileName("");
-  setSendingEmail(false); setSendingEmail(false); }
+  // setText("");
+  // setActive(false);
+  // setFile([]);
+  // setFileName("");
+  // setSendingEmail(false); setSendingEmail(false);
+
+  window.location.href = "/thank-you";
+
+
+}
   else{ toast.error("Failed to send the form."); ; setSendingEmail(false);}
 };
 
@@ -142,7 +149,7 @@ const removeFile = (indexToRemove) => {
           {/* Email */}
           <div className="flex items-center justify-start w-full gap-2 md:gap-5">
             <label htmlFor="email" className="font-M_medium md:w-[8rem]  text-[1rem] md:text-[1.5rem] text-primary cursor-pointer">Email</label>
-            <input id="email" required name="email" type="text" className="border-b  border-primary/10 focus:outline-none caret-secondary font-M_medium w-full text-primary text-[1rem] md:text-[1.4rem]" />
+            <input id="email" required name="email" type="text" className="border-b !bg-transparent  focus:bg-transparent  border-primary/10 focus:outline-none caret-secondary font-M_medium w-full text-primary text-[1rem] md:text-[1.4rem]" />
           </div>
 
           {/* Name */}
