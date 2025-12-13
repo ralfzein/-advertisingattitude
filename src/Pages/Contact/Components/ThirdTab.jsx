@@ -334,7 +334,7 @@ or email us at pr@advertisingattitude.com
                 </button>
  <p className="font-M_regular text-[7px] md:text-xs text-primary tracking-[.12em] mt-3 md:mt-5">
          
-You introduce qualified leads. We close the deal. You earn a commission on every project delivered. If it’s a fit, we’ll share<br className="hidden md:block"/>
+You introduce qualified leads. We close the deal. You earn a commission on every project delivered. If it’s a fit, we’ll share <br className="hidden md:block"/>
 our PR & Business Partnership Framework for next steps.<br/>
 Ideal for people with regional contacts in marketing, PR, and brand leadership. This is a commission-based partnership only.<br/>
 <br/>
