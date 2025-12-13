@@ -258,8 +258,8 @@ Need more space? Include a link in your message or email us at business@advertis
             <div className="flex flex-col w-auto !flex-1 md:flex-none">
             <button
             disabled={sendingEmail}
-            type="submit" className="font-R_regular text-[0.8rem] tracking-[0.05rem] leading-[] md:text-[1.4rem] md:tracking-[0.12em] md:leading-[4rem] flex items-center 
-            justify-center flex-1 md:flex-none  w-auto md:w-[28rem] mt-6 md:mt-0 h-[3rem] py-2 md:h-[5rem] hover:bg-secondary hover:opacity-80 cursor-pointer rounded-full text-primary bg-secondary">
+            type="submit" className="font-R_regular text-[0.65rem] tracking-[0.05rem] leading-[] md:text-[1.4rem] md:tracking-[0.12em] md:leading-[4rem] flex items-center 
+            justify-center flex-1 md:flex-none  w-auto md:w-[28rem] mt-6 md:mt-0 h-[3rem] py-3 md:h-[5rem] hover:bg-secondary hover:opacity-80 cursor-pointer rounded-full text-primary bg-secondary">
              {sendingEmail ? "Sending Email..." : "LET’S MAKE THINGS HAPPEN"}  
             </button>
                

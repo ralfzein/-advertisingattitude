@@ -252,15 +252,15 @@ const removeFile = (indexToRemove) => {
             disabled={sendingEmail}
 
              type="submit" className="font-R_regular text-[0.8rem] tracking-[0.05rem] leading-[] md:text-[1.4rem] md:tracking-[0.12em] md:leading-[4rem] flex items-center 
-            justify-center flex-1 md:flex-none mt-6 md:mt-0 w-auto md:w-[28rem] py-2 md:py-0 h-[3rem] md:h-[5rem] hover:bg-secondary hover:opacity-80 cursor-pointer rounded-full text-primary bg-secondary">
+            justify-center flex-1 md:flex-none mt-6 md:mt-0 w-auto md:w-[28rem] py-3 md:py-0 h-[3rem] md:h-[5rem] hover:bg-secondary hover:opacity-80 cursor-pointer rounded-full text-primary bg-secondary">
              
              {sendingEmail ? "Sending Email..." : "PROVE IT"}  
 
             </button>
  <p className="font-M_regular text-[7px] md:text-xs text-primary tracking-[.12em] mt-3 md:mt-5">
-              Advertising Attitude trusted by regional brands who operate under pressure — including Abu Dhabi Duty Free, Muscat <br className="hidden md:block"/>
+              {/* Advertising Attitude trusted by regional brands who operate under pressure — including Abu Dhabi Duty Free, Muscat <br className="hidden md:block"/>
 Duty Free, Beirut Duty Free, D-VIA, and Nouvelle Pharm. <br/>
-Best suited for brands with active marketing budgets or ongoing campaigns.<br/><br/>
+Best suited for brands with active marketing budgets or ongoing campaigns.<br/><br/> */}
 All fields are mandatory except the upload. Please enter a valid email to submit.
               </p>
             </div>
