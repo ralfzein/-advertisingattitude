@@ -256,7 +256,7 @@ const removeFile = (indexToRemove) => {
 
             </button>
  <p className="font-M_regular text-[7px] md:text-xs text-primary tracking-[.12em] mt-5">
-              Advertising Attitude trusted by regional brands who operate under pressure — including Abu Dhabi Duty Free, Muscat <br/>
+              Advertising Attitude trusted by regional brands who operate under pressure — including Abu Dhabi Duty Free, Muscat <br className="hidden md:block"/>
 Duty Free, Beirut Duty Free, D-VIA, and Nouvelle Pharm. <br/>
 Best suited for brands with active marketing budgets or ongoing campaigns.<br/><br/>
 All fields are mandatory except the upload. Please enter a valid email to submit.
