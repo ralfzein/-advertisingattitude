@@ -245,22 +245,25 @@ const removeFile = (indexToRemove) => {
           </div>
 
           {/* Submit button */}
-          <div className="flex flex-col items-center justify-between md:items-start md:justify-start w-full mt-20">
+          <div className="flex  items-center justify-between md:items-start md:justify-start w-full mt-20">
+            <div className="flex flex-col w-auto !flex-1 md:flex-none">
+
             <button 
             disabled={sendingEmail}
 
              type="submit" className="font-R_regular text-[0.8rem] tracking-[0.05rem] leading-[] md:text-[1.4rem] md:tracking-[0.12em] md:leading-[4rem] flex items-center 
-            justify-center flex-1 md:flex-none  w-auto md:w-[28rem] h-[3rem] md:h-[5rem] hover:bg-secondary hover:opacity-80 cursor-pointer rounded-full text-primary bg-secondary">
+            justify-center flex-1 md:flex-none mt-6 md:mt-0 w-auto md:w-[28rem] py-2 md:py-0 h-[3rem] md:h-[5rem] hover:bg-secondary hover:opacity-80 cursor-pointer rounded-full text-primary bg-secondary">
              
              {sendingEmail ? "Sending Email..." : "PROVE IT"}  
 
             </button>
- <p className="font-M_regular text-[7px] md:text-xs text-primary tracking-[.12em] mt-5">
+ <p className="font-M_regular text-[7px] md:text-xs text-primary tracking-[.12em] mt-3 md:mt-5">
               Advertising Attitude trusted by regional brands who operate under pressure — including Abu Dhabi Duty Free, Muscat <br className="hidden md:block"/>
 Duty Free, Beirut Duty Free, D-VIA, and Nouvelle Pharm. <br/>
 Best suited for brands with active marketing budgets or ongoing campaigns.<br/><br/>
 All fields are mandatory except the upload. Please enter a valid email to submit.
               </p>
+            </div>
              <div className="!flex-1 md:hidden " >
           <motion.img variants={imageVariants} initial="hidden" whileInView="show"
            viewport={{ once: false, amount: 0.5 }} src={"/Images/contactLogo.webp"}
