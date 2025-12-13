@@ -10,6 +10,7 @@ const FirstTab = () => {
   const [active, setActive] = useState(false);
   const [fileName, setFileName] = useState("");
   const [file, setFile] = useState(null);
+  const [checkboxError, setCheckboxError] = useState(false);
   const fileInputRef = useRef(null);
   const formRef = useRef();
   const MAX_CHARS = 400;
@@ -72,7 +73,14 @@ const handleSend = async (e) => {
   const email = formData.get("email");
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      setSendingEmail(true);
+  
+  if (!active) {
+    setCheckboxError(true);
+    toast.error("Please agree to the Privacy Policy before submitting.");
+    return;
+  }
+  
+  setSendingEmail(true);
   if (!emailRegex.test(email)) {
     toast.error("Please enter a valid email address.");
       setSendingEmail(false);
@@ -140,16 +148,19 @@ const removeFile = (indexToRemove) => {
   return (
     <motion.div variants={containerVariants} initial="hidden" animate="visible" className="md:mt-8">
       <form ref={formRef} onSubmit={handleSend}>
-        <div className="font-R_regular text-primary text-[1rem] leading-[1.2]  md:text-[1.5rem] md:leading-[2rem] md:mt-8 tracking-[0.15rem]">
-          Something feel off? Need more wings? <br className="hidden md:block" />
-          Tell us your challenge, we’ll take it for a spin.
+        <div className="font-R_regular text-primary capitalize text-[1rem] leading-[1.2]  md:text-[1.5rem] md:leading-[2rem] md:mt-8 tracking-[0.15rem]">
+          {/*the seneten shoud be uppercase  */}
+          Every day your brand avoids brutal feedback,  <br className="hidden md:block" />
+          It falls further behind.
+       
+<p className="text-xs mt-3">Get a FREE, senior-led 48-hour external diagnostic — personalised to your brand, website, OR social channels —  that shows exactly where growth is stalling.</p>
         </div>
 
         <div className="flex flex-col justify-center items-center gap-4 md:gap-8 mt-10">
           {/* Email */}
           <div className="flex items-center justify-start w-full gap-2 md:gap-5">
             <label htmlFor="email" className="font-M_medium md:w-[8rem]  text-[1rem] md:text-[1.5rem] text-primary cursor-pointer">Email</label>
-            <input id="email" required name="email" type="text" className="border-b !bg-transparent  focus:bg-transparent  border-primary/10 focus:outline-none caret-secondary font-M_medium w-full text-primary text-[1rem] md:text-[1.4rem]" />
+            <input id="email" required name="email" type="email" className="border-b !bg-transparent  focus:bg-transparent  border-primary/10 focus:outline-none caret-secondary font-M_medium w-full text-primary text-[1rem] md:text-[1.4rem]" />
           </div>
 
           {/* Name */}
@@ -188,7 +199,7 @@ const removeFile = (indexToRemove) => {
 <div className="flex w-full justify-between">
 <div className="flex flex-col">
           {/* File upload */}
-          <div className="flex items-center justify-start w-full gap-2 md:gap-10 mt-5">
+          <div className="flex items-start justify-start w-full gap-2 md:gap-5 mt-5">
             <span className="font-M_medium text-[1.5rem] text-primary cursor-pointer hover:text-secondary" onClick={handleClick}>Upload</span>
             <div className="flex flex-col gap-1">
               <span className="font-M_regular text-[6px] md:text-xs text-primary tracking-[.12em]">
@@ -219,7 +230,6 @@ Need more space? Include a link in your message or email us at business@advertis
               <input
                 type="file"
                 ref={fileInputRef}
-                required
                 onChange={handleFileChange}
                 className="hidden"
                 name="file"
@@ -227,10 +237,12 @@ Need more space? Include a link in your message or email us at business@advertis
                 accept=".pdf,.mp4,.jpg,.jpeg,.png"
             />
           </div>
-
           {/* Checkbox */}
           <div className="flex items-center justify-start w-full gap-2 md:gap-5 mt-10">
-            <div className={`flex font-M_medium text-[1.5rem] border w-10 h-10 min-w-10 min-h-10 md:w-10 md:h-14 md:min-w-14 md:min-h-14  items-center justify-center cursor-pointer transition-colors duration-300 border-primary relative`} onClick={() => setActive(!active)}>
+            <div className={`flex font-M_medium text-[1.5rem] border w-10 h-10 min-w-10 min-h-10 md:w-10 md:h-14 md:min-w-14 md:min-h-14  items-center justify-center cursor-pointer transition-colors duration-300 ${active ? "border-primary" : checkboxError ? "border-secondary" : "border-primary"} relative`} onClick={() => {
+              setActive(!active);
+              if (!active) setCheckboxError(false);
+            }}>
               <img src="/Images/swirl.svg" alt="logo" className={`  transition-scale transition-rotate duration-600 absolute top-0 left-0 w-full h-full ${active ? "opacity-100 scale-90 rotate-0" : "scale-0 opacity-0 rotate-120"}`} />
             </div>
             <span className="font-M_regular text-[7px] md:text-xs text-primary tracking-[.12em]">
@@ -242,15 +254,20 @@ Need more space? Include a link in your message or email us at business@advertis
           </div>
 
           {/* Submit button */}
-          <div className="flex items-center justify-between+ md:items-start md:justify-start w-full mt-20">
+          <div className="flex flex-col items-center justify-between+ md:items-start md:justify-start w-full mt-20">
             <button
-            disabled={sendingEmail || !isFormValid()}
+            disabled={sendingEmail}
             type="submit" className="font-R_regular text-[0.8rem] tracking-[0.05rem] leading-[] md:text-[1.4rem] md:tracking-[0.12em] md:leading-[4rem] flex items-center 
             justify-center flex-1 md:flex-none  w-auto md:w-[28rem] h-[3rem] md:h-[5rem] hover:bg-secondary hover:opacity-80 cursor-pointer rounded-full text-primary bg-secondary">
              {sendingEmail ? "Sending Email..." : "LET’S MAKE THINGS HAPPEN"}  
             </button>
                
-
+            <p className="font-M_regular text-[7px] md:text-xs text-primary tracking-[.12em] mt-5">
+              Advertising Attitude trusted by regional brands who operate under pressure — including Abu Dhabi Duty Free, Muscat <br/>
+Duty Free, Beirut Duty Free, D-VIA, and Nouvelle Pharm. <br/>
+Best suited for brands with active marketing budgets or ongoing campaigns.<br/><br/>
+All fields are mandatory except the upload. Please enter a valid email to submit.
+              </p>
              <div className="!flex-1 md:hidden " >
           <motion.img variants={imageVariants} initial="hidden" whileInView="show"
            viewport={{ once: false, amount: 0.5 }} src={"/Images/contactLogo.webp"}

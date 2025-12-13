@@ -10,6 +10,7 @@ const ThirdTab = () => {
   const [active, setActive] = useState(false);
   const [fileName, setFileName] = useState("");
   const [file, setFile] = useState(null);
+  const [checkboxError, setCheckboxError] = useState(false);
 
   const fileInputRef = useRef(null);
   const formRef = useRef();
@@ -89,7 +90,14 @@ const handleSend = async (e) => {
   const email = formData.get("email");
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      setSendingEmail(true);
+  
+  if (!active) {
+    setCheckboxError(true);
+    toast.error("Please agree to the Privacy Policy before submitting.");
+    return;
+  }
+  
+  setSendingEmail(true);
   if (!emailRegex.test(email)) {
     toast.error("Please enter a valid email address.");
       setSendingEmail(false);
@@ -144,8 +152,12 @@ const removeFile = (indexToRemove) => {
     >
       <form ref={formRef} onSubmit={handleSend}>
         <div className="font-R_regular text-primary text-[1rem] leading-[1.2]   md:text-[1.5rem] md:leading-[2rem] md:mt-8 tracking-[0.15rem]">
-          Talk is cheap. Sales aren’t. Got the network and the hustle?{" "}
-          <br className="hidden md:block" /> Let’s talk big commission.
+        The advertising industry is screaming for PR pros. <br className="hidden md:block" />
+The few who step in, build real leverage. 
+<p className="text-xs mt-3">
+  Join AA’s PR Partner Circle: earn 12–20% commission with zero overhead, zero hires, and a creative engine behind you.
+</p>
+
         </div>
 
         <div className="flex flex-col justify-center items-center gap-4 md:gap-8 mt-10">
@@ -159,8 +171,9 @@ const removeFile = (indexToRemove) => {
             </label>
             <input
               id="email"
+              required
               name="email"
-              type="text"
+              type="email"
               className="border-b  border-primary/10 focus:outline-none caret-secondary font-M_medium w-full text-primary text-[1rem] md:text-[1.4rem]"
             />
           </div>
@@ -175,6 +188,7 @@ const removeFile = (indexToRemove) => {
             </label>
             <input
               id="name"
+              required
               name="name"
               className="border-b  border-primary/10 caret-secondary focus:outline-none font-M_medium w-full text-primary text-[1rem] md:text-[1.4rem]"
             />
@@ -190,6 +204,7 @@ const removeFile = (indexToRemove) => {
             </label>
             <input
               id="Country"
+              required
               name="Country"
               className="border-b  border-primary/10 caret-secondary focus:outline-none font-M_medium w-full text-primary text-[1rem] md:text-[1.4rem]"
             />
@@ -200,13 +215,16 @@ const removeFile = (indexToRemove) => {
             <div className="font-M_medium text-[1rem] md:text-[1.5rem] text-primary  whitespace-nowrap  -mt-2 flex items-center justify-center gap-3 ">
               Quick Note{" "}
               <span className="text-[0.5rem] md:text-xs font-M_regular text-primary ">
-                (e.g. Tell us how you bring clients)
+                (Share an example of a 
+brand you can introduce 
+us to.)
               </span>
             </div>
             <div className="w-full relative bg">
               <textarea
                 name="message"
                 rows={4}
+                required
                 value={text}
                 onChange={handleChange}
                 maxLength={MAX_CHARS}
@@ -224,7 +242,7 @@ const removeFile = (indexToRemove) => {
           <div className="flex w-full justify-between">
             <div className="flex flex-col   ">
               {/* File upload */}
-              <div className="flex items-center justify-start w-full gap-2 md:gap-10 mt-5">
+              <div className="flex items-start justify-start w-full gap-2 md:gap-5 mt-5">
                 <span
                   className="font-M_medium text-[1.5rem] text-primary cursor-pointer hover:text-secondary"
                   onClick={handleClick}
@@ -269,8 +287,11 @@ or email us at pr@advertisingattitude.com
               {/* Checkbox */}
               <div className="flex items-center justify-start w-full gap-2 md:gap-5 mt-10">
                 <div
-                  className={`flex font-M_medium text-[1.5rem] border w-10 h-10 min-w-10 min-h-10 md:w-10 md:h-14 md:min-w-14 md:min-h-14  items-center justify-center cursor-pointer transition-colors duration-300 border-primary relative`}
-                  onClick={() => setActive(!active)}
+                  className={`flex font-M_medium text-[1.5rem] border w-10 h-10 min-w-10 min-h-10 md:w-10 md:h-14 md:min-w-14 md:min-h-14  items-center justify-center cursor-pointer transition-colors duration-300 ${active ? "border-primary" : checkboxError ? "border-secondary" : "border-primary"} relative`}
+                  onClick={() => {
+                    setActive(!active);
+                    if (!active) setCheckboxError(false);
+                  }}
                 >
                   <img
                     src="/Images/swirl.svg"
@@ -296,7 +317,7 @@ or email us at pr@advertisingattitude.com
               </div>
 
               {/* Submit button */}
-              <div className="flex items-center justify-between md:items-start md:justify-start w-full mt-20">
+              <div className="flex flex-col items-center justify-between md:items-start md:justify-start w-full mt-20">
                 <button
             disabled={sendingEmail}
 
@@ -309,7 +330,16 @@ or email us at pr@advertisingattitude.com
 
                 
                 </button>
+ <p className="font-M_regular text-[7px] md:text-xs text-primary tracking-[.12em] mt-5">
+         
+You introduce qualified leads. We close the deal. You earn a commission on every project delivered. If it’s a fit, we’ll share<br/>
+our PR & Business Partnership Framework for next steps.<br/>
+Ideal for people with regional contacts in marketing, PR, and brand leadership. This is a commission-based partnership only.<br/>
+<br/>
+<br/>
+All fields are mandatory except the upload. Please enter a valid email to submit.
 
+              </p>
                 <div className="!flex-1 md:hidden ">
                   <motion.img
                     variants={imageVariants}

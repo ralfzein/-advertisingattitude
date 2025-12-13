@@ -10,6 +10,7 @@ const SecondTab = () => {
   const [active, setActive] = useState(false);
   const [fileName, setFileName] = useState("");
   const [file, setFile] = useState(null);
+  const [checkboxError, setCheckboxError] = useState(false);
 
   const fileInputRef = useRef(null);
   const formRef = useRef();
@@ -80,7 +81,14 @@ const handleSend = async (e) => {
   const email = formData.get("email");
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      setSendingEmail(true);
+  
+  if (!active) {
+    setCheckboxError(true);
+    toast.error("Please agree to the Privacy Policy before submitting.");
+    return;
+  }
+  
+  setSendingEmail(true);
   if (!emailRegex.test(email)) {
     toast.error("Please enter a valid email address.");
       setSendingEmail(false);
@@ -141,20 +149,20 @@ const removeFile = (indexToRemove) => {
           {/* Email */}
           <div className="flex items-center justify-start w-full gap-5">
             <label htmlFor="email" className="font-M_medium md:w-[14rem]  text-[1rem] md:text-[1.5rem] text-primary cursor-pointer">Email</label>
-            <input id="email" name="email" type="text" className="border-b  border-primary/10 focus:outline-none caret-secondary font-M_medium w-full text-primary text-[1rem] md:text-[1.4rem]" />
+            <input id="email" required  name="email" type="email" className="border-b  border-primary/10 focus:outline-none caret-secondary font-M_medium w-full text-primary text-[1rem] md:text-[1.4rem]" />
           </div>
 
           {/* Name */}
           <div className="flex items-center justify-start w-full gap-5">
             <label htmlFor="name" className="font-M_medium md:w-[14rem]  text-[1rem] md:text-[1.5rem]   cursor-pointer  text-primary">Name</label>
-            <input id="name" name="name" className="border-b  border-primary/10 caret-secondary focus:outline-none font-M_medium w-full text-primary text-[1rem] md:text-[1.4rem]" />
+            <input id="name" required name="name" className="border-b  border-primary/10 caret-secondary focus:outline-none font-M_medium w-full text-primary text-[1rem] md:text-[1.4rem]" />
           </div>
 
           {/* Country */}
           <div className="flex items-center justify-start w-full gap-5">
             <label htmlFor="Portfolio" className="font-M_medium md:w-[14rem]  text-[1rem] md:text-[1.5rem] whitespace-nowrap
               cursor-pointer    text-primary">Portfolio Link</label>
-            <input id="Portfolio" name="Portfolio" type="link" className="border-b  border-primary/10
+            <input id="Portfolio" required  name="Portfolio" type="link" className="border-b  border-primary/10
              caret-secondary focus:outline-none font-M_medium w-full text-primary text-[1rem] md:text-[1.4rem]" />
           </div>
 
@@ -167,6 +175,7 @@ const removeFile = (indexToRemove) => {
             <div className="w-full relative">
               <textarea
                 name="message"
+                required
                 rows={4}
                 value={text}
                 onChange={handleChange}
@@ -181,7 +190,7 @@ const removeFile = (indexToRemove) => {
 <div className="flex w-full justify-between">
 <div className="flex flex-col   ">
           {/* File upload */}
-          <div className="flex items-center justify-start w-full gap-2 md:gap-10 mt-5">
+          <div className="flex items-start justify-start w-full gap-2 md:gap-5 mt-5">
             <span className="font-M_medium text-[1.5rem] text-primary cursor-pointer hover:text-secondary" onClick={handleClick}>Upload</span>
             <div className="flex flex-col gap-1">
               <span className="font-M_regular text-[7px] md:text-xs text-primary tracking-[.12em]">
@@ -221,7 +230,10 @@ const removeFile = (indexToRemove) => {
 
           {/* Checkbox */}
           <div className="flex items-center justify-start w-full gap-2 md:gap-5 mt-10">
-            <div className={`flex font-M_medium text-[1.5rem] border w-10 h-10 min-w-10 min-h-10 md:w-10 md:h-14 md:min-w-14 md:min-h-14  items-center justify-center cursor-pointer transition-colors duration-300 border-primary relative`} onClick={() => setActive(!active)}>
+            <div className={`flex font-M_medium text-[1.5rem] border w-10 h-10 min-w-10 min-h-10 md:w-10 md:h-14 md:min-w-14 md:min-h-14  items-center justify-center cursor-pointer transition-colors duration-300 ${active ? "border-primary" : checkboxError ? "border-secondary" : "border-primary"} relative`} onClick={() => {
+              setActive(!active);
+              if (!active) setCheckboxError(false);
+            }}>
               <img src="/Images/swirl.svg" alt="logo" className={`  transition-scale transition-rotate duration-600 absolute top-0 left-0 w-full h-full ${active ? "opacity-100 scale-90 rotate-0" : "scale-0 opacity-0 rotate-120"}`} />
             </div>
             <span className="font-M_regular text-[7px] md:text-xs text-primary tracking-[.12em]">
@@ -233,7 +245,7 @@ const removeFile = (indexToRemove) => {
           </div>
 
           {/* Submit button */}
-          <div className="flex items-center justify-between md:items-start md:justify-start w-full mt-20">
+          <div className="flex flex-col items-center justify-between md:items-start md:justify-start w-full mt-20">
             <button 
             disabled={sendingEmail}
 
@@ -243,7 +255,12 @@ const removeFile = (indexToRemove) => {
              {sendingEmail ? "Sending Email..." : "PROVE IT"}  
 
             </button>
-
+ <p className="font-M_regular text-[7px] md:text-xs text-primary tracking-[.12em] mt-5">
+              Advertising Attitude trusted by regional brands who operate under pressure — including Abu Dhabi Duty Free, Muscat <br/>
+Duty Free, Beirut Duty Free, D-VIA, and Nouvelle Pharm. <br/>
+Best suited for brands with active marketing budgets or ongoing campaigns.<br/><br/>
+All fields are mandatory except the upload. Please enter a valid email to submit.
+              </p>
              <div className="!flex-1 md:hidden " >
           <motion.img variants={imageVariants} initial="hidden" whileInView="show"
            viewport={{ once: false, amount: 0.5 }} src={"/Images/contactLogo.webp"}
