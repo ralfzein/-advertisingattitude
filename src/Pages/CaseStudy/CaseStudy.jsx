@@ -8,9 +8,10 @@ import ExpandableText from "./ExpandText";
 import Footer from "../../components/Footer/Footer";
 import { ChevronRight } from "lucide-react";
 import Tabs from "../../components/Tabs/Tabs";
+import { decodeId, encodeId } from "../../lib/idEncoder";
 
 const CaseStudy = () => {
-  const { id } = useParams();
+  const { id: encodedId } = useParams();
   const [caseS, setCaseS] = useState(null);
   const [nextCampaigns, setNextCampaigns] = useState([]);
   const navigate = useNavigate();
@@ -22,15 +23,26 @@ const CaseStudy = () => {
     },
   };
 
+  // Decode the ID from URL
+  const id = decodeId(encodedId);
+
+  // If invalid ID, redirect to work page
+  useEffect(() => {
+    if (id === null) {
+      navigate('/work', { replace: true });
+    }
+  }, [id, navigate]);
  
   useEffect(() => {
+    if (id === null) return;
+    
     const current = CampaignsData.find(
-      (item) => String(item.id) === String(id)
+      (item) => item.id === id
     );
     setCaseS(current);
 
     const currentIndex = CampaignsData.findIndex(
-      (item) => String(item.id) === String(id)
+      (item) => item.id === id
     );
 
     if (currentIndex === -1) return;
@@ -199,26 +211,29 @@ const CaseStudy = () => {
           </div>
         </div>
 
-        {/* Section 2 */}
-        {caseS?.section2.length > 0 && (
-          <div className="w-full ">
-            <div className="w-full grid grid-cols-4 gap-2 md:gap-5 ">
-              {caseS?.section2?.map((src, index) => (
-                <div
-                  key={index}
-                  className={`
-              ${
-                caseS?.id === 3
-                  ? index === 1
-                    ? "col-span-2"
-                    : "col-span-1"
-                  : index === 0
-                  ? "col-span-2"
-                  : "col-span-1"
-              }`}
-                >
-                  <RenderMedia
-                    src={src}
+     
+          {caseS?.section2.length > 0 && (
+            <div className="w-full ">
+              <div className={`w-full grid grid-cols-4 gap-2 md:gap-5 `}>
+                {caseS?.section2?.map((src, index) => (
+            <div
+              key={index}
+              className={`
+                ${
+            caseS?.id === 3
+              ? index === 1
+                ? "col-span-2"
+                : "col-span-1"
+              : index === 0
+              ? "col-span-2"
+              : "col-span-1"
+                }
+               ${index !== 2 && !caseS?.section2[2] && "!col-span-2"}
+
+               `}
+            >
+              <RenderMedia
+                src={src}
                     // className="!object-cover h-[42rem]"
                       className={` h-[12rem] md:h-[40rem]  
                         ${caseS.id === 1 &&  "h-[12rem] md:h-[43rem] "}
@@ -294,7 +309,7 @@ const CaseStudy = () => {
             </div>
           </div>
         )}
-
+          {caseS?.testimonial3?.[0] && (
         <div className="my-10 md:my-20">
           <h3 className="font-R_regular text-left md:text-left text-[1rem] leading-[1.1rem] md:text-[3.6rem] md:leading-[4.2rem] text-secondary tracking-[0.1rem]">
             “{caseS?.testimonial3?.[0]}”
@@ -311,6 +326,7 @@ const CaseStudy = () => {
             </div>
           </div>
         </div>
+          )}
         {/* Section 4 */}
         {caseS?.section4.length > 0 && (
           <div className="w-full ">
@@ -350,7 +366,7 @@ const CaseStudy = () => {
               <div
                 key={item.id || idx}
                 className="relative h-[28rem] md:h-[35rem]  overflow-hidden group cursor-pointer"
-                onClick={() => navigate(`/work/casestudy/${item.id}`)}
+                onClick={() => navigate(`/work/${encodeId(item.id)}`)}
               >
                 <img
                   src={item.cover ? item.cover : item.img}
@@ -388,6 +404,8 @@ const CaseStudy = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: showLogo ? 1 : 0, y: showLogo ? 0 : 20 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
+        // here i want to disable the right click context menu not the click
+        onContextMenu={(e) => e.preventDefault()}
       />
       </div>
       </motion.section>

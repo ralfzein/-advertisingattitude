@@ -23,6 +23,8 @@ const RenderMedia = ({ src, className = "" }) => {
           loop
           playsInline
           onLoadedData={() => setIsLoaded(true)}
+          onContextMenu={(e) => e.preventDefault()}
+          controlsList="nodownload"
         >
           <source src={src} type={`video/${src.split('.').pop().toLowerCase()}`} />
           Your browser does not support the video tag.
@@ -36,6 +38,8 @@ const RenderMedia = ({ src, className = "" }) => {
           decoding="async"
           className={`w-full object-cover ${className}  transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
           onLoad={() => setIsLoaded(true)}
+          onContextMenu={(e) => e.preventDefault()}
+          draggable="false"
         />
       )}
     </div>

@@ -8,6 +8,7 @@ import NewsLetter from "../../components/NewsLetter/NewsLetter";
 import theAA from '../../../public/theAAdata';
 import { useLocation, useNavigate } from "react-router-dom";
 import Tabs from "../../components/Tabs/Tabs";
+import { encodeId } from "../../lib/idEncoder";
 
 
 const TheAA = () => {
@@ -43,7 +44,8 @@ useEffect(() => {
 const handleNavigate = (id) => {
   sessionStorage.setItem('scrollPos', window.scrollY);
   sessionStorage.setItem('visibleCount', visibleCount);
-  navigate(`/theAA/${id}`);
+  const encodedId = encodeId(id);
+  navigate(`/theAA/${encodedId}`);
 };
 
 
@@ -131,6 +133,8 @@ useEffect(() => {
           loading="lazy"
           decoding="sync"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          onContextMenu={(e) => e.preventDefault()}
+          draggable="false"
           className="fixed  bottom-10 right-4 md:right-[4rem] w-18 md:w-32 z-60 cursor-pointer"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: showLogo ? 1 : 0, y: showLogo ? 0 : 20 }}
@@ -180,14 +184,23 @@ useEffect(() => {
             <div className=" relative w-full  h-[10rem] md:h-auto md:min-h-[25rem] " >
         {!isLoaded1 && <Skeleton className="absolute inset-0 w-full h-[10rem]  md:h-[25rem] bg-secondary/30" />}
 
-              <img src={data?.[0]?.img1} 
-              onLoad={() => setIsLoaded1(true)}
-           className={`transition-opacity duration-500 cursor-pointer ${
-            isLoaded1 ? 'opacity-100' : 'opacity-0'
-          } w-full h-full object-cover md:object-contain`}
-    onClick={() => navigate(`/theAA/${data[0].id}`)}
-
-          />
+              <a 
+                href={`/theAA/${encodeId(data?.[0]?.id)}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate(`/theAA/${encodeId(data[0].id)}`);
+                }}
+              >
+                <img src={data?.[0]?.img1} 
+                  onLoad={() => setIsLoaded1(true)}
+                  onContextMenu={(e) => e.preventDefault()}
+                  draggable="false"
+                  style={{ pointerEvents: 'none' }}
+                  className={`transition-opacity duration-500 cursor-pointer ${
+                    isLoaded1 ? 'opacity-100' : 'opacity-0'
+                  } w-full h-full object-cover md:object-contain`}
+                />
+              </a>
               
             </div>
 

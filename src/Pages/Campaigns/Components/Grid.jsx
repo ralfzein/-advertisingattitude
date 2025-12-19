@@ -48,6 +48,7 @@ const handleSeeMore = () => {
                   />
                 </div>
               )}
+              {!group[1] && group[0] && <div className="w-full flex-[1.1] md:flex-[1.3]"></div>}
             </div>
           )}
 
@@ -74,6 +75,7 @@ const handleSeeMore = () => {
                   <Cards data={group[4]} style={" h-[9rem]   md:h-[39rem] object-cover"} onClick={onCardClick}  />
                 </div>
               )}
+              {!group[4] && group[3] && <div className="w-full flex-1  md:!flex-[0.8]"></div>}
             </div>
           )}
 

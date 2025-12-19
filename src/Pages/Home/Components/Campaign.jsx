@@ -175,7 +175,7 @@ const sectionRefc = useRef(null);
       
 
              <button
-                      onClick={() => navigate(`/work/casestudy/${slides[current].id}`)}
+                      onClick={() => navigate(`/work/${slides[current].id}`)}
           className="w-[16rem]  font-R_regular text-[1rem] md:text-[1.5rem] tracking-[0.12em] leading-[4rem] 
           flex items-center justify-center sm:w-full md:w-[25rem] h-[3rem] md:h-[5rem] hover:bg-secondary hover:opacity-80 cursor-pointer
            rounded-full text-primary bg-secondary"          >

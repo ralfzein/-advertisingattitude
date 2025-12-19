@@ -52,7 +52,7 @@ useEffect(() => {
       <Route path="/home" element={<Home />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/work" element={<Campaigns />} />
-      <Route path="/work/casestudy/:id" element={<CaseStudy />} />
+      <Route path="/work/:id" element={<CaseStudy />} />
       <Route path="/theAA" element={<TheAA />} />
       <Route path="/theAA/:id" element={<SingleAA/>} />
       <Route path="/about" element={<About/>} />

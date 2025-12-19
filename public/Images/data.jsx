@@ -584,6 +584,336 @@ Guided by our SwirlBold™ mentality, we pair disruptive creativity with discipl
         testimonial3:["From cash desks to gondolas, everyone felt the shift. AA built Click & Collect into a habit  —  clear, simple, and unstoppable.",
         "Lina Ellaz","Head of Retail"],
   },
+  {
+    id: 12,
+    title: "Nouvelle Pharm",
+    subTitle:
+      " A healthcare brand rebuilt from the inside out — engineered for precision, pressure, and trust in Lebanon’s most critical supply chains.",
+    img: "/Images/Cases/Case12/cover.webp",
+    tags: [
+     "Pharma & Healthcare", "Campaigns", "Brand Activation", "Visual Identity"
+    ],
+      tagsM: [
+     "Pharma & Healthcare", "Campaigns", "Brand Activation"
+    ],
+             cTitle:"Nouvelle Pharm — Rebuilt From the Core",
+    client:"Nouvelle Pharm",
+    Sector:" Pharma / Healthcare",
+    Disciplines:["Campaigns", "Brand Activation", "Visual Identity", "Strategic Branding"],
+    date:"2025",
+    description:  ` <h1 class="mt-8 font-M_bold text-[1rem] md:text-[2.4rem] leading-[1.2rem] md:leading-[2.8rem] text-background tracking-[.12rem] ">
+Nouvelle Pharm is not a consumer-facing brand.
+<br/>
+<br/>
+It doesn’t compete on noise, shelf appeal, or emotion-driven marketing. It operates where failure is not an option — behind the scenes of Lebanon’s
+ healthcare system, under pressure, at scale.  
+     <div class=" font-M_semibold text-[0.8rem] leading-[1rem] md:text-[1.3rem] md:leading-[1.6rem] tracking-normal text-background"> 
+<br/>
+Our task was not to “refresh” a logo. It was to rebuild a brand system that could carry weight: operationally, culturally, and strategically. 
+ </div>
+ </h1>
+      
+      <p class=" font-M_semibold text-[0.8rem] leading-[1rem] md:text-[1.3rem] md:leading-[1.6rem] text-background ">
+
+
+The starting point was clarity. We conducted a deep visual and strategic audit across international pharmaceutical distributors, regional players, and local Lebanese competitors. The insight was immediate: most brands in the category looked interchangeable — generic symbols, expected blues, safe healthcare clichés. Nouvelle Pharm had an opportunity to stand apart by embracing what it truly is: the quiet engine of healthcare delivery.
+</br>
+The identity was built around three core forces: connectivity, agility, and reliability — expressed through a custom NP monogram designed as a system, not a symbol. Inspired by logistics networks and directional flow. The mark reflects movement under pressure. Always on. Always responsive.
+<br/>
+<br/>
+Color played a strategic role. Petrol blue, electric teal, and grounded neutrals created a palette that feels confident, technical, and dominant — avoiding both clinical coldness and decorative softness. Typography reinforced structure and discipline, favoring clarity and authority over trend.
+<br/>
+<br/>
+But the system wasn’t designed for slides. It was built to work — across packaging, fleet branding, warehouse environments, documentation, and digital touchpoints. From boxes and delivery vehicles to internal materials, the identity scales seamlessly, reinforcing trust at every interaction.
+<br/>
+<br/>
+This wasn’t branding for visibility. It was branding for performance.
+
+<br/>
+<br/>
+Nouvelle Pharm now presents itself the way it operates: precise, dependable, and built for pressure — invisible when everything works, mission-critical when it doesn’t.
+<br/>
+<br/>
+This project reflects how Advertising Attitude operates. We’re not a content studio or a signage vendor — we’re a strategic marketing agency. We build clarity-first systems that scale across bold creativity, emotional depth, and strategic clarity.
+<br/>
+<br/>
+Guided by our SwirlBold™ mentality, we pair disruptive creativity with disciplined execution. The result? Nouvelle Pharm stands today as a brand designed to lead quietly, move fast, and deliver without compromise.
+
+
+</p>`
+,
+cover:"/Images/Cases/Case12/bold.webp",
+
+      section1:["/Images/Cases/Case12/1.webp"],
+      section2:["/Images/Cases/Case12/2.webp","/Images/Cases/Case12/3.webp","/Images/Cases/Case12/4.webp"],
+      section3:["/Images/Cases/Case12/5.webp","/Images/Cases/Case12/6.webp",""],
+      section4:[],
+       testimonial:["Advertising Attitude didn’t give us a logo. They gave us a system that reflects how we actually operate — under pressure, at scale, without room for error.",
+        "Karim Machmouchi","Managing Partner"],
+          testimonial2:["The identity finally matches our reality. It feels precise, confident, and operational — not cosmetic. That was critical for us.",
+        "Karim Machmouchi","Managing Partner"],
+        // testimonial3:["This work elevated how Nouvelle Pharm is perceived internally and externally. It brought clarity, structure, and a sense of leadership to the brand.",
+        // "Karim Machmouchi","Managing Partner"],
+  },
+
+   {
+    id: 13,
+    title: "Beirut Duty Free",
+    subTitle:
+      "A playful, high-impact beauty campaign that transformed airport retail into an experience — built to stop passengers, spark emotion, and drive purchase in real time.",
+    img: "/Images/Cases/Case13/cover.webp",
+    tags: [
+        "Airport", "Campaigns", "Retail Marketing", "Brand Activation", "Concept & Creative Direction"
+    ],
+      tagsM: [
+          "Airport", "Campaigns", "Retail Marketing", "Brand Activation"
+
+
+    ],
+             cTitle:"Just Get Me to the Duty Free",
+    client:"Beirut Duty Free",
+    Sector:"Airport / Travel Retail",
+    Disciplines:["Campaigns", "Retail Marketing", "Brand Activation", "Concept & Creative Direction", "Content & Digital Activation"],
+    date:"2024",
+    description:  ` <h1 class="mt-8 font-M_bold text-[1rem] md:text-[2.4rem] leading-[1.2rem] md:leading-[2.8rem] text-background tracking-[.12rem] ">
+Most duty-free beauty zones look premium — but say nothing. Beirut Duty Free had strong brands, constant traffic, and solid offers, yet the beauty section lacked identity, energy, and stopping power.
+     <div class=" font-M_semibold text-[0.8rem] leading-[1rem] md:text-[1.3rem] md:leading-[1.6rem] tracking-normal text-background"> 
+<br/>
+Our role was not to decorate space. It was to move people. 
+<br/>
+<br/>
+We built a full campaign system that turned the beauty zone into a playful, high-impact experience — one that spoke the passenger’s language in real time. The idea was simple but strategic: airport beauty should feel irresistible, emotional, and easy. Not distant. Not silent.
+</div>
+ </h1>
+      
+      <p class=" font-M_semibold text-[0.8rem] leading-[1rem] md:text-[1.3rem] md:leading-[1.6rem] text-background ">
+
+
+Through bold visuals, emojis, colour, and real-time cues, we reframed how beauty lives in an airport. Messaging like “<i>Just Get Me to the Duty Free</i>”, “<i>Destination Gorgeous</i>”, and “<i>Good Things Await Those Who Fly</i>” weren’t slogans — they were behavioral triggers designed for passengers in motion.
+<br/>
+<br/>
+The campaign lived everywhere it mattered.<br/>
+ Overhead digital rings, in-store screens, gondolas, floor zones, and point-of-sale moments worked together to create repetition and recall. Each touchpoint reinforced urgency, value, and emotion — whether it was savings, gifting, or self-indulgence.<br/>
+<br/>
+This wasn’t random disruption. It was precision-led playfulness.<br/>
+ Passengers didn’t just walk by. They paused. They smiled. They engaged. Even frequent flyers noticed the shift.<br/>
+<br/>
+The result was a beauty section that finally spoke — and sold.
+
+<br/>
+<br/>
+
+This project reflects how Advertising Attitude operates. We’re not a content studio or a signage vendor — we’re a strategic marketing agency. We build clarity-first systems that scale across bold creativity, emotional depth, and strategic clarity.
+<br/>
+<br/>
+
+Guided by our SwirlBold™ mentality, we pair disruptive creativity with disciplined execution. The result? Not just a seasonal beauty campaign — but a retail experience that turned Beirut Duty Free space into story, attention into action, and presence into performance.
+
+</p>`
+,
+cover:"/Images/Cases/Case13/bold.webp",
+
+      section1:["/Images/Cases/Case13/1.mp4"],
+      section2:["/Images/Cases/Case13/2.webp","/Images/Cases/Case13/3.webp","/Images/Cases/Case13/4.webp"],
+      section3:["/Images/Cases/Case13/5.webp","/Images/Cases/Case13/6.webp","/Images/Cases/Case13/1.webp"],
+      section4:[],
+       testimonial:["This campaign completely changed how passengers interacted with the beauty section. You could feel the difference on the floor — more attention, more engagement, more energy.",
+        "Haythem Salem","Customer Service Manager"],
+          testimonial2:["What stood out was the clarity. The message was simple, playful, and everywhere. It made the beauty zone impossible to ignore.",
+        "Haythem Salem","Customer Service Manager"],
+        testimonial3:["Advertising Attitude didn’t just design visuals — they reshaped the experience. The results were visible in behavior, not just aesthetics.",
+        "Haythem Salem","Customer Service Manager"],
+  },
+
+
+   {
+    id: 14,
+    title: "Abu Dhabi Duty Free",
+    subTitle:
+      " An Arabic-led eyewear campaign built for speed — combining emotional headlines and clear offers to stop travelers in motion and convert attention instantly.",
+    img: "/Images/Cases/Case14/cover.webp",
+    tags: [
+       "Airport", " Campaigns", "Retail Marketing", "Content & Digital Activation"
+
+
+
+    ],
+      tagsM: [
+      "Airport", "Campaigns", "Retail Marketing", "Content & Digital Activation"
+
+
+
+
+    ],
+    cTitle:"The Language Shift That Stopped Traffic",
+    client:"Abu Dhabi Duty Free",
+    Sector:"Airport / Travel Retail",
+    Disciplines:["Campaigns", "Retail Marketing", "Brand Activation", "Concept & Creative Direction", "Content & Digital Activation", "Strategic Communication"],
+    date:"2025",
+    description:  ` <h1 class="mt-8 font-M_bold text-[1rem] md:text-[2.4rem] leading-[1.2rem] md:leading-[2.8rem] text-background tracking-[.12rem] ">
+In airports, decisions happen fast. People don’t stop to analyze — they react. Especially in categories like eyewear, where style, desire, and impulse lead the way.     <div class=" font-M_semibold text-[0.8rem] leading-[1rem] md:text-[1.3rem] md:leading-[1.6rem] tracking-normal text-background"> 
+<br/>
+Abu Dhabi Duty Free had strong brands and a clear promotion in place. The challenge wasn’t the offer. It was making it land in seconds, inside one of the busiest, most visually saturated airport environments. Our role was not to add noise. It was to capture attention, then convert it. </div>
+ </h1>
+      
+      <p class=" font-M_semibold text-[0.8rem] leading-[1rem] md:text-[1.3rem] md:leading-[1.6rem] text-background ">
+      We led with two strategic pillars working in tandem:
+      <br/>
+Arabic-led emotional headlines to stop movement, and clear discount mechanics to close the deal<br/>
+<br/>
+<br/>
+The Arabic copy wasn’t treated as translation. It was the hook. Lines like “Because the eye buys before the mind” and “Catch your sunglasses before time catches you” were designed to interrupt flow, speak culturally, and trigger instinct before logic had time to interfere.
+<br/>
+<br/>
+Once attention was secured, the offer did the rest.<i> Buy any two sunglasses and save 20% </i> — displayed boldly, legibly, and instantly. No clutter. No hesitation. Just clarity at walking speed.
+ <br/>
+<br/>
+The campaign was engineered for airport behavior. Large-format digital screens, lifestyle-led visuals, and sharp typographic hierarchy ensured the message worked whether passengers were rushing, browsing, or waiting. Every execution respected one truth: if it can’t be understood in seconds, it’s invisible.
+
+<br/>
+<br/>
+This wasn’t about choosing between emotion and commerce. It was about aligning both — letting feeling open the door, and value seal the decision.
+
+<br/>
+<br/>
+This project reflects how Advertising Attitude operates. We’re not a content studio or a signage vendor — we’re a strategic marketing agency. We build clarity-first systems that scale across bold creativity, emotional depth, and strategic clarity.
+<br/>
+<br/>
+Guided by our SwirlBold™ mentality, we pair disruptive creativity with disciplined execution. The result? A promotion that didn’t just exist in space — it cut through motion, spoke instinctively, and converted at speed.
+
+</p>`
+,
+cover:"/Images/Cases/Case14/bold.webp",
+
+      section1:["/Images/Cases/Case14/1.webp"],
+      section2:["/Images/Cases/Case14/2.webp","/Images/Cases/Case14/3.webp"],
+      section3:["/Images/Cases/Case14/4.webp","/Images/Cases/Case14/5.webp",""],
+      section4:[],
+       testimonial:["This wasn’t just a creative decision. It was a smart operational move. The language shift made the messaging clearer, faster to process, and more effective on the floor.",
+        "Adrian Bradshaw","Chief Operating Officer"],
+          testimonial2:["What impressed me most was how quickly the campaign cut through. In an environment built for movement, it created pause without disrupting operations — that’s not easy.",
+        "Adrian Bradshaw","Chief Operating Officer"],
+        testimonial3:["From an execution standpoint, the campaign worked because it respected how airports function. It improved engagement without slowing traffic — exactly the balance we aim for.",
+        "Adrian Bradshaw","Chief Operating Officer"],
+  },
+
+   {
+    id: 15,
+    title: "Beirut Duty Free",
+    subTitle:
+      "A unified in-store thematic branding system that transformed seasonal retail storytelling into a scalable sales driver — delivering up to 400% uplift at Beirut Duty Free",
+    img: "/Images/Cases/Case15/cover.webp",
+    tags: [
+        "Airport", " Campaigns", "Retail Marketing", "Brand Activation"
+    ],
+      tagsM: [
+              "Airport", " Campaigns", "Retail Marketing", "Brand Activation"
+
+
+
+    ],
+    cTitle:"In-Store Thematic Branding That Scales Sales",
+    client:"Beirut Duty Free",
+    Sector:"Airport / Travel Retail",
+    Disciplines:[" Campaigns", "Retail Marketing", "Brand Activation", "Concept & Creative Direction", "Content & Digital Activation", "Brand Positioning"],
+    date:"2025",
+    description:  ` <h1 class="mt-8 font-M_bold text-[1rem] md:text-[2.4rem] leading-[1.2rem] md:leading-[2.8rem] text-background tracking-[.12rem] ">
+Most retail environments don’t suffer from a lack of offers — they suffer from a lack of structure. Promotions rotate, visuals change, screens refresh, but without a unifying theme, the space becomes fragmented, harder to navigate, and easier to ignore.
+   <div class=" font-M_semibold text-[0.8rem] leading-[1rem] md:text-[1.3rem] md:leading-[1.6rem] tracking-normal text-background"> 
+<br/>
+Our approach to in-store thematic branding is built on a clear commercial principle: retail performance improves when communication is cohesive, not scattered.
+</div>
+</h1>
+      
+      <p class=" font-M_semibold text-[0.8rem] leading-[1rem] md:text-[1.3rem] md:leading-[1.6rem] text-background ">
+    For Beirut Duty Free’s Summer activation, we developed a single seasonal framework and scaled it across the store with discipline. One theme. One visual system. One message logic — designed to simplify decision-making and amplify impact.
+
+      <br/>
+<br/>
+Summer wasn’t treated as a temporary visual treatment. It became an operational layer across the retail environment. Overhead banners, digital screens, aisles, gondolas, cash desks, and promotional totems were aligned under one narrative — ensuring consistency, repetition, and clarity at every touchpoint.
+<br/>
+<br/>
+This alignment delivered tangible results. Clearer shopper orientation. Stronger message recall. Sustained engagement across the journey — and a measurable uplift in performance, with in-store thematic branding contributing to sales increases reaching up to 400% during key activations.
+ <br/>
+<br/>
+More importantly, it established a repeatable model. What began as a Summer activation evolved into a scalable thematic system that Beirut Duty Free now applies across its marketing calendar — turning each seasonal moment into a structured commercial opportunity rather than a one-off promotion.
+
+<br/>
+<br/>
+Summer was the proof point. The system is what endures.
+
+<br/>
+This project reflects how Advertising Attitude operates. We’re not a content studio or a signage vendor — we’re a strategic marketing agency. We build clarity-first systems that scale across bold creativity, emotional depth, and strategic clarity.
+
+<br/>
+<br/>
+Guided by our SwirlBold™ mentality, we pair disruptive creativity with disciplined execution. The result? Not just seasonal theming — but retail frameworks that turn space into structure, attention into action, and campaigns into sustained performance.
+
+</p>`
+,
+cover:"/Images/Cases/Case15/bold.webp",
+
+      section1:["/Images/Cases/Case15/1.webp"],
+      section2:["/Images/Cases/Case15/2.webp","/Images/Cases/Case15/3.webp","/Images/Cases/Case15/4.webp"],
+      section3:["/Images/Cases/Case15/5.webp","/Images/Cases/Case15/6.webp",""],
+      section4:["/Images/Cases/Case15/8.webp","/Images/Cases/Case15/9.webp","/Images/Cases/Case15/10.webp","/Images/Cases/Case15/11.webp"],
+       testimonial:["What made this approach effective was the structure. Thematic branding gave us a clear framework to communicate offers without fragmenting the store experience. The consistency across touchpoints translated directly into stronger visibility and improved commercial performance.",
+        "Hassan Nour El Din","Assistant Commercial Director"],
+          testimonial2:["Instead of running isolated promotions, we were able to operate under one unified seasonal narrative. That clarity helped customers navigate the space more easily and improved engagement throughout the shopping journey.",
+        "Hassan Nour El Din","Assistant Commercial Director"],
+        testimonial3:["Advertising Attitude didn’t treat Summer as a visual campaign, but as a scalable retail system. The results were measurable, and the framework proved adaptable across future seasonal and calendar-driven activations.",
+        "Hassan Nour El Din","Assistant Commercial Director"],
+  },
+
+//    {
+//     id: 11,
+//     title: "Beirut Duty Free",
+//     subTitle:
+//       "Click and Collect  —  a campaign built on visibility and repetition  —  consistent, clear, and everywhere. Messaging that sticks, results that show.",
+//     img: "/Images/Work/11.webp",
+//     tags: [
+//       "Airport",
+//       "Campaigns",
+//       "Retail Marketing",
+//       "Content & Digital Activation",
+//       "eCommerce"
+//     ],
+//       tagsM: [
+//       "Airport",
+//       "Campaigns",
+//       "Retail Marketing",
+//     ],
+//              cTitle:"Making ‘Fast, Easy & Convenient’ Stick",
+//     client:"Beirut Duty Free",
+//     Sector:"Airport / Travel Retail",
+//     Disciplines:[ "Campaigns"," Retail Marketing"," Brand Activation", "Concept & Creative Direction"," Content & Digital Activation", "Brand Positioning", "eCommerce"],
+//     date:"2021-24",
+//     description:  ` <h1 class="mt-8 font-M_bold text-[1rem] md:text-[2.4rem] leading-[1.2rem] md:leading-[2.8rem] text-background tracking-[.12rem] ">
+// Click & Collect wasn’t just another service at Beirut Duty Free. It was the backbone of a new kind of passenger experience  —  one where “Fast, Easy & Convenient” became more than a slogan. When we began, awareness was minimal, and usage was scattered. Our mandate was clear: turn Click & Collect into a service passengers recognized, remembered, and relied on.
+//      <div class=" font-M_semibold text-[0.8rem] leading-[1rem] md:text-[1.3rem] md:leading-[1.6rem] tracking-normal text-background"> 
+// <br/>
+// The task wasn’t seasonal. It was structural. For three years, we built and optimized the presence of Click & Collect across every channel, every activation, and every major shopping occasion. From Valentine’s hearts to summer sunglasses, from holiday gifting to chocolate season  —  the message stayed consistent. Campaign after campaign, we repeated it louder, clearer, sharper. Because marketing isn’t about saying something once; it’s about making it stick.
+//     </h1>
+      
+//       <p class=" font-M_semibold text-[0.8rem] leading-[1rem] md:text-[1.3rem] md:leading-[1.6rem] text-background ">
+// Our work covered more than visuals  —  it was brand positioning. The “blue rebranding” became a signature identity: vibrant, professional and instantly tied to ease of shopping. On digital, we designed social-first campaigns, landing pages, and media placements that drove passengers online before they even reached the airport. In-store, we amplified through high-impact signage, pillar placements, point-of-sale integration, and repetition across digital walls, cash desks, and gondolas. Even delivery trucks carried the message  —  taking Click & Collect beyond the terminal and into the city.<br/><br/>
+// We also sold the benefits, not just the service. Skip the traffic, ditch the hassle. Reserve your gift early. Check the same deals online as in-store. Each benefit spoke to a different passenger voice  —  departures in a hurry, arrivals planning ahead, gift-givers buying smart. Click & Collect became more than online shopping; it became time saved, journeys simplified, novelties discovered along the journey.<br/><br/>
+// This consistency paid off. Passengers began to shop frequently. It wasn’t a side service anymore; it became embedded in the shopping journey, shaping how Beirut Duty Free competed in a fast-moving travel retail market. Awareness turned into recall. Recall turned into transactions. And transactions built loyalty.<br/><br/>
+// This project reflects how Advertising Attitude operates. We’re not a content studio or a signage vendor  —  we’re a strategic marketing agency. We build clarity-first systems that scale across bold creativity, emotional depth, and strategic clarity.<br/><br/>
+// Guided by our SwirlBold™ mentality, we pair disruptive creativity with disciplined execution. The result? Not just more passengers using Click & Collect, but a service transformed into a brand  —  consistent, clear, and indispensable<br/><br/>
+// </p>`
+// ,
+//       section1:["/Images/Cases/Case11/1.mp4"],
+//       section2:["/Images/Cases/Case11/media 2.webp","/Images/Cases/Case11/media 3.mp4","/Images/Cases/Case11/media 4.webp"],
+//       section3:["/Images/Cases/Case11/5.webp","/Images/Cases/Case11/6.webp","/Images/Cases/Case11/7.mp4"],
+//       section4:[],
+//        testimonial:["We saw it every day on the shop floor  —  passengers asking, staff repeating. AA made Click & Collect part of the retail rhythm.",
+//         "Lina Ellaz","Head of Retail"],
+//           testimonial2:["This wasn’t just a campaign from above. Our teams lived it, our passengers trusted it. AA turned consistency into a service culture",
+//         "Lina Ellaz","Head of Retail"],
+//         testimonial3:["From cash desks to gondolas, everyone felt the shift. AA built Click & Collect into a habit  —  clear, simple, and unstoppable.",
+//         "Lina Ellaz","Head of Retail"],
+//   },
 ];
 
 export default CampaignsData;

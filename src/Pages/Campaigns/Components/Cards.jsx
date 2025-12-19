@@ -1,16 +1,24 @@
 import React, { useState } from 'react'
 import { Skeleton } from '../../../components/ui/skeleton';
 import { useNavigate } from 'react-router-dom';
+import { encodeId } from '../../../lib/idEncoder';
 
 const Cards = ({ data, style, center ,onClick }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 const navigate =useNavigate();  
- const handleClick = () => {
+
+ const encodedId = encodeId(data.id);
+
+ const handleClick = (e) => {
+    e.preventDefault();
     if (onClick) onClick(data.id);
   };
+
   return (
-    <div className={`flex flex-col gap-2 md:gap-[10px] col-span-1 ${center ? 'md:px-[5rem]' : ''}`} 
-     onClick={handleClick}
+    <a 
+      href={`/work/${encodedId}`}
+      onClick={handleClick}
+      className={`flex flex-col gap-2 md:gap-[10px] col-span-1 ${center ? 'md:px-[5rem]' : ''} cursor-pointer`}
     >
       <div className={`relative w-full overflow-hidden `}>
         {!isLoaded && (
@@ -21,6 +29,8 @@ const navigate =useNavigate();
   src={data?.img}
   alt="img"
   onLoad={() => setIsLoaded(true)}
+  draggable="false"
+  style={{ pointerEvents: 'none' }}
   className={`w-full transform transition duration-700 md:min-h-[30rem]  ease-in-out ${style}  hover:scale-105 cursor-pointer  ${
     isLoaded ? 'opacity-100' : 'opacity-0'
   }`}
@@ -76,7 +86,7 @@ const navigate =useNavigate();
         </>
       )}
       </div>
-    </div>
+    </a>
   );
 };
 

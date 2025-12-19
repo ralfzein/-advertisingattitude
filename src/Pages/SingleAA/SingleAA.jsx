@@ -9,13 +9,28 @@ import NewsLetter from "../../components/NewsLetter/NewsLetter";
 import Footer from "../../components/Footer/Footer";
 import Tabs from "../../components/Tabs/Tabs";
 import { toast } from "sonner";
+import { decodeId, encodeId } from "../../lib/idEncoder";
 
 const SingleAA = () => {
-  const { id } = useParams();
+  const { id: encodedId } = useParams();
   const [caseS, setCaseS] = useState(null);
   const [isLoaded1, setIsLoaded1] = useState(false);
   const [isBgLoaded, setIsBgLoaded] = useState(false);
   const navigate = useNavigate();
+
+  // ✅ Decode the ID from URL
+  const id = decodeId(encodedId);
+  
+  console.log('EncodedId from URL:', encodedId);
+  console.log('Decoded ID:', id);
+
+  // ✅ If invalid ID, redirect to TheAA page
+  useEffect(() => {
+    if (id === null) {
+      console.warn('Invalid ID, redirecting to /theAA');
+      navigate('/theAA', { replace: true });
+    }
+  }, [id, navigate]);
 
   // ✅ Load the background image first
   useEffect(() => {
@@ -26,8 +41,11 @@ const SingleAA = () => {
 
   // ✅ Get data for the selected case
   useEffect(() => {
-    const current = theAA.find((item) => String(item.id) === String(id));
-    setCaseS(current);
+    if (id !== null) {
+      const current = theAA.find((item) => item.id === id);
+      console.log('Found case:', current);
+      setCaseS(current);
+    }
   }, [id]);
 
   // ✅ Motion variants
@@ -115,6 +133,8 @@ const plainText = caseS?.paragraph1?.replace(/<[^>]*>/g, '');
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: showLogo ? 1 : 0, y: showLogo ? 0 : 20 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
+          onContextMenu={(e) => e.preventDefault()}
+          // draggable="false"
         />
       <motion.section
         variants={containerVariants}
@@ -196,6 +216,8 @@ const plainText = caseS?.paragraph1?.replace(/<[^>]*>/g, '');
                     isLoaded1 ? "opacity-100" : "opacity-0"
                   } w-[12rem]  h-[15rem]  md:w-[20rem] md:h-[25rem] object-cover`}
                   onLoad={() => setIsLoaded1(true)}
+                  onContextMenu={(e) => e.preventDefault()}
+                  draggable="false"
                 />
               </div>
 
@@ -273,7 +295,7 @@ const plainText = caseS?.paragraph1?.replace(/<[^>]*>/g, '');
             {caseS && caseS.id > 1 && (
               <div
                 className="flex items-center  gap-2 md:gap-5 text-secondary font-R_regular text-[1rem] md:text-[2rem] uppercase cursor-pointer hover:opacity-80"
-                onClick={() => navigate(`/theAA/${caseS.id - 1}`)}
+                onClick={() => navigate(`/theAA/${encodeId(caseS.id - 1)}`)}
               >
                                 <MoveLeft  className="hidden md:block" size={50} strokeWidth={1.5} />
                 <MoveLeft  className="block md:hidden" size={25} strokeWidth={1.5} />
@@ -287,7 +309,7 @@ const plainText = caseS?.paragraph1?.replace(/<[^>]*>/g, '');
             {caseS && caseS.id < theAA.length-1 && (
               <div
                 className="flex items-center gap-2 md:gap-5 text-secondary font-R_regular text-[1rem] md:text-[2rem] uppercase cursor-pointer hover:opacity-80"
-                onClick={() => navigate(`/theAA/${caseS.id + 1}`)}
+                onClick={() => navigate(`/theAA/${encodeId(caseS.id + 1)}`)}
               >
              <span className="text-right md:text-left">   Next <br className="md:hidden" />Perspective </span>
                 <MoveRight  className="hidden md:block" size={50} strokeWidth={1.5} />

@@ -7,6 +7,7 @@ import Footer from '../../components/Footer/Footer';
 import { useNavigate } from 'react-router-dom';
 import Tabs from '../../components/Tabs/Tabs';
 import GridsM from './Components/GridM';
+import { encodeId } from '../../lib/idEncoder';
 
 const Campaigns = () => {
   const containerVariants = {
@@ -22,7 +23,8 @@ const Campaigns = () => {
   const [showLogo, setShowLogo] = useState(false);
   const handleNavigate = (id) => {
     sessionStorage.setItem('campaignScroll', window.scrollY);
-    navigate(`/work/casestudy/${id}`);
+    const encodedId = encodeId(id);
+    navigate(`/work/${encodedId}`);
   };
 
   // 🧭 Restore scroll when coming back

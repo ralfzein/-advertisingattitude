@@ -1,20 +1,25 @@
 import { Skeleton } from '../../../components/ui/skeleton';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { encodeId } from '../../../lib/idEncoder';
 
 const Cards = ({ data ,onClick}) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const navigate = useNavigate();
 
+  const encodedId = encodeId(data.id);
   
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
     if (onClick) onClick(data.id);       
-    else navigate(`/theAA/${data.id}`); 
+    else navigate(`/theAA/${encodedId}`); 
   };
 
   return (
-    <div className="flex flex-col items-center justify-start gap-3 md:gap-4 w-full "
-    onClick={handleClick} 
+    <a 
+      href={`/theAA/${encodedId}`}
+      onClick={handleClick}
+      className="flex flex-col items-center justify-start gap-3 md:gap-4 w-full cursor-pointer"
     >
       <div className="hidden md:flex relative  items-center justify-center overflow-hidden">
         {/* Skeleton behind the image */}
@@ -26,9 +31,14 @@ const Cards = ({ data ,onClick}) => {
           src={data.img}
           onLoad={() => setIsLoaded(true)}
           alt={data.title}
+          onContextMenu={(e) => e.preventDefault()}
+          draggable="false"
+          // remove the right click here
+          style={{ pointerEvents: 'none' }}
           className={` md:!w-[25rem] md:!h-[25rem] transform transition duration-700 overflow-hidden  ease-in-out hover:scale-105 cursor-pointer  ${
             isLoaded ? 'opacity-100' : 'opacity-0'
           }
+        
              ${data.rounded2} w-full h-full object-cover`}
         />
       </div>
@@ -43,6 +53,9 @@ const Cards = ({ data ,onClick}) => {
           src={data.img}
           onLoad={() => setIsLoaded(true)}
           alt={data.title}
+          onContextMenu={(e) => e.preventDefault()}
+          draggable="false"
+          style={{ pointerEvents: 'none' }}
           className={` md:!w-[25rem] md:!h-[25rem] transform transition duration-700 overflow-hidden  ease-in-out hover:scale-105 cursor-pointer  ${
             isLoaded ? 'opacity-100' : 'opacity-0'
           }
@@ -73,7 +86,7 @@ const Cards = ({ data ,onClick}) => {
           {data.subTitle}
         </p>
       )}
-    </div>
+    </a>
   );
 };
 
