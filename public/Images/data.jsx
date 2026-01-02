@@ -801,7 +801,7 @@ cover:"/Images/Cases/Case14/bold.webp",
     id: 15,
     title: "Beirut Duty Free",
     subTitle:
-      "A unified in-store thematic branding system that transformed seasonal retail storytelling into a scalable sales driver — delivering up to 400% uplift at Beirut Duty Free",
+      "A unified in-store thematic branding system that transformed seasonal retail storytelling into a scalable sales driver — delivering up to 400% uplift at Beirut Duty Free.",
     img: "/Images/Cases/Case15/cover.webp",
     tags: [
         "Airport", " Campaigns", "Retail Marketing", "Brand Activation"
@@ -855,7 +855,7 @@ cover:"/Images/Cases/Case15/bold.webp",
 
       section1:["/Images/Cases/Case15/1.webp"],
       section2:["/Images/Cases/Case15/2.webp","/Images/Cases/Case15/3.webp","/Images/Cases/Case15/4.webp"],
-      section3:["/Images/Cases/Case15/5.webp","/Images/Cases/Case15/6.webp",""],
+      section3:["/Images/Cases/Case15/5.webp","/Images/Cases/Case15/6.webp","/Images/Cases/Case15/7.mp4"],
       section4:["/Images/Cases/Case15/8.webp","/Images/Cases/Case15/9.webp","/Images/Cases/Case15/10.webp","/Images/Cases/Case15/11.webp"],
        testimonial:["What made this approach effective was the structure. Thematic branding gave us a clear framework to communicate offers without fragmenting the store experience. The consistency across touchpoints translated directly into stronger visibility and improved commercial performance.",
         "Hassan Nour El Din","Assistant Commercial Director"],
@@ -863,6 +863,80 @@ cover:"/Images/Cases/Case15/bold.webp",
         "Hassan Nour El Din","Assistant Commercial Director"],
         testimonial3:["Advertising Attitude didn’t treat Summer as a visual campaign, but as a scalable retail system. The results were measurable, and the framework proved adaptable across future seasonal and calendar-driven activations.",
         "Hassan Nour El Din","Assistant Commercial Director"],
+  },
+
+
+    {
+    id: 16,
+    title: "Musat Duty Free",
+    subTitle:
+      " A culturally driven retail campaign designed to carry the taste and memories of Oman — from everyday life and childhood moments to wherever passengers are traveling next.",
+    img: "/Images/Cases/Case16/cover.webp",
+    tags: [
+     "Airport", "Campaigns", "In-Store Branding", "Creative Storytelling"
+    ],
+      tagsM: [
+          "Airport", "Campaigns", "In-Store Branding", "Creative Storytelling"
+
+    ],
+    cTitle:"Always Feel Home",
+    client:"Musat Duty Free",
+    Sector:"Airport / Travel Retail",
+    Disciplines:[" Campaigns", "Retail Marketing" , "Brand Activation" , "Concept & Creative Direction", "Content & Digital Activation", "Brand Positioning"],
+    date:"2024",
+    description:  ` <h1 class="mt-8 font-M_bold text-[1rem] md:text-[2.4rem] leading-[1.2rem] md:leading-[2.8rem] text-background tracking-[.12rem] ">
+Airports are built for speed. Passengers move fast, think fast, and decide in seconds. In that rush, local products don’t compete on price or packaging — they compete on meaning.   <div class=" font-M_semibold text-[0.8rem] leading-[1rem] md:text-[1.3rem] md:leading-[1.6rem] tracking-normal text-background"> 
+<br/>
+For Muscat Duty Free’s local confectionery and food section, the challenge wasn’t visibility alone. It was relevance under pressure. Travelers were already thinking about gates, luggage, and time. If Omani products were going to be bought, they had to trigger something immediate: recognition, belonging, and the fear of missing a piece of home.
+
+</h1>
+      
+      <p class=" font-M_semibold text-[0.8rem] leading-[1rem] md:text-[1.3rem] md:leading-[1.6rem] text-background ">
+Our role was to design a section passengers couldn’t pass without noticing — and couldn’t leave without remembering.
+
+      <br/>
+<br/>
+We built a vivid, culturally rooted retail environment that worked instantly. The green palette wasn’t aesthetic decoration; it was a signal. Clear. Calm. Familiar. The kind of visual language that tells you, without reading anything,<i> this is important — stop here.</i> Not to browse endlessly, but to choose confidently.
+<br/>
+<br/>
+The message was direct and human: home travels with you.
+ <br/>
+<br/>
+Instead of pushing products, we framed moments. Dates, coffee, sweets, and local goods weren’t positioned as items on shelves — they were positioned as gestures. What you take with you when distance grows. What you gift when words aren’t enough. What reminds you where you come from once you’ve landed somewhere else.
+
+
+<br/>
+<br/>
+Messaging like <i>“Always Feel Home”</i> anchored the space emotionally, while the execution did the heavy lifting. Textiles, banners, section branding, digital screens, wobblers, and offer-led cues worked together to create a zone that felt distinct the second you entered it. This wasn’t another duty-free aisle — it was a checkpoint of memory.
+
+<br/>
+<br/>
+The strategy respected how people actually behave in airports. Fast decisions. Minimal reading. High emotion. Clear cues. We designed for that reality — making sure passengers didn’t miss the section, didn’t miss the products, and didn’t miss the chance to take Oman with them before departure.
+
+<br/>
+<br/>
+This wasn’t a promotion. It was onboarding. A retail moment engineered to convert speed into sentiment — and sentiment into purchase.
+
+<br/>
+<br/>
+This project reflects how Advertising Attitude operates. We’re not a content studio or a signage vendor — we’re a strategic marketing agency. We build clarity-first systems that scale across bold creativity, emotional depth, and strategic clarity.
+<br/><br/>
+Guided by our SwirlBold™ mentality, we pair disruptive creativity with disciplined execution. The result?  A section that didn’t just sell local products. It reminded travelers, in the middle of transit, who they are — and gave them something meaningful to carry forward.
+
+</p>`
+,
+cover:"/Images/Cases/Case16/bold.webp",
+
+      section1:["/Images/Cases/Case16/1.webp"],
+      section2:["/Images/Cases/Case16/2.webp","/Images/Cases/Case16/3.webp",""],
+      section3:["/Images/Cases/Case16/4.webp","/Images/Cases/Case16/5.webp",""],
+      section4:["","","",""],
+       testimonial:["This work went beyond visuals. It gave our local products a stronger presence and a clearer identity within the airport.",
+        "Rawiya Albusaidi","Acting Head of Marketing"],
+          testimonial2:["The campaign created an immediate emotional connection. Passengers felt the difference the moment they entered the section.",
+        "Rawiya Albusaidi","Acting Head of Marketing"],
+        testimonial3:["Advertising Attitude translated local culture into a retail experience that was both modern and deeply familiar.",
+        "Rawiya Albusaidi","Acting Head of Marketing"],
   },
 
 //    {

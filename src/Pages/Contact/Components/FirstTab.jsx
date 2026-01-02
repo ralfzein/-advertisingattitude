@@ -54,14 +54,15 @@ const handleFileChange = (e) => {
   });
 
   if (validFiles.length > 0) {
-    setFile(validFiles);
-    setFileName(validFiles.map((f) => f.name).join(", "));
-  } else {
-    // Reset if all files invalid
-    setFile([]);
-    setFileName("");
-    e.target.value = "";  
+    // Append new files to existing ones instead of replacing
+    const existingFiles = file || [];
+    const updatedFiles = [...existingFiles, ...validFiles];
+    setFile(updatedFiles);
+    setFileName(updatedFiles.map((f) => f.name).join(", "));
   }
+  
+  // Clear the input value so the same file can be selected again if needed
+  e.target.value = "";
 };
 
 const [sendingEmail, setSendingEmail] = useState(false);

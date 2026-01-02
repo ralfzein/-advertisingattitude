@@ -93,6 +93,19 @@ const handleSeeMore = () => {
               </p>
             </div>
           )}
+             {index === 2 && (
+            <div className="  md:mt-12">
+              <h3
+                className="font-M_bold text-secondary text-[1.8rem] md:text-[4rem] tracking-[0.1rem] md:tracking-[0.5rem]
+             leading-[1.9rem]   md:leading-[4rem] md:text- uppercase"
+              >
+               The market doesn’t punish bad ideas
+              </h3>
+              <p className="font-M_bold text-black text-[1.5rem] leading-[1.6rem] md:text-[1.8rem] tracking-[0.1rem] md:tracking-[0.2rem] mt-4 md:mt-8">
+               It punishes ideas that were never defended long enough to win.
+              </p>
+            </div>
+          )}
         </div>
       ))}
 

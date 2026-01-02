@@ -108,8 +108,28 @@ const GridsM = ({ data, onCardClick }) => {
               </p>
             </div>
           )}
+
+             {index === 2 && (
+
+                          <div>
+              <h3
+                className="font-R_regular text-secondary text-[1.5rem] tracking-[0.1rem] uppercase 
+             leading-[1.9rem]"
+              >
+               The market doesn’t punish bad ideas
+             
+              </h3>
+              <p className="font-M_bold text-black text-[1.5rem] leading-[1.6rem] tracking-[0.1rem] mt-4">
+               It punishes ideas that were never defended long enough to win.
+              </p>
+            </div>
+
+           
+          )}
         </div>
       ))}
+
+      
 
       {/* "See More" Button */}
       {visibleChunks < chunks.length && (
