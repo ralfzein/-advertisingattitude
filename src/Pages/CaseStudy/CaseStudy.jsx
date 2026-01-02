@@ -200,7 +200,8 @@ const CaseStudy = () => {
           </h3>
           <div className="w-full items-end justify-center  md:items-end md:justify-end flex flex-col mt-5">
             <div className="items-start justify-start flex flex-col ">
-              <div className="font-R_regular text-black text-[1rem] md:text-[2rem] leading-[1.2rem] md:leading-[2.2rem]  tracking-[0.1rem] text-left md:text-left ">
+              <div className="font-R_regular text-black text-[1rem] md:text-[2rem] leading-[1.2rem]
+               md:leading-[2.3rem]  tracking-[0.1rem] text-left md:text-left ">
                 - {caseS?.testimonial?.[1]}
               </div>
               <div className="font-R_regular text-black text-xs md:text-sm ml-4 md:ml-7 tracking-[0.1rem]  ">
@@ -255,7 +256,8 @@ const CaseStudy = () => {
             </h3>
             <div className="w-full items-end justify-center  md:items-end md:justify-end flex flex-col mt-5">
               <div className="items-start justify-start flex flex-col ">
-                <div className="font-R_regular text-black text-[1rem] md:text-[2rem] leading-[1.2rem] tracking-[0.1rem] text-left md:text-left ">
+                <div className="font-R_regular text-black text-[1rem] md:text-[2rem] leading-[1.2rem]
+               md:leading-[2.3rem]  tracking-[0.1rem] text-left md:text-left  ">
                   - {caseS?.testimonial2?.[1]}
                 </div>
                 <div className="font-R_regular text-black text-xs md:text-sm ml-4 md:ml-7 tracking-[0.1rem]   ">
@@ -316,7 +318,8 @@ const CaseStudy = () => {
           </h3>
           <div className="w-full items-end justify-center  md:items-end md:justify-end flex flex-col mt-5">
             <div className="items-start justify-start flex flex-col ">
-              <div className="font-R_regular text-black text-[1rem] md:text-[2rem] leading-[1.2rem] tracking-[0.1rem] text-left md:text-left ">
+              <div className="font-R_regular text-black text-[1rem] md:text-[2rem] leading-[1.2rem]
+               md:leading-[2.3rem]  tracking-[0.1rem] text-left md:text-left ">
                 - {caseS?.testimonial3?.[1]}
               </div>
               <div className="font-R_regular text-black text-xs md:text-sm ml-4 md:ml-7 tracking-[0.1rem]" >
