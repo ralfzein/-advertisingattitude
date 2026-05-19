@@ -99,12 +99,18 @@ const sectionRef = useRef(null);
 
           <h1 className="font-R_regular text-[3.5rem]  sm:text-[6rem] text-primary leading-[3.4rem] md:leading-[5.2rem]  translate-y-2 md:translate-y-0
                  sm:pt-0    text-center  sm:text-left">
-                Advertising <br  /> Attitude 
+                Advertising <br  /> Attitude
+                
+                 
           </h1>
 </div>
-        <h1   className="font-R_regular text-[1.2rem] sm:text-[3rem] text-secondary
+        <h1   className="font-R_regular text-[1.2rem] sm:text-[3rem] text-primary
          md:pt-14 sm:pt-8 tracking-[0.2rem] md:tracking-[0.5rem]  leading-[1.2] md:leading-[1.1] text-center ">
-          LEADING CREATIVE  AGENCY
+          {/* LEADING CREATIVE  AGENCY   */}
+
+
+          Demand Generation & <br/>
+Revenue Marketing Agency
         </h1>
       </motion.div></div>
     </motion.section>

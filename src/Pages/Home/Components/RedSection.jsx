@@ -31,15 +31,21 @@ const RedSection = () => {
   style={{ backgroundImage: `url('/Images/bg.svg')` }}
 >
 
-    <div className='relative flex flex-wrap py-[2rem] md:py-[3.5rem] w-full  px-4 md:px-[4rem]' >
+    <div className='relative flex flex-wrap py-[2rem] md:py-[3.5rem] w-full  px-4 md:px-[4rem] items-center justify-center' >
 
-       <motion.h1     variants={childVariants} className= "md:hidden text-primary   tracking-[.2rem]   font-R_regular text-[2rem] leading-[2.7rem] md:leading-[6.5rem]  -ml-[5px] pl-0  font-normal     uppercase">
-          we don't just build brands.<br/>  we train them <br/> to fight, evolve, and lead. 
+       <motion.h1     variants={childVariants} 
+       className= "md:hidden text-primary  text-center  tracking-[.16rem]   font-R_regular text-[1.8rem] leading-[2.5rem] md:leading-[6.5rem]  -ml-[5px] pl-0  font-normal     uppercase">
+          {/* we don't just build brands.<br/>  we train them <br/> to fight, evolve, and lead.  */}
+          We help growth-stage businesses create,
+fix, and scale demand systems — turning
+marketing activity into real commercial
+outcomes through strategy,narrative,
+and campaign execution.
       </motion.h1>  
 
 
 
-      <motion.h1     variants={childVariants} className= 'hidden text-primary text-center md:text-left md:inline-block tracking-[.2rem]  md:tracking-[.4rem] font-R_regular text-[2rem] md:text-[5rem] leading-[2.2rem] md:leading-[6.5rem]  -ml-[5px] pl-0  font-normal     uppercase'
+      {/* <motion.h1     variants={childVariants} className= 'hidden text-primary text-center md:text-left md:inline-block tracking-[.2rem]  md:tracking-[.4rem] font-R_regular text-[2rem] md:text-[5rem] leading-[2.2rem] md:leading-[6.5rem]  -ml-[5px] pl-0  font-normal     uppercase'
       >we don't just build brands. <br/> 
       </motion.h1>
       <motion.h1     variants={childVariants} className= 'hidden text-primary text-center md:text-left md:inline-block tracking-[.2rem]  md:tracking-[.4rem] font-R_regular text-[2rem] md:text-[5rem] leading-[2.2rem] md:leading-[6.5rem]  -ml-[5px] pl-0  font-normal     uppercase'
@@ -47,7 +53,24 @@ const RedSection = () => {
 
       <motion.h1     variants={childVariants} className= 'hidden text-primary text-center md:text-left md:inline-block tracking-[.2rem]  md:tracking-[.4rem] font-R_regular text-[2rem] md:text-[5rem] leading-[2.2rem] md:leading-[6.5rem]  -ml-[5px] pl-0  font-normal     uppercase'
      > evolve, and lead.
+        </motion.h1> */}
+        <motion.h1  variants={childVariants} className= 'hidden text-primary text-center md:text-left md:inline-block tracking-[.2rem]  md:tracking-[.1rem] font-R_regular text-[2rem] md:text-[3.6rem] leading-[1rem] md:leading-[1.3]  -ml-[5px] pl-0  font-normal     uppercase'
+     > We help growth-stage businesses create,
         </motion.h1>
+        <motion.h1  variants={childVariants} className= 'hidden text-primary text-center md:text-left md:inline-block tracking-[.2rem]  md:tracking-[.1rem] font-R_regular text-[2rem] md:text-[3.6rem] leading-[1rem] md:leading-[1.3]  -ml-[5px] pl-0  font-normal     uppercase'
+     > fix, and scale demand systems 
+        </motion.h1>
+        <motion.h1  variants={childVariants} className= 'hidden text-primary text-center md:text-left md:inline-block tracking-[.2rem]  md:tracking-[.1rem] font-R_regular text-[2rem] md:text-[3.6rem] leading-[1rem] md:leading-[1.3]  -ml-[5px] pl-0  font-normal     uppercase'
+     > turning marketing  activity into real 
+        </motion.h1>
+        <motion.h1  variants={childVariants} className= 'hidden text-primary text-center md:text-left md:inline-block tracking-[.2rem]  md:tracking-[.1rem] font-R_regular text-[2rem] md:text-[3.6rem] leading-[1rem] md:leading-[1.3]  -ml-[5px] pl-0  font-normal     uppercase'
+     > commercial outcomes through strategy, 
+        </motion.h1>
+        <motion.h1  variants={childVariants} className= 'hidden text-primary text-center md:text-left md:inline-block tracking-[.2rem]  md:tracking-[.1rem] font-R_regular text-[2rem] md:text-[3.6rem] leading-[1rem] md:leading-[1.3]  -ml-[5px] pl-0  font-normal     uppercase'
+     >narrative,  and campaign execution.
+        </motion.h1>
+
+
     </div>
     </motion.section>
   )

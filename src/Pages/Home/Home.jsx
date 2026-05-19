@@ -28,31 +28,14 @@ useEffect(() => {
   const handleScroll = () => {
     const hero = document.getElementById("hero-section");
     const footer = document.getElementById("footer-section");
-    const swirl = document.getElementById("mobile-swirl");
     const scrollY = window.scrollY;
-    const windowHeight = window.innerHeight;
 
     const heroHeight = hero?.offsetHeight || 0;
     const footerTop = footer?.offsetTop || Infinity;
 
-    let hideLogo = false;
-
-    if (swirl) {
-      // Absolute positions for swirl section
-      const swirlTop = swirl.offsetTop;
-      const swirlBottom = swirlTop + swirl.offsetHeight;
-
-      // Assume your logo is fixed at bottom (100px from bottom)
-      const logoTop = scrollY + windowHeight - 100 - 128; // 128 = approx. logo height
-      const logoBottom = scrollY + windowHeight - 100;
-
-      // Hide if logo overlaps swirl range
-      hideLogo = logoBottom > swirlTop && logoTop < swirlBottom;
-    }
-
-    // Logo visible only when: passed hero, not overlapping swirl, before footer
-    const isVisible =
-      scrollY > heroHeight && !hideLogo && scrollY + windowHeight < footerTop;
+    // Show after half of hero, then hide again when entering footer.
+    const heroRevealPoint = heroHeight * 0.5;
+    const isVisible = scrollY > heroRevealPoint && scrollY < footerTop;
 
     setShowLogo(isVisible);
   };
